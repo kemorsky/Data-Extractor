@@ -2,20 +2,51 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import type { LocationData } from './utils/types'
+import { getLocation, getLocationById } from './api/api'
 
 export default function App() {
   const [count, setCount] = useState(0);
+  const [ location, setLocation ] = useState<LocationData[] | null>([]);
   const navigate = useNavigate();
+
+  const handleClick = async () => {
+    console.log("clicked");
+
+    const data = await getLocation();
+    // console.log(data[67]);
+    setLocation(data);
+    console.log("finished");
+    console.log(location);
+  }
+
+  const handleClickId = async (id: number) => {
+    console.log("clicked");
+
+    await getLocationById(id);
+    navigate(`/location/${id}`)
+    // console.log(data[67]);
+    // setLocation(data);
+    console.log("finished");
+    console.log(location);
+  }
 
   return (
     <>
       <section id="center">
         <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
+          {location?.map((location) => (
+            <div key={location.id} onClick={() => {handleClickId(location.id ?? 0)}}>
+              <h1>{location.name}</h1>
+              <p>{location.parentLocation}</p>
+              <p>{location.type}</p>
+              <p>{location.status}</p>
+              <p>{location.relatedQuestName}</p>
+              <p>{location.relatedQuestUrl}</p>
+            </div>
+          ))}
         </div>
         <div>
           <h1>Get started</h1>
@@ -30,6 +61,7 @@ export default function App() {
         >
           Count is {count}
         </button>
+        <button onClick={() => { handleClick()}}>Get locations</button>
         <button onClick={() => { navigate('/location')}}>Go to location</button>
       </section>
 

@@ -8,7 +8,7 @@ export const router = createBrowserRouter([
         Component: App
     },
     {
-        path: "/location",
+        path: "/location/:id",
         Component: LocationDataPage
     },
     {},

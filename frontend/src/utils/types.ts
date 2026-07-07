@@ -1,5 +1,5 @@
 export type LocationData = {
-    //id?: number;
+    id?: number;
     
     // image: string;
     name?: string;

@@ -1,66 +1,31 @@
 import { useState } from 'react';
 import './Pages.css';
 import type { LocationData } from '../utils/types';
+import { getLocation, getLocationByEsm } from '../api/api';
 
 export default function LocationDataPage() {
     const [ location, setLocation ] = useState<LocationData[] | null>([]);
 
-    type RequestOptions = {
-        method?: string,
-        headers?: { [key: string]: string },
-        body?: string,
-        credentials?: RequestCredentials;
+    const handleClick = async () => {
+        console.log("clicked");
+
+        const data = await getLocation();
+        // console.log(data[67]);
+        setLocation([data[1]]);
+        console.log("finished");
+        console.log(location);
     }
 
-const URL = "http://localhost:5161";
+    // const handleClick = async (): Promise<LocationData[]> => {
+    //     console.log("clicked");
 
-const apiRequest = async (url: string, options: RequestOptions = {}) => {
-    try {
-        const response = await fetch(url, {
-            method: "GET",
-            credentials: "include",
-            headers: {
-                "Content-Type": "application/json",
-                ...options.headers
-            },
-            ...options
-        })
-        if (!response.ok) {
-          let message = 'Request failed';
-          let type = 'Error';
-          try {
-            const errorData = await response.json();
-            
-            type = errorData.detail.type;
-            message = errorData.detail.message;
-            
-          } catch (error) {
-            console.error(error)
-          }
-            throw Error(`${type}: ${message}`)
-        };
-        return await response.json();
-    } catch (error) {
-        console.error(error);
-        throw error;
-    }
-}
-
-const getData = async (): Promise<LocationData[]> => {
-    const data = await apiRequest(`${URL}/test`);
-    // console.log(data[67]);
-    setLocation([data[67]]);
-    return data;
-}
-
-const handleClick = async () => {
-    console.log("clicked");
-
-    await getData();
-
-    console.log("finished");
-    console.log(location);
-}
+    //     const data = await getLocationByEsm();
+    //     // console.log(data[67]);
+    //     setLocation(data[97] as LocationData);
+    //     return data;
+    //     console.log("finished");
+    //     console.log(location);
+    // }
 
     return (
         <main>
