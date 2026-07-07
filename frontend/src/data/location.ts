@@ -1,0 +1,16 @@
+export const locationData = {
+    "id": 1,
+    "status": "First Passed",
+    "image": "",
+    "name": "Culling Halls",
+    "locationOnMap": "Leyawiin, Nibenay",
+    "locationTechnical": "CYRCullingHalls01",
+    "type": "Akaviri Ruin",
+    "enemies": "Skeletons",
+    "questLink": ["https://docs.google.com/document/d/11aiabNR3qXLggb2s9IoBdxdsCEGbzsqTmdmHPo8Ibf4/edit?tab=t.0"],
+    "vikunjaLink": ["https://claims.beyondskyrim.org/tasks/14442"],
+    "description": "An Akaviri Ruin located in Leyawiin used in the quest Visions in the Haze. ",
+    "wishlist": ["Rotate the ruin to make it less straight.", "Realign and raise the Mist FX to prevent grid bug on the ground."],
+    "lastEdited": "4 July 2026 13:55",
+    "editedBy": "kemor",
+}

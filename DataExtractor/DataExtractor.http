@@ -1,0 +1,26 @@
+@DataExtractor_HostAddress = http://localhost:5161
+
+GET {{DataExtractor_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{DataExtractor_HostAddress}}/
+Accept: application/json
+
+###
+
+GET {{DataExtractor_HostAddress}}/mod-data
+Accept: application/json
+
+###
+
+GET {{DataExtractor_HostAddress}}/test
+Accept: application/json
+
+###
+
+GET {{DataExtractor_HostAddress}}/test/2
+Accept: application/json
+
+###
