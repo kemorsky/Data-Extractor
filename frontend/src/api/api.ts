@@ -41,6 +41,11 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
     }
 }
 
+export const getLocations = async (): Promise<LocationData[]> => {
+    const data = await apiRequest(`${URL}/locations`);
+    return data.uniqueLocations;
+}
+
 export const getLocationByEsm = async (): Promise<LocationData[]> => {
     const data = await apiRequest(`${URL}/mod-data`);
     return data.uniqueLocations;

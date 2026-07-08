@@ -6,5 +6,5 @@ using Mutagen.Bethesda.Skyrim;
 
 public interface IModService
 {
-    Task<List<LocationData>> GetLocationsFromEsm(IEnumerable<ILocationGetter> locations, ILinkCache linkCache);
+    Task<List<LocationDataSheet>> GetLocationsFromEsm(IEnumerable<ILocationGetter> locations, ILinkCache linkCache);
 };

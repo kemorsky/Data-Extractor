@@ -11,9 +11,9 @@ using DataExtractor.Dto;
 
 public class ModService : IModService
 {
-    public Task<List<LocationData>> GetLocationsFromEsm(IEnumerable<ILocationGetter> locations, ILinkCache linkCache)
+    public Task<List<LocationDataSheet>> GetLocationsFromEsm(IEnumerable<ILocationGetter> locations, ILinkCache linkCache)
     {
-        var namesList = new List<LocationData>();
+        var namesList = new List<LocationDataSheet>();
 
         foreach (var loc in locations)
         {
@@ -51,13 +51,13 @@ public class ModService : IModService
                     .ToList();
             }
 
-            var details = new LocationData
+            var details = new LocationDataSheet
             {
                 // FormKey = loc.FormKey.ToString(),
                 EditorID = loc.EditorID ?? string.Empty,
                 ParentLocation = parentNameString,
                 Name = displayName ?? string.Empty,
-                Keywords = keywordsList
+                // Keywords = keywordsList
             };
 
             namesList.Add(details);

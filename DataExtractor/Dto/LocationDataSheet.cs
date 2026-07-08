@@ -3,6 +3,7 @@ namespace DataExtractor.Dto;
 public class LocationDataSheet
 {
     public int Id { get; set; }
+    public string EditorID { get; set; } = string.Empty;
     public string? Name { get; set; }
     public string? ParentLocation { get; set; }
     public string? Type { get; set; }

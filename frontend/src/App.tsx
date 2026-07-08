@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import type { LocationData } from './utils/types'
-import { getLocation, getLocationById } from './api/api'
+import { getLocations, getLocationById, getLocationByEsm } from './api/api'
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -14,8 +14,8 @@ export default function App() {
   const handleClick = async () => {
     console.log("clicked");
 
-    const data = await getLocation();
-    // console.log(data[67]);
+    const data = await getLocations();
+    console.log(data);
     setLocation(data);
     console.log("finished");
     console.log(location);

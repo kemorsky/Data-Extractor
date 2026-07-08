@@ -67,10 +67,10 @@ public class SheetService : ISheetService
 
             locationsData.Add(new LocationDataSheet
             {
-                Id = i,
+                // Id = i,
 
-                Name = row.Count > 0 ? row[0].ToString() : null,
-                ParentLocation = row.Count > 1 ? row[1].ToString() : null,
+                // Name = row.Count > 0 ? row[0].ToString() : null,
+                // ParentLocation = row.Count > 1 ? row[1].ToString() : null,
                 Type = row.Count > 3 ? row[3].ToString() : null,
                 Status = row.Count > 12 ? row[12].ToString() : null,
 

@@ -2,6 +2,7 @@ export type LocationData = {
     id?: number;
     
     // image: string;
+    editorID: string;
     name?: string;
     parentLocation?: string;
     // keywords: string[];

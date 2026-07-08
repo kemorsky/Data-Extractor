@@ -15,12 +15,17 @@ Accept: application/json
 
 ###
 
+GET {{DataExtractor_HostAddress}}/locations
+Accept: application/json
+
+###
+
 GET {{DataExtractor_HostAddress}}/test
 Accept: application/json
 
 ###
 
-GET {{DataExtractor_HostAddress}}/test/2
+GET {{DataExtractor_HostAddress}}/test/Castle-Cheydinhal
 Accept: application/json
 
 ###
