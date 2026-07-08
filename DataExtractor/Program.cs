@@ -102,7 +102,7 @@ app.MapGet("/locations", async () =>
     }
 
     // Return the final data payload back to the browser
-    return Results.Ok(new { UniqueLocations = locationsCache });
+    return Results.Ok(locationsCache);
 })
 .WithName("GetSkyrimModData");
 
@@ -116,12 +116,15 @@ app.MapGet("/test", async () =>
 });
 
 // Google Sheets endpoint
-app.MapGet("/test/{name}", async (string name) =>
+app.MapGet("/locations/{name}", async (string name) =>
 {
     name = name.Replace("-", " ");
 
     var location = locationsCache
-        .FirstOrDefault(x => x.Name == name);
+        .FirstOrDefault(x => string.Equals(
+                x.Name,
+                name,
+                StringComparison.OrdinalIgnoreCase));
 
         return location == null 
             ? Results.NotFound()

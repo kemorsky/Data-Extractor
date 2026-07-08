@@ -4,41 +4,48 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import type { LocationData } from './utils/types'
-import { getLocations, getLocationById, getLocationByEsm } from './api/api'
+import { getLocations, getLocationByName } from './api/api'
 
 export default function App() {
   const [count, setCount] = useState(0);
   const [ location, setLocation ] = useState<LocationData[] | null>([]);
+  const [ locationData, setLocationData ] = useState<LocationData>();
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    console.log("clicked");
-
     const data = await getLocations();
     console.log(data);
     setLocation(data);
-    console.log("finished");
-    console.log(location);
+    return data;
   }
 
-  const handleClickId = async (id: number) => {
-    console.log("clicked");
+  const handleClickName = async (name: string): Promise<LocationData> => {
+    // console.log("clicked");
 
-    await getLocationById(id);
-    navigate(`/location/${id}`)
-    // console.log(data[67]);
-    // setLocation(data);
-    console.log("finished");
-    console.log(location);
+    const data = await getLocationByName(name);
+    console.log(data);
+    setLocationData(data);
+    navigate(`/location/${name}`)
+    return data;
   }
 
   return (
     <>
       <section id="center">
         <div className="hero">
+          {locationData && (
+            <div>
+              <h1>{locationData.name}</h1>
+              <p>{locationData.parentLocation}</p>
+              <p>{locationData.type}</p>
+              <p>{locationData.status}</p>
+              <p>{locationData.relatedQuestName}</p>
+              <p>{locationData.relatedQuestUrl}</p>
+            </div>
+          )}
           <img src={viteLogo} className="vite" alt="Vite logo" />
           {location?.map((location) => (
-            <div key={location.id} onClick={() => {handleClickId(location.id ?? 0)}}>
+            <div key={location.id} onClick={() => {handleClickName(location.name ?? "")}}>
               <h1>{location.name}</h1>
               <p>{location.parentLocation}</p>
               <p>{location.type}</p>

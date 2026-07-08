@@ -1,31 +1,21 @@
 import { useState } from 'react';
 import './Pages.css';
 import type { LocationData } from '../utils/types';
-import { getLocation, getLocationByEsm } from '../api/api';
+import { getLocationByName } from '../api/api';
 
 export default function LocationDataPage() {
-    const [ location, setLocation ] = useState<LocationData[] | null>([]);
+    const [ location, setLocation ] = useState<LocationData>();
 
-    const handleClick = async () => {
+    const handleClick = async (name: string): Promise<LocationData> => {
         console.log("clicked");
 
-        const data = await getLocation();
+        const data = await getLocationByName(name);
         // console.log(data[67]);
-        setLocation([data[1]]);
+        setLocation(data);
+        return data;
         console.log("finished");
         console.log(location);
     }
-
-    // const handleClick = async (): Promise<LocationData[]> => {
-    //     console.log("clicked");
-
-    //     const data = await getLocationByEsm();
-    //     // console.log(data[67]);
-    //     setLocation(data[97] as LocationData);
-    //     return data;
-    //     console.log("finished");
-    //     console.log(location);
-    // }
 
     return (
         <main>
@@ -42,15 +32,15 @@ export default function LocationDataPage() {
                     </article>
                 </section>
 
-                <button onClick={() => {handleClick()}}>Test data fetch</button>
+                <button onClick={() => {handleClick(location?.name ?? "")}}>Test data fetch</button>
 
                 <section className="location-header__core-info">
-                    <h1>{location?.[0]?.name}</h1>
-                    <span>{location?.[0]?.parentLocation}</span>
+                    <h1>{location?.name}</h1>
+                    <span>{location?.parentLocation}</span>
                 </section>
 
                 <article className="location-header__status">
-                    <span>{location?.[0]?.status}</span>
+                    <span>{location?.status}</span>
                 </article>
             </header>
 
@@ -60,13 +50,13 @@ export default function LocationDataPage() {
                         Location: <strong>{location.locationOnMap}</strong>
                     </li> */}
                     <li className="location-content__list-item">
-                        Type: <strong>{location?.[0]?.type}</strong>
+                        Type: <strong>{location?.type}</strong>
                     </li>
                     {/* <li className="location-content__list-item">
                         Enemies: <strong>{location.enemies}</strong>
                     </li> */}
                     <li className="location-content__list-item">
-                        Quest Links: <strong><a target="_blank" href={location?.[0]?.relatedQuestUrl}>{location?.[0]?.relatedQuestName}</a></strong>
+                        Quest Links: <strong><a target="_blank" href={location?.relatedQuestUrl}>{location?.relatedQuestName}</a></strong>
                     </li>
                     {/* <li className="location-content__list-item">
                         Vikunja Links: <strong>

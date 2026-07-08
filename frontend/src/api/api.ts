@@ -43,21 +43,11 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
 
 export const getLocations = async (): Promise<LocationData[]> => {
     const data = await apiRequest(`${URL}/locations`);
-    return data.uniqueLocations;
-}
-
-export const getLocationByEsm = async (): Promise<LocationData[]> => {
-    const data = await apiRequest(`${URL}/mod-data`);
-    return data.uniqueLocations;
-}
-
-
-export const getLocation = async (): Promise<LocationData[]> => {
-    const data = await apiRequest(`${URL}/test`);
+    console.log(data);
     return data;
 }
 
-export const getLocationById = async (id: number): Promise<LocationData> => {
-    const data = await apiRequest(`${URL}/test/${id}`);
+export const getLocationByName = async (name: string): Promise<LocationData> => {
+    const data = await apiRequest(`${URL}/locations/${name}`);
     return data;
 }

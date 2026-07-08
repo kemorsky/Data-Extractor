@@ -25,7 +25,7 @@ Accept: application/json
 
 ###
 
-GET {{DataExtractor_HostAddress}}/test/Castle-Cheydinhal
+GET {{DataExtractor_HostAddress}}/locations/Anga
 Accept: application/json
 
 ###
