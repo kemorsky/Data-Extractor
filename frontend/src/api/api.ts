@@ -8,7 +8,7 @@ type RequestOptions = {
     }
 
 // const URL = "http://localhost:5161";
-const URL = "https://kemorsky.github.io/Data-Extractor/";
+const URL = "https://kemorsky.github.io/Data-Extractor";
 
 const apiRequest = async (url: string, options: RequestOptions = {}) => {
     try {
