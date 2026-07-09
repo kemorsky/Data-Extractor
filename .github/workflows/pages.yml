@@ -25,14 +25,14 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: "Data-Extractor/frontend/package-lock.json"
+          cache-dependency-path: "Data Extractor/frontend/package-lock.json"
 
       - name: Install frontend dependencies
-        working-directory: "Data-Extractor/frontend"
+        working-directory: "Data Extractor/frontend"
         run: npm ci
 
       - name: Build frontend
-        working-directory: "Data-Extractor/frontend"
+        working-directory: "Data Extractor/frontend"
         run: npm run build
 
       - name: Upload Pages artifact
