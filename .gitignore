@@ -34,6 +34,7 @@ dist-ssr
 # dotenv files
 .env
 DataExtractor/utils
+DataExtractor/Properties
 
 # User-specific files
 *.rsuser
