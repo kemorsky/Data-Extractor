@@ -66,9 +66,6 @@ app.MapGet("/locations", async () =>
 
     var modPathHeartland = Path.Combine("DATA-HEARTLANDS", "BSHeartland.esm");
     var modPathAssets = Path.Combine("DATA-ASSETS", "BSAssets.esm");
-
-    // List<string?> armors = new();
-    // List<LocationDataSheet> locations = new();
     
     if (File.Exists(modPathHeartland))
     {
