@@ -16,14 +16,9 @@ var credentialPath = Path.Combine(
 Environment.SetEnvironmentVariable(
     "GOOGLE_APPLICATION_CREDENTIALS",
     credentialPath);
-
-Environment.GetEnvironmentVariable(
-    "DATA-HEARTLANDS"
-);
-
-Environment.GetEnvironmentVariable(
-    "DATA-ASSETS"
-);
+Environment.GetEnvironmentVariable("DATA-HEARTLANDS");
+Environment.GetEnvironmentVariable("DATA-ASSETS");
+Environment.GetEnvironmentVariable("URL");
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,7 +34,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http://localhost:5173, URL")
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
