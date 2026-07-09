@@ -15,7 +15,7 @@ public class DataService : IDataService
 {
     public async Task<List<LocationDataSheet>> GetLocations(IEnumerable<ILocationGetter> locations, ILinkCache linkCache)
     {
-        Environment.GetEnvironmentVariable(
+        var masterlistId = Environment.GetEnvironmentVariable(
             "MASTERLIST-ID"
         );
         
@@ -29,7 +29,7 @@ public class DataService : IDataService
             ApplicationName = "MyApp"
         });
 
-        var spreadsheetRequest = sheetsService.Spreadsheets.Get("MASTERLIST-ID");
+        var spreadsheetRequest = sheetsService.Spreadsheets.Get(masterlistId);
 
         spreadsheetRequest.Ranges = new List<string>
             {
@@ -44,7 +44,7 @@ public class DataService : IDataService
             .RowData;
 
         var request = sheetsService.Spreadsheets.Values.BatchGet(
-            "MASTERLIST-ID");
+            masterlistId);
 
         request.Ranges = new List<string>
         {

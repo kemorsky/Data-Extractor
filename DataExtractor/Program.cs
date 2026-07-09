@@ -16,9 +16,12 @@ var credentialPath = Path.Combine(
 Environment.SetEnvironmentVariable(
     "GOOGLE_APPLICATION_CREDENTIALS",
     credentialPath);
-Environment.GetEnvironmentVariable("DATA-HEARTLANDS");
-Environment.GetEnvironmentVariable("DATA-ASSETS");
-Environment.GetEnvironmentVariable("URL");
+
+var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA-HEARTLANDS");
+var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA-ASSETS");
+var URL = Environment.GetEnvironmentVariable("URL");
+
+Console.Write(pathToModHeartlandESM);
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,10 +37,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "URL")
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials();
+        if (URL != null)
+        {
+            policy.WithOrigins("http://localhost:5173", URL)
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        }
     });
 });
 
@@ -64,8 +70,8 @@ app.MapGet("/locations", async () =>
 
     // var weapons = ModHelper.GetEditorIds(env.LoadOrder.PriorityOrder.Weapon().WinningOverrides());
 
-    var modPathHeartland = Path.Combine("DATA-HEARTLANDS", "BSHeartland.esm");
-    var modPathAssets = Path.Combine("DATA-ASSETS", "BSAssets.esm");
+    var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
+    var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
     
     if (File.Exists(modPathHeartland))
     {
