@@ -15,6 +15,10 @@ public class DataService : IDataService
 {
     public async Task<List<LocationDataSheet>> GetLocations(IEnumerable<ILocationGetter> locations, ILinkCache linkCache)
     {
+        Environment.GetEnvironmentVariable(
+            "MASTERLIST-ID"
+        );
+        
         var credential = await GoogleCredential.GetApplicationDefaultAsync();
 
         credential = credential.CreateScoped(SheetsService.Scope.SpreadsheetsReadonly);
@@ -25,8 +29,7 @@ public class DataService : IDataService
             ApplicationName = "MyApp"
         });
 
-        var spreadsheetId = "1xugAEYfbjQQbUO5ZWffHO2Q7XaJxG7xRaHVQF1yrvpY";
-        var spreadsheetRequest = sheetsService.Spreadsheets.Get(spreadsheetId);
+        var spreadsheetRequest = sheetsService.Spreadsheets.Get("MASTERLIST-ID");
 
         spreadsheetRequest.Ranges = new List<string>
             {
@@ -41,7 +44,7 @@ public class DataService : IDataService
             .RowData;
 
         var request = sheetsService.Spreadsheets.Values.BatchGet(
-            spreadsheetId);
+            "MASTERLIST-ID");
 
         request.Ranges = new List<string>
         {

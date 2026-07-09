@@ -17,6 +17,14 @@ Environment.SetEnvironmentVariable(
     "GOOGLE_APPLICATION_CREDENTIALS",
     credentialPath);
 
+Environment.GetEnvironmentVariable(
+    "DATA-HEARTLANDS"
+);
+
+Environment.GetEnvironmentVariable(
+    "DATA-ASSETS"
+);
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
@@ -52,9 +60,6 @@ var sheetService = new SheetService();
 var modService = new ModService();
 var dataService = new DataService();
 
-var pathToModHeartlandESM = @"C:\Modding\MO2\mods\se-heartlands";
-var pathToModAssetsESM = @"C:\Modding\MO2\mods\se-assets-master";
-
 app.MapGet("/locations", async () =>
 {
     using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
@@ -64,8 +69,8 @@ app.MapGet("/locations", async () =>
 
     // var weapons = ModHelper.GetEditorIds(env.LoadOrder.PriorityOrder.Weapon().WinningOverrides());
 
-    var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
-    var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
+    var modPathHeartland = Path.Combine("DATA-HEARTLANDS", "BSHeartland.esm");
+    var modPathAssets = Path.Combine("DATA-ASSETS", "BSAssets.esm");
 
     // List<string?> armors = new();
     // List<LocationDataSheet> locations = new();
