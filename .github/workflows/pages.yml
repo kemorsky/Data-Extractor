@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
 name: Deploy frontend to GitHub Pages
 
 on:
@@ -41,9 +43,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
 
     steps:
       - name: Deploy to GitHub Pages
