@@ -41,7 +41,10 @@ jobs:
       - name: Publish backend
         run: dotnet publish DataExtractor/DataExtractor.csproj -c Release -o publish  
 
-     
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
 
         
           

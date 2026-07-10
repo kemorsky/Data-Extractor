@@ -56,9 +56,6 @@ var dataService = new DataService();
 
 app.MapGet("/locations", async () =>
 {
-    using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
-    ILinkCache linkCache = env.LinkCache;
-
     // var weapons = ModHelper.GetEditorIds(env.LoadOrder.PriorityOrder.Weapon().WinningOverrides());
 
     var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
@@ -66,6 +63,9 @@ app.MapGet("/locations", async () =>
     
     if (File.Exists(modPathHeartland))
     {
+        using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
+        ILinkCache linkCache = env.LinkCache;
+
         Console.WriteLine(" Mod path exists ");
         using var mod = SkyrimMod.CreateFromBinaryOverlay(modPathHeartland, SkyrimRelease.SkyrimSE);
         // armors = ModHelper.GetEditorIds(ConvertArmorsToMajorRecords(mod.Armors));
