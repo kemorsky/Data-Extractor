@@ -52,9 +52,6 @@ app.MapOpenApi();
 
 List<LocationDataSheet> locationsCache = new();
 
-using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
-ILinkCache linkCache = env.LinkCache;
-
 var dataService = new DataService();
 
 app.MapGet("/locations", async () =>
