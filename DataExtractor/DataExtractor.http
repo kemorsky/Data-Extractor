@@ -1,5 +1,5 @@
-# @DataExtractor_HostAddress = http://localhost:5161
-@DataExtractor_HostAddress = https://kemorsky.github.io/Data-Extractor/
+@DataExtractor_HostAddress = http://localhost:5161
+# @DataExtractor_HostAddress = https://kemorsky.github.io/Data-Extractor/
 
 GET {{DataExtractor_HostAddress}}/weatherforecast/
 Accept: application/json
