@@ -13,7 +13,7 @@ using DataExtractor.Dto;
 
 public class DataService : IDataService
 {
-    public async Task<List<LocationDataSheet>> GetLocations(IEnumerable<ILocationGetter> locations, ILinkCache linkCache)
+    public async Task<List<LocationDataSheet>> GetLocations(IEnumerable<ILocationGetter?>? locations = null, ILinkCache? linkCache = null)
     {
         var masterlistId = Environment.GetEnvironmentVariable(
             "MASTERLIST-ID"
@@ -57,12 +57,6 @@ public class DataService : IDataService
 
         Console.WriteLine($"Returned ranges: {dungeonData.Count}");
 
-        foreach (var range in dungeonData)
-        {
-            Console.WriteLine($"Range: {range.Range}");
-            Console.WriteLine($"Rows: {range.Values?.Count ?? 0}");
-        }
-
         var mainData = dungeonData.ElementAtOrDefault(0)?.Values ?? [];
 
         var sheetLookup = mainData
@@ -80,69 +74,108 @@ public class DataService : IDataService
         var locationsData = new List<LocationDataSheet>();
         var id = 0;
 
+        // If mod path is missing use only the masterlist
+        if (locations == null || linkCache == null)
+        {
+            foreach (var row in sheetLookup)
+            {
+                var sheet = row.Value;
+                
+                locationsData.Add(new LocationDataSheet
+                {
+                    Id = id++,
+                    EditorID = sheet?.Row.Count > 6 ? sheet.Row[6].ToString() ?? "None" : "None",
+                    ParentLocation = sheet?.Row.Count > 1 ? sheet.Row[1].ToString() ?? "None" : "None",
+                    Name = sheet?.Row.Count > 0 ? sheet.Row[0].ToString() ?? "None" : "None",
+
+                    LocationType = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() ?? "None" : "None",
+                    Status = sheet?.Row.Count > 12 ? sheet.Row[12].ToString()  ?? "None" : "None",
+
+                    RelatedQuestName = sheet?.QuestCell?
+                        .Values?
+                        .FirstOrDefault()?
+                        .FormattedValue
+                        ?? "None",
+
+                    RelatedQuestUrl = sheet?.QuestCell?
+                        .Values?
+                        .FirstOrDefault()?
+                        .Hyperlink
+                        ?? "None",
+                });
+            };
+
+            return locationsData;
+        };
+
+        // If mod path is present use both the esm and the masterlist
         foreach (var loc in locations)
         {
-            var displayName = loc.Name?.ToString();
+            var displayName = loc?.Name?.ToString() ?? "";
             var keywordsList = new List<string>();
+
+            sheetLookup.TryGetValue(
+                displayName,
+                out var sheet);
             
             string parentNameString = "None";
 
             // Use the FormLink directly instead of pulling the FormKey property out
-            if (loc.ParentLocation.TryResolve(linkCache, out var parentLoc))
+            if (loc?.ParentLocation != null && loc.ParentLocation.TryResolve(linkCache, out var parentLoc))
             {
-                Console.WriteLine($"Found the parent location! {parentLoc.Name}");
+                // Console.WriteLine($"Found the parent location! {parentLoc.Name}");
                 // FormLink successfully found the record in the active load order cache
                 parentNameString = parentLoc.Name?.ToString() ?? parentLoc.EditorID ?? "Unnamed Parent Location";
             }
-            else if (!loc.ParentLocation.IsNull)
+            else if ((!loc?.ParentLocation.IsNull) ?? false)
             {
                 // The link exists but the master file containing it isn't loaded in the environment
-                var missingFormKey = loc.ParentLocation.FormKey;
-                Console.WriteLine($"Could not resolve Parent! FormID: {missingFormKey.ID:X6}, Master File: {missingFormKey.ModKey}");
+                var missingFormKey = loc?.ParentLocation.FormKey;
+                Console.WriteLine($"Could not resolve Parent! FormID: {missingFormKey?.ID:X6}, Master File: {missingFormKey?.ModKey}");
                 
-                parentNameString = missingFormKey.ToString();
+                parentNameString = missingFormKey.ToString() ?? "";
             }
 
-            if (loc.Keywords != null)
-            {
-                keywordsList = loc.Keywords
-                    .Select(keywordLink => {
-                        if (keywordLink.TryResolve(linkCache, out var keywordRecord))
-                        {
-                            return keywordRecord.EditorID ?? keywordLink.FormKey.ToString();
-                        }
-                        return keywordLink.FormKey.ToString();
-                    })
-                    .ToList();
-            }
-
-            sheetLookup.TryGetValue(
-                loc.Name?.ToString() ?? "",
-                out var sheet);
+            // if (loc.Keywords != null)
+            // {
+            //     keywordsList = loc.Keywords
+            //         .Select(keywordLink => {
+            //             if (keywordLink.TryResolve(linkCache, out var keywordRecord))
+            //             {
+            //                 return keywordRecord.EditorID ?? keywordLink.FormKey.ToString();
+            //             }
+            //             return keywordLink.FormKey.ToString();
+            //         })
+            //         .ToList();
+            // }
 
             locationsData.Add(new LocationDataSheet
             {
                 Id = id++,
                 // FormKey = loc.FormKey.ToString(),
-                EditorID = loc.EditorID ?? string.Empty,
+                EditorID = loc?.EditorID?.ToString() ?? "None",
                 ParentLocation = parentNameString,
-                Name = displayName ?? string.Empty,
+                Name = displayName,
                 // Keywords = keywordsList
 
-                Type = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() : null,
-                Status = sheet?.Row.Count > 12 ? sheet.Row[12].ToString() : null,
+                LocationType = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() ?? "None" : "None",
+                Status = sheet?.Row.Count > 12 ? sheet.Row[12].ToString()  ?? "None" : "None",
 
                 RelatedQuestName = sheet?.QuestCell?
                     .Values?
                     .FirstOrDefault()?
-                    .FormattedValue,
+                    .FormattedValue
+                    ?? "None",
 
                 RelatedQuestUrl = sheet?.QuestCell?
                     .Values?
                     .FirstOrDefault()?
-                    .Hyperlink,
+                    .Hyperlink
+                    ?? "None",
             });
         };
+
+        Console.WriteLine($"Locations from DataService: {locationsData.Count}");
 
         return locationsData;
     }

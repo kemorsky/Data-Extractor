@@ -28,8 +28,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 // Services builder
-builder.Services.AddScoped<ISheetService, SheetService>();
-builder.Services.AddScoped<IModService, ModService>();
 builder.Services.AddScoped<IDataService, DataService>();
 
 // CORS builder services
@@ -57,16 +55,12 @@ List<LocationDataSheet> locationsCache = new();
 using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 ILinkCache linkCache = env.LinkCache;
 
-var sheetService = new SheetService();
-var modService = new ModService();
 var dataService = new DataService();
 
 app.MapGet("/locations", async () =>
 {
     using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
     ILinkCache linkCache = env.LinkCache;
-
-    locationsCache = await sheetService.GetLocationsFromSheets();
 
     // var weapons = ModHelper.GetEditorIds(env.LoadOrder.PriorityOrder.Weapon().WinningOverrides());
 
@@ -84,7 +78,9 @@ app.MapGet("/locations", async () =>
         
         var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter>(modsList, LinkCachePreferences.Default);
         
-        locationsCache = dataService.GetLocations(mod.Locations, combinedCache).Result;
+        Console.Write(combinedCache);
+
+        locationsCache = await dataService.GetLocations(mod.Locations, combinedCache);
     }
     // else if (File.Exists(modPathAssets)) // TODO - add support for Assets
     // {
@@ -102,6 +98,7 @@ app.MapGet("/locations", async () =>
     else
     {
         Console.Write($"Warning: Could not find {modPathHeartland} in your Skyrim Data folder.");
+        locationsCache = await dataService.GetLocations();
     }
 
     // Return the final data payload back to the browser
@@ -110,13 +107,13 @@ app.MapGet("/locations", async () =>
 .WithName("GetSkyrimModData");
 
 // Google Sheets endpoint
-app.MapGet("/test", async () =>
-{
-    locationsCache = await sheetService.GetLocationsFromSheets();
+// app.MapGet("/test", async () =>
+// {
+//     locationsCache = await sheetService.GetLocationsFromSheets();
 
-    return Results.Ok(locationsCache);
+//     return Results.Ok(locationsCache);
     
-});
+// });
 
 // Google Sheets endpoint
 app.MapGet("/locations/{name}", async (string name) =>
@@ -133,58 +130,6 @@ app.MapGet("/locations/{name}", async (string name) =>
             ? Results.NotFound()
             : Results.Ok(location);
 });
-
-// var pathToModHeartlandESM = @"C:\Modding\MO2\mods\se-heartlands";
-// var pathToModAssetsESM = @"C:\Modding\MO2\mods\se-assets-master";
-
-// app.MapGet("/mod-data", () =>
-// {
-//     using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
-//     ILinkCache linkCache = env.LinkCache;
-
-//     // var weapons = ModHelper.GetEditorIds(env.LoadOrder.PriorityOrder.Weapon().WinningOverrides());
-
-//     var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
-//     var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
-
-//     // List<string?> armors = new();
-//     List<LocationDataSheet> locations = new();
-    
-//     if (File.Exists(modPathHeartland))
-//     {
-//         Console.WriteLine(" Mod path exists ");
-//         using var mod = SkyrimMod.CreateFromBinaryOverlay(modPathHeartland, SkyrimRelease.SkyrimSE);
-//         // armors = ModHelper.GetEditorIds(ConvertArmorsToMajorRecords(mod.Armors));
-
-//         var modsList = env.LoadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
-//         modsList.Add(mod); // Inject the binary overlay mod into the index list
-        
-//         var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter>(modsList, LinkCachePreferences.Default);
-        
-//         locations = modService.GetLocationsFromEsm(mod.Locations, combinedCache).Result;
-//     }
-//     // else if (File.Exists(modPathAssets)) // TODO - add support for Assets
-//     // {
-//     //     Console.WriteLine(" Mod path exists ");
-//     //     using var mod = SkyrimMod.CreateFromBinaryOverlay(modPathAssets, SkyrimRelease.SkyrimSE);
-//     //     // armors = modService.GetEditorIds(ConvertArmorsToMajorRecords(mod.Armors));
-
-//     //     var modsList = env.LoadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
-//     //     modsList.Add(mod); // Inject the binary overlay mod into the index list
-        
-//     //     var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter>(modsList, LinkCachePreferences.Default);
-        
-//     //     locations = modService.GetLocationsFromEsm(mod.Locations, combinedCache).Result;
-//     // }
-//     else
-//     {
-//         Console.Write($"Warning: Could not find {modPathHeartland} in your Skyrim Data folder.");
-//     }
-
-//     // Return the final data payload back to the browser
-//     return Results.Ok(new { UniqueLocations = locations });
-// })
-// .WithName("GetSkyrimModData");
 
 app.MapGet("/", () => "Hello World!");
 app.UseCors("FrontendPolicy");
