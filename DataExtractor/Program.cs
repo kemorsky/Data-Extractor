@@ -121,7 +121,6 @@ app.MapGet("/locations", async () =>
 // })
 // .WithName("GetSkyrimModData");
 
-// Google Sheets endpoint
 app.MapGet("/locations/{name}", (string name) =>
 {
     name = name.Replace("-", " ");
