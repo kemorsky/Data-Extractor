@@ -32,7 +32,9 @@ builder.Services.AddCors(options =>
     {
         if (URL != null)
         {
-            policy.WithOrigins("http://localhost:5173", URL)
+            policy.WithOrigins(
+                "http://localhost:5173", 
+                "https://kemorsky.github.io/Data-Extractor/")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
