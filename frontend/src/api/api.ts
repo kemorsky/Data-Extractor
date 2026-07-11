@@ -15,14 +15,13 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
     try {
         const response = await fetch(url, {
             method: "GET",
-            credentials: "include",
+            // credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 ...options.headers
             },
             ...options
         })
-        console.log(URL);
         if (!response.ok) {
           let message = 'Request failed';
           let type = 'Error';
