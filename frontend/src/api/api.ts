@@ -7,7 +7,8 @@ type RequestOptions = {
         credentials?: RequestCredentials;
     }
 
-const URL = "http://localhost:5161";
+const URL = import.meta.env.VITE_URL;
+// const URL = "http://localhost:5161";
 // const URL = "https://kemorsky.github.io/Data-Extractor";
 
 const apiRequest = async (url: string, options: RequestOptions = {}) => {
@@ -21,6 +22,7 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
             },
             ...options
         })
+        console.log(URL);
         if (!response.ok) {
           let message = 'Request failed';
           let type = 'Error';

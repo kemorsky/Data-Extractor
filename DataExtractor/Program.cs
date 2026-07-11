@@ -42,6 +42,7 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseCors("FrontendPolicy");
 app.UseHttpsRedirection();
 app.MapOpenApi();
 
@@ -137,5 +138,4 @@ app.MapGet("/locations/{name}", (string name) =>
 });
 
 app.MapGet("/", () => "Hello World!");
-app.UseCors("FrontendPolicy");
 app.Run();
