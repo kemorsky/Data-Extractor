@@ -34,18 +34,17 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins(
                 "http://localhost:5173", 
-                "https://kemorsky.github.io/Data-Extractor/")
+                URL)
                 .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
+                .AllowAnyMethod();
         }
     });
 });
 
 var app = builder.Build();
 
-app.UseCors("FrontendPolicy");
 app.UseHttpsRedirection();
+app.UseCors("FrontendPolicy");
 app.MapOpenApi();
 
 List<LocationDataSheet> locationsCache = new();
