@@ -1,4 +1,4 @@
-namespace DataExtractor.Services;
+namespace DataExtractor.Tool.Services;
 
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Skyrim;
@@ -9,20 +9,19 @@ using System.Collections.Generic;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Auth.OAuth2;
-using DataExtractor.Dto;
+using Google.Apis.Download;
+using Google.Apis.Drive.v3;
+using DataExtractor.Tool.Dto;
 
 public class DataService : IDataService
 {
     public async Task<List<LocationDataSheet>> GetLocations(IEnumerable<ILocationGetter?>? locations = null, ILinkCache? linkCache = null)
     {
-        var masterlistId = Environment.GetEnvironmentVariable(
-            "MASTERLIST-ID"
-        );
+        var masterlistId = Environment.GetEnvironmentVariable("MASTERLIST-ID");
         
         var credential = await GoogleCredential.GetApplicationDefaultAsync();
-
         credential = credential.CreateScoped(SheetsService.Scope.SpreadsheetsReadonly);
-
+        
         var sheetsService = new SheetsService(new BaseClientService.Initializer
         {
             HttpClientInitializer = credential,
@@ -30,22 +29,19 @@ public class DataService : IDataService
         });
 
         var spreadsheetRequest = sheetsService.Spreadsheets.Get(masterlistId);
-
         spreadsheetRequest.Ranges = new List<string>
             {
                 "Dungeons!J1:J"
             };
         spreadsheetRequest.IncludeGridData = true;
 
-        var questResponse = await spreadsheetRequest.ExecuteAsync();
 
+        var questResponse = await spreadsheetRequest.ExecuteAsync();
         var questCells = questResponse.Sheets[0]
             .Data[0]
             .RowData;
 
-        var request = sheetsService.Spreadsheets.Values.BatchGet(
-            masterlistId);
-
+        var request = sheetsService.Spreadsheets.Values.BatchGet(masterlistId);
         request.Ranges = new List<string>
         {
             "Dungeons!A1:M",
@@ -53,6 +49,7 @@ public class DataService : IDataService
         };
 
         var response = await request.ExecuteAsync();
+        
         var dungeonData = response.ValueRanges;
 
         Console.WriteLine($"Returned ranges: {dungeonData.Count}");

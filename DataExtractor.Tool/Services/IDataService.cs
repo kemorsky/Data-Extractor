@@ -1,6 +1,6 @@
-namespace DataExtractor.Services;
+namespace DataExtractor.Tool.Services;
 
-using DataExtractor.Dto;
+using DataExtractor.Tool.Dto;
 using Mutagen.Bethesda.Plugins.Cache;
 using Mutagen.Bethesda.Skyrim;
 
