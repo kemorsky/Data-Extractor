@@ -49,7 +49,7 @@ export default function App() {
   };
 
   const handleClickName = (name: string) => {
-    navigate(`/${encodeURIComponent(name)}`)
+    navigate(`/locations/${encodeURIComponent(name)}`)
   }
 
   return (
