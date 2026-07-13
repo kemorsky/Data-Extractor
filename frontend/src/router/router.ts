@@ -4,11 +4,11 @@ import LocationDataPage from "../pages/location-page";
 
 export const router = createBrowserRouter([
     {
-        path: "/locations",
+        path: "/",
         Component: App
     },
     {
-        path: "/locations/:name",
+        path: "/:name",
         Component: LocationDataPage
     },
     {},
