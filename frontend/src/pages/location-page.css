@@ -1,0 +1,75 @@
+.location-page {
+
+    display: flex;
+    flex-direction: column;
+
+    .location-page-header {
+        width: 23rem;
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1rem;
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+
+        .location-page-header__core-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .location-page-header__last-edited {
+            align-self: flex-start;
+        }
+
+        .location-page-header__list {
+            list-style: none;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+
+        .location-page-header__list-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .location-page-header__status {
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            background-color: orange;
+            color: white;
+            border-radius: 0.5rem;
+            padding: 0.33rem;
+            font-size: 0.75rem;
+        }
+    }
+
+    .location-page-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 2rem;
+
+
+        
+
+        .location-page-content__notes {
+            align-self: center;
+        }
+
+        .location-page-content__writing-ld-wishlist {
+            align-self: center;
+
+            ul {
+                text-align: left;
+            }
+        }
+
+    }
+}
