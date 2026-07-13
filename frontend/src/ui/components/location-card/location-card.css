@@ -1,0 +1,29 @@
+.location-card {
+    max-width: 12rem;
+    width: 100%;
+    background-color: rgb(46, 45, 43);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+
+    .location-card__labels {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    .location-card__info {
+        display: flex;
+        flex-direction: column;
+        place-items: start;
+        gap: 0.125rem;
+        margin-top: 1rem;
+
+        .location-card__info__name {
+            font-weight: 700;
+        }
+
+        .location-card__info__type {
+            font-size: 0.75rem;
+        }
+    }
+}

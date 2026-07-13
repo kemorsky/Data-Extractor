@@ -13,7 +13,7 @@ export type LocationData = {
     // enemies: string;
     // questLinks: string[];
     // vikunjaLink: string[];
-    // description: string;
+    notes: string;
     // wishlist: string;
     // lastEdited: string;
     // editedBy: string;

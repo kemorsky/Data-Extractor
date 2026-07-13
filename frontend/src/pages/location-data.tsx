@@ -55,9 +55,9 @@ export default function LocationDataPage() {
                     </li> */}
                 </ul>
 
-                <section className="location-content__description">
-                    <h2>Description</h2>
-                    {/* <p >{location.description}</p> */}
+                <section className="location-content__notes">
+                    <h2>Notes</h2>
+                    <p >{locationByName?.notes}</p>
                 </section>
                 <section className="location-content__writing-ld-wishlist">
                     <h2>Level Design Wishlist</h2>

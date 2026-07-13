@@ -1,0 +1,13 @@
+.checkbox-group {
+    align-self: flex-start;
+
+    .checkbox-group__option {
+        text-align: left;
+
+
+        .checkbox-group__option__label {
+            margin-left: 0.25rem;
+        }
+    }
+}
+

@@ -1,29 +1,11 @@
 using DataExtractor.Dto;
 using System.Text.Json;
 
-// Retrieve credentials
-// var credentialPath = Path.Combine(
-//     AppContext.BaseDirectory,
-//     "utils",
-//     "service-account.json");
-
-// Environment.SetEnvironmentVariable(
-//     "GOOGLE_APPLICATION_CREDENTIALS",
-//     credentialPath);
-
-// var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA-HEARTLANDS");
-// var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA-ASSETS");
 var URL = Environment.GetEnvironmentVariable("URL");
-
-// Console.Write(pathToModHeartlandESM);
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
-
-// Services builder
-// builder.Services.AddScoped<IDataService, DataService>();
-// builder.Services.AddScoped<DownloadEsm>();
 
 // CORS builder services
 builder.Services.AddCors(options =>
@@ -43,11 +25,6 @@ app.UseCors("FrontendPolicy");
 app.MapOpenApi();
 
 List<LocationDataSheet> locationsCache = new();
-
-// var dataService = new DataService();
-// var downloadEsm = new DownloadEsm();
-
-// var stream = downloadEsm.DownloadFromDrive();
 
 var locationsJson = await File.ReadAllTextAsync(
     Path.Combine(

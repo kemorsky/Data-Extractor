@@ -16,9 +16,9 @@ export function locationByNameQueryOptions(name: string) {
 };
 
 export function locationFilterQueryOptions(
-    status?: string, 
-    locationType?: string, 
-    parentLocation?: string
+    status?: string[], 
+    locationType?: string[], 
+    parentLocation?: string[]
 ){
     return queryOptions({
         queryKey: ["locations", {status, locationType, parentLocation}],

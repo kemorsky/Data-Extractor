@@ -9,8 +9,6 @@ using System.Collections.Generic;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Auth.OAuth2;
-using Google.Apis.Download;
-using Google.Apis.Drive.v3;
 using DataExtractor.Tool.Dto;
 
 public class DataService : IDataService
@@ -37,37 +35,15 @@ public class DataService : IDataService
         spreadsheetRequest.IncludeGridData = true;
 
         var questResponse = await spreadsheetRequest.ExecuteAsync();
-        
-
-        foreach (var data in questResponse.Sheets[0].Data)
-{
-            Console.WriteLine($"{data.StartColumn} -> {data.RowData?.Count}");
-        }
 
         var cells = questResponse.Sheets[0];
-
         var questCells = cells.Data[0].RowData;
         var imageCells = cells.Data[1].RowData;
-
-        var first = imageCells.FirstOrDefault()?.Values?.FirstOrDefault();
-
-        Console.WriteLine(first?.FormattedValue);
-        Console.WriteLine(first?.Hyperlink);
-        Console.WriteLine(first?.UserEnteredValue?.StringValue);
-
-        Console.WriteLine(cells.Data.Count);
-
-        for (int i = 0; i < cells.Data.Count; i++)
-        {
-            Console.WriteLine($"Data[{i}] StartColumn={cells.Data[i].StartColumn}");
-        }
 
         var request = sheetsService.Spreadsheets.Values.BatchGet(masterlistId);
         request.Ranges = new List<string>
         {
             "Dungeons!A1:Z",
-            // "Dungeons!M1:M",
-            // "Dungeons!Y1:Y",
         };
 
         var response = await request.ExecuteAsync();
@@ -77,10 +53,6 @@ public class DataService : IDataService
         Console.WriteLine($"Returned ranges: {dungeonData.Count}");
 
         var mainData = dungeonData.ElementAtOrDefault(0)?.Values ?? [];
-
-        Console.WriteLine(mainData.Count);
-        Console.WriteLine(questCells.Count);
-        Console.WriteLine(imageCells.Count);
 
         var sheetLookup = mainData
             .Select((row, i) => new

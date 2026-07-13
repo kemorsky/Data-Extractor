@@ -17,15 +17,21 @@
   }
 }
 
-.filter {
+.main__wrapper {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  justify-content: space-between;
 
+  gap: 0.5rem;
+  
 }
 
 .hero {
+  max-width: 30rem;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 
   .base,
   .framework,
@@ -71,7 +77,7 @@
   place-items: start;
   flex-grow: 1;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1440px) {
     padding: 32px 20px 24px;
     gap: 18px;
   }

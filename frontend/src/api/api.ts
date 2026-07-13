@@ -55,15 +55,15 @@ export const getLocationByName = async (name: string): Promise<LocationData> => 
 }
 
 export const getLocationFilter = async (
-    status?: string, 
-    locationType?: string, 
-    parentLocation?: string): Promise<LocationData[]> => 
+    status?: string[], 
+    locationType?: string[], 
+    parentLocation?: string[]): Promise<LocationData[]> => 
     {
         const params = new URLSearchParams();
 
-        if (status) params.append("status", status);
-        if (locationType) params.append("locationType", locationType);
-        if (parentLocation) params.append("parentLocation", parentLocation);
+        if (status) params.append("status", status.join(","));
+        if (locationType) params.append("locationType", locationType.join(","));
+        if (parentLocation) params.append("parentLocation", parentLocation.join(","));
 
         return apiRequest(`${URL}/locations/filter?${params.toString()}`);
     };
