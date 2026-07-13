@@ -31,21 +31,43 @@ public class DataService : IDataService
         var spreadsheetRequest = sheetsService.Spreadsheets.Get(masterlistId);
         spreadsheetRequest.Ranges = new List<string>
             {
-                "Dungeons!J1:J"
+                "Dungeons!J1:J",
+                "Dungeons!Z1:Z"
             };
         spreadsheetRequest.IncludeGridData = true;
 
-
         var questResponse = await spreadsheetRequest.ExecuteAsync();
-        var questCells = questResponse.Sheets[0]
-            .Data[0]
-            .RowData;
+        
+
+        foreach (var data in questResponse.Sheets[0].Data)
+{
+            Console.WriteLine($"{data.StartColumn} -> {data.RowData?.Count}");
+        }
+
+        var cells = questResponse.Sheets[0];
+
+        var questCells = cells.Data[0].RowData;
+        var imageCells = cells.Data[1].RowData;
+
+        var first = imageCells.FirstOrDefault()?.Values?.FirstOrDefault();
+
+        Console.WriteLine(first?.FormattedValue);
+        Console.WriteLine(first?.Hyperlink);
+        Console.WriteLine(first?.UserEnteredValue?.StringValue);
+
+        Console.WriteLine(cells.Data.Count);
+
+        for (int i = 0; i < cells.Data.Count; i++)
+        {
+            Console.WriteLine($"Data[{i}] StartColumn={cells.Data[i].StartColumn}");
+        }
 
         var request = sheetsService.Spreadsheets.Values.BatchGet(masterlistId);
         request.Ranges = new List<string>
         {
-            "Dungeons!A1:M",
-            "Dungeons!M1:M",
+            "Dungeons!A1:Z",
+            // "Dungeons!M1:M",
+            // "Dungeons!Y1:Y",
         };
 
         var response = await request.ExecuteAsync();
@@ -56,12 +78,17 @@ public class DataService : IDataService
 
         var mainData = dungeonData.ElementAtOrDefault(0)?.Values ?? [];
 
+        Console.WriteLine(mainData.Count);
+        Console.WriteLine(questCells.Count);
+        Console.WriteLine(imageCells.Count);
+
         var sheetLookup = mainData
             .Select((row, i) => new
             {
                 Name = row.Count > 0 ? row[0].ToString() : "",
                 Row = row,
-                QuestCell = questCells.ElementAtOrDefault(i)
+                QuestCell = questCells.ElementAtOrDefault(i),
+                ImageCell = imageCells.ElementAtOrDefault(i)
             })
             .Where(x => !string.IsNullOrWhiteSpace(x.Name))
             .ToDictionary(
@@ -95,6 +122,14 @@ public class DataService : IDataService
                         ?? "None",
 
                     RelatedQuestUrl = sheet?.QuestCell?
+                        .Values?
+                        .FirstOrDefault()?
+                        .Hyperlink
+                        ?? "None",
+
+                    Notes = sheet?.Row.Count > 24 ? sheet.Row[24].ToString()  ?? "None" : "None",
+
+                    Image = sheet?.ImageCell?
                         .Values?
                         .FirstOrDefault()?
                         .Hyperlink
@@ -165,6 +200,14 @@ public class DataService : IDataService
                     ?? "None",
 
                 RelatedQuestUrl = sheet?.QuestCell?
+                    .Values?
+                    .FirstOrDefault()?
+                    .Hyperlink
+                    ?? "None",
+
+                Notes = sheet?.Row.Count > 24 ? sheet.Row[24].ToString()  ?? "None" : "None",
+
+                Image = sheet?.ImageCell?
                     .Values?
                     .FirstOrDefault()?
                     .Hyperlink

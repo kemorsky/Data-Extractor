@@ -124,13 +124,40 @@ app.MapGet("/locations/{name}", (string name) =>
 
     var location = locationsCache
         .FirstOrDefault(x => string.Equals(
-                x.Name,
-                name,
-                StringComparison.OrdinalIgnoreCase));
+            x.Name,
+            name,
+            StringComparison.OrdinalIgnoreCase));
 
         return location == null 
             ? Results.NotFound()
             : Results.Ok(location);
+});
+
+app.MapGet("/locations/filter", (
+    string? q,
+    string? status,
+    string? locationType,
+    string? parentLocation
+    ) =>
+{
+    status = status?.Replace("-", " ");
+    parentLocation = parentLocation?.Replace("-", " ");
+
+    var locations = locationsCache
+        .Where(x =>
+            (string.IsNullOrEmpty(status) ||
+            string.Equals(x.Status, status, StringComparison.OrdinalIgnoreCase)) &&
+
+            (string.IsNullOrEmpty(locationType) ||
+            string.Equals(x.LocationType, locationType, StringComparison.OrdinalIgnoreCase)) &&
+
+            (string.IsNullOrEmpty(parentLocation) ||
+            string.Equals(x.ParentLocation, parentLocation, StringComparison.OrdinalIgnoreCase)))
+            .ToList();
+
+        return locations.Count == 0 
+            ? Results.NotFound()
+            : Results.Ok(locations);
 });
 
 app.MapGet("/", () => "Hello World!");

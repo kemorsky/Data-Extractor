@@ -1,12 +1,12 @@
 export type LocationData = {
     id?: number;
     
-    // image: string;
+    image?: string;
     editorID: string;
     name?: string;
     parentLocation?: string;
     // keywords: string[];
-    type?: string;
+    locationType?: string;
     status?: string;
     relatedQuestName?: string;
     relatedQuestUrl?: string;

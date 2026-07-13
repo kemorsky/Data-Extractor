@@ -7,8 +7,8 @@ type RequestOptions = {
         credentials?: RequestCredentials;
     }
 
-const URL = import.meta.env.VITE_URL;
-// const URL = "http://localhost:5161";
+// const URL = import.meta.env.VITE_URL;
+const URL = "http://localhost:5161";
 // const URL = "https://kemorsky.github.io/Data-Extractor";
 
 const apiRequest = async (url: string, options: RequestOptions = {}) => {
@@ -53,3 +53,17 @@ export const getLocationByName = async (name: string): Promise<LocationData> => 
     const data = await apiRequest(`${URL}/locations/${name}`);
     return data;
 }
+
+export const getLocationFilter = async (
+    status?: string, 
+    locationType?: string, 
+    parentLocation?: string): Promise<LocationData[]> => 
+    {
+        const params = new URLSearchParams();
+
+        if (status) params.append("status", status);
+        if (locationType) params.append("locationType", locationType);
+        if (parentLocation) params.append("parentLocation", parentLocation);
+
+        return apiRequest(`${URL}/locations/filter?${params.toString()}`);
+    };

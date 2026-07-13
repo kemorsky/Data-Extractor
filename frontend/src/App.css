@@ -17,6 +17,13 @@
   }
 }
 
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+}
+
 .hero {
   position: relative;
 
@@ -58,10 +65,10 @@
 
 #center {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 25px;
   place-content: center;
-  place-items: center;
+  place-items: start;
   flex-grow: 1;
 
   @media (max-width: 1024px) {

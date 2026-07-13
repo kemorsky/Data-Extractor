@@ -1,21 +1,13 @@
-import { useState } from 'react';
+import { useParams } from "react-router";
 import './Pages.css';
-import type { LocationData } from '../utils/types';
-import { getLocationByName } from '../api/api';
+import { useQuery } from '@tanstack/react-query';
+import { locationByNameQueryOptions } from '../queries/locationQueryOptions';
 
 export default function LocationDataPage() {
-    const [ location, setLocation ] = useState<LocationData>();
+    const { name } = useParams();
+    const { data: locationByName } = useQuery(locationByNameQueryOptions(name ?? ""));
 
-    const handleClick = async (name: string): Promise<LocationData> => {
-        console.log("clicked");
-
-        const data = await getLocationByName(name);
-        // console.log(data[67]);
-        setLocation(data);
-        return data;
-        console.log("finished");
-        console.log(location);
-    }
+    console.log(locationByName?.image);
 
     return (
         <main>
@@ -30,17 +22,15 @@ export default function LocationDataPage() {
                         <p>By:</p>
                         {/* <p>{location.editedBy}</p> */}
                     </article>
+                    <img src={locationByName?.image} alt={`${locationByName?.name} image`} width="400" height="250" />
                 </section>
-
-                <button onClick={() => {handleClick(location?.name ?? "")}}>Test data fetch</button>
-
                 <section className="location-header__core-info">
-                    <h1>{location?.name}</h1>
-                    <span>{location?.parentLocation}</span>
+                    <h1>{locationByName?.name}</h1>
+                    <span>{locationByName?.parentLocation}</span>
                 </section>
 
                 <article className="location-header__status">
-                    <span>{location?.status}</span>
+                    <span>{locationByName?.status}</span>
                 </article>
             </header>
 
@@ -50,13 +40,13 @@ export default function LocationDataPage() {
                         Location: <strong>{location.locationOnMap}</strong>
                     </li> */}
                     <li className="location-content__list-item">
-                        Type: <strong>{location?.type}</strong>
+                        Type: <strong>{locationByName?.locationType}</strong>
                     </li>
                     {/* <li className="location-content__list-item">
                         Enemies: <strong>{location.enemies}</strong>
                     </li> */}
                     <li className="location-content__list-item">
-                        Quest Links: <strong><a target="_blank" href={location?.relatedQuestUrl}>{location?.relatedQuestName}</a></strong>
+                        Quest Links: <strong><a target="_blank" href={locationByName?.relatedQuestUrl}>{locationByName?.relatedQuestName}</a></strong>
                     </li>
                     {/* <li className="location-content__list-item">
                         Vikunja Links: <strong>
@@ -76,7 +66,6 @@ export default function LocationDataPage() {
                     </ul> */}
                 </section>
             </div>
-
         </main>
     )
 }

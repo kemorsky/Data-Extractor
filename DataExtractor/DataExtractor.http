@@ -30,3 +30,8 @@ GET {{DataExtractor_HostAddress}}/locations/Anga
 Accept: application/json
 
 ###
+
+GET {{DataExtractor_HostAddress}}/locations/filter?parentLocation=County-Anvil
+Accept: application/json
+
+###

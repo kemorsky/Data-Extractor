@@ -1,5 +1,5 @@
 import { queryOptions } from "@tanstack/react-query";
-import { getLocations, getLocationByName } from "../api/api";
+import { getLocations, getLocationByName, getLocationFilter } from "../api/api";
 
 export function locationsQueryOptions() {
     return queryOptions({
@@ -10,7 +10,18 @@ export function locationsQueryOptions() {
 
 export function locationByNameQueryOptions(name: string) {
     return queryOptions({
-        queryKey: ["location"],
+        queryKey: ["location", name],
         queryFn: () => getLocationByName(name)
+    })
+};
+
+export function locationFilterQueryOptions(
+    status?: string, 
+    locationType?: string, 
+    parentLocation?: string
+){
+    return queryOptions({
+        queryKey: ["locations", {status, locationType, parentLocation}],
+        queryFn: () => getLocationFilter(status, locationType, parentLocation)
     })
 };
