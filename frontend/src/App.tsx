@@ -23,7 +23,7 @@ export default function App() {
     statuses: [],
     locationTypes: [],
     parentLocations: [],
-    inhabitants: []
+    inhabitants: [],
   });
 
   const { data: locations } = useQuery(locationsQueryOptions());
