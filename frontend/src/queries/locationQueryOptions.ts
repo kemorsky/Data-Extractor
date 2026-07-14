@@ -19,7 +19,7 @@ export function locationFilterQueryOptions(
     status?: string[], 
     locationType?: string[], 
     parentLocation?: string[],
-    inhabitants?: string[]
+    inhabitants?: string[],
 ){
     return queryOptions({
         queryKey: ["locations", {status, locationType, parentLocation, inhabitants}],
