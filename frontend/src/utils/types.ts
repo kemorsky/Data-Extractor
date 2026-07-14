@@ -5,12 +5,13 @@ export type LocationData = {
     editorID: string;
     name?: string;
     parentLocation?: string;
+    region?: string;
     // keywords: string[];
     locationType?: string;
     status?: string;
     relatedQuestName?: string;
     relatedQuestUrl?: string;
-    // enemies: string;
+    inhabitants?: string;
     // questLinks: string[];
     // vikunjaLink: string[];
     notes: string;

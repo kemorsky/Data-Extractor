@@ -17,24 +17,27 @@ export default function LocationDataPage() {
                     {/* <img src={locationByName?.image} alt={`${locationByName?.name} image`} width="400" height="250" /> */}
                 </section>
                 <section className="location-page-header__core-info">
-                    <h1>{locationByName?.name}</h1>
+                    <h1 className="location-page-header__core-info__name">{locationByName?.name}</h1>
                     <article className="location-page-header__status">
                         <span>{locationByName?.status}</span>
                     </article>
                 </section>
                 <ul className="location-page-header__list">
-                    <li className="location-page-header__list-item">Parent Location: {locationByName?.parentLocation}</li>
-                    {/* <li className="location-content__list-item">
-                        Location: <strong>{location.locationOnMap}</strong>
-                    </li> */}
+                    <li className="location-page-header__list-item">
+                        Parent Location: {locationByName?.parentLocation}, {locationByName?.region}
+                    </li>
                     <li className="location-page-header__list-item">
                         Type: <strong>{locationByName?.locationType}</strong>
                     </li>
-                    {/* <li className="location-header__list-item">
-                        Enemies: <strong>{location.enemies}</strong>
-                    </li> */}
                     <li className="location-page-header__list-item">
-                        Quest Links: <strong><a target="_blank" href={locationByName?.relatedQuestUrl}>{locationByName?.relatedQuestName}</a></strong>
+                        Inhabitants: <strong>{locationByName?.inhabitants}</strong>
+                    </li>
+                    <li className="location-page-header__list-item">
+                        Quest Links: <strong>
+                                        <a target="_blank" href={locationByName?.relatedQuestUrl}>
+                                            {locationByName?.relatedQuestName}
+                                        </a>
+                                    </strong>
                     </li>
                     {/* <li className="location-header__list-item">
                         Vikunja Links: <strong>
@@ -45,9 +48,9 @@ export default function LocationDataPage() {
             </header>
 
             <div className="location-page-content">
-                
                 <section className="location-page-content__notes">
                     <h2>Notes</h2>
+                    <hr className="location-page-content__separator" />
                     <p >{locationByName?.notes}</p>
                 </section>
 

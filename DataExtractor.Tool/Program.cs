@@ -24,17 +24,20 @@ Console.WriteLine("Hello, World!");
 
 using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 
-if (string.IsNullOrWhiteSpace(pathToModHeartlandESM))
+if (string.IsNullOrWhiteSpace(pathToModHeartlandESM) || string.IsNullOrWhiteSpace(pathToModAssetsESM))
 {
     throw new Exception("DATA-HEARTLANDS is not configured.");
 }
 
 var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
+var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
 
 using var mod = SkyrimMod.CreateFromBinaryOverlay(modPathHeartland, SkyrimRelease.SkyrimSE);
+using var mod2 = SkyrimMod.CreateFromBinaryOverlay(modPathAssets, SkyrimRelease.SkyrimSE);
 
 var modsList = env.LoadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
 modsList.Add(mod);
+modsList.Add(mod2);
 
 var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter>(modsList, LinkCachePreferences.Default);
 

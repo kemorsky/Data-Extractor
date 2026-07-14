@@ -12,13 +12,13 @@ export default function CheckboxGroup(props: CheckboxProps) {
         <fieldset className="checkbox-group">
             <legend>{props.title}</legend>
             {props.options.map(option => (
-                <article className="checkbox-group__option">
+                <article key={option} className="checkbox-group__option">
                     <input  
                         type="checkbox"
                         checked={props.selected.includes(option)}
                         onChange={() => props.onToggle(option)}
                     />
-                    <label key={option} className="checkbox-group__option__label">
+                    <label className="checkbox-group__option__label">
                         {option}
                     </label>
                 </article>

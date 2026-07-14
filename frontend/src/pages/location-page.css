@@ -2,10 +2,13 @@
 
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
 
     .location-page-header {
-        width: 23rem;
-        align-self: flex-end;
+        width: 45rem;
+        align-self: center;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -17,9 +20,13 @@
 
         .location-page-header__core-info {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             width: 100%;
+
+            .location-page-header__core-info__name {
+                align-self: center;
+            }
         }
 
         .location-page-header__last-edited {
@@ -41,6 +48,7 @@
             height: 2rem;
             display: flex;
             align-items: center;
+            justify-self: end;
             background-color: orange;
             color: white;
             border-radius: 0.5rem;
@@ -57,10 +65,14 @@
         gap: 2rem;
 
 
-        
+        .location-page-content__separator {
+            width: 100%;
+            border: 1px solid var(--border);
+        }
 
         .location-page-content__notes {
             align-self: center;
+            text-align: left;
         }
 
         .location-page-content__writing-ld-wishlist {

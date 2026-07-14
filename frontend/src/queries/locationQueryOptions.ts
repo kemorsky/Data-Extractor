@@ -18,10 +18,11 @@ export function locationByNameQueryOptions(name: string) {
 export function locationFilterQueryOptions(
     status?: string[], 
     locationType?: string[], 
-    parentLocation?: string[]
+    parentLocation?: string[],
+    inhabitants?: string[]
 ){
     return queryOptions({
-        queryKey: ["locations", {status, locationType, parentLocation}],
-        queryFn: () => getLocationFilter(status, locationType, parentLocation)
+        queryKey: ["locations", {status, locationType, parentLocation, inhabitants}],
+        queryFn: () => getLocationFilter(status, locationType, parentLocation, inhabitants)
     })
 };

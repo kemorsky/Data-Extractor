@@ -82,9 +82,11 @@ public class DataService : IDataService
                     Id = id++,
                     EditorID = sheet?.Row.Count > 6 ? sheet.Row[6].ToString() ?? "None" : "None",
                     ParentLocation = sheet?.Row.Count > 1 ? sheet.Row[1].ToString() ?? "None" : "None",
+                    Region = sheet?.Row.Count > 2 ? sheet.Row[2].ToString() ?? "None" : "None",
                     Name = sheet?.Row.Count > 0 ? sheet.Row[0].ToString() ?? "None" : "None",
 
                     LocationType = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() ?? "None" : "None",
+                    Inhabitants = sheet?.Row.Count > 5 ? sheet.Row[5].ToString() ?? "None" : "None",
                     Status = sheet?.Row.Count > 12 ? sheet.Row[12].ToString()  ?? "None" : "None",
 
                     RelatedQuestName = sheet?.QuestCell?
@@ -159,10 +161,12 @@ public class DataService : IDataService
                 // FormKey = loc.FormKey.ToString(),
                 EditorID = loc?.EditorID?.ToString() ?? "None",
                 ParentLocation = parentNameString,
+                Region = sheet?.Row.Count > 2 ? sheet.Row[2].ToString() ?? "None" : "None",
                 Name = displayName,
                 // Keywords = keywordsList
 
                 LocationType = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() ?? "None" : "None",
+                Inhabitants = sheet?.Row.Count > 5 ? sheet.Row[5].ToString() ?? "None" : "None",
                 Status = sheet?.Row.Count > 12 ? sheet.Row[12].ToString()  ?? "None" : "None",
 
                 RelatedQuestName = sheet?.QuestCell?

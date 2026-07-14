@@ -27,13 +27,14 @@
 }
 
 .hero {
-  max-width: 30rem;
+  max-width: 45rem;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
 
-
+  .location-card__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
 }
 

@@ -114,23 +114,22 @@ app.MapGet("/locations/filter", (
     string? q,
     string? status,
     string? locationType,
-    string? parentLocation
+    string? parentLocation,
+    string? inhabitants
     ) =>
 {
-    status = status?.Replace("-", " ");
-    parentLocation = parentLocation?.Replace("-", " ");
-
+    var statuses = status?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    var locationTypes = locationType?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    var parentLocations = parentLocation?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    var enemies = inhabitants?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    
     var locations = locationsCache
         .Where(x =>
-            (string.IsNullOrEmpty(status) ||
-            string.Equals(x.Status, status, StringComparison.OrdinalIgnoreCase)) &&
-
-            (string.IsNullOrEmpty(locationType) ||
-            string.Equals(x.LocationType, locationType, StringComparison.OrdinalIgnoreCase)) &&
-
-            (string.IsNullOrEmpty(parentLocation) ||
-            string.Equals(x.ParentLocation, parentLocation, StringComparison.OrdinalIgnoreCase)))
-            .ToList();
+            (statuses == null || statuses.Contains(x.Status, StringComparer.OrdinalIgnoreCase)) &&
+            (locationTypes == null || locationTypes.Contains(x.LocationType, StringComparer.OrdinalIgnoreCase)) &&
+            (parentLocations == null || parentLocations.Contains(x.ParentLocation, StringComparer.OrdinalIgnoreCase)) &&
+            (enemies == null || enemies.Contains(x.Inhabitants, StringComparer.OrdinalIgnoreCase))
+        ).ToList();
 
         return locations.Count == 0 
             ? Results.NotFound()
