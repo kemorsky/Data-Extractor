@@ -10,6 +10,7 @@ using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Auth.OAuth2;
 using DataExtractor.Tool.Dto;
+using Mutagen.Bethesda.Plugins.Cache.Internals.Implementations;
 
 public class DataService : IDataService
 {
@@ -129,7 +130,7 @@ public class DataService : IDataService
             // Use the FormLink directly instead of pulling the FormKey property out
             if (loc?.ParentLocation != null && loc.ParentLocation.TryResolve(linkCache, out var parentLoc))
             {
-                // Console.WriteLine($"Found the parent location! {parentLoc.Name}");
+                Console.WriteLine($"Found the parent location! {parentLoc}");
                 // FormLink successfully found the record in the active load order cache
                 parentNameString = parentLoc.Name?.ToString() ?? parentLoc.EditorID ?? "Unnamed Parent Location";
             }
@@ -140,30 +141,30 @@ public class DataService : IDataService
                 Console.WriteLine($"Could not resolve Parent! FormID: {missingFormKey?.ID:X6}, Master File: {missingFormKey?.ModKey}");
                 
                 parentNameString = missingFormKey.ToString() ?? "";
-            }
+            };
 
-            // if (loc.Keywords != null)
-            // {
-            //     keywordsList = loc.Keywords
-            //         .Select(keywordLink => {
-            //             if (keywordLink.TryResolve(linkCache, out var keywordRecord))
-            //             {
-            //                 return keywordRecord.EditorID ?? keywordLink.FormKey.ToString();
-            //             }
-            //             return keywordLink.FormKey.ToString();
-            //         })
-            //         .ToList();
-            // }
+            if (loc?.Keywords != null)
+            {
+                keywordsList = loc.Keywords
+                    .Select(keywordLink => {
+                        if (keywordLink.TryResolve(linkCache, out var keywordRecord))
+                        {
+                            return keywordRecord.EditorID ?? keywordLink.FormKey.ToString();
+                        }
+                        return keywordLink.FormKey.ToString();
+                    })
+                    .ToList();
+            };
 
             locationsData.Add(new LocationDataSheet
             {
                 Id = id++,
-                // FormKey = loc.FormKey.ToString(),
+                // FormKey = loc?.FormKey.ToString(),
                 EditorID = loc?.EditorID?.ToString() ?? "None",
                 ParentLocation = parentNameString,
                 Region = sheet?.Row.Count > 2 ? sheet.Row[2].ToString() ?? "None" : "None",
                 Name = displayName,
-                // Keywords = keywordsList
+                Keywords = keywordsList.ToArray(),
 
                 LocationType = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() ?? "None" : "None",
                 Inhabitants = sheet?.Row.Count > 5 ? sheet.Row[5].ToString() ?? "None" : "None",

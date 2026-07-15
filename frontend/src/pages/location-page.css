@@ -34,7 +34,10 @@
         }
 
         .location-page-header__list {
+            width: 100%;
+            max-width: 25rem;
             list-style: none;
+            font-weight: 600;
             margin-top: 0;
             margin-bottom: 0;
             padding-left: 0;
@@ -42,6 +45,15 @@
 
         .location-page-header__list-item {
             margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: start;
+            gap: 7rem;
+           
+
+            .location-page-header__list__text {
+                width: 12rem;
+            }
         }
 
         .location-page-header__status {

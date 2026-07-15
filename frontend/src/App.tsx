@@ -7,6 +7,7 @@ import { getUniqueProperties } from './utils/get-unique-properties'
 import CheckboxGroup from './ui/components/checkbox-group/checkbox-group'
 import LocationCard from './ui/components/location-card/location-card'
 import StatusGraph from './ui/components/status-graph.tsx/status-graph'
+import type { LocationData } from './utils/types'
 
 type LocationFilters = {
   statuses: string[];
@@ -63,6 +64,18 @@ export default function App() {
     navigate(`/locations/${encodeURIComponent(name)}`)
   };
 
+  const childrenByParent = new Map<string, LocationData[]>();
+
+  for (const loc of locations ?? []) {
+    if (!loc.parentLocation) continue;
+
+    if (!childrenByParent.has(loc.parentLocation)) {
+        childrenByParent.set(loc.parentLocation, []);
+    }
+
+    childrenByParent.get(loc.parentLocation)!.push(loc);
+  };
+
   return (
     <main id="center">
       <section className="main__wrapper">
@@ -104,12 +117,14 @@ export default function App() {
             {filterResults?.map((location) => (
               <LocationCard 
                 key={location.id} 
-                location={location} 
+                location={location}
+                childrenByParent={childrenByParent}
                 handleClickName={handleClickName}
               />
             ))}
           </section>
         </div>
+        
       </section>
     </main>
   )

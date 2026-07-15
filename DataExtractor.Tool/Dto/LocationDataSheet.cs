@@ -4,9 +4,11 @@ public class LocationDataSheet
 {
     public int Id { get; set; }
     public string EditorID { get; set; } = string.Empty;
+    public string FormKey { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public string ParentLocation { get; set; } = string.Empty;
     public string Region { get; set; } = string.Empty;
+    public string[] Keywords { get; set; } = Array.Empty<string>();
     public string LocationType { get; set; } = string.Empty;
     public string Inhabitants { get; set; } = string.Empty;
     public string RelatedQuestName { get; set; } = string.Empty;

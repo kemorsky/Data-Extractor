@@ -3,6 +3,7 @@ import type { LocationData } from '../../../utils/types';
 
 interface LocationCardProps {
     location: LocationData;
+    childrenByParent: Map<string, LocationData[]>;
     handleClickName: (name: string) => void;
 };
 
@@ -20,7 +21,9 @@ export default function LocationCard(props: LocationCardProps) {
 
             <section className="location-card__info">
             <p className="location-card__info__name">{props.location.name}</p>
-            <p className="location-card__info__parentLocation">{props.location.parentLocation}</p>
+            <p className="location-card__info__parentLocation">
+                {props.location.parentLocation}
+            </p>
             </section>
         </div>
     )

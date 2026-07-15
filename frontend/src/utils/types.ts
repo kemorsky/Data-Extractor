@@ -3,10 +3,11 @@ export type LocationData = {
     
     image?: string;
     editorID: string;
+    formKey: string;
     name?: string;
     parentLocation?: string;
     region?: string;
-    // keywords: string[];
+    keywords: string[];
     locationType?: string;
     status?: string;
     relatedQuestName?: string;
