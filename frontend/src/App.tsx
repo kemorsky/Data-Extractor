@@ -35,14 +35,16 @@ export default function App() {
     .sort((a, b) => a.localeCompare(b));
 
   const locationTypes = getUniqueProperties(locations, "locationType")
-    .filter(status => status !== "None");
+    .filter(status => status !== "None")
+    .sort((a, b) => a.localeCompare(b));
   
   const statuses = getUniqueProperties(locations, "status")
     .filter(status => status !== "None")
     .sort((a, b) => a.localeCompare(b));
 
   const inhabitants = getUniqueProperties(locations, "inhabitants")
-    .filter(status => status !== "None");
+    .filter(status => status !== "None")
+    .sort((a, b) => a.localeCompare(b));
 
   const toggleFilter = (
     category: keyof LocationFilters,
