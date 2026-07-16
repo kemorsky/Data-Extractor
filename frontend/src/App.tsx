@@ -34,6 +34,13 @@ export default function App() {
     .filter(location => location.includes("County") || location.includes("Imperial Seat"))
     .sort((a, b) => a.localeCompare(b));
 
+  // const groupedData = parentLocations.reduce((groups, location) => {
+  //   groups[location] = locations?.filter((l) => l.parentLocation === location) ?? [];
+  //   return groups;
+  // }, {} as Record<string, LocationData[]>);
+
+  // console.log(groupedData);
+
   const locationTypes = getUniqueProperties(locations, "locationType")
     .filter(status => status !== "None")
     .sort((a, b) => a.localeCompare(b));
@@ -43,7 +50,7 @@ export default function App() {
     .sort((a, b) => a.localeCompare(b));
 
   const inhabitants = getUniqueProperties(locations, "inhabitants")
-    .filter(status => status !== "None")
+    .filter(status => status !== "None" && status !== "")
     .sort((a, b) => a.localeCompare(b));
 
   const toggleFilter = (
@@ -114,7 +121,7 @@ export default function App() {
       
         <div className="hero">
           <StatusGraph parentLocations={parentLocations} statuses={statuses} />
-
+          <h2>Locations</h2>
           <section className="location-card__container">
             {filterResults?.map((location) => (
               <LocationCard 

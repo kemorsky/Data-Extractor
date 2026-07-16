@@ -129,7 +129,10 @@ app.MapGet("/locations/filter", (
             (locationTypes == null || locationTypes.Contains(x.LocationType, StringComparer.OrdinalIgnoreCase)) &&
             (parentLocations == null || parentLocations.Contains(x.ParentLocation, StringComparer.OrdinalIgnoreCase)) &&
             (enemies == null || enemies.Contains(x.Inhabitants, StringComparer.OrdinalIgnoreCase))
-        ).ToList();
+        )
+        .OrderBy(x => x.ParentLocation ?? string.Empty)
+        .ThenBy(x => x.Name)
+        .ToList();
 
         return locations.Count == 0 
             ? Results.NotFound()
