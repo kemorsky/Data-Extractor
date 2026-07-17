@@ -8,6 +8,8 @@ import CheckboxGroup from './ui/components/checkbox-group/checkbox-group'
 import LocationCard from './ui/components/location-card/location-card'
 import StatusGraph from './ui/components/status-graph.tsx/status-graph'
 import type { LocationData } from './utils/types'
+import LocationDrawer from './ui/components/drawer/drawer'
+// import LocationRoute from './router/location-route'
 
 type LocationFilters = {
   statuses: string[];
@@ -70,7 +72,9 @@ export default function App() {
   };
 
   const handleClickName = (name: string) => {
-    navigate(`/locations/${encodeURIComponent(name)}`)
+    navigate(`/locations/${encodeURIComponent(name)}`, {
+      state: { drawer: true }
+    })
   };
 
   const childrenByParent = new Map<string, LocationData[]>();
@@ -133,8 +137,9 @@ export default function App() {
             ))}
           </section>
         </div>
-        
+        <LocationDrawer />
       </section>
+      
     </main>
   )
 }

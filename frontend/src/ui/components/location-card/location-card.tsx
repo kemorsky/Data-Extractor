@@ -1,6 +1,6 @@
 import './location-card.css'
 import type { LocationData } from '../../../utils/types';
-import ayleidImage from "../../../../public/ayleid-ruin.webp";
+import ayleidImage from "../../../assets/ayleid-ruin.webp"
 
 interface LocationCardProps {
     location: LocationData;
