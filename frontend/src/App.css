@@ -25,12 +25,13 @@
   gap: 0.5rem;
 
   .filter__options {
+    width: 18rem;
     max-height: 100vh;
     overflow-x: auto;
 
     .filter__options-title {
       font-size: 1.25rem;
-      text-align: left;
+      text-align: center;
       margin-bottom: 1rem;
     }
   }
@@ -48,6 +49,8 @@
     justify-content: center;
     gap: 0.75rem;
     margin-top: 3rem;
+    max-height: 100vh;
+    overflow-x: auto;
   }
 
 }
@@ -59,6 +62,8 @@
   place-content: center;
   place-items: start;
   flex-grow: 1;
+  padding: 32px 20px 24px;
+  gap: 18px;
 
   @media (max-width: 1440px) {
     padding: 32px 20px 24px;

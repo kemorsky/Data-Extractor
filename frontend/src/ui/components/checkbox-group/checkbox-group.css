@@ -6,7 +6,7 @@
     flex-direction: column;
     gap: 0.75rem;
     align-items: flex-start;
-    margin: 0 0 1rem 0;
+    margin: 0 auto 1rem auto;
     margin-bottom: 1rem;
 
     .checkbox-group__legend {
