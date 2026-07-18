@@ -27,6 +27,7 @@ export type LocationFilters = {
   keywords: string[];
   locationCategories : string[];
   locationTypes: string[];
+  parentLocationsCities: string[];
   parentLocations: string[];
   inhabitants: string[];
 };

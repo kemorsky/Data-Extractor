@@ -46,12 +46,18 @@ export default function LocationDrawer() {
                 <Drawer.Viewport className={styles.Viewport}>           
                     <Drawer.Popup className={styles.Popup}>             
                         <Drawer.Content className={styles.Content}>               
-                            <Drawer.Title className={styles.Title}>
-                                {locationByName?.name}
-                            </Drawer.Title>
+                            <article className={styles.Title}>
+                                <div className={styles.Actions}>                 
+                                    <Drawer.Close className={styles.Button}>Close</Drawer.Close>               
+                                </div> 
+                                <h3 className={styles.TitleText}>{locationByName?.name}</h3>
+                                <article className={styles.Status}>
+                                    <span>{locationByName?.status}</span>
+                                </article>
+                            </article>
                             <ul className={styles.List}>
                                 <li onClick={() => {handleClick();}} className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Parent Location:</span> 
+                                    <span className={styles.ListItemText}>Location:</span> 
                                     <span className={styles.ListItemText}>{locationByName?.parentLocation}, {locationByName?.region}</span>
                                 </li>
                                 <li className={styles.ListItem}>
@@ -65,19 +71,16 @@ export default function LocationDrawer() {
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Quest Links:</span> 
                                     <span className={styles.ListItemText}>
-                                        <a target="_blank" href={locationByName?.relatedQuestUrl}>
+                                        <a target="_blank" style={{fontWeight: 600}} href={locationByName?.relatedQuestUrl}>
                                             {locationByName?.relatedQuestName}
                                         </a>
                                     </span>
                                 </li>
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Keywords: </span>
-                                    <ul style={{marginTop: 0,
-                                        marginBottom: 0,
-                                        paddingLeft: 0,
-                                    }}>
+                                    <ul className={styles.ListKeywords}>
                                         {locationByName?.keywords.map((keyword) => (
-                                            <li key={keyword} className={styles.ListItem}>
+                                            <li key={keyword} className={styles.ListKeywordsItem}>
                                                 <span className={styles.ListItemText}>{keyword}</span>
                                             </li>))}
                                     </ul>
@@ -95,10 +98,7 @@ export default function LocationDrawer() {
                                     <p className={styles.NotesText}>{locationByName?.notes}</p>
                                 </section>
 
-                            </div>                  
-                            <div className={styles.Actions}>                 
-                                <Drawer.Close className={styles.Button}>Close</Drawer.Close>               
-                            </div>             
+                            </div>                              
                         </Drawer.Content>           
                     </Drawer.Popup>         
                 </Drawer.Viewport>       
