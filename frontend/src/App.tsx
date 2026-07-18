@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router'
 import './App.css'
+import "./assets/fonts/Webfonts/Balgruf.woff";
 import { useQuery } from '@tanstack/react-query'
 import { locationFilterQueryOptions, locationsQueryOptions } from './queries/locationQueryOptions'
 import { useState } from 'react'
@@ -7,16 +8,9 @@ import { getUniqueProperties } from './utils/get-unique-properties'
 import CheckboxGroup from './ui/components/checkbox-group/checkbox-group'
 import LocationCard from './ui/components/location-card/location-card'
 import StatusGraph from './ui/components/status-graph.tsx/status-graph'
-import type { LocationData } from './utils/types'
+import type { LocationData, LocationFilters } from './utils/types'
 import LocationDrawer from './ui/components/drawer/drawer'
 // import LocationRoute from './router/location-route'
-
-type LocationFilters = {
-  statuses: string[];
-  locationTypes: string[];
-  parentLocations: string[];
-  inhabitants: string[];
-};
 
 export default function App() {
   const navigate = useNavigate();
@@ -24,27 +18,40 @@ export default function App() {
    
   const [filters, setFilters] = useState<LocationFilters>({
     statuses: [],
+    keywords: [],
+    locationCategories: [],
     locationTypes: [],
     parentLocations: [],
     inhabitants: [],
   });
 
   const { data: locations } = useQuery(locationsQueryOptions());
-  const { data: filterResults } = useQuery(locationFilterQueryOptions(filters.statuses, filters.locationTypes, filters.parentLocations, filters.inhabitants));
+  const { data: filterResults } = useQuery(locationFilterQueryOptions(
+    filters.statuses, 
+    filters.locationCategories, 
+    filters.locationTypes, 
+    filters.parentLocations, 
+    filters.inhabitants
+  ));
 
-  const parentLocations = getUniqueProperties(locations, "parentLocation")
-    .filter(location => location.includes("County") || location.includes("Imperial Seat"))
-    .sort((a, b) => a.localeCompare(b));
+  const parentLocations = [
+    ...new Set(
+      (locations ?? [])
+        .filter(location =>
+          location.keywords.includes("LocTypeHold")
+        )
+        .map(location => location.name)
+    ),
+    ].sort();
 
-  // const groupedData = parentLocations.reduce((groups, location) => {
-  //   groups[location] = locations?.filter((l) => l.parentLocation === location) ?? [];
-  //   return groups;
-  // }, {} as Record<string, LocationData[]>);
+  const locationCategories = getUniqueProperties(locations, "locationCategory")
+    .filter(category => category !== "None")
+    .sort();
 
-  // console.log(groupedData);
+  console.log(locationCategories);
 
   const locationTypes = getUniqueProperties(locations, "locationType")
-    .filter(status => status !== "None")
+    .filter(type => type !== "None")
     .sort((a, b) => a.localeCompare(b));
   
   const statuses = getUniqueProperties(locations, "status")
@@ -52,7 +59,7 @@ export default function App() {
     .sort((a, b) => a.localeCompare(b));
 
   const inhabitants = getUniqueProperties(locations, "inhabitants")
-    .filter(status => status !== "None" && status !== "")
+    .filter(inhabitants => inhabitants !== "None" && inhabitants !== "" && inhabitants !== "N/A")
     .sort((a, b) => a.localeCompare(b));
 
   const toggleFilter = (
@@ -95,27 +102,34 @@ export default function App() {
         <section className="filter__options">
           <CheckboxGroup 
             key={1}
+            title="Location Type"
+            options={locationCategories}
+            selected={filters.locationCategories}
+            onToggle={(value) => toggleFilter("locationCategories", value)}
+          />
+          <CheckboxGroup 
+            key={2}
             title="Parent Location"
             options={parentLocations}
             selected={filters.parentLocations}
             onToggle={(value) => toggleFilter("parentLocations", value)}
           />
           <CheckboxGroup 
-            key={2}
+            key={3}
             title="Type"
             options={locationTypes}
             selected={filters.locationTypes}
             onToggle={(value) => toggleFilter("locationTypes", value)}
           />
           <CheckboxGroup 
-            key={3}
+            key={4}
             title="Status"
             options={statuses}
             selected={filters.statuses}
             onToggle={(value) => toggleFilter("statuses", value)}
           />
           <CheckboxGroup 
-            key={4}
+            key={5}
             title="Inhabitants"
             options={inhabitants}
             selected={filters.inhabitants}

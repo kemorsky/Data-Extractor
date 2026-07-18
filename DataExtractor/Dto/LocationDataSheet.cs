@@ -9,6 +9,7 @@ public class LocationDataSheet
     public string ParentLocation { get; set; } = string.Empty;
     public string Region { get; set; } = string.Empty;
     public string[] Keywords { get; set; } = Array.Empty<string>();
+    public string LocationCategory { get; set; } = string.Empty;
     public string LocationType { get; set; } = string.Empty;
     public string Inhabitants { get; set; } = string.Empty;
     public string RelatedQuestName { get; set; } = string.Empty;

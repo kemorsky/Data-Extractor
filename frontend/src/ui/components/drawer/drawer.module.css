@@ -209,11 +209,13 @@
 }
 
 .Notes {
+  font-family: "Balgruf";
   background-color: #BFA366;
   color: #241E02;
   width: 100%;
   align-self: center;
   text-align: left;
+  font-size: 1.25rem;
   padding: 1rem;
 }
 

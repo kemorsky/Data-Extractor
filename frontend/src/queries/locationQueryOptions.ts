@@ -17,12 +17,13 @@ export function locationByNameQueryOptions(name: string) {
 
 export function locationFilterQueryOptions(
     status?: string[], 
+    locationCategory?: string[],
     locationType?: string[], 
     parentLocation?: string[],
     inhabitants?: string[],
 ){
     return queryOptions({
-        queryKey: ["locations", {status, locationType, parentLocation, inhabitants}],
-        queryFn: () => getLocationFilter(status, locationType, parentLocation, inhabitants)
+        queryKey: ["locations", {status, locationCategory, locationType, parentLocation, inhabitants}],
+        queryFn: () => getLocationFilter(status, locationCategory, locationType, parentLocation, inhabitants)
     })
 };

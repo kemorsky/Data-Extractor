@@ -4,11 +4,12 @@ export type LocationData = {
     image?: string;
     editorID: string;
     formKey: string;
-    name?: string;
-    parentLocation?: string;
-    region?: string;
+    name: string;
+    parentLocation: string;
+    region: string;
     keywords: string[];
-    locationType?: string;
+    locationCategory: string;
+    locationType: string;
     status?: string;
     relatedQuestName?: string;
     relatedQuestUrl?: string;
@@ -19,6 +20,13 @@ export type LocationData = {
     // wishlist: string;
     // lastEdited: string;
     // editedBy: string;
-    
+};
 
+export type LocationFilters = {
+  statuses: string[];
+  keywords: string[];
+  locationCategories : string[];
+  locationTypes: string[];
+  parentLocations: string[];
+  inhabitants: string[];
 };

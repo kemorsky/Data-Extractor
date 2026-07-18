@@ -15,13 +15,9 @@ export default function LocationCard(props: LocationCardProps) {
             onClick={() => {props.handleClickName(props.location.name ?? "")}}
             className="location-card"
         >
-            
             <img className="location-card__image" src={ayleidImage} width="100%"/>
-            
-            
-            <section className="location-card__content">
 
-            
+            <section className="location-card__content">
                 <section className="location-card__info">
                     <p className="location-card__info__name">{props.location.name}</p>
                     <p className="location-card__info__parentLocation">
@@ -33,7 +29,6 @@ export default function LocationCard(props: LocationCardProps) {
                     <p className="location-card__labels__status">{props.location.status}</p>
                 </section>
             </section>
-
             
         </div>
     )

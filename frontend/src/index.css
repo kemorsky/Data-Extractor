@@ -102,3 +102,8 @@ code,
   border-radius: 4px;
   color: var(--text-h);
 }
+
+@font-face {
+  font-family: "Balgruf";
+  src: url("./assets/fonts/Webfonts/Balgruf.woff2") format("woff2");
+}

@@ -56,7 +56,7 @@ export default function LocationDrawer() {
                                 </li>
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Type:</span> 
-                                    <span className={styles.ListItemText}>{locationByName?.locationType}</span>
+                                    <span className={styles.ListItemText}>{locationByName?.locationCategory}, {locationByName?.locationType}</span>
                                 </li>
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Inhabitants:</span> 

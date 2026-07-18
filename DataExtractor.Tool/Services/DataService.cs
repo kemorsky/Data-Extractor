@@ -71,6 +71,30 @@ public class DataService : IDataService
         var locationsData = new List<LocationDataSheet>();
         var id = 0;
 
+        var locationCategoryMap = new Dictionary<string, string>
+        {
+            ["LocTypeDwelling"] = "Interior",
+            ["LocTypeDungeon"] = "Dungeon",
+            ["LocTypeSettlement"] = "Settlement",
+        };
+
+        var locationTypeMap = new Dictionary<string, string>
+        {
+            ["LocTypeHouse"] = "House",
+            ["LocTypeCastle"] = "Castle",
+            ["LocTypeCave"] = "Cave",
+            ["LocTypeMine"] = "Mine",
+            ["LocTypeFarm"] = "Farm",
+            ["LocTypeShip"] = "Ship",
+            ["LocTypeMilitaryFort"] = "Imperial Fort",
+            ["LocTypeBanditCamp"] = "Bandit Camp",
+            ["BSKLocTypeAyleid"] = "Ayleid Ruin",
+            ["BSKLocTypeUndead"] = "Undead",
+            ["BSKLocTypeGoblinDen"] = "Goblin Den",
+            ["CYRLocSetAkaviriRuin"] = "Akaviri Ruin",
+
+        };
+
         // If mod path is missing use only the masterlist
         if (locations == null || linkCache == null)
         {
@@ -156,6 +180,21 @@ public class DataService : IDataService
                     .ToList();
             };
 
+            string locationCategory = "None";
+            string locationType = "None";
+
+            foreach (var keyword in keywordsList)
+            {
+                if (locationCategoryMap.TryGetValue(keyword, out var category))
+                {
+                    locationCategory = category;
+                }
+                if (locationTypeMap.TryGetValue(keyword, out var type))
+                {
+                    locationType = type;
+                }
+            }
+
             locationsData.Add(new LocationDataSheet
             {
                 Id = id++,
@@ -165,8 +204,10 @@ public class DataService : IDataService
                 Region = sheet?.Row.Count > 2 ? sheet.Row[2].ToString() ?? "None" : "None",
                 Name = displayName,
                 Keywords = keywordsList.ToArray(),
-
-                LocationType = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() ?? "None" : "None",
+                
+                LocationCategory = locationCategory,
+                LocationType = locationType,
+                // LocationType = sheet?.Row.Count > 3 ? sheet.Row[3].ToString() ?? "None" : "None",
                 Inhabitants = sheet?.Row.Count > 5 ? sheet.Row[5].ToString() ?? "None" : "None",
                 Status = sheet?.Row.Count > 12 ? sheet.Row[12].ToString()  ?? "None" : "None",
 
