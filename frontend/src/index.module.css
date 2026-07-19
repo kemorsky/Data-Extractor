@@ -21,7 +21,7 @@
   margin: 0;
   outline: 0;
   background: none;
-  color: oklch(43.9% 0 0deg);
+  color: oklch(87% 0 0deg);
   font-family: inherit;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -34,9 +34,6 @@
   padding-block: 0;
   height: calc(2rem + 1px);
 
-  @media (prefers-color-scheme: dark) {
-    color: oklch(87% 0 0deg);
-  }
 
   @media (hover: hover) {
     &:hover {
@@ -78,15 +75,10 @@
   transition-property: translate, width;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
-  border-top: 1px solid oklch(14.5% 0 0deg);
-  border-inline: 1px solid oklch(14.5% 0 0deg);
-  background-color: white;
+  border-top: 1px solid white;
+  border-inline: 1px solid white;
+  background-color: oklch(14.5% 0 0deg);
 
-  @media (prefers-color-scheme: dark) {
-    border-top: 1px solid white;
-    border-inline: 1px solid white;
-    background-color: oklch(14.5% 0 0deg);
-  }
 }
 
 .PanelViewport {
@@ -95,13 +87,9 @@
   grid-template-columns: minmax(0, 1fr);
   width: 100%;
   min-height: 8rem;
-  border-inline: 1px solid oklch(14.5% 0 0deg);
-  border-block: 1px solid oklch(14.5% 0 0deg);
+  border-inline: 1px solid white;
+  border-block: 1px solid white;
 
-  @media (prefers-color-scheme: dark) {
-    border-inline: 1px solid white;
-    border-block: 1px solid white;
-  }
 }
 
 .Panel {
