@@ -5,33 +5,45 @@ import { Chart as ChartJS, CategoryScale,
   Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { locationsQueryOptions } from '../../../queries/locationQueryOptions';
+import { getUniqueProperties } from '../../../utils/get-unique-properties';
 
 ChartJS.register(CategoryScale,
   LinearScale,
   BarElement,
   Title, Tooltip, Legend);
 
-interface StatusGraphProps {
-    statuses: string[];
-    parentLocations: string[];
-}
+export default function StatusGraph() {
+    const { data: locations } = useQuery(locationsQueryOptions());
+    
+    const parentLocations = [
+        ...new Set(
+          (locations ?? [])
+            .filter(location =>
+              location.keywords.includes("LocTypeHold") 
+              // || 
+              // location.keywords.includes("LocTypeCity")
+            )
+            .map(location => location.name)
+        ),
+        ].sort();
+    
+    const statuses = getUniqueProperties(locations, "status")
+      .filter(status => status !== "None")
+      .sort();
 
-export default function StatusGraph(props: StatusGraphProps) {
-    const { data: filterResults } = useQuery(locationsQueryOptions());
-
-    const statusByCounty = filterResults?.reduce((acc, location) => {
+    const statusByCounty = locations?.reduce((acc, location) => {
     const county = location.parentLocation;
     const status = location.status;
 
-        if (!county || !status || !props.parentLocations.includes(county)) return acc;
+    if (!county || !status || !parentLocations.includes(county)) return acc;
 
-        if (!acc[county]) {
-        acc[county] = {};
-        }
+      if (!acc[county]) {
+      acc[county] = {};
+      }
 
-        acc[county][status] = (acc[county][status] ?? 0) + 1;
+      acc[county][status] = (acc[county][status] ?? 0) + 1;
 
-        return acc;
+      return acc;
     }, {} as Record<string, Record<string, number>>);
 
   const colors = [
@@ -43,16 +55,17 @@ export default function StatusGraph(props: StatusGraphProps) {
     'rgb(150, 0, 0)',
   ];
 
-  const datasets = props.statuses.map((status, i) => ({
+  const datasets = statuses.map((status, i) => ({
     label: status,
-    data: props.parentLocations.map(
+    data: parentLocations.map(
       county => statusByCounty?.[county]?.[status] ?? 0
     ),
     backgroundColor: colors[i],
+    barPercentage: 0.5,
   }));
 
   const data = {
-    labels: props.parentLocations,
+    labels: parentLocations,
     datasets,
   };
 
@@ -88,4 +101,4 @@ export default function StatusGraph(props: StatusGraphProps) {
           <Bar data={data} options={options} />
         </div>
     )
-}
+};

@@ -38,23 +38,6 @@
   
 }
 
-.hero {
-  max-width: 45rem;
-  position: relative;
-
-
-  .location-card__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-top: 3rem;
-    max-height: 100vh;
-    overflow-x: auto;
-  }
-
-}
-
 #center {
   display: flex;
   flex-direction: row;
