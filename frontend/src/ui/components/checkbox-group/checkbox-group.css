@@ -1,5 +1,6 @@
 .checkbox-group {
     width: 12.725rem;
+    border: 1px solid #4a4e51;
     align-self: flex-start;
     border-radius: 0.5rem;
     display: flex;

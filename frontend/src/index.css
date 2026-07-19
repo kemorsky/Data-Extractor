@@ -1,8 +1,8 @@
 :root {
-  --text: #D1D5DB;
+  --text: #f2f0eb;
   --text-h: #f3f4f6;
-  --bg: #2C2E31;
-  --border: #2e303a;
+  --bg: #1c1c1c;
+  --border: #4a4e51;
   --code-bg: #1f2028;
   --accent: #c084fc;
   --accent-bg: rgba(192, 132, 252, 0.15);

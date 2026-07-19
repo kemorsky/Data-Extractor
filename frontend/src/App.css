@@ -23,18 +23,6 @@
   justify-content: space-between;
 
   gap: 0.5rem;
-
-  .filter__options {
-    width: 18rem;
-    max-height: 100vh;
-    overflow-x: auto;
-
-    .filter__options-title {
-      font-size: 1.25rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-  }
   
 }
 
