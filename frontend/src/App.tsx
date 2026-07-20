@@ -16,14 +16,14 @@ export default function App() {
   const [ searchParams, setSearchParams ] = useSearchParams();
 
   const [ filters, setFilters ] = useState<LocationFilters>({
-        statuses: [],
-        keywords: [],
-        locationCategories: [],
-        locationTypes: [],
-        parentLocationsCities: [],
-        parentLocations: [],
-        inhabitants: [],
-    });
+    statuses: searchParams.get("statuses")?.split(",") ?? [],
+    keywords: searchParams.get("keywords")?.split(",") ?? [],
+    locationCategories: searchParams.get("locationCategories")?.split(",") ?? [],
+    locationTypes: searchParams.get("locationTypes")?.split(",") ?? [],
+    parentLocationsCities: searchParams.get("parentLocationsCities")?.split(",") ?? [],
+    parentLocations: searchParams.get("parentLocations")?.split(",") ?? [],
+    inhabitants: searchParams.get("inhabitants")?.split(",") ?? []
+  });
 
   const { data: locations } = useQuery(locationsQueryOptions());
   const { data: filterResults, isLoading, error } = useQuery(locationFilterQueryOptions(
