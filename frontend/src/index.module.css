@@ -2,6 +2,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 45rem;
+  max-height: 100vh;
 }
 
 .List {
@@ -9,7 +10,7 @@
   position: relative;
   z-index: 1;
   gap: 0.33rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .Tab {

@@ -60,6 +60,17 @@ export default function LocationsTab(props: LocationTabProps) {
             <h2>Locations</h2>
             {isLoading && <h2>Loading data...</h2>}
             {error && <h2>{error.message}</h2>}
+            
+            <section className="location-card__container">
+                {pageResults?.map((location) => (
+                    <LocationCard 
+                        key={location.id} 
+                        location={location}
+                        childrenByParent={childrenByParent}
+                        handleClickName={handleClickName}
+                    />
+                ))}
+            </section>
             <div className="pagination">
     
                 <button
@@ -87,16 +98,6 @@ export default function LocationsTab(props: LocationTabProps) {
                     Last
                 </button>
             </div>
-            <section className="location-card__container">
-                {pageResults?.map((location) => (
-                    <LocationCard 
-                        key={location.id} 
-                        location={location}
-                        childrenByParent={childrenByParent}
-                        handleClickName={handleClickName}
-                    />
-                ))}
-            </section>
         </div>
     )
 };

@@ -10,13 +10,16 @@ interface LocationCardProps {
 
 export default function LocationCard(props: LocationCardProps) {
     return (
-        <div 
-            key={props.location.id} 
-            onClick={() => {props.handleClickName(props.location.name ?? "")}}
+        <div tabIndex={0} key={props.location.id} 
             className="location-card"
+            onClick={() => {props.handleClickName(props.location.name ?? "")}} 
+            onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                    {props.handleClickName(props.location.name ?? "")}
+                }
+            }}
         >
             <img className="location-card__image" src={ayleidImage} width="100%"/>
-
             <section className="location-card__content">
                 <section className="location-card__info">
                     <p className="location-card__info__name">{props.location.name}</p>
@@ -29,7 +32,6 @@ export default function LocationCard(props: LocationCardProps) {
                     <p className="location-card__labels__status">{props.location.status}</p>
                 </section>
             </section>
-            
         </div>
     )
 };
