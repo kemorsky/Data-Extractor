@@ -7,11 +7,13 @@ import type { LocationFilters } from "../../../utils/types";
 
 interface FilterProps {
     filters: LocationFilters;
-    setFilters: (value: React.SetStateAction<LocationFilters>) => void
+    setFilters: (value: React.SetStateAction<LocationFilters>) => void;
+    searchParams: URLSearchParams;
+    setSearchParams: (value: React.SetStateAction<URLSearchParams>) => void;
 }
 
 export default function Filters(props: FilterProps) {
-    const { filters, setFilters } = props;
+    const { filters, setFilters, searchParams, setSearchParams } = props;
 
     const { data: locations } = useQuery(locationsQueryOptions());
 
@@ -60,21 +62,54 @@ export default function Filters(props: FilterProps) {
         category: keyof LocationFilters,
         value: string
     ) => {
-        setFilters(prev => {
-            const values = prev[category];
+        const values = filters[category];
 
-            return {
-            ...prev,
+        const next = {
+            ...filters,
             [category]: values.includes(value)
                 ? values.filter(v => v !== value)
                 : [...values, value],
             };
+
+        setFilters(next);
+
+        const params = new URLSearchParams(searchParams);
+
+        params.set("page", "1");
+
+        Object.entries(next).forEach(([key, values]) => {
+            if (values.length === 0) {
+                params.delete(key);
+            } else {
+                params.set(key, values.join(","));
+            }
         });
+
+        setSearchParams(params);
+    };
+
+    const handleClearFilters = () => {
+        setFilters({
+            statuses: [],
+            keywords: [],
+            locationCategories: [],
+            locationTypes: [],
+            parentLocationsCities: [],
+            parentLocations: [],
+            inhabitants: []
+        });
+
+        const params = new URLSearchParams();
+
+        params.set("page", "1");
+
+        setSearchParams(params);
     };
 
     return (
         <section className="filter__options">
             <legend className="filter__options-title">Filters</legend>
+            <button onClick={() => handleClearFilters()}>Clear Filters</button>
             <CheckboxGroup 
                 key={1}
                 title="Location Category"

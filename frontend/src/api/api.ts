@@ -27,8 +27,8 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
           try {
             const errorData = await response.json();
             
-            type = errorData.detail.type;
-            message = errorData.detail.message;
+            type = errorData.type;
+            message = errorData.message;
             
           } catch (error) {
             console.error(error)
@@ -59,7 +59,8 @@ export const getLocationFilter = async (
     locationCategory?: string[],
     locationType?: string[], 
     parentLocation?: string[],
-    inhabitants?: string[]): Promise<LocationData[]> => 
+    inhabitants?: string[],
+): Promise<LocationData[]> => 
     {
         const params = new URLSearchParams();
 
@@ -70,5 +71,7 @@ export const getLocationFilter = async (
         if (parentLocation?.length) params.append("parentLocation", parentLocation.join(","));
         if (inhabitants?.length) params.append("inhabitants", inhabitants.join(","));
 
-        return apiRequest(`${URL}/locations/filter?${params.toString()}`);
+        
+        const data =  await apiRequest(`${URL}/locations/filter?${params.toString()}`);
+        return data;
     };

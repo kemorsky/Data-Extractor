@@ -1,19 +1,22 @@
-import { useQuery } from '@tanstack/react-query';
 import { Chart as ChartJS, CategoryScale,
   LinearScale,
   BarElement,
   Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { locationsQueryOptions } from '../../../queries/locationQueryOptions';
 import { getUniqueProperties } from '../../../utils/get-unique-properties';
+import type { LocationData } from '../../../utils/types';
 
 ChartJS.register(CategoryScale,
   LinearScale,
   BarElement,
   Title, Tooltip, Legend);
 
-export default function StatusGraph() {
-    const { data: locations } = useQuery(locationsQueryOptions());
+interface StatusGraphProps {
+  locations: LocationData[] | undefined;
+}
+
+export default function StatusGraph(props: StatusGraphProps) {
+    const { locations } = props;
     
     const parentLocations = [
         ...new Set(

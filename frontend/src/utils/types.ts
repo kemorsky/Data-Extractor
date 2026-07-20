@@ -1,6 +1,5 @@
 export type LocationData = {
-    id?: number;
-    
+    id: number;
     image?: string;
     editorID: string;
     formKey: string;
@@ -10,10 +9,10 @@ export type LocationData = {
     keywords: string[];
     locationCategory: string;
     locationType: string;
-    status?: string;
-    relatedQuestName?: string;
-    relatedQuestUrl?: string;
-    inhabitants?: string;
+    status: string;
+    relatedQuestName: string;
+    relatedQuestUrl: string;
+    inhabitants: string;
     // questLinks: string[];
     // vikunjaLink: string[];
     notes: string;

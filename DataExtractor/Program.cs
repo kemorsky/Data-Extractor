@@ -38,7 +38,12 @@ locationsCache = JsonSerializer.Deserialize<List<LocationDataSheet>>(locationsJs
 
 app.MapGet("/locations", async () =>
 {
-    return Results.Ok(locationsCache);
+    return locationsCache == null 
+            ? Results.NotFound(new
+            {
+                message = "Locations not found"
+            })
+            : Results.Ok(locationsCache);
 });
 
 // app.MapGet("/locations", async () =>
@@ -117,8 +122,7 @@ app.MapGet("/locations/filter", (
     string? locationType,
     string? parentLocation,
     string? inhabitants,
-    string[]? keywords
-    ) =>
+    string[]? keywords) =>
 {
     var statuses = status?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
     var locationCategories = locationCategory?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
@@ -142,7 +146,11 @@ app.MapGet("/locations/filter", (
         .ToList();
 
         return locations.Count == 0 
-            ? Results.NotFound()
+            ? Results.NotFound(new
+            {
+                type = "404",
+                message = "No results found"
+            })
             : Results.Ok(locations);
 });
 

@@ -2,13 +2,29 @@ import "./locations-tab.css";
 import { useNavigate } from "react-router";
 import type { LocationData } from "../../../utils/types";
 import LocationCard from "../../components/location-card/location-card";
+
 interface LocationTabProps {
+    error: Error | null;
     isLoading: boolean;
     locations: LocationData[] | undefined;
     filterResults: LocationData[] | undefined;
+    searchParams: URLSearchParams;
+    setSearchParams: (params: URLSearchParams) => void
 }
+
 export default function LocationsTab(props: LocationTabProps) {
-    const { isLoading, locations, filterResults } = props;
+    const { isLoading, locations, filterResults, error, searchParams, setSearchParams } = props;
+
+    const page = Number(searchParams.get("page") ?? "1");
+
+    const setPage = (newPage: number) => {
+        const params = new URLSearchParams(searchParams);
+
+        params.set("page", newPage.toString());
+
+        setSearchParams(params);
+    };
+
     const navigate = useNavigate();
     
     const handleClickName = (name: string) => {
@@ -29,12 +45,50 @@ export default function LocationsTab(props: LocationTabProps) {
         childrenByParent.get(loc.parentLocation)!.push(loc);
     };
 
+    const pageSize = 30;
+    const totalPages = Math.ceil(
+      (filterResults?.length ?? 0) / pageSize
+    );
+
+    const pageResults = filterResults?.slice(
+      (page - 1) * pageSize,
+      page * pageSize
+    );
+
     return (
         <div className="hero">
-            {isLoading && <h2>Loading data...</h2>}
             <h2>Locations</h2>
+            {isLoading && <h2>Loading data...</h2>}
+            {error && <h2>{error.message}</h2>}
+            <div className="pagination">
+    
+                <button
+                    disabled={page === 1}
+                    onClick={() => setPage(page - 1)}
+                >
+                    Previous
+                </button>
+
+                <span>
+                    Page {page} of {totalPages}
+                </span>
+
+                <button
+                    disabled={page === totalPages}
+                    onClick={() => setPage(page + 1)}
+                >
+                    Next
+                </button>
+
+                <button
+                    disabled={page === totalPages}
+                    onClick={() => setPage(totalPages)}
+                >
+                    Last
+                </button>
+            </div>
             <section className="location-card__container">
-                {filterResults?.map((location) => (
+                {pageResults?.map((location) => (
                     <LocationCard 
                         key={location.id} 
                         location={location}
