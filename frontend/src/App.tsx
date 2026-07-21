@@ -11,6 +11,7 @@ import { useQuery } from '@tanstack/react-query';
 import { locationsQueryOptions, locationFilterQueryOptions } from './queries/locationQueryOptions';
 import { Tabs } from '@base-ui/react/tabs';
 import { useSearchParams } from 'react-router';
+import Footer from './ui/components/shared/footer';
 
 export default function App() {
   const [ searchParams, setSearchParams ] = useSearchParams();
@@ -75,6 +76,7 @@ export default function App() {
         <LocationDrawer />
 
       </section>
+      <Footer />
     </main>
   )
 }

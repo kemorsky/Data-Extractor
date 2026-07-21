@@ -15,6 +15,11 @@ interface LocationTabProps {
 export default function LocationsTab(props: LocationTabProps) {
     const { isLoading, locations, filterResults, error, searchParams, setSearchParams } = props;
 
+    // const filteredResults = filterResults?.filter(location => 
+    //     location.name !== "" &&
+    //     location.name !== "None"
+    // );
+
     const page = Number(searchParams.get("page") ?? "1");
 
     const setPage = (newPage: number) => {
@@ -29,7 +34,7 @@ export default function LocationsTab(props: LocationTabProps) {
     
     const handleClickName = (name: string) => {
         navigate(`/locations/${encodeURIComponent(name)}`, {
-        state: { drawer: true }
+            state: { drawer: true }
         })
     };
 

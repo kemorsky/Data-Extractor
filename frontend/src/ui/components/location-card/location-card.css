@@ -5,10 +5,31 @@
     border-radius: 0.33rem;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
     
 
     .location-card__image {
         object-fit: fill;
+    }
+
+    .location-card__location-type-icon {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 1.25rem;
+    }
+
+    .location-card__quest {
+        position: absolute;
+        top: 0.5rem;
+        left: 2rem;
+        
+        text-decoration: none;
+        color: white;
+
+        .location-card__quest__icon {
+            width: 1.25rem;
+        }
     }
 
     .location-card__content {
@@ -18,13 +39,16 @@
     .location-card__labels {
         display: flex;
         justify-content: space-between;
-        margin-top: 1rem;
+        
         
         p {
             font-size: 0.75rem;
         }
 
         .location-card__labels__status {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
             padding: 0.25rem 0.5rem;
             border-radius: 0.25rem;
             background-color: rgb(0, 0, 41);
