@@ -1,7 +1,6 @@
 import './location-card.css'
 import type { LocationData } from '../../../utils/types';
 import ayleidImage from "../../../assets/ayleid-ruin.webp"
-import Fort from "../../../assets/Fort.svg"
 import Quest from "../../../assets/Quest-Door.svg"
 import Status from "../shared/status";
 import Icons from "../shared/icons";
@@ -26,7 +25,6 @@ export default function LocationCard(props: LocationCardProps) {
         >
             <img className="location-card__image" src={ayleidImage} width="100%"/>
             <section className="location-card__labels">
-                {/* <p>{props.location.locationType}</p> */}
                 <section className="location-card__labels-icons">
                     <Icons showText={false} text={props.location.locationType} />
                     {props.location.relatedQuestName !== "None" &&
