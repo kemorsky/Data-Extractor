@@ -43,10 +43,7 @@
 }
 
 .status__needs-finalization {
-    
     background-color: rgb(118, 151, 0);
-    
-    
     
 }
 
@@ -64,4 +61,17 @@
 
 .status__redo {
     background-color: rgb(150, 0, 0);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    height: 1.656rem;
+}
+
+.icons__image {
+    width: 1.5rem;
+    height: 1.5rem;
 }

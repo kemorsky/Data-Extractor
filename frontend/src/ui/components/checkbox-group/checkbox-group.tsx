@@ -1,15 +1,18 @@
 import { useState } from "react";
 import "./checkbox-group.css";
+import Icons from "../shared/icons";
 
 type CheckboxProps = {
   title: string,
   options: string[];
   selected: string[];
+  counts: Record<string, number>;
   onToggle: (value: string) => void;
 };
 
 export default function CheckboxGroup(props: CheckboxProps) {
     const [showTypes, setShowTypes] = useState(false);
+
     return (
         <fieldset className="checkbox-group">
             <legend className="checkbox-group__legend">
@@ -31,7 +34,11 @@ export default function CheckboxGroup(props: CheckboxProps) {
                             checked={props.selected.includes(option)}
                             onChange={() => props.onToggle(option)}
                         />
-                        <span className="checkbox-group__option-text">{option}</span>
+                        <Icons text={option} />
+                        <span className="checkbox-group__option-text">
+                            ({props.counts[option] ?? 0})
+                        </span>
+                        {/* <span className="checkbox-group__option-text">{option} {props.selected.length} </span> */}
                     </label>
                 ))
             )}

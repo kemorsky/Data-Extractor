@@ -34,11 +34,24 @@ export default function App() {
       filters.parentLocations, 
       filters.inhabitants,
   ));
+
+  
+
+  // console.log(countBy(filterResults ?? [], "status"));
+
+  // const categoryCounts = (filterResults ?? []).reduce((acc, location) => {
+  //   acc[location.locationCategory] = (acc[location.locationCategory] ?? 0) + 1;
+  //   return acc;
+  // }, {} as Record<string, number>);
+
+  // console.log(categoryCounts["Dungeons"]);
   
   return (
     <main id="center">
       <section className="main__wrapper">
         <Filters 
+          locations={locations}
+          filterResults={filterResults}
           filters={filters} 
           setFilters={setFilters} 
           searchParams={searchParams} 

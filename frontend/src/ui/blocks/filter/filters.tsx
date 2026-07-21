@@ -1,11 +1,12 @@
 import "./filters.css";
 import CheckboxGroup from "../../components/checkbox-group/checkbox-group";
-import { useQuery } from "@tanstack/react-query";
-import { locationsQueryOptions } from "../../../queries/locationQueryOptions";
 import { getUniqueProperties } from "../../../utils/get-unique-properties";
-import type { LocationFilters } from "../../../utils/types";
+import type { LocationData, LocationFilters } from "../../../utils/types";
+import { getObjectCount } from "../../../utils/get-object-count";
 
 interface FilterProps {
+    locations: NoInfer<LocationData[]> | undefined
+    filterResults: NoInfer<LocationData[]> | undefined
     filters: LocationFilters;
     setFilters: (value: React.SetStateAction<LocationFilters>) => void;
     searchParams: URLSearchParams;
@@ -13,9 +14,7 @@ interface FilterProps {
 }
 
 export default function Filters(props: FilterProps) {
-    const { filters, setFilters, searchParams, setSearchParams } = props;
-
-    const { data: locations } = useQuery(locationsQueryOptions());
+    const { locations, filterResults, filters, setFilters, searchParams, setSearchParams } = props;
 
     const parentLocations = [
         ...new Set(
@@ -39,24 +38,28 @@ export default function Filters(props: FilterProps) {
         ),
     ].sort();
 
-    const locationCategories = getUniqueProperties(locations, "locationCategory")
-        .filter(category => category !== "None")
-        .sort();
+    const getOptions = <K extends keyof LocationData>(
+        key: K,
+        invalid: string[] = ["None"]
+        ) =>
+        getUniqueProperties(locations, key)
+            .filter(value => !invalid.includes(value as string))
+            .sort();
 
-    const locationTypes = getUniqueProperties(locations, "locationType")
-        .filter(type => type !== "None")
-        .sort((a, b) => a.localeCompare(b));
-    
-    const statuses = getUniqueProperties(locations, "status")
-        .filter(status => status !== "None")
-        .sort((a, b) => a.localeCompare(b));
+    const locationCategories = getOptions("locationCategory");
+    const locationTypes = getOptions("locationType");
+    const statuses = getOptions("status");
+    const inhabitants = getOptions("inhabitants", [
+        "None",
+        "",
+        "N/A",
+    ]);
 
-    const inhabitants = getUniqueProperties(locations, "inhabitants")
-        .filter(inhabitants => inhabitants !== "None"  
-            && inhabitants !== "" 
-            && inhabitants !== "N/A"
-        )
-        .sort((a, b) => a.localeCompare(b));
+    const categoryCount = getObjectCount(filterResults ?? [], "locationCategory");
+    const typeCount = getObjectCount(filterResults ?? [], "locationType");
+    const parentLocationCount = getObjectCount(filterResults ?? [], "parentLocation");
+    const statusCount = getObjectCount(filterResults ?? [], "status");
+    const inhabitantsCount = getObjectCount(filterResults ?? [], "inhabitants");
 
     const toggleFilter = (
         category: keyof LocationFilters,
@@ -114,6 +117,7 @@ export default function Filters(props: FilterProps) {
                 key={1}
                 title="Location Category"
                 options={locationCategories}
+                counts={categoryCount}
                 selected={filters.locationCategories}
                 onToggle={(value) => toggleFilter("locationCategories", value)}
             />
@@ -121,6 +125,7 @@ export default function Filters(props: FilterProps) {
                 key={2}
                 title="City"
                 options={parentLocationsCities}
+                counts={parentLocationCount}
                 selected={filters.parentLocations}
                 onToggle={(value) => toggleFilter("parentLocations", value)}
             />
@@ -128,6 +133,7 @@ export default function Filters(props: FilterProps) {
                 key={3}
                 title="County"
                 options={parentLocations}
+                counts={parentLocationCount}
                 selected={filters.parentLocations}
                 onToggle={(value) => toggleFilter("parentLocations", value)}
             />
@@ -135,6 +141,7 @@ export default function Filters(props: FilterProps) {
                 key={4}
                 title="Location Type"
                 options={locationTypes}
+                counts={typeCount}
                 selected={filters.locationTypes}
                 onToggle={(value) => toggleFilter("locationTypes", value)}
             />
@@ -142,6 +149,7 @@ export default function Filters(props: FilterProps) {
                 key={5}
                 title="Status"
                 options={statuses}
+                counts={statusCount}
                 selected={filters.statuses}
                 onToggle={(value) => toggleFilter("statuses", value)}
             />
@@ -149,6 +157,7 @@ export default function Filters(props: FilterProps) {
                 key={6}
                 title="Inhabitants"
                 options={inhabitants}
+                counts={inhabitantsCount}
                 selected={filters.inhabitants}
                 onToggle={(value) => toggleFilter("inhabitants", value)}
             />
