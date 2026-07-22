@@ -24,19 +24,18 @@
         
         .location-card__labels-icons {
             position: absolute;
-            width: 3.25rem;
             height: 3.25rem;
-            top: 0.5rem;
+            top: 0;
             left: 0.5rem;
             display: flex;
             justify-content: flex-start;
+            align-items: center;
             gap: 0.33rem;
         }
 
         
 
         .location-card__quest {
-            
             
             text-decoration: none;
             color: white;
@@ -69,13 +68,19 @@
         
 
         .location-card__info__name {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
             text-align: center;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
 
         .location-card__info__parentLocation {
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.33rem;
+            font-weight: 500;
             font-size: 0.75rem;
         }
     }

@@ -80,15 +80,22 @@ public class DataService : IDataService
 
         var locationTypeMap = new Dictionary<string, string>
         {
+            ["LocTypeAnimalDen"] = "Animal Den",
             ["LocTypeHouse"] = "House",
             ["LocTypeCastle"] = "Castle",
-            ["LocTypeCave"] = "Cave",
+            ["LocSetCave"] = "Cave",
             ["LocTypeMine"] = "Mine",
             ["LocTypeFarm"] = "Farm",
+            ["LocSetOutdoor"] = "Exterior",
             ["LocTypeShip"] = "Ship",
             ["LocTypeMilitaryFort"] = "Imperial Fort",
             ["LocTypeBanditCamp"] = "Bandit Camp",
             ["BSKLocTypeAyleid"] = "Ayleid Ruin",
+            ["BSKLocSetTombColovian"] = "Colovian Tomb",
+            ["BSKLocSetTombNibenese"] = "Nibenese Tomb",
+            ["BSKLocSetFortRuin"] = "Fort Ruin",
+            ["BSKLocTypeMinotaurCamp"] = "Minotaur Camp",
+            ["BSKLocTypeOgreDen"] = "Ogre Den",
             ["BSKLocTypeUndead"] = "Undead",
             ["BSKLocTypeGoblinDen"] = "Goblin Den",
             ["CYRLocSetAkaviriRuin"] = "Akaviri Ruin",

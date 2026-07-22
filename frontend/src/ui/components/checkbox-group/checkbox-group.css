@@ -53,7 +53,7 @@
         }
 
         .checkbox-group__option-text {
-           line-height: 1;
+           line-height: 1.333;
         }
 
         .checkbox-group__option__checkbox {

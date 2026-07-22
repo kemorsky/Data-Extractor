@@ -15,6 +15,8 @@ const iconSources = Object.fromEntries(
 interface IconsProps {
     text: string;
     showText?: boolean;
+    width?: number;
+    height?: number;
     
 };
 
@@ -22,14 +24,21 @@ interface IconsProps {
 //     return value in iconSources;
 // }
 
-export default function Icons({ showText = true, text }: IconsProps) {
+export default function Icons({ text, showText = true, width = 30, height = 30 }: IconsProps) {
     const src = iconSources[text];
 
     return (
         <span className="icons">
+            
+            {src && 
+                <img className="icons__image" 
+                    width={width} 
+                    height={height} 
+                    src={src} 
+                    alt={`${text} icon`} 
+                />
+            }
             {showText && text} 
-            {/* checkbox-group__option-text */}
-            {src && <img width={30} height={30} src={src} alt={text} />}
         </span>
     )
 };
