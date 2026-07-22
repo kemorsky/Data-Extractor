@@ -111,8 +111,12 @@ export default function Filters(props: FilterProps) {
 
     return (
         <section className="filter__options">
-            <legend className="filter__options-title">Filters</legend>
-            <button onClick={() => handleClearFilters()}>Clear Filters</button>
+            <article className="filter__options__header">
+
+            
+                <legend className="filter__options__header-title">Filters</legend>
+                <button onClick={() => handleClearFilters()}>Clear Filters</button>
+            </article>
             <CheckboxGroup 
                 key={1}
                 title="Location Category"

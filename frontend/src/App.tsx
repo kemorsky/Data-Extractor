@@ -12,7 +12,7 @@ import { locationsQueryOptions, locationFilterQueryOptions } from './queries/loc
 import { Tabs } from '@base-ui/react/tabs';
 import { useSearchParams } from 'react-router';
 import Footer from './ui/components/shared/footer';
-import Nav from './ui/components/shared/nav';
+import Navbar from './ui/components/shared/navbar';
 
 export default function App() {
   const [ searchParams, setSearchParams ] = useSearchParams();
@@ -49,7 +49,7 @@ export default function App() {
   
   return (
     <main id="center">
-      <Nav />
+      <Navbar />
       <section className="main__wrapper">
         <Filters 
           locations={locations}
@@ -87,10 +87,9 @@ export default function App() {
             </Tabs.Panel>
           </div>
         </Tabs.Root>        
-        
         <LocationDrawer />
-        <Footer />
       </section>
+      <Footer />
     </main>
   )
 }

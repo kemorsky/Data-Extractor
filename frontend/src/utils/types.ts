@@ -13,12 +13,9 @@ export type LocationData = {
     relatedQuestName: string;
     relatedQuestUrl: string;
     inhabitants: string;
-    // questLinks: string[];
     // vikunjaLink: string[];
     notes: string;
     // wishlist: string;
-    // lastEdited: string;
-    // editedBy: string;
 };
 
 export type LocationFilters = {

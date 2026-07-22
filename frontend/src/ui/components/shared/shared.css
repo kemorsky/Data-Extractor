@@ -1,17 +1,49 @@
 .nav {
-    padding: 0.5rem 0 0.5rem 0;
-    background-color: blue;
+    position: relative;
+    display: flex;
+    padding: 1rem 0 1rem 0;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #4a4e51;
+
+    .nav__logo {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .nav__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+
+        a {
+            text-decoration: none;
+            color: gray;
+            
+        }
+
+        a:hover {
+            color: white
+        }
+
+        span {
+            font-weight: 600;
+            font-size: 0.875rem;
+            line-height: 1;
+        }
+    }
 }
 
 .footer {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: orange;
     max-width: 74.875rem;
     width: 100%;
-    padding: 1rem 0 1rem 0;
+    margin-bottom: 2rem;
 
     .footer__quick-links {
         list-style: none;
@@ -31,6 +63,10 @@
     }
 
     .footer__copyright {
+        font-weight: 600;
+        color: gray;
+        font-size: 0.875rem;
+        line-height: 1;
         margin: 0 auto 0 auto;
     }
 }

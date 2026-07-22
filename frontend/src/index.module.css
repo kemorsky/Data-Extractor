@@ -89,7 +89,8 @@
   border-block: 1px solid #4a4e51;
   border-radius: 0.5rem;
   height: 100%;
-  overflow-x: auto;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .Panel {

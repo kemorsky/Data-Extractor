@@ -62,7 +62,7 @@ export default function LocationsTab(props: LocationTabProps) {
 
     return (
         <div className="hero">
-            <h2>Locations</h2>
+            
             {isLoading && <h2>Loading data...</h2>}
             {error && <h2>{error.message}</h2>}
             
