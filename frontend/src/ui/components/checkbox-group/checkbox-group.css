@@ -12,26 +12,10 @@
 
     .checkbox-group__legend {
         
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 1.125rem;
+        font-weight: 700;
         margin-bottom: 0.5rem;
-
-        .checkbox-group__legend-button {
-            height: 2rem;
-            
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            color: white;
-            display: flex;
-            align-items: center;
-            
-            gap: 0.5rem;
-        }
     }
-    
 
     .checkbox-group__option {
         display: flex;
@@ -52,8 +36,13 @@
             width: 0;
         }
 
+        .checkbox-group__option-text-null {
+            color: #4a4e51 !important;
+            line-height: 1.333;
+        }
+
         .checkbox-group__option-text {
-           line-height: 1.333;
+            line-height: 1.333;
         }
 
         .checkbox-group__option__checkbox {
@@ -68,6 +57,24 @@
 
         .checkbox-group__option__checkbox:checked {
             background-color: red;
+        }
+    }
+
+    .checkbox-group__show-more-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 600;
+        gap: 0.25rem;
+        padding: 0;
+
+        .checkbox-group__show-more-button__text {
+            text-decoration: underline;
         }
     }
     

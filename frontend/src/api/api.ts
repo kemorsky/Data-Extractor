@@ -55,22 +55,24 @@ export const getLocationByName = async (name: string): Promise<LocationData> => 
 
 export const getLocationFilter = async (
     status?: string[], 
+    hasQuest?: boolean,
     //keywords?: string[],
     locationCategory?: string[],
     locationType?: string[], 
     parentLocation?: string[],
     inhabitants?: string[],
+    
 ): Promise<LocationData[]> => 
     {
         const params = new URLSearchParams();
 
         if (status?.length) params.append("status", status.join(","));
+        if (hasQuest) params.append("hasQuest", hasQuest.toString())
         //if (keywords?.length) params.append("keywords", keywords.join(","));
         if (locationType?.length) params.append("locationType", locationType.join(","));
         if (locationCategory?.length) params.append("locationCategory", locationCategory.join(","));
         if (parentLocation?.length) params.append("parentLocation", parentLocation.join(","));
         if (inhabitants?.length) params.append("inhabitants", inhabitants.join(","));
-
         
         const data =  await apiRequest(`${URL}/locations/filter?${params.toString()}`);
         return data;

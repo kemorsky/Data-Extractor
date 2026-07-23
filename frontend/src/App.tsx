@@ -19,6 +19,7 @@ export default function App() {
 
   const [ filters, setFilters ] = useState<LocationFilters>({
     statuses: searchParams.get("statuses")?.split(",") ?? [],
+    hasAQuest: searchParams.get("hasQuest") === "true",
     keywords: searchParams.get("keywords")?.split(",") ?? [],
     locationCategories: searchParams.get("locationCategories")?.split(",") ?? [],
     locationTypes: searchParams.get("locationTypes")?.split(",") ?? [],
@@ -30,13 +31,14 @@ export default function App() {
   const { data: locations } = useQuery(locationsQueryOptions());
   const { data: filterResults, isLoading, error } = useQuery(locationFilterQueryOptions(
       filters.statuses, 
+      filters.hasAQuest,
       filters.locationCategories, 
       filters.locationTypes,
       filters.parentLocations, 
       filters.inhabitants,
   ));
 
-  
+  console.log(filterResults);
 
   // console.log(countBy(filterResults ?? [], "status"));
 
@@ -87,6 +89,7 @@ export default function App() {
             </Tabs.Panel>
           </div>
         </Tabs.Root>        
+
         <LocationDrawer />
       </section>
       <Footer />

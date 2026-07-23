@@ -13,6 +13,7 @@ export type LocationData = {
     relatedQuestName: string;
     relatedQuestUrl: string;
     inhabitants: string;
+    hasQuest: boolean;
     // vikunjaLink: string[];
     notes: string;
     // wishlist: string;
@@ -26,4 +27,5 @@ export type LocationFilters = {
   parentLocationsCities: string[];
   parentLocations: string[];
   inhabitants: string[];
+  hasAQuest: boolean;
 };

@@ -99,7 +99,6 @@ public class DataService : IDataService
             ["BSKLocTypeUndead"] = "Undead",
             ["BSKLocTypeGoblinDen"] = "Goblin Den",
             ["CYRLocSetAkaviriRuin"] = "Akaviri Ruin",
-
         };
 
         // If mod path is missing use only the masterlist
@@ -132,6 +131,12 @@ public class DataService : IDataService
                         .FirstOrDefault()?
                         .Hyperlink
                         ?? "None",
+
+                    HasQuest = (sheet?.QuestCell?
+                        .Values?
+                        .FirstOrDefault()?
+                        .FormattedValue
+                        ?? "None") != "None",
 
                     Notes = sheet?.Row.Count > 24 ? sheet.Row[24].ToString()  ?? "None" : "None",
 
@@ -229,6 +234,12 @@ public class DataService : IDataService
                     .FirstOrDefault()?
                     .Hyperlink
                     ?? "None",
+
+                HasQuest = (sheet?.QuestCell?
+                    .Values?
+                    .FirstOrDefault()?
+                    .FormattedValue
+                    ?? "None") != "None",
 
                 Notes = sheet?.Row.Count > 24 ? sheet.Row[24].ToString()  ?? "None" : "None",
 
