@@ -7,6 +7,9 @@
     cursor: pointer;
     position: relative;
     
+    @media (max-width: 1024px) {
+        max-width: 10rem;
+    }
 
     .location-card__image {
         object-fit: fill;

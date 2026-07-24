@@ -272,7 +272,7 @@
 
 .Actions {
   position: absolute;
-  left: 0;
+  right: -5rem;
   top: 0;
   display: flex;
   justify-content: flex-end;

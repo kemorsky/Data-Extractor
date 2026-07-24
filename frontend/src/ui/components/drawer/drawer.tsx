@@ -36,10 +36,10 @@ export default function LocationDrawer() {
     
     return (
         <Drawer.Root swipeDirection="right" open={!!name} onOpenChange={(open) => {
-        if (!open) {
-          navigate("/");
-        }
-      }}>
+            if (!open) {
+                navigate("/");
+            }
+        }}>
             {/* <Drawer.Trigger className={styles.Button}>Open drawer</Drawer.Trigger>        */}
             <Drawer.Portal>         
                 <Drawer.Backdrop className={styles.Backdrop} />         
@@ -49,7 +49,7 @@ export default function LocationDrawer() {
                             <article className={styles.Title}>
                                 <div className={styles.Actions}>                 
                                     <Drawer.Close className={styles.Button}>Close</Drawer.Close>               
-                                </div> 
+                                </div>
                                 <h3 className={styles.TitleText}>{locationByName?.name}</h3>
                                 <article className={styles.Status}>
                                     <span>{locationByName?.status}</span>
