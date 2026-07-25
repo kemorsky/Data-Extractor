@@ -1,9 +1,11 @@
 import "./filters.css";
+import styles from "./filters.module.css";
 import CheckboxGroup from "../../components/checkbox-group/checkbox-group";
 import { getUniqueProperties } from "../../../utils/get-unique-properties";
 import type { LocationData, LocationFilters } from "../../../utils/types";
 import { getObjectCount } from "../../../utils/get-object-count";
 import Quest from "../../../assets/Quest-Door.svg"
+import { Drawer } from "@base-ui/react";
 
 interface FilterProps {
     locations: NoInfer<LocationData[]> | undefined
@@ -17,20 +19,20 @@ interface FilterProps {
 export default function Filters(props: FilterProps) {
     const { locations, filterResults, filters, setFilters, searchParams, setSearchParams } = props;
 
-    const allFilters = Object.entries(filters).flatMap(([category, values]) => {
-        if (!Array.isArray(values)) {
-            return values ? [{
-                category: category as keyof LocationFilters,
-                value: "Has Quest"
-            }] : [];
-        }
+    // const allFilters = Object.entries(filters).flatMap(([category, values]) => {
+    //     if (!Array.isArray(values)) {
+    //         return values ? [{
+    //             category: category as keyof LocationFilters,
+    //             value: "Has Quest"
+    //         }] : [];
+    //     }
 
-        return values.map(value => ({
-            category: category as Exclude<keyof LocationFilters, "hasAQuest">,
-            value
-        }))
-        .sort()
-    });
+    //     return values.map(value => ({
+    //         category: category as Exclude<keyof LocationFilters, "hasAQuest">,
+    //         value
+    //     }))
+    //     .sort()
+    // });
     
     const parentLocations = [
         ...new Set(
@@ -135,110 +137,197 @@ export default function Filters(props: FilterProps) {
         setSearchParams(params);
     };
 
-    const handleClearFilters = () => {
-        setFilters({
-            statuses: [],
-            keywords: [],
-            locationCategories: [],
-            locationTypes: [],
-            parentLocationsCities: [],
-            parentLocations: [],
-            inhabitants: [],
-            hasAQuest: false
-        });
+    // const handleClearFilters = () => {
+    //     setFilters({
+    //         statuses: [],
+    //         keywords: [],
+    //         locationCategories: [],
+    //         locationTypes: [],
+    //         parentLocationsCities: [],
+    //         parentLocations: [],
+    //         inhabitants: [],
+    //         hasAQuest: false
+    //     });
 
-        const params = new URLSearchParams();
-        params.set("page", "1");
-        setSearchParams(params);
-    };
+    //     const params = new URLSearchParams();
+    //     params.set("page", "1");
+    //     setSearchParams(params);
+    // };
 
     return (
-        <section className="filter__options">
-            <article className="filter__options__header">
-                <legend className="filter__options__header-title">Filters</legend>
-                <button onClick={() => handleClearFilters()}>Clear Filters</button>
-            </article>
-            <section className="filter__tags">
-                {allFilters.map(({category, value}) => (
-                    <span className="filter__tags-tag" key={`${category}-${value}`}>
-                        {value}
-                        <button className="filter__tags-tag__delete-btn" 
-                                onClick={() => {
-                                    if (category === "hasAQuest") {
-                                        toggleHasQuest();
-                                    } else {
-                                        toggleFilter(category, value);
-                                    }
-                                }}>
-                            X
-                        </button>
-                    </span>
-                ))}
-            </section>
-            <section className="quest-checkbox">
-                <label className="quest-checkbox__option">
-                    <input
-                        type="checkbox"
-                        className="quest-checkbox__option__checkbox"
-                        checked={filters.hasAQuest === null ? false : filters.hasAQuest}
-                        onChange={toggleHasQuest}
-                    />
-                    <section style={{height: 30, width: 30, display: "flex", alignItems: "center", justifyContent: "center"}}>
-                        <img width={20} src={Quest} alt="Quest anchor icon" />
-                    </section> 
-                    <span className="quest-checkbox__option-text">
-                        Has Quest
-                    </span>
-                </label>
-            </section>
-            <CheckboxGroup 
-                key={1}
-                title="Location Category"
-                options={locationCategories}
-                counts={categoryCount}
-                selected={filters.locationCategories}
-                onToggle={(value) => toggleFilter("locationCategories", value)}
-            />
-            <CheckboxGroup 
-                key={2}
-                title="City"
-                options={parentLocationsCities}
-                counts={parentLocationCount}
-                selected={filters.parentLocations}
-                onToggle={(value) => toggleFilter("parentLocations", value)}
-            />
-            <CheckboxGroup 
-                key={3}
-                title="County"
-                options={parentLocations}
-                counts={parentLocationCount}
-                selected={filters.parentLocations}
-                onToggle={(value) => toggleFilter("parentLocations", value)}
-            />
-            <CheckboxGroup 
-                key={4}
-                title="Location Type"
-                options={locationTypes}
-                counts={typeCount}
-                selected={filters.locationTypes}
-                onToggle={(value) => toggleFilter("locationTypes", value)}
-            />
-            <CheckboxGroup 
-                key={5}
-                title="Status"
-                options={statuses}
-                counts={statusCount}
-                selected={filters.statuses}
-                onToggle={(value) => toggleFilter("statuses", value)}
-            />
-            <CheckboxGroup 
-                key={6}
-                title="Inhabitants"
-                options={inhabitants}
-                counts={inhabitantsCount}
-                selected={filters.inhabitants}
-                onToggle={(value) => toggleFilter("inhabitants", value)}
-            />
-        </section>
+        <Drawer.Root swipeDirection="left" modal={false} disablePointerDismissal>
+            <Drawer.Trigger className={styles.Button}>Filters</Drawer.Trigger>
+            {/* <Drawer.Trigger className={styles.Button}>Open drawer</Drawer.Trigger>        */}
+            <Drawer.Portal>         
+                {/* <Drawer.Backdrop className={styles.Backdrop} />          */}
+                <Drawer.Viewport className={styles.Viewport}>           
+                    <Drawer.Popup className={styles.Popup}>             
+                        <Drawer.Content className={styles.Content}>
+                            <Drawer.Close className={styles.Button}>Close</Drawer.Close>               
+           
+                            {/* <article className={styles.Title}>
+                                <div className={styles.Actions}>                 
+                                </div>
+                                <article className="filter__options__header">
+                                    <legend className="filter__options__header-title">Filters</legend>
+                                    <button onClick={() => handleClearFilters()}>Clear Filters</button>
+                                </article>
+                            </article> */}
+                            <section className="quest-checkbox">
+                                <label className="quest-checkbox__option">
+                                    <input
+                                        type="checkbox"
+                                        className="quest-checkbox__option__checkbox"
+                                        checked={filters.hasAQuest === null ? false : filters.hasAQuest}
+                                        onChange={toggleHasQuest}
+                                    />
+                                    <section style={{height: 30, width: 30, display: "flex", alignItems: "center", justifyContent: "center"}}>
+                                        <img width={20} src={Quest} alt="Quest anchor icon" />
+                                    </section> 
+                                    <span className="quest-checkbox__option-text">
+                                        Has Quest
+                                    </span>
+                                </label>
+                            </section>
+                            <CheckboxGroup 
+                                key={1}
+                                title="Location Category"
+                                options={locationCategories}
+                                counts={categoryCount}
+                                selected={filters.locationCategories}
+                                onToggle={(value) => toggleFilter("locationCategories", value)}
+                            />
+                            <CheckboxGroup 
+                                key={2}
+                                title="City"
+                                options={parentLocationsCities}
+                                counts={parentLocationCount}
+                                selected={filters.parentLocations}
+                                onToggle={(value) => toggleFilter("parentLocations", value)}
+                            />
+                            <CheckboxGroup 
+                                key={3}
+                                title="County"
+                                options={parentLocations}
+                                counts={parentLocationCount}
+                                selected={filters.parentLocations}
+                                onToggle={(value) => toggleFilter("parentLocations", value)}
+                            />
+                            <CheckboxGroup 
+                                key={4}
+                                title="Location Type"
+                                options={locationTypes}
+                                counts={typeCount}
+                                selected={filters.locationTypes}
+                                onToggle={(value) => toggleFilter("locationTypes", value)}
+                            />
+                            <CheckboxGroup 
+                                key={5}
+                                title="Status"
+                                options={statuses}
+                                counts={statusCount}
+                                selected={filters.statuses}
+                                onToggle={(value) => toggleFilter("statuses", value)}
+                            />
+                            <CheckboxGroup 
+                                key={6}
+                                title="Inhabitants"
+                                options={inhabitants}
+                                counts={inhabitantsCount}
+                                selected={filters.inhabitants}
+                                onToggle={(value) => toggleFilter("inhabitants", value)}
+                            />             
+                        </Drawer.Content>           
+                    </Drawer.Popup>         
+                </Drawer.Viewport>       
+            </Drawer.Portal>     
+        </Drawer.Root>
+        // <section className="filter__options">
+        //     <article className="filter__options__header">
+        //         <legend className="filter__options__header-title">Filters</legend>
+        //         <button onClick={() => handleClearFilters()}>Clear Filters</button>
+        //     </article>
+        //     <section className="filter__tags">
+        //         {allFilters.map(({category, value}) => (
+        //             <span className="filter__tags-tag" key={`${category}-${value}`}>
+        //                 {value}
+        //                 <button className="filter__tags-tag__delete-btn" 
+        //                         onClick={() => {
+        //                             if (category === "hasAQuest") {
+        //                                 toggleHasQuest();
+        //                             } else {
+        //                                 toggleFilter(category, value);
+        //                             }
+        //                         }}>
+        //                     X
+        //                 </button>
+        //             </span>
+        //         ))}
+        //     </section>
+        //     <section className="quest-checkbox">
+        //         <label className="quest-checkbox__option">
+        //             <input
+        //                 type="checkbox"
+        //                 className="quest-checkbox__option__checkbox"
+        //                 checked={filters.hasAQuest === null ? false : filters.hasAQuest}
+        //                 onChange={toggleHasQuest}
+        //             />
+        //             <section style={{height: 30, width: 30, display: "flex", alignItems: "center", justifyContent: "center"}}>
+        //                 <img width={20} src={Quest} alt="Quest anchor icon" />
+        //             </section> 
+        //             <span className="quest-checkbox__option-text">
+        //                 Has Quest
+        //             </span>
+        //         </label>
+        //     </section>
+        //     <CheckboxGroup 
+        //         key={1}
+        //         title="Location Category"
+        //         options={locationCategories}
+        //         counts={categoryCount}
+        //         selected={filters.locationCategories}
+        //         onToggle={(value) => toggleFilter("locationCategories", value)}
+        //     />
+        //     <CheckboxGroup 
+        //         key={2}
+        //         title="City"
+        //         options={parentLocationsCities}
+        //         counts={parentLocationCount}
+        //         selected={filters.parentLocations}
+        //         onToggle={(value) => toggleFilter("parentLocations", value)}
+        //     />
+        //     <CheckboxGroup 
+        //         key={3}
+        //         title="County"
+        //         options={parentLocations}
+        //         counts={parentLocationCount}
+        //         selected={filters.parentLocations}
+        //         onToggle={(value) => toggleFilter("parentLocations", value)}
+        //     />
+        //     <CheckboxGroup 
+        //         key={4}
+        //         title="Location Type"
+        //         options={locationTypes}
+        //         counts={typeCount}
+        //         selected={filters.locationTypes}
+        //         onToggle={(value) => toggleFilter("locationTypes", value)}
+        //     />
+        //     <CheckboxGroup 
+        //         key={5}
+        //         title="Status"
+        //         options={statuses}
+        //         counts={statusCount}
+        //         selected={filters.statuses}
+        //         onToggle={(value) => toggleFilter("statuses", value)}
+        //     />
+        //     <CheckboxGroup 
+        //         key={6}
+        //         title="Inhabitants"
+        //         options={inhabitants}
+        //         counts={inhabitantsCount}
+        //         selected={filters.inhabitants}
+        //         onToggle={(value) => toggleFilter("inhabitants", value)}
+        //     />
+        // </section>
     )
 };
