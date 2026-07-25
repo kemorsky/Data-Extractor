@@ -100,9 +100,9 @@ export default function LocationDrawer() {
                                 <section className={styles.Notes}>
                                     <h2 className={styles.NotesTitle}>Notes</h2>
                                     <hr className={styles.NotesSeparator} />
-                                    <p className={styles.NotesText}>
+                                    <article className={styles.NotesText}>
                                         {parse(rawNotes)}
-                                    </p>
+                                    </article>
                                 </section>
 
                             </div>                              
