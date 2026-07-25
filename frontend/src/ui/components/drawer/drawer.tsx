@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
 import { locationByNameQueryOptions, locationsQueryOptions } from "../../../queries/locationQueryOptions";
 import type { LocationData } from '../../../utils/types';
+import parse from 'html-react-parser';
 
 export default function LocationDrawer() {
     const navigate = useNavigate();
@@ -15,6 +16,10 @@ export default function LocationDrawer() {
         ...locationByNameQueryOptions(name ?? ""),
         enabled: !!name,
     });
+
+    const rawNotes = locationByName?.notes && locationByName?.notes !== "None" 
+        ? locationByName?.notes
+        : "<p>No description available.</p>";
 
     const childrenByParent = new Map<string, LocationData[]>();
         
@@ -95,7 +100,9 @@ export default function LocationDrawer() {
                                 <section className={styles.Notes}>
                                     <h2 className={styles.NotesTitle}>Notes</h2>
                                     <hr className={styles.NotesSeparator} />
-                                    <p className={styles.NotesText}>{locationByName?.notes}</p>
+                                    <p className={styles.NotesText}>
+                                        {parse(rawNotes)}
+                                    </p>
                                 </section>
 
                             </div>                              
