@@ -7,8 +7,8 @@
     cursor: pointer;
     position: relative;
     
-    @media (max-width: 1024px) {
-        max-width: 10rem;
+    @media (max-width: 740px) {
+        max-width: 12rem;
     }
 
     .location-card__image {

@@ -23,7 +23,7 @@ export default function LocationCard(props: LocationCardProps) {
                 }
             }}
         >
-            <img className="location-card__image" src={ayleidImage} width="100%"/>
+            <img className="location-card__image" src={ayleidImage} width="100%" />
             <section className="location-card__labels">
                 <section className="location-card__labels-icons">
                     {/* <Icons showText={false} text={props.location.locationType} /> */}

@@ -1,12 +1,14 @@
 import "./filters.css";
 import styles from "./filters.module.css";
+import { useMemo } from "react";
 import CheckboxGroup from "../../components/checkbox-group/checkbox-group";
 import { getUniqueProperties } from "../../../utils/get-unique-properties";
 import type { LocationData, LocationFilters } from "../../../utils/types";
 import { getObjectCount } from "../../../utils/get-object-count";
 import Quest from "../../../assets/Quest-Door.svg"
 import { Drawer } from "@base-ui/react";
-import { useMemo } from "react";
+import Filter from "../../../assets/filter.svg"
+import X from "../../../assets/cross.svg"
 
 interface FilterProps {
     locations: NoInfer<LocationData[]> | undefined
@@ -149,25 +151,32 @@ export default function Filters(props: FilterProps) {
         <Drawer.Root swipeDirection="left" modal={false} disablePointerDismissal>
             
             <section className="filter__tags">
-                <Drawer.Trigger className={styles.Button}>Filters</Drawer.Trigger>
+                <Drawer.Trigger className={styles.Button}>
+                    <img src={Filter} alt="filter button icon" width={21} />
+                    Filter
+                </Drawer.Trigger>
                 <section className="filter__tags-container">
-
                     {allFilters.map(({category, value}) => (
-                        <span className="filter__tags-tag" key={`${category}-${value}`}>
-                            {value}
-                            <button className="filter__tags-tag__delete-btn" 
-                                    onClick={() => {
-                                        if (category === "hasAQuest") {
-                                            toggleHasQuest();
-                                        } else {
-                                            toggleFilter(category, value);
-                                        }
-                                    }}>
-                                X
-                            </button>
-                        </span>
+                        <button 
+                            className="filter__tags-tag" key={`${category}-${value}`}
+                            onClick={() => {
+                                if (category === "hasAQuest") {
+                                    toggleHasQuest();
+                                } else {
+                                    toggleFilter(category, value);
+                                }
+                            }}>
+                            {value.toUpperCase()} <img src={X} alt="delete filter icon" width={18} />
+                        </button>
                     ))}
-                    <button onClick={() => handleClearFilters()}>Clear Filters</button>
+
+                    {allFilters.length > 0 &&
+                        <button 
+                            className="filter__tags-clear-btn"
+                            onClick={() => handleClearFilters()}>
+                            Clear Filters
+                        </button>
+                    }
                 </section>
             </section>
             {/* <Drawer.Trigger className={styles.Button}>Open drawer</Drawer.Trigger>        */}

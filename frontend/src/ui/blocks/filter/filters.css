@@ -1,5 +1,6 @@
 .filter__options {
-  width: 18rem;
+  max-width: 18rem;
+  width: 100%;
   overflow-y: auto;
   scrollbar-width: thin;
   height: 100%;
@@ -32,10 +33,9 @@
 }
 
 .filter__tags {
-  max-width: 17rem;
+  
   width: 100%;
   display: flex;
-  flex-direction: column;
   gap: 0.5rem;
   align-items: center;
   align-self: flex-start;
@@ -43,7 +43,7 @@
 }
 
 .filter__tags-container {
-  max-width: 17rem;
+  
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -52,17 +52,31 @@
   justify-content: flex-start;
 }
 
-.filter__tags-tag {
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  background-color: rgb(168, 134, 134);
-  color: white;
-  font-size: 0.75rem;
+.filter__tags-clear-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1;
   font-weight: 600;
+  color: rgb(0, 113, 185);
+  text-decoration: underline;
 }
 
-.filter__tags-tag__delete-btn {
-  margin-left: 0.25rem;
+.filter__tags-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0.4435rem 0.75rem 0.4435rem 0.75rem;
+  border-radius: 0.75rem;
+  background-color: rgb(68, 17, 83);
+  color: white;
+  font-size: 0.825rem;
+  border: 1px solid rgb(227, 145, 252);
+}
+
+.filter__tags-tag:hover {
+  background-color: rgba(68, 17, 83, 0.397);
 }
 
 .quest-checkbox {
