@@ -44,12 +44,11 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
 
 export const getLocations = async (): Promise<LocationData[]> => {
     const data = await apiRequest(`${URL}/locations`);
-    console.log(data);
     return data;
 }
 
 export const getLocationByName = async (name: string): Promise<LocationData> => {
-    const data = await apiRequest(`${URL}/locations/${name}`);
+    const data = await apiRequest(`${URL}/locations/${encodeURIComponent(name)}`);
     return data;
 }
 

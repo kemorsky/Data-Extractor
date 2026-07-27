@@ -18,16 +18,29 @@
 }
 
 .main__wrapper {
+  max-width: 60rem;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  max-height: calc(100vh - 12rem);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 1024px) {
+    max-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
   
 }
 
 #center {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
   position: relative;
   height: 100%;
   

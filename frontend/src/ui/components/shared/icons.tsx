@@ -20,10 +20,6 @@ interface IconsProps {
     
 };
 
-// function isIcon(value: string): value is keyof typeof iconSources {
-//     return value in iconSources;
-// }
-
 export default function Icons({ text, showText = true, width = 30, height = 30 }: IconsProps) {
     const src = iconSources[text];
 

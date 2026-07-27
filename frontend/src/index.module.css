@@ -1,7 +1,7 @@
 .Root {
   box-sizing: border-box;
   width: 100%;
-  max-width: 45rem;
+  max-width: 60rem;
   max-height: 100vh;
 }
 
@@ -10,7 +10,7 @@
   position: relative;
   z-index: 1;
   gap: 0.33rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.33rem;
 }
 
 .Tab {
@@ -34,6 +34,7 @@
   padding-inline: 0.5rem;
   padding-block: 0;
   height: calc(2rem + 1px);
+  cursor: pointer;
 
 
   @media (hover: hover) {
@@ -80,6 +81,7 @@
 }
 
 .PanelViewport {
+  max-height: calc(100vh - 14.5rem);
   box-sizing: border-box;
   display: grid;
   grid-template-columns: minmax(0, 1fr);

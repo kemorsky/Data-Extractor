@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router'
+import { useMemo } from 'react';
+import { useLocation, useNavigate } from 'react-router'
 import { Drawer } from "@base-ui/react/drawer";
 import styles from './drawer.module.css';
 import { useQuery } from "@tanstack/react-query";
@@ -9,6 +10,8 @@ import parse from 'html-react-parser';
 
 export default function LocationDrawer() {
     const navigate = useNavigate();
+    const location = useLocation();
+
     const { name } = useParams();
 
     const { data: locations } = useQuery(locationsQueryOptions());
@@ -21,28 +24,38 @@ export default function LocationDrawer() {
         ? locationByName?.notes
         : "<p>No description available.</p>";
 
-    const childrenByParent = new Map<string, LocationData[]>();
-        
+    const childrenByParent = useMemo(() => {
+        const map = new Map<string, LocationData[]>();
+    
         for (const loc of locations ?? []) {
             if (!loc.parentLocation) continue;
-    
-            if (!childrenByParent.has(loc.parentLocation)) {
-                childrenByParent.set(loc.parentLocation, []);
+
+            if (!map.has(loc.parentLocation)) {
+                map.set(loc.parentLocation, []);
             }
-    
-                childrenByParent.get(loc.parentLocation)!.push(loc);
+
+            map.get(loc.parentLocation)!.push(loc);
         };
+
+        return map;
+    }, [locations]);
     
-        const children = childrenByParent.get(locationByName?.parentLocation ?? "") ?? [];
+    const children = childrenByParent.get(locationByName?.parentLocation ?? "") ?? [];
 
     const handleClick = () => {
         console.log(`Parent Location: ${locationByName?.parentLocation}`, children);
-    }
+    };
+
+    const backgroundLocation = location.state?.backgroundLocation;
+
+    const handleCloseDrawer = () => {
+        navigate(backgroundLocation ?? "/");
+    };
     
     return (
         <Drawer.Root swipeDirection="right" open={!!name} onOpenChange={(open) => {
             if (!open) {
-                navigate("/");
+                handleCloseDrawer();
             }
         }}>
             {/* <Drawer.Trigger className={styles.Button}>Open drawer</Drawer.Trigger>        */}

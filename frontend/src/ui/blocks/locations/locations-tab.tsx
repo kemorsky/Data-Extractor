@@ -1,7 +1,12 @@
 import "./locations-tab.css";
-import { useNavigate } from "react-router";
+import { memo, useMemo, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router";
 import type { LocationData } from "../../../utils/types";
 import LocationCard from "../../components/location-card/location-card";
+import ChevronLeft from "../../../assets/chevron-left.svg";
+import ChevronRight from "../../../assets/chevron-right.svg";
+import ChevronDoubleLeft from "../../../assets/chevron-double-left.svg";
+import ChevronDoubleRight from "../../../assets/chevron-double-right.svg";
 
 interface LocationTabProps {
     error: Error | null;
@@ -12,8 +17,11 @@ interface LocationTabProps {
     setSearchParams: (params: URLSearchParams) => void
 }
 
-export default function LocationsTab(props: LocationTabProps) {
-    const { isLoading, locations, filterResults, error, searchParams, setSearchParams } = props;
+export const LocationsTab = memo(function LocationsTab (props: LocationTabProps) {
+    const { isLoading, locations, filterResults, searchParams, error, setSearchParams } = props;
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     // const filteredResults = filterResults?.filter(location => 
     //     location.name !== "" &&
@@ -22,43 +30,58 @@ export default function LocationsTab(props: LocationTabProps) {
 
     const page = Number(searchParams.get("page") ?? "1");
 
-    const setPage = (newPage: number) => {
+    const setPage = useCallback((newPage: number) => {
         const params = new URLSearchParams(searchParams);
 
         params.set("page", newPage.toString());
 
         setSearchParams(params);
-    };
+    }, [searchParams, setSearchParams]);
 
-    const navigate = useNavigate();
+    function slugify(value: string) {
+        return value
+            .toLowerCase()
+            .trim()
+            .replace(/['']/g, "")
+            .replace(/\s+/g, "-");
+    }
     
     const handleClickName = (name: string) => {
-        navigate(`/locations/${encodeURIComponent(name)}`, {
-            state: { drawer: true }
-        })
+        navigate(`/locations/${slugify(name)}`, {
+            state: { 
+                drawer: true,
+                backgroundLocation: location.state?.backgroundLocation ?? location,
+            },
+        });
     };
 
-    const childrenByParent = new Map<string, LocationData[]>();
+    const childrenByParent = useMemo(() => {
+        const map = new Map<string, LocationData[]>();
     
-    for (const loc of locations ?? []) {
-        if (!loc.parentLocation) continue;
+        for (const loc of locations ?? []) {
+            if (!loc.parentLocation) continue;
 
-        if (!childrenByParent.has(loc.parentLocation)) {
-            childrenByParent.set(loc.parentLocation, []);
-        }
+            if (!map.has(loc.parentLocation)) {
+                map.set(loc.parentLocation, []);
+            }
 
-        childrenByParent.get(loc.parentLocation)!.push(loc);
-    };
+            map.get(loc.parentLocation)!.push(loc);
+        };
+
+        return map;
+    }, [locations]);
 
     const pageSize = 30;
     const totalPages = Math.ceil(
       (filterResults?.length ?? 0) / pageSize
     );
 
-    const pageResults = filterResults?.slice(
-      (page - 1) * pageSize,
-      page * pageSize
-    );
+    const pageResults = useMemo(() => {
+        return filterResults?.slice(
+            (page - 1) * pageSize,
+            page * pageSize
+        );
+    }, [filterResults, page]);
 
     return (
         <div className="hero">
@@ -77,32 +100,43 @@ export default function LocationsTab(props: LocationTabProps) {
                 ))}
             </section>
             <div className="pagination">
+
+                <button
+                    className="pagination__first-btn"
+                    disabled={page === 1}
+                    onClick={() => setPage(page === 1 ? 1 : 1)}
+                >
+                    <img src={ChevronDoubleLeft} width={20} height={20} />
+                </button>
     
                 <button
+                    className="pagination__previous-btn"
                     disabled={page === 1}
                     onClick={() => setPage(page - 1)}
                 >
-                    Previous
+                    <img src={ChevronLeft} width={20} height={20} />
                 </button>
 
-                <span>
+                <span className="pagination__pages-text">
                     Page {page} of {totalPages}
                 </span>
 
                 <button
+                    className="pagination__next-btn"
                     disabled={page === totalPages}
                     onClick={() => setPage(page + 1)}
                 >
-                    Next
+                    <img src={ChevronRight} width={20} height={20} />
                 </button>
 
                 <button
+                    className="pagination__last-btn"
                     disabled={page === totalPages}
                     onClick={() => setPage(totalPages)}
                 >
-                    Last
+                    <img src={ChevronDoubleRight} width={20} height={20} />
                 </button>
             </div>
         </div>
     )
-};
+});

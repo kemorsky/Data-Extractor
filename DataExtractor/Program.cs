@@ -100,14 +100,21 @@ app.MapGet("/locations", async () =>
 // })
 // .WithName("GetSkyrimModData");
 
-app.MapGet("/locations/{name}", (string name) =>
+static string Slugify(string value)
 {
-    name = name.Replace("-", " ");
+    return value
+        .ToLowerInvariant()
+        .Trim()
+        .Replace("'", "")
+        .Replace(" ", "-");
+}
 
+app.MapGet("/locations/{slug}", (string slug) =>
+{
     var location = locationsCache
         .FirstOrDefault(x => string.Equals(
-            x.Name,
-            name,
+            Slugify(x.Name),
+            slug,
             StringComparison.OrdinalIgnoreCase));
 
         return location == null 

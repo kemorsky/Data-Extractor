@@ -1,23 +1,34 @@
 import './App.css'
 import styles from './index.module.css';
 import "./assets/fonts/Webfonts/Balgruf.woff";
-import { useState } from 'react'
+import { useMemo } from 'react'
 import StatusGraph from './ui/components/status-graph/status-graph'
 import type { LocationFilters } from './utils/types'
 import LocationDrawer from './ui/components/drawer/drawer'
 import Filters from './ui/blocks/filter/filters';
-import LocationsTab from './ui/blocks/locations/locations-tab';
+import { LocationsTab } from './ui/blocks/locations/locations-tab';
 import { useQuery } from '@tanstack/react-query';
 import { locationsQueryOptions, locationFilterQueryOptions } from './queries/locationQueryOptions';
 import { Tabs } from '@base-ui/react/tabs';
-import { useSearchParams } from 'react-router';
+import { useLocation, useSearchParams } from 'react-router';
 import Footer from './ui/components/shared/footer';
 import Navbar from './ui/components/shared/navbar';
 
 export default function App() {
-  const [ searchParams, setSearchParams ] = useSearchParams();
+  const [_, setSearchParams] = useSearchParams();
 
-  const [ filters, setFilters ] = useState<LocationFilters>({
+  const location = useLocation();
+  console.log(_);
+
+  const listLocation =
+    location.state?.backgroundLocation ?? location;
+
+  const searchParams = useMemo(() => 
+    new URLSearchParams(listLocation.search),
+    [listLocation.search]
+  );
+
+  const filters = useMemo<LocationFilters>(() =>({
     statuses: searchParams.get("statuses")?.split(",") ?? [],
     hasAQuest: searchParams.get("hasQuest") === "true",
     keywords: searchParams.get("keywords")?.split(",") ?? [],
@@ -25,8 +36,8 @@ export default function App() {
     locationTypes: searchParams.get("locationTypes")?.split(",") ?? [],
     parentLocationsCities: searchParams.get("parentLocationsCities")?.split(",") ?? [],
     parentLocations: searchParams.get("parentLocations")?.split(",") ?? [],
-    inhabitants: searchParams.get("inhabitants")?.split(",") ?? []
-  });
+    inhabitants: searchParams.get("inhabitants")?.split(",") ?? [],
+  }), [searchParams]);
 
   const { data: locations } = useQuery(locationsQueryOptions());
   const { data: filterResults, isLoading, error } = useQuery(locationFilterQueryOptions(
@@ -37,17 +48,6 @@ export default function App() {
       filters.parentLocations, 
       filters.inhabitants,
   ));
-
-  console.log(filterResults);
-
-  // console.log(countBy(filterResults ?? [], "status"));
-
-  // const categoryCounts = (filterResults ?? []).reduce((acc, location) => {
-  //   acc[location.locationCategory] = (acc[location.locationCategory] ?? 0) + 1;
-  //   return acc;
-  // }, {} as Record<string, number>);
-
-  // console.log(categoryCounts["Dungeons"]);
   
   return (
     <main id="center">
@@ -57,7 +57,7 @@ export default function App() {
           locations={locations}
           filterResults={filterResults}
           filters={filters} 
-          setFilters={setFilters} 
+          // setFilters={setFilters} 
           searchParams={searchParams} 
           setSearchParams={setSearchParams}
         />

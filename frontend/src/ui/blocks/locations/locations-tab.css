@@ -1,12 +1,12 @@
 .hero {
-  max-width: 45rem;
+  max-width: 55rem;
   width: 100%;
   position: relative;
 
   .location-card__container {
     width: 100%;
     
-    max-width: 45rem;
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -23,10 +23,45 @@
   .pagination {
     background-color: #111111;
     width: calc(100% - 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     position: sticky;
-    bottom: -0.01rem;
+    bottom: -0.1rem;
     left: 0;
     padding: 1.5rem;
   }
+
+  .pagination__first-btn, .pagination__previous-btn, .pagination__next-btn, .pagination__last-btn {
+    padding: 0.5rem;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+
+    &[disabled] {
+      opacity: 0.7;
+      cursor: default;
+    }
+  }
+
+  .pagination__pages-text {
+    font-weight: 600;
+    min-width: 6rem;
+  }
+
+  
+  .pagination__next-btn {
+
+  }
+
+  .pagination__last-btn {
+
+  }
+
 
 }

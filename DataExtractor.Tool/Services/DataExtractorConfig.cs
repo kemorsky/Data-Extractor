@@ -41,6 +41,7 @@ public class DataExtractorConfig
         ["LocTypeDwelling"] = "Interior",
         ["LocTypeDungeon"] = "Dungeon",
         ["LocTypeSettlement"] = "Settlement",
+        ["LocTypeTown"] = "Town",
     };
 
     public static readonly Dictionary<string, string> LocationTypeMap = new(StringComparer.OrdinalIgnoreCase)

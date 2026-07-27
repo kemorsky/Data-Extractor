@@ -1,4 +1,4 @@
-.Button {
+.Button, .ButtonClose {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -17,6 +17,8 @@
   color: oklch(14.5% 0 0deg);
   -webkit-user-select: none;
   user-select: none;
+  align-self: flex-start;
+  cursor: pointer;
 
 
   @media (prefers-color-scheme: dark) {
@@ -63,7 +65,7 @@
   }
 }
 
-.Button__Close {
+.ButtonClose {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -121,13 +123,12 @@
 .Popup {
   --bleed: 3rem;
   box-sizing: border-box;
-  width: calc(16rem + var(--bleed));
+  width: calc(17rem + var(--bleed));
   max-width: calc(100vw - 3rem + var(--bleed));
   max-height: calc(100vh + var(--bleed));;
   padding: 1.5rem;
   
   margin-right: calc(-1 * var(--bleed));
-  border-left: 1px solid white;
   border-right: 1px solid white;
   background-color: white;
   color: oklch(14.5% 0 0deg);
@@ -142,7 +143,6 @@
   transform: translateX(var(--drawer-swipe-movement-x));
 
   @media (prefers-color-scheme: dark) {
-    border-left: 1px solid white;
     background-color: oklch(39.585% 0.04826 19.387);
     color: white;
     box-shadow: none;
@@ -175,6 +175,7 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  margin-top: 2rem;
 }
 
 .List {
