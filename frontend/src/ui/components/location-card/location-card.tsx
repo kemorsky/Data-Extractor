@@ -4,7 +4,7 @@ import ayleidImage from "../../../assets/location-background-images/Ayleid Ruin.
 import Quest from "../../../assets/location-icons/Quest-Door.svg"
 import Status from "../shared/status";
 import Icons from "../shared/icons";
-import LocationCardBackground from "../shared/location-card-background";
+// import LocationCardBackground from "../shared/location-card-background";
 
 interface LocationCardProps {
     location: LocationData;
