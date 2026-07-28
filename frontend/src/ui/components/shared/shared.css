@@ -72,9 +72,6 @@
 }
 
 .status {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,9 +82,9 @@
 }
 
 .status__text {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.75rem;
-    line-height: 1.5;
+    line-height: 24px;
 }
 
 .status__finalized {

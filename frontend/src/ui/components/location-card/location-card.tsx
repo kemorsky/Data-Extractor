@@ -35,10 +35,11 @@ export default function LocationCard(props: LocationCardProps) {
                         </a>
                     }
                 </section>
-                {props.location.status !== "None" &&
-                    <Status text={props.location.status} />
-                }
-                {/* <p className="location-card__labels__status">{props.location.status}</p> */}
+                <div className="location-card__labels-status">
+                    {props.location.status !== "None" &&
+                        <Status text={props.location.status} />
+                    }
+                </div>
             </section>
             <section className="location-card__content">
                 <section className="location-card__info">

@@ -53,6 +53,7 @@ public class DataExtractorConfig
         ["LocSetCave"] = "Cave",
         ["LocTypeMine"] = "Mine",
         ["LocTypeFarm"] = "Farm",
+        ["LocTypeGuild"] = "Guild",
         ["LocTypeHabitation"] = "Exterior",
         ["LocSetOutdoor"] = "Exterior",
         ["LocTypeShip"] = "Ship",

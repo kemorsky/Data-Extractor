@@ -4,8 +4,10 @@ import { Drawer } from "@base-ui/react/drawer";
 import styles from './drawer.module.css';
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router";
+import Status from '../shared/status';
 import { locationByNameQueryOptions, locationsQueryOptions } from "../../../queries/locationQueryOptions";
 import type { LocationData } from '../../../utils/types';
+import X from "../../../assets/icons/cross.svg"
 import parse from 'html-react-parser';
 
 export default function LocationDrawer() {
@@ -65,14 +67,18 @@ export default function LocationDrawer() {
                     <Drawer.Popup className={styles.Popup}>             
                         <Drawer.Content className={styles.Content}>               
                             <article className={styles.Title}>
-                                <div className={styles.Actions}>                 
-                                    <Drawer.Close className={styles.Button}>Close</Drawer.Close>               
+                                <div className={styles.Status}>
+                                    {locationByName?.status !== "None" &&
+                                        <Status text={locationByName?.status ?? ""} />
+                                    }
                                 </div>
                                 <h3 className={styles.TitleText}>{locationByName?.name}</h3>
-                                <article className={styles.Status}>
-                                    <span>{locationByName?.status}</span>
-                                </article>
                             </article>
+                            <div className={styles.Actions}>                 
+                                <Drawer.Close className={styles.Button}>
+                                    <img src={X} width={22} height={22} />
+                                </Drawer.Close>               
+                            </div>
                             <ul className={styles.List}>
                                 <li onClick={() => {handleClick();}} className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Location:</span> 

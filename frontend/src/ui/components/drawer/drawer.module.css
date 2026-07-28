@@ -3,11 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  height: 2rem;
-  padding: 0 0.75rem;
+  padding: 0.33rem;
   margin: 0;
   border: 1px solid oklch(14.5% 0 0deg);
+  border-radius: 0.33rem;
   background-color: white;
   font-family: inherit;
   font-size: 0.875rem;
@@ -17,6 +16,7 @@
   color: oklch(14.5% 0 0deg);
   -webkit-user-select: none;
   user-select: none;
+  transition: var(--button-colors);
 
   @media (prefers-color-scheme: dark) {
     border: 1px solid white;
@@ -119,9 +119,9 @@
   padding: 1.5rem;
   padding-right: calc(1.5rem + var(--bleed));
   margin-right: calc(-1 * var(--bleed));
-  border-left: 1px solid oklch(14.5% 0 0deg);
-  background-color: white;
-  color: oklch(14.5% 0 0deg);
+  border-left: 1px solid white;
+  background-color: oklch(39.585% 0.04826 19.387);
+  color: white;
   outline: 0;
   box-shadow: 0.25rem 0.25rem 0 rgb(0 0 0 / 12%);
   overflow-y: auto;
@@ -130,13 +130,6 @@
   transition: transform 450ms cubic-bezier(0.32, 0.72, 0, 1);
   will-change: transform;
   transform: translateX(var(--drawer-swipe-movement-x));
-
-  @media (prefers-color-scheme: dark) {
-    border-left: 1px solid white;
-    background-color: oklch(39.585% 0.04826 19.387);
-    color: white;
-    box-shadow: none;
-  }
 
   &[data-starting-style],
   &[data-ending-style] {
@@ -150,28 +143,23 @@
   @supports (-webkit-touch-callout: none) {
     --bleed: 0px;
     margin-right: 0;
-    border: 1px solid oklch(14.5% 0 0deg);
-
-    @media (prefers-color-scheme: dark) {
-      border: 1px solid white;
-    }
+    border: 1px solid white;
   }
 }
 
 .Content {
   width: 100%;
-  max-width: 32rem;
-  margin: 0 auto;
+  max-width: 40rem;
+  margin: 0 auto 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   gap: 1.5rem;
-  font-family: var(--font-primary);
 }
 
 .List {
-  width: 100%;
+  
   list-style: none;
   font-weight: 500;
   margin-top: 0;
@@ -197,28 +185,21 @@
 
 .ListKeywordsItem {
   margin-bottom: 0.33rem;
+  color: var(--text-muted);
 }
 
 .ListItemText {
   width: 12rem;
 }
 
-.Status {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-self: end;
-  background-color: orange;
-  color: white;
-  border-radius: 0.5rem;
-  padding: 0.33rem;
-  font-size: 0.75rem;
-}
+
 
 .Title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
   width: 100%;
   position: relative;
   margin-bottom: 0.25rem;
@@ -227,12 +208,14 @@
 }
 
 .TitleText {
-  justify-self: center;
   font-size: 2rem;
   line-height: normal;
   font-weight: 700;
+  margin: 0;
  
-  margin: 0 auto 0 auto;
+  @media (max-width: 740px) {
+    font-size: 1.5rem;
+  }
 }
 
 .NotesContainer {
@@ -248,7 +231,7 @@
   width: 100%;
   align-self: center;
   text-align: left;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   padding: 1rem;
 }
 
@@ -262,7 +245,6 @@
 }
 
 .NotesText {
-  font-family: "Balgruf";
   min-height: 6rem;
   background-color: #f3e9cd; /* #BFA366 */
   color: #2b221e;
@@ -273,8 +255,8 @@
 
 .Actions {
   position: absolute;
-  right: -5rem;
-  top: 0;
+  right: 4.5rem;
+  top: 1.5rem;
   display: flex;
   justify-content: flex-end;
   gap: 0.75rem;
