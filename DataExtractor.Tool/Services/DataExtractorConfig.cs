@@ -48,13 +48,16 @@ public class DataExtractorConfig
     {
         ["LocTypeAnimalDen"] = "Animal Den",
         ["LocTypeHouse"] = "House",
+        ["CYRLocUniqueBattlehornCastle"] = "Castle",
         ["LocTypeCastle"] = "Castle",
         ["LocSetCave"] = "Cave",
         ["LocTypeMine"] = "Mine",
         ["LocTypeFarm"] = "Farm",
+        ["LocTypeHabitation"] = "Exterior",
         ["LocSetOutdoor"] = "Exterior",
         ["LocTypeShip"] = "Ship",
         ["LocTypeMilitaryFort"] = "Imperial Fort",
+        ["LocTypeInn"] = "Inn",
         ["LocTypeBanditCamp"] = "Bandit Camp",
         ["BSKLocTypeAyleid"] = "Ayleid Ruin",
         ["BSKLocSetTombColovian"] = "Colovian Tomb",
@@ -64,6 +67,7 @@ public class DataExtractorConfig
         ["BSKLocTypeOgreDen"] = "Ogre Den",
         ["BSKLocTypeUndead"] = "Undead",
         ["BSKLocTypeGoblinDen"] = "Goblin Den",
+        ["BSKLocTypeWayshrine"] = "Wayshrine",
         ["CYRLocSetAkaviriRuin"] = "Akaviri Ruin",
     };
 }

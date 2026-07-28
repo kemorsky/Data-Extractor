@@ -3,10 +3,10 @@ import { memo, useMemo, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router";
 import type { LocationData } from "../../../utils/types";
 import LocationCard from "../../components/location-card/location-card";
-import ChevronLeft from "../../../assets/chevron-left.svg";
-import ChevronRight from "../../../assets/chevron-right.svg";
-import ChevronDoubleLeft from "../../../assets/chevron-double-left.svg";
-import ChevronDoubleRight from "../../../assets/chevron-double-right.svg";
+import ChevronLeft from "../../../assets/icons/chevron-left.svg";
+import ChevronRight from "../../../assets/icons/chevron-right.svg";
+import ChevronDoubleLeft from "../../../assets/icons/chevron-double-left.svg";
+import ChevronDoubleRight from "../../../assets/icons/chevron-double-right.svg";
 
 interface LocationTabProps {
     error: Error | null;

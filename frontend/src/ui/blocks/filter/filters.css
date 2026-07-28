@@ -5,6 +5,7 @@
   scrollbar-width: thin;
   height: 100%;
   max-height: calc(100vh - 9rem);
+  font-family: var(--font-primary);
 
   @media (max-width: 1024px) {
     max-height: 100vh;
@@ -53,6 +54,7 @@
 }
 
 .filter__tags-clear-btn {
+  font-family: var(--font-primary);
   border: none;
   background-color: transparent;
   font-size: 0.875rem;
@@ -60,9 +62,15 @@
   font-weight: 600;
   color: rgb(0, 113, 185);
   text-decoration: underline;
+  transition: color 150ms ease-in-out;
+
+  &:hover {
+    color: rgb(1, 139, 224);
+  }
 }
 
 .filter__tags-tag {
+  font-family: var(--font-primary);
   display: flex;
   align-items: center;
   justify-content: center;

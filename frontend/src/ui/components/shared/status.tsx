@@ -18,7 +18,7 @@ function isStatus(value: string): value is keyof typeof statusClasses {
 }
 
 export default function Status({ text }: StatusProps) {
-    return <span className={`status ${isStatus(text) ? statusClasses[text] : "status"}`}>
-        {text}
-    </span>
+    return <div className={`status ${isStatus(text) ? statusClasses[text] : "status"}`}>
+        <span className="status__text">{text}</span>
+    </div>
 }

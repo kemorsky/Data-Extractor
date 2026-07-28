@@ -5,10 +5,10 @@ import CheckboxGroup from "../../components/checkbox-group/checkbox-group";
 import { getUniqueProperties } from "../../../utils/get-unique-properties";
 import type { LocationData, LocationFilters } from "../../../utils/types";
 import { getObjectCount } from "../../../utils/get-object-count";
-import Quest from "../../../assets/Quest-Door.svg"
+import Quest from "../../../assets/location-icons/Quest-Door.svg"
 import { Drawer } from "@base-ui/react";
-import Filter from "../../../assets/filter.svg"
-import X from "../../../assets/cross.svg"
+import Filter from "../../../assets/icons/filter.svg"
+import X from "../../../assets/icons/cross.svg"
 
 interface FilterProps {
     locations: NoInfer<LocationData[]> | undefined
@@ -166,7 +166,7 @@ export default function Filters(props: FilterProps) {
                                     toggleFilter(category, value);
                                 }
                             }}>
-                            {value.toUpperCase()} <img src={X} alt="delete filter icon" width={18} />
+                            {value} <img src={X} alt="delete filter icon" width={18} />
                         </button>
                     ))}
 
@@ -183,10 +183,9 @@ export default function Filters(props: FilterProps) {
             <Drawer.Portal>         
                 {/* <Drawer.Backdrop className={styles.Backdrop} />          */}
                 <Drawer.Viewport className={styles.Viewport}>           
-                    <Drawer.Popup className={styles.Popup}>             
+                    <Drawer.Popup className={styles.Popup}>        
                         <Drawer.Content className={styles.Content}>
                             <Drawer.Close className={styles.ButtonClose}>Close</Drawer.Close>               
-           
                             
                             <section className="quest-checkbox">
                                 <label className="quest-checkbox__option">

@@ -1,25 +1,32 @@
 .location-card {
     max-width: 14rem;
+    /* height: 100%;
+    max-height: 9.647rem; */
     width: 100%;
-    background-color: rgb(85, 85, 85);
+    /* background-color: rgb(85, 85, 85); */
     border-radius: 0.33rem;
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    font-family: var(--font-primary);
+    border: 1px solid transparent;
+    transition: border 200ms ease-in-out;
     
     @media (max-width: 740px) {
         max-width: 12rem;
     }
 
+
     .location-card__image {
         object-fit: fill;
+        filter: blur(0.125rem);
     }
 
     
 
-    .location-card__content {
+    /* .location-card__content {
         padding: 0.25rem 0.5rem 0.5rem 0.5rem;
-    }
+    } */
 
     .location-card__labels {
         display: flex;
@@ -64,17 +71,19 @@
     }
 
     .location-card__info {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0.25rem;
         display: flex;
         flex-direction: column;
         place-items: start;
         gap: 0.125rem;
-        
 
         .location-card__info__name {
             display: flex;
             align-items: center;
             gap: 0.25rem;
-            text-align: center;
+            text-align: left;
             font-weight: 700;
             font-size: 0.85rem;
         }
@@ -87,4 +96,9 @@
             font-size: 0.75rem;
         }
     }
+}
+
+.location-card:hover {
+    
+    border: 1px solid green;
 }

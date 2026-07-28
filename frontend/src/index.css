@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --text: #f2f0eb;
   --text-h: #f3f4f6;
@@ -11,9 +13,16 @@
   --shadow:
     rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+   /* Fonts */
+  
+    --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  --font-primary: 'Raleway', sans-serif;
+
+  /* Transitions */
+
+  --button-colors: background-color 150ms ease-in-out;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -91,3 +100,4 @@ code,
   font-family: "Balgruf";
   src: url("./assets/fonts/Webfonts/Balgruf.woff2") format("woff2");
 }
+

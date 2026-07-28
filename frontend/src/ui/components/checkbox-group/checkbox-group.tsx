@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./checkbox-group.css";
 import Icons from "../shared/icons";
-import ChevronUp from "../../../assets/chevron-up.svg";
-import ChevronDown from "../../../assets/chevron-down.svg";
+import ChevronUp from "../../../assets/icons/chevron-up.svg";
+import ChevronDown from "../../../assets/icons/chevron-down.svg";
 
 type CheckboxProps = {
   title: string,

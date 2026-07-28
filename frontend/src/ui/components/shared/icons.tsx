@@ -1,6 +1,6 @@
 import "./shared.css";
 
-const icons = import.meta.glob("../../../assets/*.svg", {
+const icons = import.meta.glob("../../../assets/location-icons/*.svg", {
     eager: true,
     import: "default",
 }) as Record<string, string>;
