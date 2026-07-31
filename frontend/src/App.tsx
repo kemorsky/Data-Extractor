@@ -73,7 +73,7 @@ export default function App() {
             <Tabs.Indicator className={styles.Indicator} />
           </Tabs.List>
           <div className={styles.PanelViewport}>
-            <Tabs.Panel className={styles.Panel} value="locations">
+            <Tabs.Panel key={"locations"} className={styles.Panel} value="locations">
               <LocationsTab 
                 error={error}
                 isLoading={isLoading} 
@@ -84,7 +84,7 @@ export default function App() {
               />
               
             </Tabs.Panel>
-            <Tabs.Panel className={styles.Panel} value="graphs">
+            <Tabs.Panel key={"graphs"} className={styles.Panel} value="graphs">
               <StatusGraph locations={locations} />
             </Tabs.Panel>
           </div>

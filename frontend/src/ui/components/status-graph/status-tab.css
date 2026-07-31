@@ -1,0 +1,32 @@
+.graphTab {
+    max-width: 45rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: auto;
+    gap: 0.5rem;
+}
+
+.graphTab__province-graph {
+    max-width: 45rem;
+    width: 100%;
+}
+
+.graphTab__county-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    place-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: 740px) {
+        grid-template-columns: auto;
+    }
+}
+
+.graphTab__county-graph {
+    width: 300px;
+    grid-column: auto;
+    grid-row: auto;
+}
