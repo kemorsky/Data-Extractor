@@ -1,10 +1,10 @@
 import './location-card.css'
 import type { LocationData } from '../../../utils/types';
-import ayleidImage from "../../../assets/location-background-images/Ayleid Ruin.webp"
+// import ayleidImage from "../../../assets/location-background-images/Ayleid Ruin.webp"
 import Quest from "../../../assets/location-icons/Quest-Door.svg"
 import Status from "../shared/status";
 import Icons from "../shared/icons";
-// import LocationCardBackground from "../shared/location-card-background";
+import LocationCardBackground from "../shared/location-card-background";
 
 interface LocationCardProps {
     location: LocationData;
@@ -24,8 +24,8 @@ export default function LocationCard(props: LocationCardProps) {
                 }
             }}
         >
-            {/* <LocationCardBackground width="100%" height="100%" text={props.location.locationType} showText={false} /> */}
-            <img className="location-card__image" src={ayleidImage} width="100%" />
+            <LocationCardBackground width="100%" height="100%" text={props.location.locationType} showText={false} />
+            {/* <img className="location-card__image" src={ayleidImage} width="100%" height="100%"/> */}
             <section className="location-card__labels">
                 <section className="location-card__labels-icons">
                     {/* <Icons showText={false} text={props.location.locationType} /> */}

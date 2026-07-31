@@ -69,7 +69,7 @@ export default function LocationDrawer() {
                             <article className={styles.Title}>
                                 <div className={styles.Status}>
                                     {locationByName?.status !== "None" &&
-                                        <Status text={locationByName?.status ?? ""} />
+                                        <Status size="md" text={locationByName?.status ?? ""} />
                                     }
                                 </div>
                                 <h3 className={styles.TitleText}>{locationByName?.name}</h3>

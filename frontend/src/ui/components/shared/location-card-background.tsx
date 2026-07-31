@@ -1,4 +1,5 @@
 import "./shared.css";
+import DefaultImage from "../../../assets/location-background-images/Default.jpg"
 
 const images = import.meta.glob("../../../assets/location-background-images/*.{svg,png,jpg,webp}", {
     eager: true,
@@ -26,14 +27,21 @@ export default function LocationCardBackground({ text, showText = true, width = 
     return (
         <>
             
-            {src && 
+            {src ? (
                 <img className="location-card__image" 
                     width={width} 
                     height={height} 
                     src={src} 
                     alt={`${text} image`} 
                 />
-            }
+            ) : (
+                <img className="location-card__image" 
+                    width={width} 
+                    height={height} 
+                    src={DefaultImage} 
+                    alt={`${text} image`} 
+                />
+            )}
             {showText && text} 
         </>
     )

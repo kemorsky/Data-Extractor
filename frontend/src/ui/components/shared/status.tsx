@@ -9,16 +9,35 @@ const statusClasses = {
     Redo: "status__redo",
 } as const;
 
+const sizeClasses = {
+  sm: "status--sm",
+  md: "status--md",
+  lg: "status--lg",
+} as const;
+
 interface StatusProps {
     text: string;
+    size?: keyof typeof sizeClasses;
 };
 
 function isStatus(value: string): value is keyof typeof statusClasses {
     return value in statusClasses;
 }
 
-export default function Status({ text }: StatusProps) {
-    return <div className={`status ${isStatus(text) ? statusClasses[text] : "status"}`}>
+export default function Status({ text, size = "sm" }: StatusProps) {
+    // <div
+    //   className={[
+    //     "status",
+    //     sizeClasses[size],
+    //     isStatus(text) ? statusClasses[text] : "",
+    //   ].join(" ")}
+    // ></div>
+
+    return <div className={[
+        "status",
+        sizeClasses[size],
+        isStatus(text) ? statusClasses[text] : "",
+      ].join(" ")}>
         <span className="status__text">{text}</span>
     </div>
 }

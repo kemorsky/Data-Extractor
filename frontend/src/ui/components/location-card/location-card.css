@@ -1,7 +1,6 @@
 .location-card {
-    max-width: 14rem;
-    /* height: 100%;
-    max-height: 9.647rem; */
+    max-width: 15rem;
+    
     width: 100%;
     /* background-color: rgb(85, 85, 85); */
     border-radius: 0.33rem;
@@ -16,10 +15,10 @@
     }
 
 
-    .location-card__image {
+    /* .location-card__image {
         object-fit: fill;
-        filter: blur(0.125rem);
-    }
+        filter: blur(1px);
+    } */
 
     
 

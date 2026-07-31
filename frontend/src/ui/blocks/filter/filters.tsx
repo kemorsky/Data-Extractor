@@ -182,9 +182,11 @@ export default function Filters(props: FilterProps) {
             {/* <Drawer.Trigger className={styles.Button}>Open drawer</Drawer.Trigger>        */}
             <Drawer.Portal>         
                 {/* <Drawer.Backdrop className={styles.Backdrop} />          */}
-                <Drawer.Viewport className={styles.Viewport}>           
-                    <Drawer.Popup className={styles.Popup}>        
+                <Drawer.Viewport className={styles.Viewport}>          
+                    <Drawer.Popup className={styles.Popup}>       
+                        
                         <Drawer.Content className={styles.Content}>
+
                             <Drawer.Close className={styles.ButtonClose}>Close</Drawer.Close>               
                             
                             <section className="quest-checkbox">
