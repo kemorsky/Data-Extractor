@@ -25,14 +25,6 @@ function isStatus(value: string): value is keyof typeof statusClasses {
 }
 
 export default function Status({ text, size = "sm" }: StatusProps) {
-    // <div
-    //   className={[
-    //     "status",
-    //     sizeClasses[size],
-    //     isStatus(text) ? statusClasses[text] : "",
-    //   ].join(" ")}
-    // ></div>
-
     return <div className={[
         "status",
         sizeClasses[size],
