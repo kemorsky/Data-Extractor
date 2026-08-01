@@ -2,7 +2,7 @@ import './App.css'
 import styles from './index.module.css';
 import "./assets/fonts/Webfonts/Balgruf.woff";
 import { useMemo } from 'react'
-import StatusGraph from './ui/components/status-graph/status-graph'
+import StatusTab from './ui/components/status-graph/status-tab'
 import type { LocationFilters } from './utils/types'
 import LocationDrawer from './ui/components/drawer/drawer'
 import Filters from './ui/blocks/filter/filters';
@@ -85,7 +85,7 @@ export default function App() {
               
             </Tabs.Panel>
             <Tabs.Panel key={"graphs"} className={styles.Panel} value="graphs">
-              <StatusGraph locations={locations} />
+              <StatusTab locations={locations} />
             </Tabs.Panel>
           </div>
         </Tabs.Root>        

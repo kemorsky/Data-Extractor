@@ -4,21 +4,24 @@
     display: grid;
     grid-template-columns: auto;
     grid-auto-rows: auto;
-    gap: 0.5rem;
+    gap: 2rem;
 }
 
 .graphTab__province-graph {
     max-width: 45rem;
     width: 100%;
+
 }
 
 .graphTab__county-container {
     display: grid;
+    /* background-color: white; */
     grid-template-columns: auto auto;
     grid-auto-rows: auto;
     place-items: center;
-    gap: 1rem;
+    gap: 3px;
     margin-bottom: 2rem;
+    /* border: 3px solid white; */
 
     @media (max-width: 740px) {
         grid-template-columns: auto;
@@ -26,7 +29,23 @@
 }
 
 .graphTab__county-graph {
-    width: 300px;
+    width: 100%;
+    /* max-width: 350px; */
+    max-height: 400px;
+    height: 100%;
     grid-column: auto;
     grid-row: auto;
+
+    border: 3px solid white;
+}
+
+.graphTab__county-graph__doughnut {
+    margin: auto;
+    padding: 1rem;
+}
+
+@media (max-width: 740px) {
+    .graphTab__province-graph {
+        display: none;
+    }  
 }

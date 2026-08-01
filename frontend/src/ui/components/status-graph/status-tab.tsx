@@ -7,12 +7,13 @@ import { Bar, Doughnut } from 'react-chartjs-2';
 import { getUniqueProperties } from '../../../utils/get-unique-properties';
 import type { LocationData } from '../../../utils/types';
 
+ChartJS.defaults.color = '#cac9c9';
 ChartJS.register(CategoryScale,
   LinearScale,
   BarElement,
   ArcElement, Title, Tooltip, Legend);
 
-interface StatusGraphProps {
+interface StatusTabProps {
   locations: LocationData[] | undefined;
 }
 
@@ -22,7 +23,7 @@ interface CountyStatusGraphProps {
   statusCounts: Record<string, number>;
 }
 
-export default function StatusGraph(props: StatusGraphProps) {
+export default function StatusTab(props: StatusTabProps) {
   const { locations } = props;
   
   const parentLocations = [
@@ -96,6 +97,9 @@ export default function StatusGraph(props: StatusGraphProps) {
         title: {
             display: true,
             text: 'LD completion status by county',
+            font: {
+              size: 16,
+            },
         },
     },
     scales: {
@@ -131,23 +135,35 @@ export default function StatusGraph(props: StatusGraphProps) {
       plugins: {
           legend: {
               position: 'top' as const,
+              labels: {
+                    // This more specific font property overrides the global property
+                    font: {
+                        size: 14,
+                    }
+                }
           },
           title: {
               display: true,
               text: `LD completion status for ${county}`,
+              font: {
+                size: 16,
+              },
           },
       },
     };
 
     return <div className="graphTab__county-graph">
-              <Doughnut data={data} options={countyOptions} />
+              <Doughnut className="graphTab__county-graph__doughnut" data={data} options={countyOptions} />
             </div>;
   }
 
     return (
         <div className="graphTab">
-          <Bar className="graphTab__province-graph" data={data} options={options} />
+          <div className="graphTab__province-graph" >
 
+          
+            <Bar data={data} options={options} />
+          </div>
           <section className="graphTab__county-container">
           {/* Individual county graphs */}
             {parentLocations.map(county => (
