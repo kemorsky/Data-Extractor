@@ -9,7 +9,6 @@ import { locationByNameQueryOptions, locationsQueryOptions } from "../../../quer
 import type { LocationData } from '../../../utils/types';
 import X from "../../../assets/icons/cross.svg"
 import parse from 'html-react-parser';
-import Test from '../../../assets/location-background-images/Ayleid Ruin.jpg';
 import DrawerCityMap from '../shared/drawer-city-map';
 
 export default function LocationDrawer() {
