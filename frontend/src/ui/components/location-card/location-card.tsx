@@ -1,6 +1,5 @@
 import './location-card.css'
 import type { LocationData } from '../../../utils/types';
-// import ayleidImage from "../../../assets/location-background-images/Ayleid Ruin.webp"
 import Quest from "../../../assets/location-icons/Quest-Door.svg"
 import Status from "../shared/status";
 import Icons from "../shared/icons";

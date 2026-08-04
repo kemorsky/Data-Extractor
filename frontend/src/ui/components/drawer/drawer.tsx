@@ -9,6 +9,8 @@ import { locationByNameQueryOptions, locationsQueryOptions } from "../../../quer
 import type { LocationData } from '../../../utils/types';
 import X from "../../../assets/icons/cross.svg"
 import parse from 'html-react-parser';
+import Test from '../../../assets/location-background-images/Ayleid Ruin.jpg';
+import DrawerCityMap from '../shared/drawer-city-map';
 
 export default function LocationDrawer() {
     const navigate = useNavigate();
@@ -43,6 +45,20 @@ export default function LocationDrawer() {
     }, [locations]);
     
     const children = childrenByParent.get(locationByName?.parentLocation ?? "") ?? [];
+
+    const parentLocationsCities = [
+        ...new Set(
+            (locations ?? [])
+                .filter(location => 
+                    location.keywords.includes("LocTypeCity")
+                )
+                .map(location => location.name)
+        ),
+    ].sort();
+
+    const shouldShowMap = parentLocationsCities.includes(locationByName?.parentLocation ?? "");
+
+    console.log(shouldShowMap);
 
     const handleClick = () => {
         console.log(`Parent Location: ${locationByName?.parentLocation}`, children);
@@ -79,6 +95,7 @@ export default function LocationDrawer() {
                                     <img src={X} width={22} height={22} />
                                 </Drawer.Close>               
                             </div>
+
                             <ul className={styles.List}>
                                 <li onClick={() => {handleClick();}} className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Location:</span> 
@@ -86,6 +103,13 @@ export default function LocationDrawer() {
                                         {locationByName?.parentLocation}
                                         {locationByName?.region !== "None" && `, ${locationByName?.region}`}
                                     </span>
+
+                                    {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
+                                        <>
+                                            <button className={styles.ShowMapButton} popoverTarget="image-modal">Show map</button>
+                                            <DrawerCityMap text={locationByName?.parentLocation ?? ""} showText={false} />
+                                        </>
+                                    }
                                 </li>
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Type:</span> 

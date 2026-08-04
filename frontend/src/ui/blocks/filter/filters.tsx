@@ -9,6 +9,7 @@ import Quest from "../../../assets/location-icons/Quest-Door.svg"
 import { Drawer } from "@base-ui/react";
 import Filter from "../../../assets/icons/filter.svg"
 import X from "../../../assets/icons/cross.svg"
+import HideFilters from '../../../assets/icons/hide-filters.svg';
 
 interface FilterProps {
     locations: NoInfer<LocationData[]> | undefined
@@ -155,6 +156,9 @@ export default function Filters(props: FilterProps) {
                     <img src={Filter} alt="filter button icon" width={21} />
                     Filter
                 </Drawer.Trigger>
+                {allFilters.length > 0 && 
+                    <div className="filter__tags-divider" />
+                }
                 <section className="filter__tags-container">
                     {allFilters.map(({category, value}) => (
                         <button 
@@ -186,8 +190,11 @@ export default function Filters(props: FilterProps) {
                     <Drawer.Popup className={styles.Popup}>       
                         
                         <Drawer.Content className={styles.Content}>
-
-                            <Drawer.Close className={styles.ButtonClose}>Close</Drawer.Close>               
+                            <section className={styles.ButtonCloseContainer}>
+                                <Drawer.Close className={styles.ButtonClose}>
+                                    <img src={HideFilters} width={32}/>
+                                </Drawer.Close> 
+                            </section>             
                             
                             <section className="quest-checkbox">
                                 <label className="quest-checkbox__option">

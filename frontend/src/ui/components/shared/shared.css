@@ -185,8 +185,39 @@
    
 }
 
-.location-card__image {
+.image-modal__image {
     object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
     
     /* filter: blur(1px); */
 }
+
+dialog {
+    --bleed: 1rem;
+    max-width: calc(30rem - var(--bleed));
+    width: calc(100% - var(--bleed));
+    max-height: 40rem;
+    position: relative;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0;
+}
+
+dialog::backdrop {
+    background-color: black;
+    opacity: 0.75;
+}
+
+dialog > button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/* @media (max-width: 444px) {
+    .location-card__image {
+        display: none;
+    }
+} */

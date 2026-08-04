@@ -23,11 +23,6 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
     const navigate = useNavigate();
     const location = useLocation();
 
-    // const filteredResults = filterResults?.filter(location => 
-    //     location.name !== "" &&
-    //     location.name !== "None"
-    // );
-
     const page = Number(searchParams.get("page") ?? "1");
 
     const setPage = useCallback((newPage: number) => {
