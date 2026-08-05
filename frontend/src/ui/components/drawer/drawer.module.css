@@ -120,7 +120,7 @@
   padding-right: calc(1.5rem + var(--bleed));
   margin-right: calc(-1 * var(--bleed));
   border-left: 1px solid white;
-  background-color: oklch(39.585% 0.04826 19.387);
+  background-color: var(--bg-dark);
   color: white;
   outline: 0;
   box-shadow: 0.25rem 0.25rem 0 rgb(0 0 0 / 12%);
@@ -157,9 +157,26 @@
   gap: 1.5rem;
 }
 
+.ParentLocationChildren {
+  position: absolute;
+  /* right: -2.5rem; */
+  right: -15rem;
+  top: 2.5rem;
+  max-height: 20rem;
+  background-color: var(--bg-dark-80);
+  border: 1px solid var(--border);
+  border-radius: 0.33rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  font-size: 0.825rem;
+  z-index: 50;
+  overflow: auto;
+}
+
 .List {
   list-style: none;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
@@ -172,6 +189,7 @@
   align-items: start;
   gap: 0.75rem;
   position: relative;
+  color: var(--text-muted);
 }
 
 .ListKeywords {
@@ -185,7 +203,6 @@
 
 .ListKeywordsItem {
   margin-bottom: 0.33rem;
-  color: var(--text-muted);
 }
 
 .ListItemText {
@@ -236,7 +253,8 @@
 
 .NotesTitle {
   text-align: center;
-  color: #2B251F;
+  color: white;
+  font-weight: 600;
 }
 
 .NotesSeparator {
@@ -249,6 +267,7 @@
   color: #2b221e;
   padding: 1rem;
   border: 4px solid #5c4033;
+  border-radius: 0.33rem;
   box-shadow: inset 0 0 40px rgba(92, 64, 51, 0.2), 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 

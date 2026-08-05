@@ -98,10 +98,16 @@ export default function LocationDrawer() {
                             <ul className={styles.List}>
                                 <li onClick={() => {handleClick();}} className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Location:</span> 
-                                    <span className={styles.ListItemText}>
-                                        {locationByName?.parentLocation}
+                                    <span className={styles.ListItemText} style={{cursor: "pointer", position: "relative"}}>
+                                        {locationByName?.parentLocation} *
                                         {locationByName?.region !== "None" && `, ${locationByName?.region}`}
                                     </span>
+                                    
+                                    <section className={styles.ParentLocationChildren}>
+                                        {children.map((child) => (
+                                            <span key={child.name}>{child.name}</span>
+                                        ))}
+                                    </section>
 
                                     {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
                                         <>
