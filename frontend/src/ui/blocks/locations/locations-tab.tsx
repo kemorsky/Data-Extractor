@@ -78,6 +78,8 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         );
     }, [filterResults, page]);
 
+    console.log(totalPages);
+
     return (
         <div className="hero">
             
@@ -112,8 +114,24 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                     <img src={ChevronLeft} width={20} height={20} />
                 </button>
 
-                <span className="pagination__pages-text">
+                {/* <span className="pagination__pages-text">
                     Page {page} of {totalPages}
+                </span> */}
+
+                <select
+                    className="pagination__select"
+                    value={page}
+                    onChange={(e) => setPage(Number(e.target.value))}
+                >
+                    {[...Array(totalPages)].map((_, index) => (
+                        <option key={index + 1} value={index + 1}>
+                            {index + 1}
+                        </option>
+                    ))}
+                </select>
+
+                <span className="pagination__pages-text">
+                    of {totalPages}
                 </span>
 
                 <button

@@ -2,19 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-  --text: #f2f0eb;
-  --text-h: #f3f4f6;
-  --bg: #1c1c1c;
+  /* --bg: #1c1c1c; */
   --border: #4a4e51;
   --code-bg: #1f2028;
-  --accent: #c084fc;
-  --accent-bg: rgba(192, 132, 252, 0.15);
-  --accent-border: rgba(192, 132, 252, 0.5);
-  --social-bg: rgba(47, 48, 58, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
+  --bg-dark: hsl(322, 14%, 15%);
+  --bg-dark-80: hsla(322, 20%, 15%);
+  --bg: #94948D;
+  --bg-light: #F7F6F4;
+  --text: oklch(0.15 0 278);
+  --text-muted: oklch(0.4 0 278);
+  --highlight: oklch(1 0 278);
+  --border-muted: oklch(0.7 0 278);
+
   /* Text */
+  --text: #222222;
   --text-muted: #d3d3d3;
 
   /* Fonts */
@@ -53,10 +57,12 @@
   flex-direction: column;
   box-sizing: border-box;
   isolation: isolate;
+  background-color: var(--bg);
 }
 
 body {
   margin: 0;
+  background-color: var(--bg);
 }
 
 button {

@@ -1,4 +1,4 @@
-.Button, .ButtonClose {
+.Button {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -73,6 +73,17 @@
   top: -0.5rem;
   right: -0.5rem;
   width: 2.25rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  height: 2rem;
+  padding: 0 0.75rem;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 0.33rem;
+  transition: var(--button-colors);
 }
 
 .Backdrop {
@@ -126,7 +137,7 @@
 
 .Popup {
   --bleed: 3rem;
-  background-color: oklch(39.585% 0.04826 19.387);
+  background-color: var(--bg-dark);
   color: white;
   box-shadow: none;
   box-sizing: border-box;
@@ -178,7 +189,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
 }
 

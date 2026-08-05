@@ -91,8 +91,9 @@
 
 .quest-checkbox {
   width: 12.725rem;
-  align-self: center;
+  align-self: flex-start;
   border-radius: 0.5rem;
+  padding-left: 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
