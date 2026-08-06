@@ -78,8 +78,6 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         );
     }, [filterResults, page]);
 
-    console.log(totalPages);
-
     return (
         <div className="hero">
             
@@ -113,10 +111,6 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                 >
                     <img src={ChevronLeft} width={20} height={20} />
                 </button>
-
-                {/* <span className="pagination__pages-text">
-                    Page {page} of {totalPages}
-                </span> */}
 
                 <select
                     className="pagination__select"

@@ -3,14 +3,15 @@
 
 :root {
   /* --bg: #1c1c1c; */
-  --border: #4a4e51;
+  --border: #4a4e51; /* hsl(45, 40%, 50%) */
   --code-bg: #1f2028;
   --shadow:
     rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
   --bg-dark: hsl(322, 14%, 15%);
   --bg-dark-80: hsla(322, 20%, 15%);
-  --bg: #94948D;
+  --bg: hsl(0, 0%, 90%);
+  /* --bg: hsl(220, 15%, 85%); */
   --bg-light: #F7F6F4;
   --text: oklch(0.15 0 278);
   --text-muted: oklch(0.4 0 278);
@@ -104,9 +105,3 @@ code,
   border-radius: 4px;
   color: var(--text-h);
 }
-
-@font-face {
-  font-family: "Balgruf";
-  src: url("./assets/fonts/Webfonts/Balgruf.woff2") format("woff2");
-}
-

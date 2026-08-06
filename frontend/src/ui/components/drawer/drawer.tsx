@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router'
 import { Drawer } from "@base-ui/react/drawer";
 import styles from './drawer.module.css';
@@ -22,6 +22,8 @@ export default function LocationDrawer() {
         ...locationByNameQueryOptions(name ?? ""),
         enabled: !!name,
     });
+
+    const [ showChildren, setShowChildren ] = useState(false);
 
     const rawNotes = locationByName?.notes && locationByName?.notes !== "None" 
         ? locationByName?.notes
@@ -55,17 +57,15 @@ export default function LocationDrawer() {
         ),
     ].sort();
 
-    const shouldShowMap = parentLocationsCities.includes(locationByName?.parentLocation ?? "");
-
-    console.log(shouldShowMap);
-
     const handleClick = () => {
         console.log(`Parent Location: ${locationByName?.parentLocation}`, children);
+        setShowChildren(!showChildren)
     };
 
     const backgroundLocation = location.state?.backgroundLocation;
 
     const handleCloseDrawer = () => {
+        setShowChildren(false);
         navigate(backgroundLocation ?? "/");
     };
     
@@ -96,14 +96,18 @@ export default function LocationDrawer() {
                             </div>
 
                             <ul className={styles.List}>
-                                <li onClick={() => {handleClick();}} className={styles.ListItem}>
+                                <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Location:</span> 
-                                    <span className={styles.ListItemText} style={{cursor: "pointer", position: "relative"}}>
+                                    <span 
+                                        className={styles.ListItemText} 
+                                        onClick={() => { handleClick() }} 
+                                        style={{cursor: "pointer", position: "relative" }}
+                                    >
                                         {locationByName?.parentLocation} *
                                         {locationByName?.region !== "None" && `, ${locationByName?.region}`}
                                     </span>
                                     
-                                    <section className={styles.ParentLocationChildren}>
+                                    <section className={styles.ParentLocationChildren} style={{display: showChildren ? "flex" : "none"}}>
                                         {children.map((child) => (
                                             <span key={child.name}>{child.name}</span>
                                         ))}

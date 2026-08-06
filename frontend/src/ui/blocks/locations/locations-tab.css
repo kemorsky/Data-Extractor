@@ -48,6 +48,11 @@
     border: 1px solid var(--border);
   }
 
+  .pagination__select:hover  {
+    background-color: #52525E;
+    transition: var(--button-colors);
+  }
+
   .pagination__first-btn, .pagination__previous-btn, .pagination__next-btn, .pagination__last-btn {
     padding: 0.5rem;
     height: 2rem;

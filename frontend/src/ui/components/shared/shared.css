@@ -214,7 +214,63 @@ dialog > button {
     position: absolute;
     top: 1rem;
     right: 1rem;
-}
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.33rem;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 0.33rem;
+    background-color: oklch(14.5% 0 0deg);
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+    color: white;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: var(--button-colors);
+
+    @media (hover: hover) {
+        &:hover:not([data-disabled]) {
+        background-color: oklch(97% 0 0deg);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: oklch(26.9% 0 0deg);
+        }
+        }
+    }
+
+    &:active:not([data-disabled]) {
+        background-color: oklch(92.2% 0 0deg);
+
+        @media (prefers-color-scheme: dark) {
+        background-color: oklch(37.1% 0 0deg);
+        }
+    }
+
+    &[data-disabled] {
+        color: oklch(55.6% 0 0deg);
+        border-color: oklch(55.6% 0 0deg);
+
+        @media (prefers-color-scheme: dark) {
+        color: oklch(70.8% 0 0deg);
+        border-color: oklch(70.8% 0 0deg);
+        }
+    }
+
+    &:focus-visible {
+        outline: 2px solid oklch(14.5% 0 0deg);
+        outline-offset: -1px;
+
+        @media (prefers-color-scheme: dark) {
+        outline-color: white;
+        }
+    }
+    }
+
 
 /* @media (max-width: 444px) {
     .location-card__image {

@@ -1,4 +1,5 @@
 import "./shared.css";
+import X from "../../../assets/icons/cross.svg"
 
 const images = import.meta.glob("../../../assets/map-cities/*.{svg,png,jpg,webp}", {
     eager: true,
@@ -24,7 +25,9 @@ export default function DrawerCityMap({ text, showText = true }: DrawerCityMapPr
 
     return (
         <dialog id="image-modal" popover={""}>
-            <button popoverTarget="image-modal">Close</button>
+            <button popoverTarget="image-modal">
+                <img src={X} width={24} />
+            </button>
             <img className="image-modal__image" 
                 src={src} 
                 alt={`${text} image`} 

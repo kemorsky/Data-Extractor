@@ -9,8 +9,8 @@
   display: flex;
   position: relative;
   z-index: 1;
-  gap: 0.33rem;
   margin-bottom: 0.33rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .Tab {
@@ -31,21 +31,25 @@
   user-select: none;
   white-space: nowrap;
   word-break: keep-all;
-  padding-inline: 0.5rem;
+  padding-inline: 0.75rem;
   padding-block: 0;
   height: calc(2rem + 1px);
   cursor: pointer;
+  border-radius: 0.33rem;
+  transition: var(--button-colors);
 
 
   @media (hover: hover) {
     &:hover {
       color: white;
-
+      background-color: var(--bg-dark-80);
     }
   }
 
   &[data-active] {
-    color: white;
+    color: yellow;
+    border-bottom: 1px solid yellow;
+    border-radius: 0.33rem 0.33rem 0 0;
   }
 
   &:focus-visible {
@@ -66,10 +70,8 @@
   transition-property: translate, width;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
-  border-top: 1px solid white;
-  border-bottom: 1px solid gray;
-  border-radius: 0.33rem;
-  border-inline: 1px solid white;
+  border-radius: 0.33rem 0.33rem 0 0;
+  
   background-color: var(--bg-dark);
   
   
