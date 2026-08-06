@@ -20,8 +20,7 @@ export default function App() {
   const location = useLocation();
   console.log(_);
 
-  const listLocation =
-    location.state?.backgroundLocation ?? location;
+  const listLocation = location.state?.backgroundLocation ?? location;
 
   const searchParams = useMemo(() => 
     new URLSearchParams(listLocation.search),
