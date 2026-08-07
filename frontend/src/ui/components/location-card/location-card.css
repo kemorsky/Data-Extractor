@@ -88,3 +88,19 @@ p {
         font-size: 0.8rem;
     }
 }
+
+@media (max-width: 444px) {
+    .location-card {
+        min-height: 7.5rem;
+        max-width: 10rem;
+    }
+
+    .location-card__info__name {
+        font-size: 0.75rem;
+    }
+
+    .location-card__labels-status {
+        left: 0.5rem;
+        right: auto;
+    }
+}
