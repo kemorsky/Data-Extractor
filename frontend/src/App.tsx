@@ -76,7 +76,7 @@ export default function App() {
               <LocationsTab 
                 error={error}
                 isLoading={isLoading} 
-                locations={locations} 
+                // locations={locations} 
                 filterResults={filterResults} 
                 searchParams={searchParams}
                 setSearchParams={setSearchParams}
