@@ -1,5 +1,5 @@
 import "./locations-tab.css";
-import { memo, useMemo, useCallback } from "react";
+import { memo, useMemo, useCallback, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import type { LocationData } from "../../../utils/types";
 import LocationCard from "../../components/location-card/location-card";
@@ -11,14 +11,15 @@ import ChevronDoubleRight from "../../../assets/icons/chevron-double-right.svg";
 interface LocationTabProps {
     error: Error | null;
     isLoading: boolean;
-    locations: LocationData[] | undefined;
+    // locations: LocationData[] | undefined;
     filterResults: LocationData[] | undefined;
     searchParams: URLSearchParams;
     setSearchParams: (params: URLSearchParams) => void
 }
 
 export const LocationsTab = memo(function LocationsTab (props: LocationTabProps) {
-    const { isLoading, locations, filterResults, searchParams, error, setSearchParams } = props;
+    const { isLoading, filterResults, searchParams, error, setSearchParams } = props;
+    const [ isTable, setIsTable ] = useState(false);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -50,21 +51,21 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         });
     };
 
-    const childrenByParent = useMemo(() => {
-        const map = new Map<string, LocationData[]>();
+    // const childrenByParent = useMemo(() => {
+    //     const map = new Map<string, LocationData[]>();
     
-        for (const loc of locations ?? []) {
-            if (!loc.parentLocation) continue;
+    //     for (const loc of locations ?? []) {
+    //         if (!loc.parentLocation) continue;
 
-            if (!map.has(loc.parentLocation)) {
-                map.set(loc.parentLocation, []);
-            }
+    //         if (!map.has(loc.parentLocation)) {
+    //             map.set(loc.parentLocation, []);
+    //         }
 
-            map.get(loc.parentLocation)!.push(loc);
-        };
+    //         map.get(loc.parentLocation)!.push(loc);
+    //     };
 
-        return map;
-    }, [locations]);
+    //     return map;
+    // }, [locations]);
 
     const pageSize = 30;
     const totalPages = Math.ceil(
@@ -84,13 +85,30 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             {isLoading && <h2>Loading data...</h2>}
             {error && <h2>{error.message}</h2>}
             
-            <section className="location-card__container">
+            <button onClick={() => setIsTable(false)}>Cards</button>
+            <button onClick={() => setIsTable(true)}>Table</button>
+            
+            <section className={`${isTable ? "location-card__table-container" : "location-card__cards-container"}`}>
+
+                {isTable && 
+                    <div className="location-card__table-container__header">
+                        <div className="location-card__table-container__header-row">
+                            <span className="location-card__table-container__header-row__cell">Type</span>
+                            <span className="location-card__table-container__header-row__cell">Name</span>
+                            <span className="location-card__table-container__header-row__cell">Location</span>
+                            <span className="location-card__table-container__header-row__cell">Status</span>
+                            <span className="location-card__table-container__header-row__cell">Has Quest</span>
+                        </div>
+                    </div>
+                }
+
                 {pageResults?.map((location) => (
                     <LocationCard 
                         key={location.id} 
                         location={location}
-                        childrenByParent={childrenByParent}
+                        // childrenByParent={childrenByParent}
                         handleClickName={handleClickName}
+                        isTable={isTable}
                     />
                 ))}
             </section>

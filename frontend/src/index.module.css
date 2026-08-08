@@ -1,7 +1,7 @@
 .Root {
   box-sizing: border-box;
   width: 100%;
-  max-width: 60rem;
+  max-width: 75rem;
   max-height: 100vh;
 }
 

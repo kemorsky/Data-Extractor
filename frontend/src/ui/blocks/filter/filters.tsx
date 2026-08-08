@@ -149,16 +149,18 @@ export default function Filters(props: FilterProps) {
     };
 
     return (
-        <Drawer.Root swipeDirection="left" modal={false} disablePointerDismissal>
+        <Drawer.Root swipeDirection="left" defaultOpen={true} modal={false} disablePointerDismissal>
             
             <section className="filter__tags">
                 <Drawer.Trigger className={styles.Button}>
                     <img src={Filter} alt="filter button icon" width={21} />
                     Filter
                 </Drawer.Trigger>
+
                 {allFilters.length > 0 && 
                     <div className="filter__tags-divider" />
                 }
+
                 <section className="filter__tags-container">
                     {allFilters.map(({category, value}) => (
                         <button 

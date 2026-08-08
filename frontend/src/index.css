@@ -6,7 +6,7 @@
   --border: #4a4e51; /* hsl(45, 40%, 50%) */
   --code-bg: #1f2028;
   --shadow:
-    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    rgba(206, 199, 199, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
   --bg-dark: hsl(322, 14%, 15%);
   --bg-dark-80: hsla(322, 20%, 15%);
@@ -48,9 +48,9 @@
 }
 
 #root {
-  width: 1200px;
+  width: 1440px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0 6.75rem 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;
