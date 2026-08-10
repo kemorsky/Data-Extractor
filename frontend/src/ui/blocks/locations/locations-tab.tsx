@@ -7,6 +7,8 @@ import ChevronLeft from "../../../assets/icons/chevron-left.svg";
 import ChevronRight from "../../../assets/icons/chevron-right.svg";
 import ChevronDoubleLeft from "../../../assets/icons/chevron-double-left.svg";
 import ChevronDoubleRight from "../../../assets/icons/chevron-double-right.svg";
+import Cards from "../../../assets/icons/cards.svg";
+import Table from "../../../assets/icons/table.svg";
 
 interface LocationTabProps {
     error: Error | null;
@@ -85,8 +87,14 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             {isLoading && <h2>Loading data...</h2>}
             {error && <h2>{error.message}</h2>}
             
-            <button onClick={() => setIsTable(false)}>Cards</button>
-            <button onClick={() => setIsTable(true)}>Table</button>
+            <section className="location-card__container-view">
+                <button className="location-card__container-view__btn" onClick={() => setIsTable(false)}>
+                    <img src={Cards} width={24} alt="Card icon" />
+                </button>
+                <button className="location-card__container-view__btn" onClick={() => setIsTable(true)}>
+                    <img src={Table} width={24} alt="Table Icon"/>
+                </button>
+            </section>
             
             <section className={`${isTable ? "location-card__table-container" : "location-card__cards-container"}`}>
 
@@ -97,6 +105,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             <span className="location-card__table-container__header-row__cell">Name</span>
                             <span className="location-card__table-container__header-row__cell">Location</span>
                             <span className="location-card__table-container__header-row__cell">Status</span>
+                            <span className="location-card__table-container__header-row__cell">Vikunja</span>
                             <span className="location-card__table-container__header-row__cell">Has Quest</span>
                         </div>
                     </div>

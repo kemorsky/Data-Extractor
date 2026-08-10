@@ -65,7 +65,7 @@
         .nav__content.nav__content-open {
             position: absolute;
             top: 4rem;
-            right: 0;
+            right: 0.5rem;
             z-index: 70;
             background-color: #111111;
             border-radius: 0.5rem;

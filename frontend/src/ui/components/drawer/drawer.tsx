@@ -129,13 +129,21 @@ export default function LocationDrawer() {
                                     <span className={styles.ListItemText}>{locationByName?.inhabitants}</span>
                                 </li>
                                 <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Quest Links:</span> 
+                                    <span className={styles.ListItemText}>Quest Link:</span> 
                                     <span className={styles.ListItemText}>
                                         <a target="_blank" style={{fontWeight: 600}} href={locationByName?.relatedQuestUrl}>
                                             {locationByName?.relatedQuestName}
                                         </a>
                                     </span>
                                 </li>
+                                {locationByName?.vikunjaLink !== "" && 
+                                    <li className={styles.ListItem}>
+                                        <span className={styles.ListItemText}>Vikunja Link:</span>
+                                        <span className={styles.ListItemText}>
+                                            <a target="_blank" href={locationByName?.vikunjaLink}>{locationByName?.vikunjaLink}</a>
+                                        </span>
+                                    </li>
+                                }
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Keywords: </span>
                                     <ul className={styles.ListKeywords}>
@@ -145,11 +153,6 @@ export default function LocationDrawer() {
                                             </li>))}
                                     </ul>
                                 </li>
-                                {/* <li className="location-header__list-item">
-                                    Vikunja Links: <strong>
-                                        <a target="_blank" href={location.vikunjaLink[0]}>{location.vikunjaLink[0]}</a>
-                                        </strong>
-                                </li> */}
                             </ul>
                             <div className={styles.NotesContainer}>
                                 <section className={styles.Notes}>

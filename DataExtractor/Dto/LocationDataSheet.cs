@@ -16,6 +16,7 @@ public class LocationDataSheet
     public string RelatedQuestUrl { get; set; } = string.Empty;
     public bool HasQuest { get; set; } = false;
     public string Status { get; set; } = string.Empty;
+    public string VikunjaLink { get; set; } = string.Empty;
     public string Notes { get; set; } = string.Empty;
     public string Image { get; set; } = string.Empty;
 }

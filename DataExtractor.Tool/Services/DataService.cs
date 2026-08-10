@@ -76,6 +76,7 @@ public class DataService : IDataService
         var vikunjaApiUrl = Environment.GetEnvironmentVariable("VIKUNJA_API_URL");
         var vikunjaToken = Environment.GetEnvironmentVariable("VIKUNJA_TOKEN");
         var vikunjaFrontendUrl = Environment.GetEnvironmentVariable("VIKUNJA_FRONTEND_URL");
+        var vikunjaProjectUrl = Environment.GetEnvironmentVariable("VIKUNJA_PROJECT_URL");
 
         var vikunjaLookup = new Dictionary<string, (VikunjaTask Task, string Url)>(StringComparer.OrdinalIgnoreCase);
 
@@ -105,6 +106,7 @@ public class DataService : IDataService
 
                     var tasks = responseData?.Items ?? new List<VikunjaTask>();
 
+                    Console.Write(tasks);
                     Console.WriteLine($"[Vikunja Diagnostics] Extracted {tasks.Count} inner tasks from API payload.");
 
                     vikunjaLookup = tasks
@@ -230,6 +232,12 @@ public class DataService : IDataService
 
             string rawDesc = vikunjaMatch.Task?.Description ?? "";
             string notesText = "None";
+            string vikunjaLink = vikunjaProjectUrl + vikunjaMatch.Task?.Id.ToString() ?? "";
+
+            if (vikunjaMatch.Task?.Id == null)
+            {
+                vikunjaLink = "";
+            }
 
             if (!string.IsNullOrWhiteSpace(rawDesc))
             {
@@ -255,6 +263,23 @@ public class DataService : IDataService
                         : rawTitle;
                 }
             };
+
+//             if (loc is ICellGetter cell)
+// {
+//     Console.WriteLine(cell.EditorID);
+
+//     if (cell.Grid != null)
+//     {
+//         Console.WriteLine(
+//             $"Grid: {cell.Grid.Point.X}, {cell.Grid.Point.Y}"
+//         );
+//     }
+
+//     // if (cell.Worldspace.TryResolve(linkCache, out var worldspace))
+//     // {
+//     //     Console.WriteLine($"Worldspace: {worldspace.EditorID}");
+//     // }
+// }
             
             string parentNameString = "None";
 
@@ -337,11 +362,9 @@ public class DataService : IDataService
                     .FormattedValue
                     ?? "None") != "None",
 
-                Notes = !string.IsNullOrWhiteSpace(notesText) ? notesText : "None",
+                VikunjaLink = vikunjaLink,
 
-                // Notes = vikunjaMatch.Task != null && !string.IsNullOrWhiteSpace(vikunjaMatch.Task.Description) 
-                //     ? vikunjaMatch.Task.Description 
-                //     : (sheet?.Row.Count > 24 ? sheet.Row[24].ToString()  ?? "None" : "None"),
+                Notes = !string.IsNullOrWhiteSpace(notesText) ? notesText : "None",
 
                 Image = sheet?.ImageCell?
                     .Values?

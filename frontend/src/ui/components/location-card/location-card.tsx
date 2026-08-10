@@ -1,6 +1,7 @@
 import './location-card.css'
 import type { LocationData } from '../../../utils/types';
 import Quest from "../../../assets/location-icons/Quest-Door.svg"
+import Vikunja from "../../../assets/icons/vikunja.svg"
 import Status from "../shared/status";
 import Icons from "../shared/icons";
 import LocationCardBackground from "../shared/location-card-background";
@@ -54,6 +55,19 @@ export default function LocationCard(props: LocationCardProps) {
                             <Status text={location.status} />
                         }
                     </div>
+                </section>
+
+                <section className="table__location-card__cell">
+                    <section className="table__location-card__labels-icons">
+                        {/* <Icons showText={false} text={location.locationType} /> */}
+                        
+                        {location.vikunjaLink !== "" && 
+                            <a target="_blank" href={location.vikunjaLink} className="table__location-card__vikunja">
+                                <img src={Vikunja} width={24} alt="Vikunja anchor icon" className="table__location-card__vikunja__icon" />
+                            </a>
+                        }
+                        
+                    </section>
                 </section>
 
                 <section className="table__location-card__cell">

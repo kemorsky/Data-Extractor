@@ -1,7 +1,7 @@
 import './App.css'
 import styles from './index.module.css';
 import "./assets/fonts/Webfonts/Balgruf.woff";
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import StatusTab from './ui/components/status-graph/status-tab'
 import type { LocationFilters } from './utils/types'
 import LocationDrawer from './ui/components/drawer/drawer'
@@ -60,7 +60,6 @@ export default function App() {
           searchParams={searchParams} 
           setSearchParams={setSearchParams}
         />
-      
         <Tabs.Root className={styles.Root} defaultValue="overview">
           <Tabs.List className={styles.List}>
             <Tabs.Tab className={styles.Tab} value="locations">

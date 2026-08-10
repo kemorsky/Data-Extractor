@@ -14,7 +14,7 @@ export type LocationData = {
     relatedQuestUrl: string;
     inhabitants: string;
     hasQuest: boolean;
-    // vikunjaLink: string[];
+    vikunjaLink: string;
     notes: string;
     // wishlist: string;
 };
