@@ -1,7 +1,7 @@
 import './App.css'
 import styles from './index.module.css';
 import "./assets/fonts/Webfonts/Balgruf.woff";
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import StatusTab from './ui/components/status-graph/status-tab'
 import type { LocationFilters } from './utils/types'
 import LocationDrawer from './ui/components/drawer/drawer'
