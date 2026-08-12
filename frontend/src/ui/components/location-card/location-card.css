@@ -96,7 +96,7 @@ p {
 .table__location-card:hover .table__location-card__cell:hover {
     /* box-shadow: var(--shadow); */
     /* border: 1px solid green; */
-    background-color: rgb(124, 124, 124);
+    background-color: var(--table-row-hover);
 }
 
 .table__location-card__cell {
@@ -105,7 +105,7 @@ p {
     display: table-cell;
     padding: 0.33rem 0.75rem;
     vertical-align: middle;
-    background-color: rgb(85, 85, 85);
+    background-color: var(--table-row);
 }
 
 .table__location-card__cell:nth-child(1) {
@@ -136,7 +136,7 @@ p {
 }
 
 .table__location-card:hover .table__location-card__cell {
-    background-color: rgb(124, 124, 124);
+    background-color: var(--table-row-hover);
 }
 
 .table__location-card__info__name {

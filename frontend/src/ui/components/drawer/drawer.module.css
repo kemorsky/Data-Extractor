@@ -99,9 +99,9 @@
   justify-content: flex-end;
   padding: var(--viewport-padding);
 
-  @supports (-webkit-touch-callout: none) {
+  /* @supports (-webkit-touch-callout: none) {
     --viewport-padding: 0.625rem;
-  }
+  } */
 }
 
 .Popup {

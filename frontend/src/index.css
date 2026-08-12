@@ -3,14 +3,20 @@
 
 :root {
   /* --bg: #1c1c1c; */
-  --border: #4a4e51; /* hsl(45, 40%, 50%) */
+  --border: #3e5c76; /* hsl(45, 40%, 50%) */
   --code-bg: #1f2028;
   --shadow:
     rgba(206, 199, 199, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
-  --bg-dark: hsl(322, 14%, 15%);
+  /* --bg-dark: hsl(322, 14%, 15%);
   --bg-dark-80: hsla(322, 20%, 15%);
-  --bg: hsl(0, 0%, 90%);
+  --bg: hsl(0, 0%, 90%); */
+  --bg-dark: #1c1f26;
+  --bg-dark-80: #2a2e38;
+  --bg: #c2d8d8;
+  --table-row: #292e38;
+  --table-row-hover: #353b47;
+  --button-bg: #748cab;
   /* --bg: hsl(220, 15%, 85%); */
   --bg-light: #F7F6F4;
   --text: oklch(0.15 0 278);
@@ -68,6 +74,7 @@ body {
 
 button {
   cursor: pointer;
+  background-color: var(--button-bg);
 }
 
 h1,

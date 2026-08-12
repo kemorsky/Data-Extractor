@@ -57,7 +57,7 @@
 }
 
 .location-card__table-container__header-row__cell {
-  background-color: rgb(85, 85, 85);
+  background-color: var(--table-row);
   display: table-cell;
   width: 20%;
   text-align: left;
