@@ -121,39 +121,79 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0, 0, 41);
-    
+}
+
+.status-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    /* background-color: rgb(0, 0, 41); */
+    border-radius: 0.33rem;
+    padding: 0.33rem 0.5rem 0.33rem 0.5rem;
+    backdrop-filter: blur(5px);
+
+}
+
+.status__circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
 }
 
 .status__text {
     font-weight: 500;
-    font-size: 0.75rem;
-    line-height: 24px;
+    font-size: 0.675rem;
+    line-height: 0.75rem;
 }
 
-.status__finalized {
+.status__circle__finalized {
     background-color: rgb(0, 94, 31);
 }
 
-.status__needs-finalization {
+.status__circle__needs-finalization {
     background-color: rgb(118, 151, 0);
-    
 }
 
-.status__first-passed {
+.status__circle__first-passed {
     background-color: rgb(73, 145, 73);
 }
 
-.status__needs-more-work {
+.status__circle__needs-more-work {
     background-color: rgb(156, 157, 255);
 }
 
-.status__not-started {
+.status__circle__not-started {
     background-color: rgb(192, 192, 192);
 }
 
-.status__redo {
+.status__circle__redo {
     background-color: rgb(150, 0, 0);
+}
+
+.status__finalized {
+    border: 1px solid rgb(0, 94, 31);
+}
+
+.status__needs-finalization {
+    border: 1px solid rgb(118, 151, 0);
+}
+
+.status__first-passed {
+    border: 1px solid rgb(73, 145, 73);
+}
+
+.status__needs-more-work {
+    border: 1px solid rgb(156, 157, 255);
+}
+
+.status__not-started {
+    border: 1px solid rgb(192, 192, 192);
+}
+
+.status__redo {
+    border: 1px solid rgb(150, 0, 0);
 }
 
 .status--sm {
@@ -220,8 +260,8 @@ dialog > button {
     justify-content: center;
     padding: 0.33rem;
     margin: 0;
-    border: 1px solid var(--border);
-    border-radius: 0.33rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
     background-color: oklch(14.5% 0 0deg);
     font-family: inherit;
     font-size: 0.875rem;

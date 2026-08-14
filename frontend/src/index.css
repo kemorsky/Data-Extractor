@@ -13,7 +13,7 @@
   --bg: hsl(0, 0%, 90%); */
   --bg-dark: #1c1f26;
   --bg-dark-80: #2a2e38;
-  --bg: #c2d8d8;
+  --bg: #090d16;
   --table-row: #292e38;
   --table-row-hover: #353b47;
   --button-bg: #748cab;
@@ -27,6 +27,11 @@
   /* Text */
   --text: #222222;
   --text-muted: #d3d3d3;
+
+  /* Spacing */
+  --sm: 0.5rem;
+  --md: 0.75rem;
+  --lg: 1.5rem;
 
   /* Fonts */
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;

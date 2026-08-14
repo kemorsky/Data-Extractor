@@ -83,11 +83,18 @@ export default function LocationDrawer() {
                         <Drawer.Content className={styles.Content}>               
                             <article className={styles.Title}>
                                 <div className={styles.Status}>
-                                    {locationByName?.status !== "None" &&
+                                    <Status text={locationByName?.status ?? ""}/>
+                                    {/* {locationByName?.status !== "None" &&
                                         <Status size="md" text={locationByName?.status ?? ""} />
-                                    }
+                                    } */}
                                 </div>
                                 <h3 className={styles.TitleText}>{locationByName?.name}</h3>
+                                {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
+                                        <>
+                                            <button className={styles.ShowMapButton} popoverTarget="image-modal">Show map</button>
+                                            <DrawerCityMap text={locationByName?.parentLocation ?? ""} showText={false} />
+                                        </>
+                                    }
                             </article>
                             <div className={styles.Actions}>                 
                                 <Drawer.Close className={styles.Button}>
@@ -101,10 +108,10 @@ export default function LocationDrawer() {
                                     <span 
                                         className={styles.ListItemText} 
                                         onClick={() => { handleClick() }} 
-                                        style={{cursor: "pointer", position: "relative" }}
+                                        style={{ minWidth: "2rem", cursor: "pointer", position: "relative" }}
                                     >
                                         {locationByName?.parentLocation} *
-                                        {locationByName?.region !== "None" && `, ${locationByName?.region}`}
+                                        {locationByName?.region !== "None" && `, ${locationByName?.region}`}                                                                                             
                                     </span>
                                     
                                     <section className={styles.ParentLocationChildren} style={{display: showChildren ? "flex" : "none"}}>
@@ -113,12 +120,7 @@ export default function LocationDrawer() {
                                         ))}
                                     </section>
 
-                                    {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
-                                        <>
-                                            <button className={styles.ShowMapButton} popoverTarget="image-modal">Show map</button>
-                                            <DrawerCityMap text={locationByName?.parentLocation ?? ""} showText={false} />
-                                        </>
-                                    }
+                                    
                                 </li>
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Type:</span> 
@@ -131,7 +133,7 @@ export default function LocationDrawer() {
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Quest Link:</span> 
                                     <span className={styles.ListItemText}>
-                                        <a target="_blank" style={{fontWeight: 600}} href={locationByName?.relatedQuestUrl}>
+                                        <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.relatedQuestUrl}>
                                             {locationByName?.relatedQuestName}
                                         </a>
                                     </span>
@@ -140,7 +142,9 @@ export default function LocationDrawer() {
                                     <li className={styles.ListItem}>
                                         <span className={styles.ListItemText}>Vikunja Link:</span>
                                         <span className={styles.ListItemText}>
-                                            <a target="_blank" href={locationByName?.vikunjaLink}>{locationByName?.vikunjaLink}</a>
+                                            <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
+                                                {locationByName?.vikunjaLink}
+                                            </a>
                                         </span>
                                     </li>
                                 }

@@ -23,7 +23,7 @@
   margin: 0;
   outline: 0;
   background: none;
-  color: oklch(25.197% 0.00003 271.152);
+  color: oklch(67.64% 0.00008 271.152);
   font-family: inherit;
   font-size: 0.825rem;
   line-height: 1.25rem;
@@ -50,8 +50,8 @@
   }
 
   &[data-active] {
-    color: yellow;
-    border-bottom: 1px solid yellow;
+    color: #faf118;
+    border-bottom: 1px solid #faf118;
     border-radius: 0.33rem 0.33rem 0 0;
   }
 

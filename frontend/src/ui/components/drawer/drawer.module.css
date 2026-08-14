@@ -5,15 +5,9 @@
   justify-content: center;
   padding: 0.33rem;
   margin: 0;
-  border: 1px solid white;
-  border-radius: 0.33rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   background-color: oklch(14.5% 0 0deg);
-  font-family: inherit;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1;
-  white-space: nowrap;
-  color: white;
   -webkit-user-select: none;
   user-select: none;
   transition: var(--button-colors);
@@ -113,7 +107,7 @@
   padding: 1.5rem;
   padding-right: calc(1.5rem + var(--bleed));
   margin-right: calc(-1 * var(--bleed));
-  border-left: 1px solid yellow;
+  border-left: 1px solid #faf118;
   background-color: var(--bg-dark);
   color: white;
   outline: 0;
@@ -148,7 +142,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: var(--lg);
 }
 
 .ParentLocationChildren {
@@ -169,6 +163,7 @@
 }
 
 .List {
+  min-width: 20rem;
   list-style: none;
   font-weight: 400;
   margin-top: 0;
@@ -177,17 +172,17 @@
 }
 
 .ListItem {
-  margin-bottom: 1rem;
+  margin-bottom: var(--md);
   display: flex;
   justify-content: flex-start;
   align-items: start;
-  gap: 0.75rem;
+  gap: 4rem;
   position: relative;
   color: var(--text-muted);
 }
 
 .ListKeywords {
-  width: 12rem;
+  min-width: 9rem;
   list-style: none;
   font-weight: 600;
   margin-top: 0;
@@ -200,7 +195,11 @@
 }
 
 .ListItemText {
-  min-width: 12rem;
+  min-width: 6.5rem;
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   text-align: left;
 }
 
@@ -209,7 +208,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 0.75rem;
+  gap: var(--md);
   width: 100%;
   position: relative;
   
@@ -234,7 +233,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 2rem;
+  gap: var(--lg);
 }
 
 .Notes {
@@ -252,7 +251,7 @@
 }
 
 .NotesSeparator {
-  border: 1px solid gold;
+  border: 1px solid #faf118;
 }
 
 .NotesText {
@@ -274,16 +273,11 @@
   position: absolute;
   right: 4.5rem;
   top: 1.5rem;
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
 }
 
 .ShowMapButton {
-  position: absolute;
-  bottom: -0.125rem;
-  right: -4rem;
-  gap: 0.75rem;
+  border-radius: 0.33rem;
+  gap: var(--md);
   padding: 0.33rem;
 
   @media (max-width: 1024px) {
@@ -294,16 +288,25 @@
 @media (max-width: 740px) {
   .Actions {
     top: 1rem;
-    right: 1rem;
+    right: 1.5rem;
   }
   .Popup {
-    padding: 1rem;
+    padding: 1rem 2rem 1rem 1rem;
+    
     max-width: calc(90vw - 3rem + var(--bleed));
     margin-right: calc(0 * var(--bleed));
   }
 
   .TitleText {
     font-size: 1.5rem;
+  }
+
+  .List {
+    min-width: 4rem;
+  }
+
+  .ListItem {
+    gap: 1rem;
   }
 
   .ListItemText {
