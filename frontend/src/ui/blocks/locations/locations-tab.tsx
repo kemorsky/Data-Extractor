@@ -69,7 +69,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
     //     return map;
     // }, [locations]);
 
-    const pageSize = 30;
+    const pageSize = 32;
     const totalPages = Math.ceil(
       (filterResults?.length ?? 0) / pageSize
     );

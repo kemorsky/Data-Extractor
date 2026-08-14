@@ -1,7 +1,7 @@
 /* Card view styling */
 
 .location-card {
-    max-width: 15rem;
+    max-width: 17.85rem;
     min-height: 8rem;
     width: 100%;
     background-color: rgb(85, 85, 85);
@@ -212,7 +212,7 @@ p {
 @media (max-width: 444px) {
     .location-card {
         min-height: 7.5rem;
-        max-width: 10rem;
+        max-width: 11rem;
     }
 
     .location-card__info__name {
@@ -222,5 +222,12 @@ p {
     .location-card__labels-status {
         left: 0.5rem;
         right: auto;
+    }
+}
+
+@media (max-width: 400px) {
+    .location-card {
+        min-height: 7.5rem;
+        max-width: 10rem;
     }
 }

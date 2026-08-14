@@ -288,10 +288,10 @@
 @media (max-width: 740px) {
   .Actions {
     top: 1rem;
-    right: 1.5rem;
+    right: 1rem;
   }
   .Popup {
-    padding: 1rem 2rem 1rem 1rem;
+    padding: 1rem;
     
     max-width: calc(90vw - 3rem + var(--bleed));
     margin-right: calc(0 * var(--bleed));
