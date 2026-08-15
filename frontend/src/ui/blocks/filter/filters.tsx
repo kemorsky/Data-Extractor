@@ -1,6 +1,7 @@
 import "./filters.css";
 import styles from "./filters.module.css";
-import { useMemo } from "react";
+import { useMemo } from "react"; // , useState
+// import { type FilterId } from '../../../utils/types';
 import CheckboxGroup from "../../components/checkbox-group/checkbox-group";
 import { getUniqueProperties } from "../../../utils/get-unique-properties";
 import type { LocationData, LocationFilters } from "../../../utils/types";
@@ -10,6 +11,7 @@ import { Drawer } from "@base-ui/react";
 import Filter from "../../../assets/icons/filter.svg"
 import X from "../../../assets/icons/cross.svg"
 import HideFilters from '../../../assets/icons/hide-filters.svg';
+// import FilterOptions from "../../components/filter-options/filter-options";
 
 interface FilterProps {
     locations: NoInfer<LocationData[]> | undefined
@@ -21,6 +23,8 @@ interface FilterProps {
 
 export default function Filters(props: FilterProps) {
     const { locations, filterResults, filters, searchParams, setSearchParams } = props;
+
+    // const [ activeFilter, setActiveFilter ] = useState<FilterId | null>(null);
 
     const allFilters = Object.entries(filters).flatMap(([category, values]) => {
         if (!Array.isArray(values)) {
@@ -128,8 +132,6 @@ export default function Filters(props: FilterProps) {
             hasAQuest: !filters.hasAQuest,
         };
 
-        // setFilters(next);
-
         const params = new URLSearchParams(searchParams);
         params.set("page", "1");
 
@@ -149,12 +151,13 @@ export default function Filters(props: FilterProps) {
     };
 
     return (
+        <>
         <Drawer.Root swipeDirection="left" defaultOpen={true} modal={false} disablePointerDismissal>
             
             <section className="filter__tags">
-                <Drawer.Trigger className={styles.Button}>
-                    <img src={Filter} alt="filter button icon" width={21} />
-                    Filter
+                <Drawer.Trigger className={styles.ButtonOpenFilter}>
+                    <img src={Filter} alt="filter button icon" width={28} />
+                    {/* Filter */}
                 </Drawer.Trigger>
 
                 {allFilters.length > 0 && 
@@ -188,9 +191,9 @@ export default function Filters(props: FilterProps) {
             {/* <Drawer.Trigger className={styles.Button}>Open drawer</Drawer.Trigger>        */}
             <Drawer.Portal>         
                 {/* <Drawer.Backdrop className={styles.Backdrop} />          */}
-                <Drawer.Viewport className={styles.Viewport}>          
-                    <Drawer.Popup className={styles.Popup}>       
-                        
+                <Drawer.Viewport className={styles.Viewport}>
+                    <Drawer.Popup className={styles.Popup}>   
+                
                         <Drawer.Content className={styles.Content}>
                             <section className={styles.ButtonCloseContainer}>
                                 <Drawer.Close className={styles.ButtonClose}>
@@ -221,6 +224,9 @@ export default function Filters(props: FilterProps) {
                                 counts={categoryCount}
                                 selected={filters.locationCategories}
                                 onToggle={(value) => toggleFilter("locationCategories", value)}
+                                // onOpen={() =>
+                                //     setActiveFilter("locationCategories")
+                                // }
                             />
                             <CheckboxGroup 
                                 key={2}
@@ -229,6 +235,9 @@ export default function Filters(props: FilterProps) {
                                 counts={parentLocationCount}
                                 selected={filters.parentLocations}
                                 onToggle={(value) => toggleFilter("parentLocations", value)}
+                                // onOpen={() =>
+                                //     setActiveFilter("cities")
+                                // }
                             />
                             <CheckboxGroup 
                                 key={3}
@@ -237,6 +246,9 @@ export default function Filters(props: FilterProps) {
                                 counts={parentLocationCount}
                                 selected={filters.parentLocations}
                                 onToggle={(value) => toggleFilter("parentLocations", value)}
+                                // onOpen={() =>
+                                //     setActiveFilter("counties")
+                                // }
                             />
                             <CheckboxGroup 
                                 key={4}
@@ -245,6 +257,9 @@ export default function Filters(props: FilterProps) {
                                 counts={typeCount}
                                 selected={filters.locationTypes}
                                 onToggle={(value) => toggleFilter("locationTypes", value)}
+                                // onOpen={() =>
+                                //     setActiveFilter("locationTypes")
+                                // }
                             />
                             <CheckboxGroup 
                                 key={5}
@@ -253,6 +268,9 @@ export default function Filters(props: FilterProps) {
                                 counts={statusCount}
                                 selected={filters.statuses}
                                 onToggle={(value) => toggleFilter("statuses", value)}
+                                // onOpen={() =>
+                                //     setActiveFilter("statuses")
+                                // }
                             />
                             <CheckboxGroup 
                                 key={6}
@@ -261,11 +279,118 @@ export default function Filters(props: FilterProps) {
                                 counts={inhabitantsCount}
                                 selected={filters.inhabitants}
                                 onToggle={(value) => toggleFilter("inhabitants", value)}
+                                // onOpen={() =>
+                                //     setActiveFilter("inhabitants")
+                                // }
                             />             
                         </Drawer.Content>           
-                    </Drawer.Popup>         
+                    </Drawer.Popup>      
                 </Drawer.Viewport>       
             </Drawer.Portal>     
         </Drawer.Root>
+        {/* <Drawer.Root
+            open={activeFilter !== null}
+            onOpenChange={(open) => {
+                if (!open) {
+                    setActiveFilter(null);
+                }
+            }}
+            swipeDirection="left"
+            modal={false}
+            
+        >
+            <Drawer.Portal>
+                <Drawer.Viewport className={styles.Viewport}>
+                    <Drawer.Popup className={styles.OptionsPopup}>
+                        <Drawer.Content className={styles.Content}>
+
+                            <section className={styles.ButtonCloseContainer}>
+                                <Drawer.Close className={styles.ButtonClose}>
+                                    <img
+                                        src={HideFilters}
+                                        width={32}
+                                        alt="Close filters"
+                                    />
+                                </Drawer.Close>
+                            </section>
+
+                            {activeFilter === "locationCategories" && (
+                                <FilterOptions
+                                    title="Location Category"
+                                    options={locationCategories}
+                                    counts={categoryCount}
+                                    selected={filters.locationCategories}
+                                    onToggle={(value) =>
+                                        toggleFilter("locationCategories", value)
+                                    }
+                                />
+                            )}
+
+                            {activeFilter === "cities" && (
+                                <FilterOptions
+                                    title="City"
+                                    options={parentLocationsCities}
+                                    counts={parentLocationCount}
+                                    selected={filters.parentLocations}
+                                    onToggle={(value) =>
+                                        toggleFilter("parentLocations", value)
+                                    }
+                                />
+                            )}
+
+                            {activeFilter === "counties" && (
+                                <FilterOptions
+                                    title="County"
+                                    options={parentLocations}
+                                    counts={parentLocationCount}
+                                    selected={filters.parentLocations}
+                                    onToggle={(value) =>
+                                        toggleFilter("parentLocations", value)
+                                    }
+                                />
+                            )}
+
+                            {activeFilter === "locationTypes" && (
+                                <FilterOptions
+                                    title="Location Type"
+                                    options={locationTypes}
+                                    counts={typeCount}
+                                    selected={filters.locationTypes}
+                                    onToggle={(value) =>
+                                        toggleFilter("locationTypes", value)
+                                    }
+                                />
+                            )}
+
+                            {activeFilter === "statuses" && (
+                                <FilterOptions
+                                    title="Status"
+                                    options={statuses}
+                                    counts={statusCount}
+                                    selected={filters.statuses}
+                                    onToggle={(value) =>
+                                        toggleFilter("statuses", value)
+                                    }
+                                />
+                            )}
+
+                            {activeFilter === "inhabitants" && (
+                                <FilterOptions
+                                    title="Inhabitants"
+                                    options={inhabitants}
+                                    counts={inhabitantsCount}
+                                    selected={filters.inhabitants}
+                                    onToggle={(value) =>
+                                        toggleFilter("inhabitants", value)
+                                    }
+                                />
+                            )}
+
+                        </Drawer.Content>
+                    </Drawer.Popup>
+                </Drawer.Viewport>
+            </Drawer.Portal>
+        </Drawer.Root> */}
+        </>
     )
 };

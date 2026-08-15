@@ -165,7 +165,7 @@ p {
 
 .table__location-card__labels-status {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .location-card__quest {
@@ -205,6 +205,10 @@ p {
     }
 
     .table__location-card__labels-status {
+        display: none;
+    }
+
+    .table__location-card__cell:nth-child(n + 4) {
         display: none;
     }
 }

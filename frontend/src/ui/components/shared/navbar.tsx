@@ -10,7 +10,7 @@ export default function Navbar() {
     return (
         <nav className="nav">
             <picture>
-                <source media="(max-width: 834px)" srcSet={Logo} height={32} />
+                <source media="(max-width: 890px)" srcSet={Logo} height={32} />
                 <img className="nav__logo" src={LogoFull} height={24} alt="Logo" />
             </picture>
             

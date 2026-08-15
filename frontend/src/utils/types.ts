@@ -29,3 +29,11 @@ export type LocationFilters = {
   inhabitants: string[];
   hasAQuest: boolean;
 };
+
+// export type FilterId =
+//     | "locationCategories"
+//     | "cities"
+//     | "counties"
+//     | "locationTypes"
+//     | "statuses"
+//     | "inhabitants";

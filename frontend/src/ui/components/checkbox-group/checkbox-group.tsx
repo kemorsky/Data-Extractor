@@ -10,6 +10,7 @@ type CheckboxProps = {
   selected: string[] | boolean;
   counts: Record<string, number>;
   onToggle: (value: string) => void;
+//   onOpen?: () => void;
 };
 
 export default function CheckboxGroup(props: CheckboxProps) {
@@ -21,7 +22,10 @@ export default function CheckboxGroup(props: CheckboxProps) {
 
     return (
         <fieldset className="checkbox-group">
-            <legend className="checkbox-group__legend">
+            <legend 
+                className="checkbox-group__legend"
+                // onClick={props.onOpen}
+            >
                 <span>{props.title}</span>
                 
             </legend>

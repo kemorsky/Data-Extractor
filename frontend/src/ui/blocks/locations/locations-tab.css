@@ -81,7 +81,7 @@
 
 .location-card__table-container__header-row__cell:nth-child(4) {
   width: 15%;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .location-card__table-container__header-row__cell:nth-child(5) {
@@ -165,13 +165,14 @@
 @media (max-width: 680px) {
   .location-card__table-container__header-row__cell{
     width: 25%;
+    justify-content: flex-start;
   }
 
   .location-card__table-container__header-row__cell:nth-child(1) {
     width: 25%;
   }
 
-  .location-card__table-container__header-row__cell:last-child {
+  .location-card__table-container__header-row__cell:nth-child(n + 4) {
     display: none;
   }
 }

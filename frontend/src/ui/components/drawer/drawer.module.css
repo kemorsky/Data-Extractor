@@ -311,5 +311,6 @@
 
   .ListItemText {
     min-width: 8rem;
+    font-size: 0.875rem;
   }
 }
