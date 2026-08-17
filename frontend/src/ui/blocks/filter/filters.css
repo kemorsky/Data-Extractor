@@ -35,6 +35,7 @@
 
 .filter__tags {
   width: 100%;
+  min-height: 2rem;
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -43,10 +44,10 @@
   /* padding: 0 0.5rem 0 0.5rem; */
 }
 
-.filter__tags-divider {
+/* .filter__tags-divider {
   height: 1.33rem;
   border-left: 1px solid var(--border);
-}
+} */
 
 .filter__tags-container {
   
@@ -66,10 +67,10 @@
   font-weight: 600;
   color: rgb(0, 113, 185);
   text-decoration: underline;
-  transition: color 150ms ease-in-out;
 
   &:hover {
     color: rgb(1, 139, 224);
+    background-color: transparent;
   }
 }
 
@@ -123,10 +124,6 @@
   cursor: pointer;
   background-color: #eee;
   margin-right: 0.25rem;
-}
-
-.quest-checkbox__option__checkbox {
-  
 }
 
 .quest-checkbox__option-text {

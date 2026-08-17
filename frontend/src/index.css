@@ -16,7 +16,8 @@
   --bg: #090d16;
   --table-row: #292e38;
   --table-row-hover: #353b47;
-  --button-bg: #748cab;
+  --button-bg: #9a9bce;
+  --button-bg-hover: #a4a5da;
   /* --bg: hsl(220, 15%, 85%); */
   --bg-light: #F7F6F4;
   --text: oklch(0.15 0 278);
@@ -80,7 +81,21 @@ body {
 button {
   cursor: pointer;
   background-color: var(--button-bg);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  margin: 0;
+  border: 1px solid oklch(49.561% 0.2043 273.035);
+  border-radius: 0.33rem;
+  transition: var(--button-colors);
 }
+
+button:hover {
+  background-color: var(--button-bg-hover);
+}
+
 
 h1,
 h2 {

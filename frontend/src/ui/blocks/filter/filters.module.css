@@ -1,14 +1,6 @@
 .Button {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 0.25rem;
   height: 2rem;
-  padding: 0 0.75rem;
-  margin: 0;
-  border: 1px solid oklch(49.561% 0.2043 273.035);
-  background-color: oklch(64.32% 0.09802 291.735);
   font-size: 0.825rem;
   font-weight: 500;
   line-height: 1;
@@ -16,9 +8,6 @@
   color: white;
   -webkit-user-select: none;
   user-select: none;
-  align-self: flex-start;
-  border-radius: 0.33rem;
-  transition: var(--button-colors);
 
   @media (hover: hover) {
     &:hover:not([data-disabled]) {
@@ -62,17 +51,7 @@
   position: absolute;
   top: 3rem;
   left: 1rem;
-  width: 2.25rem;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 0.25rem;
-  height: 2rem;
-  margin: 0;
-  border: 1px solid var(--border);
-  border-radius: 0.33rem;
-  transition: var(--button-colors);
   transform: translateY(-100%);
 }
 
@@ -88,20 +67,10 @@
 
 .ButtonClose {
   position: absolute;
-  top: -0.5rem;
+  top: 1.5rem;
   right: -0.5rem;
-  width: 2.25rem;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 0.25rem;
-  height: 2rem;
-  padding: 0 0.75rem;
-  margin: 0;
-  border: 1px solid var(--border);
-  border-radius: 0.33rem;
-  transition: var(--button-colors);
+  transform: translateY(-100%);
 }
 
 .Backdrop {
@@ -184,11 +153,6 @@
   @supports (-webkit-touch-callout: none) {
     --bleed: 0px;
     margin-right: 0;
-    border: 1px solid oklch(14.5% 0 0deg);
-
-    @media (prefers-color-scheme: dark) {
-      border: 1px solid white;
-    }
   }
 
   @media (max-width: 1024px) {

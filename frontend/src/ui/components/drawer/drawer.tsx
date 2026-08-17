@@ -83,10 +83,9 @@ export default function LocationDrawer() {
                         <Drawer.Content className={styles.Content}>               
                             <article className={styles.Title}>
                                 <div className={styles.Status}>
-                                    <Status text={locationByName?.status ?? ""}/>
-                                    {/* {locationByName?.status !== "None" &&
-                                        <Status size="md" text={locationByName?.status ?? ""} />
-                                    } */}
+                                    {locationByName?.status !== "None" &&
+                                        <Status text={locationByName?.status ?? ""} />
+                                    }
                                 </div>
                                 <h3 className={styles.TitleText}>{locationByName?.name}</h3>
                                 {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
@@ -130,23 +129,43 @@ export default function LocationDrawer() {
                                     <span className={styles.ListItemText}>Inhabitants:</span> 
                                     <span className={styles.ListItemText}>{locationByName?.inhabitants}</span>
                                 </li>
-                                <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Quest Link:</span> 
-                                    <span className={styles.ListItemText}>
-                                        <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.relatedQuestUrl}>
-                                            {locationByName?.relatedQuestName}
-                                        </a>
-                                    </span>
-                                </li>
-                                {locationByName?.vikunjaLink !== "" && 
-                                    <li className={styles.ListItem}>
-                                        <span className={styles.ListItemText}>Vikunja Link:</span>
-                                        <span className={styles.ListItemText}>
-                                            <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
-                                                {locationByName?.vikunjaLink}
-                                            </a>
-                                        </span>
-                                    </li>
+                                {locationByName?.relatedQuestName !== "None" ? 
+                                    (   <li className={styles.ListItem}>
+                                            <span className={styles.ListItemText}>Quest Link:</span> 
+                                            <span className={styles.ListItemText}>
+                                                <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.relatedQuestUrl}>
+                                                    {locationByName?.relatedQuestName}
+                                                </a>
+                                            </span>
+                                        </li>
+                                    ) :
+                                    (   <li className={styles.ListItem} style={{ fontStyle: "italic" }}>
+                                            <span className={styles.ListItemText}>Quest Link:</span> 
+                                            <span className={styles.ListItemText}>
+                                                No quest matched
+                                            </span>
+                                        </li>
+                                    )
+                                }
+                                {locationByName?.vikunjaLink !== "" ?
+                                    (   <li className={styles.ListItem}>
+                                            <span className={styles.ListItemText}>Vikunja Link:</span>
+                                            <span className={styles.ListItemText}>
+                                                <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
+                                                    {locationByName?.vikunjaLink}
+                                                </a>
+                                            </span>
+                                        </li>
+                                    ) : 
+                                    (
+                                        <li className={styles.ListItem} style={{ fontStyle: "italic" }}>
+                                            <span className={styles.ListItemText}>Vikunja Link:</span>
+                                            <span className={styles.ListItemText}>
+                                                No claim card matched
+                                            </span>
+                                        </li>
+                                    ) 
+
                                 }
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Keywords: </span>

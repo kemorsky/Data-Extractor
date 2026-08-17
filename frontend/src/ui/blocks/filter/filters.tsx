@@ -160,9 +160,9 @@ export default function Filters(props: FilterProps) {
                     {/* Filter */}
                 </Drawer.Trigger>
 
-                {allFilters.length > 0 && 
+                {/* {allFilters.length > 0 && 
                     <div className="filter__tags-divider" />
-                }
+                } */}
 
                 <section className="filter__tags-container">
                     {allFilters.map(({category, value}) => (
@@ -197,7 +197,7 @@ export default function Filters(props: FilterProps) {
                         <Drawer.Content className={styles.Content}>
                             <section className={styles.ButtonCloseContainer}>
                                 <Drawer.Close className={styles.ButtonClose}>
-                                    <img src={HideFilters} width={32}/>
+                                    <img src={HideFilters} width={28} height={28}/>
                                 </Drawer.Close> 
                             </section>             
                             

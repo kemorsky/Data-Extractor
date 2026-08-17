@@ -13,7 +13,6 @@ import Table from "../../../assets/icons/table.svg";
 interface LocationTabProps {
     error: Error | null;
     isLoading: boolean;
-    // locations: LocationData[] | undefined;
     filterResults: LocationData[] | undefined;
     searchParams: URLSearchParams;
     setSearchParams: (params: URLSearchParams) => void
@@ -53,22 +52,6 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         });
     };
 
-    // const childrenByParent = useMemo(() => {
-    //     const map = new Map<string, LocationData[]>();
-    
-    //     for (const loc of locations ?? []) {
-    //         if (!loc.parentLocation) continue;
-
-    //         if (!map.has(loc.parentLocation)) {
-    //             map.set(loc.parentLocation, []);
-    //         }
-
-    //         map.get(loc.parentLocation)!.push(loc);
-    //     };
-
-    //     return map;
-    // }, [locations]);
-
     const pageSize = 32;
     const totalPages = Math.ceil(
       (filterResults?.length ?? 0) / pageSize
@@ -89,10 +72,10 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             
             <section className="location-card__container-view">
                 <button className="location-card__container-view__btn" onClick={() => setIsTable(false)}>
-                    <img src={Cards} width={24} alt="Card icon" />
+                    <img src={Cards} width={27} alt="Card icon" />
                 </button>
                 <button className="location-card__container-view__btn" onClick={() => setIsTable(true)}>
-                    <img src={Table} width={24} alt="Table Icon"/>
+                    <img src={Table} width={27} alt="Table Icon"/>
                 </button>
             </section>
             
@@ -123,53 +106,68 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             </section>
             <div className="pagination">
 
-                <button
-                    className="pagination__first-btn"
-                    disabled={page === 1}
-                    onClick={() => setPage(page === 1 ? 1 : 1)}
-                >
-                    <img src={ChevronDoubleLeft} width={20} height={20} />
-                </button>
-    
-                <button
-                    className="pagination__previous-btn"
-                    disabled={page === 1}
-                    onClick={() => setPage(page - 1)}
-                >
-                    <img src={ChevronLeft} width={20} height={20} />
-                </button>
+                <section className="pagination__buttons-container">
+                    <button
+                        className="pagination__first-btn"
+                        disabled={page === 1}
+                        onClick={() => setPage(page === 1 ? 1 : 1)}
+                    >
+                        <img src={ChevronDoubleLeft} width={28} height={28} />
+                    </button>
+        
+                    <button
+                        className="pagination__previous-btn"
+                        disabled={page === 1}
+                        onClick={() => 
+                            {setPage(page - 1); 
+                            window.scrollTo({top: 0, behavior: "smooth"});
+                        }}
+                    >
+                        <img src={ChevronLeft} width={28} height={28} />
+                    </button>
+                </section>
 
-                <select
-                    className="pagination__select"
-                    value={page}
-                    onChange={(e) => setPage(Number(e.target.value))}
-                >
-                    {[...Array(totalPages)].map((_, index) => (
-                        <option key={index + 1} value={index + 1}>
-                            {index + 1}
-                        </option>
-                    ))}
-                </select>
+                <section className="pagination__select-container">
+                    <select
+                        className="pagination__select"
+                        value={page}
+                        onChange={(e) => 
+                            {setPage(Number(e.target.value));
+                            window.scrollTo({top: 0, behavior: "smooth"});
+                        }}
+                    >
+                        {[...Array(totalPages)].map((_, index) => (
+                            <option key={index + 1} value={index + 1}>
+                                {index + 1}
+                            </option>
+                        ))}
+                    </select>
 
-                <span className="pagination__pages-text">
-                    of {totalPages}
-                </span>
+                    <span className="pagination__select-pages-text">
+                        of {totalPages}
+                    </span>
+                </section>
 
-                <button
-                    className="pagination__next-btn"
-                    disabled={page === totalPages}
-                    onClick={() => setPage(page + 1)}
-                >
-                    <img src={ChevronRight} width={20} height={20} />
-                </button>
+                <section className="pagination__buttons-container">
+                    <button
+                        className="pagination__next-btn"
+                        disabled={page === totalPages}
+                        onClick={() => 
+                            {setPage(page + 1); 
+                            window.scrollTo({top: 0, behavior: "smooth"});
+                        }}
+                    >
+                        <img src={ChevronRight} width={28} height={28} />
+                    </button>
 
-                <button
-                    className="pagination__last-btn"
-                    disabled={page === totalPages}
-                    onClick={() => setPage(totalPages)}
-                >
-                    <img src={ChevronDoubleRight} width={20} height={20} />
-                </button>
+                    <button
+                        className="pagination__last-btn"
+                        disabled={page === totalPages}
+                        onClick={() => setPage(totalPages)}
+                    >
+                        <img src={ChevronDoubleRight} width={28} height={28} />
+                    </button>
+                </section>
             </div>
         </div>
     )

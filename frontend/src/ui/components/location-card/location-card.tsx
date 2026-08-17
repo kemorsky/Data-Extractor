@@ -101,14 +101,15 @@ export default function LocationCard(props: LocationCardProps) {
                 <LocationCardBackground width="100%" height="100%" text={location.locationType} showText={false} />
                 {/* <img className="location-card__image" src={ayleidImage} width="100%" height="100%"/> */}
                 <section className="location-card__labels">
-                    <section className="location-card__labels-icons">
-                        {/* <Icons showText={false} text={location.locationType} /> */}
-                        {location.relatedQuestName !== "None" &&
-                            <a target="_blank" href={location.relatedQuestUrl} className="location-card__quest">
-                                <img src={Quest} alt="Quest anchor icon" className="location-card__quest__icon" />
-                            </a>
-                        }
-                    </section>
+                    {location.relatedQuestName !== "None" &&
+                        <section className="location-card__labels-icons">
+                            {/* <Icons showText={false} text={location.locationType} /> */}
+                            
+                                <a target="_blank" href={location.relatedQuestUrl} className="location-card__quest">
+                                    <img src={Quest} width={18} alt="Quest anchor icon" className="location-card__quest__icon" />
+                                </a>
+                        </section>
+                    }                        
                     <div className="location-card__labels-status">
                         {location.status !== "None" &&
                             <Status text={location.status} />

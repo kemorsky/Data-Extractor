@@ -131,7 +131,6 @@
   @supports (-webkit-touch-callout: none) {
     --bleed: 0px;
     margin-right: 0;
-    border: 1px solid white;
   }
 }
 
