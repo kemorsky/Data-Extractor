@@ -51,7 +51,7 @@
 }
 
 .Backdrop {
-  --backdrop-opacity: 0.2;
+  --backdrop-opacity: 0.7;
   --bleed: 3rem;
   position: fixed;
   min-height: 100dvh;
@@ -65,10 +65,6 @@
   /* iOS 26+: Ensure the backdrop covers the entire visible viewport. */
   @supports (-webkit-touch-callout: none) {
     position: absolute;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    --backdrop-opacity: 0.7;
   }
 
   &[data-starting-style],

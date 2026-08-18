@@ -10,6 +10,11 @@
   gap: 0.5rem;
   margin-bottom: 1rem;
   align-self: flex-end;
+  padding-inline: 0.75rem;
+}
+
+.location-card__container-view > span {
+  font-size: 0.825rem;
 }
 
 .location-card__container-view__select {
@@ -21,7 +26,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   font-family: var(--font-primary);
   border-radius: 0.33rem;
   border: 1px solid var(--border);
