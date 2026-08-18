@@ -223,10 +223,6 @@ p {
         font-size: 0.75rem;
     }
 
-    .location-card__labels-status {
-        left: 0.5rem;
-        right: auto;
-    }
 }
 
 @media (max-width: 400px) {

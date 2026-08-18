@@ -37,7 +37,7 @@ export default function Status({ text }: StatusProps) {
     return (
         <div className={
             [ 
-                "status-new",
+                "status",
                 isStatus(text) ? statusBorderClasses[text] : "",
             ].join(" ")}>
             <div className={

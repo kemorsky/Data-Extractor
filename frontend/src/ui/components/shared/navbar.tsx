@@ -20,7 +20,7 @@ export default function Navbar() {
                 aria-label="Toggle navigation"
                 aria-expanded={menuOpen}
             >
-                <img src={Hamburger} width={20} alt="hamburger icon" />
+                <img src={Hamburger} width={28} alt="hamburger icon" />
             </button>
             <article className={`nav__content ${menuOpen ? "nav__content-open" : ""}`}>
                 

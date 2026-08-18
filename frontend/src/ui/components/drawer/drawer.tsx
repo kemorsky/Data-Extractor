@@ -10,6 +10,7 @@ import type { LocationData } from '../../../utils/types';
 import X from "../../../assets/icons/cross.svg"
 import parse from 'html-react-parser';
 import DrawerCityMap from '../shared/drawer-city-map';
+import Icons from "../shared/icons";
 
 export default function LocationDrawer() {
     const navigate = useNavigate();
@@ -87,13 +88,40 @@ export default function LocationDrawer() {
                                         <Status text={locationByName?.status ?? ""} />
                                     }
                                 </div>
-                                <h3 className={styles.TitleText}>{locationByName?.name}</h3>
-                                {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
+
+                                <article className={styles.TitleContainer}>
+                                    <Icons width={24} height={24} showText={false} text={locationByName?.locationType ?? ""} />
+                                    <h3 className={styles.TitleText}>{locationByName?.name}</h3>
+                                </article>
+
+                                <section className={styles.LocationContainer}>
+                                    <Icons width={24} height={24} showText={false} text={locationByName?.parentLocation ?? ""} />
+                                    <span 
+                                        className={styles.LocationText} 
+                                        onClick={() => { handleClick() }} 
+                                        style={{ minWidth: "2rem", cursor: "pointer", position: "relative" }}
+                                    >
+                                        
+                                        {locationByName?.parentLocation} *
+                                        {locationByName?.region !== "None" && `, ${locationByName?.region}`}                                                                                             
+                                    </span>
+                                    
+                                    <section className={styles.ParentLocationChildren} style={{display: showChildren ? "flex" : "none"}}>
+                                        {children.map((child) => (
+                                            <span key={child.name}>{child.name}</span>
+                                        ))}
+                                    </section>
+
+                                    {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
                                         <>
                                             <button className={styles.ShowMapButton} popoverTarget="image-modal">Show map</button>
                                             <DrawerCityMap text={locationByName?.parentLocation ?? ""} showText={false} />
                                         </>
                                     }
+                                </section>
+                                    
+                                
+                                
                             </article>
                             <div className={styles.Actions}>                 
                                 <Drawer.Close className={styles.Button}>
@@ -102,7 +130,7 @@ export default function LocationDrawer() {
                             </div>
 
                             <ul className={styles.List}>
-                                <li className={styles.ListItem}>
+                                {/* <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Location:</span> 
                                     <span 
                                         className={styles.ListItemText} 
@@ -120,7 +148,7 @@ export default function LocationDrawer() {
                                     </section>
 
                                     
-                                </li>
+                                </li> */}
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Type:</span> 
                                     <span className={styles.ListItemText}>{locationByName?.locationType}, {locationByName?.locationCategory}</span>
@@ -139,9 +167,9 @@ export default function LocationDrawer() {
                                             </span>
                                         </li>
                                     ) :
-                                    (   <li className={styles.ListItem} style={{ fontStyle: "italic" }}>
+                                    (   <li className={styles.ListItem}>
                                             <span className={styles.ListItemText}>Quest Link:</span> 
-                                            <span className={styles.ListItemText}>
+                                            <span className={styles.ListItemText} style={{ fontStyle: "italic" }}>
                                                 No quest matched
                                             </span>
                                         </li>
