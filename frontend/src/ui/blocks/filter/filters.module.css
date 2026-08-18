@@ -68,7 +68,7 @@
 .ButtonClose {
   position: absolute;
   top: 1.5rem;
-  right: -0.5rem;
+  right: -1rem;
   gap: 0.25rem;
   transform: translateY(-100%);
 }

@@ -12,6 +12,21 @@
   align-self: flex-end;
 }
 
+.location-card__container-view__select {
+  padding: 0.25rem;
+  height: 2.167rem;
+  width: 4.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-family: var(--font-primary);
+  border-radius: 0.33rem;
+  border: 1px solid var(--border);
+}
+
 .location-card__container-view__btn {
   padding: 0.25rem;
   display: flex;

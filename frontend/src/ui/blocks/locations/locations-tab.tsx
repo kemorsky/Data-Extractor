@@ -71,13 +71,31 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             {error && <h2>{error.message}</h2>}
             
             <section className="location-card__container-view">
+                <span>View style: </span>
+                <select className="location-card__container-view__select">
+                    <option 
+                        value="Cards"
+                        onClick={() => setIsTable(false)}
+                    >
+                        Cards
+                    </option>
+                    <option 
+                        value="Table"
+                        onClick={() => setIsTable(true)}
+                    >
+                        Table
+                    </option>
+                </select>
+            </section>
+            
+            {/* <section className="location-card__container-view">
                 <button className="location-card__container-view__btn" onClick={() => setIsTable(false)}>
                     <img src={Cards} width={27} alt="Card icon" />
                 </button>
                 <button className="location-card__container-view__btn" onClick={() => setIsTable(true)}>
                     <img src={Table} width={27} alt="Table Icon"/>
                 </button>
-            </section>
+            </section> */}
             
             <section className={`${isTable ? "location-card__table-container" : "location-card__cards-container"}`}>
 
