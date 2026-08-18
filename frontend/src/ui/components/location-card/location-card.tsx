@@ -98,6 +98,8 @@ export default function LocationCard(props: LocationCardProps) {
                     }
                 }}
             >
+                <div className="location-card__backdrop" />
+
                 <LocationCardBackground width="100%" height="100%" text={location.locationType} showText={false} />
                 {/* <img className="location-card__image" src={ayleidImage} width="100%" height="100%"/> */}
                 <section className="location-card__labels">
