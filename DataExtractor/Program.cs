@@ -128,7 +128,7 @@ app.MapGet("/locations/filter", (
     string? locationCategory,
     string? locationType,
     string? parentLocation,
-    string? inhabitants,
+    string[]? inhabitants,
     string[]? keywords,
     bool? hasQuest) =>
 {
@@ -136,7 +136,7 @@ app.MapGet("/locations/filter", (
     var locationCategories = locationCategory?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
     var locationTypes = locationType?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
     var parentLocations = parentLocation?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-    var enemies = inhabitants?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+    var enemies = inhabitants?.Select(e => e.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries));
     var keyWords = keywords?.Select(k => k.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries));
     
     var locations = locationsCache
@@ -145,7 +145,7 @@ app.MapGet("/locations/filter", (
             (locationCategories == null || locationCategories.Contains(x.LocationCategory, StringComparer.OrdinalIgnoreCase)) &&
             (locationTypes == null || locationTypes.Contains(x.LocationType, StringComparer.OrdinalIgnoreCase)) &&
             (parentLocations == null || parentLocations.Contains(x.ParentLocation, StringComparer.OrdinalIgnoreCase)) &&
-            (enemies == null || enemies.Contains(x.Inhabitants, StringComparer.OrdinalIgnoreCase)) &&
+            (enemies == null || enemies.All(i => i.Any(en => x.Inhabitants.Contains(en, StringComparer.OrdinalIgnoreCase)))) &&
             (keyWords == null || keyWords.All(k => k.Any(kw => x.Keywords.Contains(kw, StringComparer.OrdinalIgnoreCase)))) &&
             (hasQuest != true || x.HasQuest)
         )

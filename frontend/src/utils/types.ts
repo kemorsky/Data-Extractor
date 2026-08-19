@@ -12,7 +12,7 @@ export type LocationData = {
     status: string;
     relatedQuestName: string;
     relatedQuestUrl: string;
-    inhabitants: string;
+    inhabitants: string[];
     hasQuest: boolean;
     vikunjaLink: string;
     notes: string;

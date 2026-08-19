@@ -154,8 +154,13 @@ export default function LocationDrawer() {
                                     <span className={styles.ListItemText}>{locationByName?.locationType}, {locationByName?.locationCategory}</span>
                                 </li>
                                 <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Inhabitants:</span> 
-                                    <span className={styles.ListItemText}>{locationByName?.inhabitants}</span>
+                                    <span className={styles.ListItemText}>Inhabitants: </span>
+                                    <ul className={styles.ListKeywords}>
+                                        {locationByName?.inhabitants.map((inhabitant) => (
+                                            <li key={inhabitant} className={styles.ListKeywordsItem}>
+                                                <span className={styles.ListItemText}>{inhabitant}</span>
+                                            </li>))}
+                                    </ul>
                                 </li>
                                 {locationByName?.relatedQuestName !== "None" ? 
                                     (   <li className={styles.ListItem}>

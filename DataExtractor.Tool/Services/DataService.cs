@@ -74,6 +74,7 @@ public class DataService : IDataService
 
         // Vikunja Environment Variables
         var vikunjaApiUrl = Environment.GetEnvironmentVariable("VIKUNJA_API_URL");
+        var vikunjaApiUrlDungeons = Environment.GetEnvironmentVariable("VIKUNJA_API_URL_DUNGEONS");
         var vikunjaToken = Environment.GetEnvironmentVariable("VIKUNJA_TOKEN");
         var vikunjaFrontendUrl = Environment.GetEnvironmentVariable("VIKUNJA_FRONTEND_URL");
         var vikunjaProjectUrl = Environment.GetEnvironmentVariable("VIKUNJA_PROJECT_URL");
@@ -86,67 +87,72 @@ public class DataService : IDataService
         
         if (!string.IsNullOrEmpty(vikunjaApiUrl) && !string.IsNullOrEmpty(vikunjaToken))
         {
-            try
+            var apiUrls = new[] { vikunjaApiUrl, vikunjaApiUrlDungeons }
+                .Where(url => !string.IsNullOrEmpty(url))
+                .ToList();
+            
+            using var localHttpClient = new HttpClient();
+
+            foreach (var url in apiUrls)
             {
-                using var localHttpClient = new HttpClient();
-
-                var httpRequest = new HttpRequestMessage(HttpMethod.Get, vikunjaApiUrl);
-                httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", vikunjaToken);
-                httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var httpResponse = await localHttpClient.SendAsync(httpRequest);
-
-                Console.WriteLine($"[Vikunja Diagnostics] HTTP Status Code Received: {httpResponse.StatusCode} ({(int)httpResponse.StatusCode})");
-
-                if (httpResponse.IsSuccessStatusCode)
+                try
                 {
-                    var jsonString = await httpResponse.Content.ReadAsStringAsync();
-                    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                    var responseData = JsonSerializer.Deserialize<VikunjaResponseContainer>(jsonString, options);
+                    // using var localHttpClient = new HttpClient();
 
-                    var tasks = responseData?.Items ?? new List<VikunjaTask>();
+                    var httpRequest = new HttpRequestMessage(HttpMethod.Get, url);
+                    httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", vikunjaToken);
+                    httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                    Console.Write(tasks);
-                    Console.WriteLine($"[Vikunja Diagnostics] Extracted {tasks.Count} inner tasks from API payload.");
+                    var httpResponse = await localHttpClient.SendAsync(httpRequest);
 
-                    vikunjaLookup = tasks
-                        .Select(x => 
+                    Console.WriteLine($"[Vikunja Diagnostics] HTTP Status Code Received: {httpResponse.StatusCode} ({(int)httpResponse.StatusCode})");
+
+                    if (httpResponse.IsSuccessStatusCode)
+                    {
+                        var jsonString = await httpResponse.Content.ReadAsStringAsync();
+                        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                        var responseData = JsonSerializer.Deserialize<VikunjaResponseContainer>(jsonString, options);
+
+                        var tasks = responseData?.Items ?? new List<VikunjaTask>();
+
+                        Console.Write(tasks);
+                        Console.WriteLine($"[Vikunja Diagnostics] Extracted {tasks.Count} inner tasks from API payload.");
+
+                        foreach (var task in tasks)
                         {
-                            string rawName = x.Name;
+                            string rawName = task.Name ?? "";
                             string trimmedKey = rawName.Trim();
 
-                            // Check and trim the Vikunja task title string
                             if (rawName.Contains('-'))
                             {
                                 var parts = rawName.Split('-', 2);
                                 if (parts.Length > 1) 
                                 {
-                                    trimmedKey = parts[1].Trim(); // E.g., Returns "Sarvena's House"
+                                    trimmedKey = parts[1].Trim();
                                 }
                             }
-                            return new { TrimmedKey = trimmedKey, Task = x };
-                        })
-                        .DistinctBy(x => x.TrimmedKey, StringComparer.OrdinalIgnoreCase)
-                        .ToDictionary( 
-                            x => x.TrimmedKey,
-                            x => (t: x.Task, Url: $"{vikunjaFrontendUrl?.TrimEnd('/')}/tasks/{x.Task.Id}"),
-                            StringComparer.OrdinalIgnoreCase
-                        );
 
-                    Console.WriteLine($"Successfully loaded {vikunjaLookup.Count} trimmed keys from Vikunja.");
-                    foreach (var key in vikunjaLookup.Keys.Take(5)) 
-                    {
-                        Console.WriteLine($"Parsed Vikunja Key Preview: '{key}'");
+                            if (!string.IsNullOrWhiteSpace(trimmedKey))
+                            {
+                                var taskUrl = $"{vikunjaFrontendUrl?.TrimEnd('/')}/tasks/{task.Id}";
+                                vikunjaLookup.TryAdd(trimmedKey, (Task: task, Url: taskUrl));
+                            }
+                        }
                     }
+                } catch (Exception ex)
+                {
+                    Console.WriteLine($"Warning: Failed to fetch data from Vikunja API. {ex.Message}");
                 }
-            } catch (Exception ex)
-            {
-                Console.WriteLine($"Warning: Failed to fetch data from Vikunja API. {ex.Message}");
             }
         }
         
         var locationsData = new List<LocationDataSheet>();
         var id = 0;
+
+        // string rawName = task.Name ?? "";
+
+        // // Strips everything from the start up to the FIRST '.', '-', or ':' and trailing spaces
+        // string trimmedKey = Regex.Replace(rawName, @"^(?:[^.:\-]+[.:\-]\s*)+", "").Trim();
 
         // If mod path is present use both the esm and the masterlist
         foreach (var loc in locations)
@@ -269,7 +275,9 @@ public class DataService : IDataService
                 
                 LocationCategory = locationCategory,
                 LocationType = locationType,
-                Inhabitants = sheet?.Row.Count > 5 ? sheet.Row[5].ToString() ?? "None" : "None",
+                Inhabitants = sheet?.Row.Count > 5 && sheet.Row[5] != null
+                    ? sheet.Row[5].ToString()!.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    : Array.Empty<string>(),
                 Status = displayStatusText != "None" 
                     ? displayStatusText 
                     : (sheet?.Row.Count > 12 ? sheet.Row[12].ToString()  ?? "None" : "None"),

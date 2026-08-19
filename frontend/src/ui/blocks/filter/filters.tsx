@@ -66,10 +66,17 @@ export default function Filters(props: FilterProps) {
     const getOptions = <K extends keyof LocationData>(
         key: K,
         invalid: string[] = ["None"]
-        ) =>
-        getUniqueProperties(locations, key)
-            .filter(value => !invalid.includes(value as string))
-            .sort();
+        ): string[] => {
+            const rawOptions = getUniqueProperties(locations, key);
+
+            const flatOptions = rawOptions.flat().map(String);
+
+            const uniqueOptions = Array.from(new Set(flatOptions));
+
+            return uniqueOptions
+                .filter(value => value && !invalid.includes(value))
+                .sort();
+        };
 
     const locationCategories = getOptions("locationCategory");
     const locationTypes = getOptions("locationType");

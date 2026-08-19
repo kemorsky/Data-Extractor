@@ -11,7 +11,7 @@ public class LocationDataSheet
     public string[] Keywords { get; set; } = Array.Empty<string>();
     public string LocationCategory { get; set; } = string.Empty;
     public string LocationType { get; set; } = string.Empty;
-    public string Inhabitants { get; set; } = string.Empty;
+    public string[] Inhabitants { get; set; } = Array.Empty<string>();
     public string RelatedQuestName { get; set; } = string.Empty;
     public string RelatedQuestUrl { get; set; } = string.Empty;
     public bool HasQuest { get; set; } = false;
