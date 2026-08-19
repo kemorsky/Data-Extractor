@@ -60,9 +60,9 @@
 }
 
 #root {
-  width: 1440px;
+  width: 1200px;
   max-width: 100%;
-  margin: 0 6.75rem 0 auto;
+  margin: auto;
   text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;

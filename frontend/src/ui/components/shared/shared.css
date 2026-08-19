@@ -1,83 +1,60 @@
 .nav {
-    height: 3.563rem;
+    height: 4rem;
     position: relative;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
     border-bottom: 1px solid #4a4e51;
+}
 
+.nav__logo {
+    position: absolute;
+    top: 1.5rem;
+    left: 3rem;
+}
+
+.nav__toggle {
+    display: none;
+}
+
+.nav__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    a {
+        text-decoration: none;
+        color: var(--text);
+        
+    }
+
+    a:hover {
+        color: white
+    }
+
+    span {
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 19px;
+    }
+}
+
+@media (max-width: 740px) { 
+    .nav {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 890px) {
+    
     .nav__logo {
         position: absolute;
-        top: 1.25rem;
+        top: 1rem;
         left: 3rem;
     }
 
-    .nav__toggle {
-        display: none;
-    }
-
-    .nav__content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-
-        a {
-            text-decoration: none;
-            color: var(--text);
-            
-        }
-
-        a:hover {
-            color: white
-        }
-
-        span {
-            font-weight: 600;
-            font-size: 0.875rem;
-            line-height: 19px;
-        }
-    }
-
-    @media (max-width: 890px) {
-        height: 4rem;
-
-        .nav__logo {
-            position: absolute;
-            top: 1rem;
-            left: 3rem;
-        }
-
-        .nav__toggle {
-            display: flex;
-            justify-content: center;
-            padding: 0.25rem;
-            position: absolute;
-            /* top: 1rem; */
-            right: 0;
-        }
-
-        .nav__content {
-            display: none;
-        }
-
-        .nav__content.nav__content-open {
-            position: absolute;
-            top: 4rem;
-            right: 0;
-            z-index: 70;
-            background-color: #111111;
-            border-radius: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            /* border: 1px solid var(--border); */
-            box-shadow: rgba(206, 199, 199, 0.4) 0 10px 25px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-            transition: height 400ms ease-in-out;
-        }
-    }
 }
 
 .footer {

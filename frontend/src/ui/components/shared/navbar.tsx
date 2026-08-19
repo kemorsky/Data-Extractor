@@ -9,10 +9,12 @@ export default function Navbar() {
 
     return (
         <nav className="nav">
-            <picture>
-                <source media="(max-width: 890px)" srcSet={Logo} height={32} />
-                <img className="nav__logo" src={LogoFull} height={24} alt="Logo" />
-            </picture>
+            <a href="https://beyondskyrim.org/">
+                <picture>
+                    <source media="(max-width: 890px)" srcSet={Logo} height={32} />
+                    <img className="nav__logo" src={LogoFull} height={24} alt="Logo" />
+                </picture>
+            </a>
             
             <button 
                 className="nav__toggle"
@@ -22,11 +24,8 @@ export default function Navbar() {
             >
                 <img src={Hamburger} width={28} alt="hamburger icon" />
             </button>
-            <article className={`nav__content ${menuOpen ? "nav__content-open" : ""}`}>
+            <article className={`nav__content`}>
                 
-                <a href="https://beyondskyrim.org/">
-                    <span>Beyond Skyrim Website</span>
-                </a>
                 <a href="https://claims.beyondskyrim.org/">
                     <span>Vikunja</span>
                 </a>

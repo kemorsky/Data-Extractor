@@ -20,6 +20,9 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
     const { isLoading, filterResults, searchParams, error, setSearchParams } = props;
     const [ isTable, setIsTable ] = useState(false);
 
+    const pageSizes = [20, 25, 35, 50, 100];
+    const [ numberPerPage, setNumberPerPage ] = useState(pageSizes[2]);
+
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -50,17 +53,16 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         });
     };
 
-    const pageSize = 32;
     const totalPages = Math.ceil(
-      (filterResults?.length ?? 0) / pageSize
+      (filterResults?.length ?? 0) / numberPerPage
     );
 
     const pageResults = useMemo(() => {
         return filterResults?.slice(
-            (page - 1) * pageSize,
-            page * pageSize
+            (page - 1) * numberPerPage,
+            page * numberPerPage
         );
-    }, [filterResults, page]);
+    }, [filterResults, page, numberPerPage]);
 
     return (
         <div className="hero">
@@ -83,6 +85,22 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                     >
                         Table
                     </option>
+                </select>
+
+                <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>
+                <select 
+                    className="location-card__container-view__select"
+                    value={numberPerPage}
+                    onChange={(e) => 
+                        {setNumberPerPage(Number(e.target.value));
+                        window.scrollTo({top: 0, behavior: "smooth"});
+                    }}
+                    >
+                    {pageSizes.map((number, index) => (
+                        <option key={index} value={number}>
+                            {number}
+                        </option>
+                    ))}
                 </select>
             </section>
             
