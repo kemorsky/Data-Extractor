@@ -64,10 +64,7 @@
 
 .location-card__table-container {
   width: 100%;
-  
-  display: table;
   border-collapse: separate;
-  border-spacing: 0 0.5rem;
   margin-bottom: 1rem;
   position: relative;
   
@@ -77,17 +74,16 @@
 }
 
 .location-card__table-container__header {
-  display: table-header-group;
-}
-
-.location-card__table-container__header-row {
-  display: table-row;
+  background-color: var(--table-row);
+  width: 100%;
+  display: flex;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .location-card__table-container__header-row__cell {
-  background-color: var(--table-row);
-  display: table-cell;
-  width: 20%;
+  display: flex;
+  width: 20%; 
   text-align: left;
   padding: 0.33rem 0.75rem;
   vertical-align: middle;
@@ -109,18 +105,17 @@
 
 .location-card__table-container__header-row__cell:nth-child(4) {
   width: 15%;
-  /* text-align: center; */
 }
 
 .location-card__table-container__header-row__cell:nth-child(5) {
   width: 10%;
-  text-align: center;
+  justify-content: center;
 }
 
 .location-card__table-container__header-row__cell:last-child {
   width: 10%;
   border-radius: 0 0.25rem 0.25rem 0;
-  text-align: center;
+  justify-content: center;
 }
 
 .pagination {
@@ -189,9 +184,15 @@
 }
 
 @media (max-width: 680px) {
-  .location-card__table-container__header-row__cell{
-    width: 25%;
+  .location-card__container-view {
+    flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .location-card__table-container__header-row__cell{
+    flex: 1;
   }
 
   .location-card__table-container__header-row__cell:nth-child(1) {

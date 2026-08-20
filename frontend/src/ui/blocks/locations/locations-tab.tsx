@@ -107,16 +107,16 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             <section className={`${isTable ? "location-card__table-container" : "location-card__cards-container"}`}>
 
                 {isTable && 
-                    <div className="location-card__table-container__header">
-                        <div className="location-card__table-container__header-row">
-                            <span className="location-card__table-container__header-row__cell">Type</span>
-                            <span className="location-card__table-container__header-row__cell">Name</span>
-                            <span className="location-card__table-container__header-row__cell">Location</span>
-                            <span className="location-card__table-container__header-row__cell">Status</span>
-                            <span className="location-card__table-container__header-row__cell">Vikunja</span>
-                            <span className="location-card__table-container__header-row__cell">Has Quest</span>
-                        </div>
-                    </div>
+                    <tr className="location-card__table-container__header">
+                        
+                        <td className="location-card__table-container__header-row__cell">Type</td>
+                        <td className="location-card__table-container__header-row__cell">Name</td>
+                        <td className="location-card__table-container__header-row__cell">Location</td>
+                        <td className="location-card__table-container__header-row__cell">Status</td>
+                        <td className="location-card__table-container__header-row__cell">Vikunja</td>
+                        <td className="location-card__table-container__header-row__cell">Has Quest</td>
+                        
+                    </tr>
                 }
 
                 {pageResults?.map((location) => (
@@ -128,7 +128,8 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                         isTable={isTable}
                     />
                 ))}
-            </section>
+            </table>
+
             <div className="pagination">
 
                 <section className="pagination__buttons-container">

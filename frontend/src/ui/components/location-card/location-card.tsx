@@ -18,7 +18,7 @@ export default function LocationCard(props: LocationCardProps) {
     return (
         <>
         {isTable ? (
-            <div tabIndex={0} key={location.id} 
+            <tr tabIndex={0} key={location.id} 
                 className="table__location-card"
                 onClick={() => {handleClickName(location.name ?? "")}} 
                 onKeyDown={(e) => {
@@ -30,34 +30,34 @@ export default function LocationCard(props: LocationCardProps) {
                 {/* <LocationCardBackground width="100%" height="100%" text={location.locationType} showText={false} /> */}
                 
                 
-                <section className="table__location-card__cell">
+                <td className="table__location-card__cell">
                     <p className="table__location-card__info__name">
                         <Icons width={24} height={24} showText={false} text={location.locationType} />
                         {location.locationType}
                     </p>
-                </section>
-                <section className="table__location-card__cell">
+                </td>
+                <td className="table__location-card__cell">
                     <p className="table__location-card__info__name">
                         {location.name}
                     </p>
-                </section>
+                </td>
 
-                <section className="table__location-card__cell">
+                <td colSpan={2} className="table__location-card__cell">
                     <p className="table__location-card__info__parentLocation">
                         <Icons width={24} height={24} showText={false} text={location.parentLocation} />
                         {location.parentLocation}
                     </p>
-                </section>
+                </td>
                 
-                <section className="table__location-card__cell">
+                <td className="table__location-card__cell">
                     <div className="table__location-card__labels-status">
                         {location.status !== "None" &&
                             <Status text={location.status} />
                         }
                     </div>
-                </section>
+                </td>
 
-                <section className="table__location-card__cell">
+                <td className="table__location-card__cell">
                     <section className="table__location-card__labels-icons">
                         {/* <Icons showText={false} text={location.locationType} /> */}
                         
@@ -68,7 +68,7 @@ export default function LocationCard(props: LocationCardProps) {
                         }
                         
                     </section>
-                </section>
+                </td>
 
                 <section className="table__location-card__cell">
                     <section className="table__location-card__labels-icons">
@@ -86,7 +86,7 @@ export default function LocationCard(props: LocationCardProps) {
                         <p className="location-card__labels__status">{location.status}</p>
                     </section> 
                 </section> */}
-            </div>
+            </tr>
             
         ) : (
             <div tabIndex={0} key={location.id} 

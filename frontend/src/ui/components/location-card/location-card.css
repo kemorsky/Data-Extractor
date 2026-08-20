@@ -88,50 +88,55 @@ p {
 /* Table view styling */
 
 .table__location-card {
-    display: table-row;
+    background-color: var(--table-row);
+    display: flex;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    border-radius: 0.25rem;
     /* min-height: 4rem; */
-    border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
     /* position: relative; */
+    margin-bottom: 0.5rem;
     border: 1px solid transparent;
     transition: border 200ms ease-in-out;
 }
 
-.table__location-card:hover .table__location-card__cell:hover {
-    /* box-shadow: var(--shadow); */
-    /* border: 1px solid green; */
+.table__location-card:hover {
     background-color: var(--table-row-hover);
 }
 
 .table__location-card__cell {
     width: 20%;
-    height: 2.5rem;
-    display: table-cell;
+    min-height: 2.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.33rem 0.75rem;
-    vertical-align: middle;
     background-color: var(--table-row);
 }
 
 .table__location-card__cell:nth-child(1) {
     width: 15%;
     border-radius: 0.25rem 0 0 0.25rem;
+    justify-content: flex-start;
 }
 
 .table__location-card__cell:nth-child(2) {
     width: 30%;
+    justify-content: flex-start;
 }
 
 .table__location-card__cell:nth-child(3) {
     width: 20%;
+    justify-content: flex-start;
 }
 
 .table__location-card__cell:nth-child(4) {
     width: 15%;
-    vertical-align: middle;
+    justify-content: flex-start;
 }
 
 .table__location-card__cell:nth-child(5) {
@@ -207,9 +212,18 @@ p {
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 680px) {
     .location-card__info__name {
         font-size: 0.8rem;
+    }
+
+    .table__location-card {
+        justify-content: center;
+    }
+
+    .table__location-card__cell {
+        flex: 1;
+        justify-content: center;
     }
 
     .table__location-card__labels-status {
