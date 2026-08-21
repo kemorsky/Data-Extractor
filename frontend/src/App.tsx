@@ -28,8 +28,9 @@ export default function App() {
   );
 
   const filters = useMemo<LocationFilters>(() =>({
+    query: searchParams.get("query") ?? "",
     statuses: searchParams.get("statuses")?.split(",") ?? [],
-    hasAQuest: searchParams.get("hasQuest") === "true",
+    hasQuest: searchParams.get("hasQuest") === "true" ? true : false,
     keywords: searchParams.get("keywords")?.split(",") ?? [],
     locationCategories: searchParams.get("locationCategories")?.split(",") ?? [],
     locationTypes: searchParams.get("locationTypes")?.split(",") ?? [],
@@ -40,8 +41,9 @@ export default function App() {
 
   const { data: locations } = useQuery(locationsQueryOptions());
   const { data: filterResults, isLoading, error } = useQuery(locationFilterQueryOptions(
+      filters.query,
       filters.statuses, 
-      filters.hasAQuest,
+      filters.hasQuest,
       filters.locationCategories, 
       filters.locationTypes,
       filters.parentLocations, 
@@ -76,6 +78,7 @@ export default function App() {
                 error={error}
                 isLoading={isLoading} 
                 // locations={locations} 
+                filters={filters}
                 filterResults={filterResults} 
                 searchParams={searchParams}
                 setSearchParams={setSearchParams}

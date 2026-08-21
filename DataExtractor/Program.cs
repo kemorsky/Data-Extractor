@@ -1,5 +1,6 @@
 using DataExtractor.Dto;
 using System.Text.Json;
+using DataExtractor.Tools;
 
 var URL = Environment.GetEnvironmentVariable("URL");
 
@@ -123,7 +124,7 @@ app.MapGet("/locations/{slug}", (string slug) =>
 });
 
 app.MapGet("/locations/filter", (
-    string? q,
+    string? query,
     string? status,
     string? locationCategory,
     string? locationType,
@@ -132,6 +133,7 @@ app.MapGet("/locations/filter", (
     string[]? keywords,
     bool? hasQuest) =>
 {
+    var searchTerm = query?.Trim();
     var statuses = status?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
     var locationCategories = locationCategory?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
     var locationTypes = locationType?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
@@ -141,6 +143,8 @@ app.MapGet("/locations/filter", (
     
     var locations = locationsCache
         .Where(x =>
+            (string.IsNullOrWhiteSpace(query) || DataExtractorTools.QueryMatches(x, searchTerm)) &&
+            
             (statuses == null || statuses.Contains(x.Status, StringComparer.OrdinalIgnoreCase)) &&
             (locationCategories == null || locationCategories.Contains(x.LocationCategory, StringComparer.OrdinalIgnoreCase)) &&
             (locationTypes == null || locationTypes.Contains(x.LocationType, StringComparer.OrdinalIgnoreCase)) &&

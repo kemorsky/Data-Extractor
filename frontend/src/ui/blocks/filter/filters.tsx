@@ -136,13 +136,13 @@ export default function Filters(props: FilterProps) {
     const toggleHasQuest = () => {
         const next = {
             ...filters,
-            hasAQuest: !filters.hasAQuest,
+            hasQuest: !filters.hasQuest,
         };
 
         const params = new URLSearchParams(searchParams);
         params.set("page", "1");
 
-        if (next.hasAQuest === true) {
+        if (next.hasQuest === true) {
             params.set("hasQuest", "true");
         } else {
             params.delete("hasQuest");
@@ -176,7 +176,7 @@ export default function Filters(props: FilterProps) {
                         <button 
                             className="filter__tags-tag" key={`${category}-${value}`}
                             onClick={() => {
-                                if (category === "hasAQuest") {
+                                if (category === "hasQuest") {
                                     toggleHasQuest();
                                 } else {
                                     toggleFilter(category, value);
@@ -213,7 +213,7 @@ export default function Filters(props: FilterProps) {
                                     <input
                                         type="checkbox"
                                         className="quest-checkbox__option__checkbox"
-                                        checked={filters.hasAQuest === null ? false : filters.hasAQuest}
+                                        checked={filters.hasQuest === null ? false : filters.hasQuest}
                                         onChange={toggleHasQuest}
                                     />
                                     <section style={{height: 30, width: 30, display: "flex", alignItems: "center", justifyContent: "center"}}>

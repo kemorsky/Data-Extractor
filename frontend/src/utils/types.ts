@@ -20,6 +20,7 @@ export type LocationData = {
 };
 
 export type LocationFilters = {
+  query: string;
   statuses: string[];
   keywords: string[];
   locationCategories : string[];
@@ -27,7 +28,7 @@ export type LocationFilters = {
   parentLocationsCities: string[];
   parentLocations: string[];
   inhabitants: string[];
-  hasAQuest: boolean;
+  hasQuest: boolean;
 };
 
 // export type FilterId =

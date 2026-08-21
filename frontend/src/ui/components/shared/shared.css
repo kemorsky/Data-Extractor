@@ -117,6 +117,7 @@
     font-weight: 500;
     font-size: 0.675rem;
     line-height: 1;
+    text-align: left;
 }
 
 .status__circle__finalized {

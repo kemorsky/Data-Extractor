@@ -16,6 +16,7 @@ export function locationByNameQueryOptions(name: string) {
 };
 
 export function locationFilterQueryOptions(
+    query?: string,
     status?: string[], 
     hasQuest?: boolean,
     locationCategory?: string[],
@@ -25,7 +26,7 @@ export function locationFilterQueryOptions(
     
 ){
     return queryOptions({
-        queryKey: ["locations", { status, hasQuest, locationCategory, locationType, parentLocation, inhabitants }],
-        queryFn: () => getLocationFilter( status, hasQuest, locationCategory, locationType, parentLocation, inhabitants )
+        queryKey: ["locations", { query, status, hasQuest, locationCategory, locationType, parentLocation, inhabitants }],
+        queryFn: () => getLocationFilter( query, status, hasQuest, locationCategory, locationType, parentLocation, inhabitants )
     })
 };

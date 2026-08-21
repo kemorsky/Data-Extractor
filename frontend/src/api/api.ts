@@ -53,6 +53,7 @@ export const getLocationByName = async (name: string): Promise<LocationData> => 
 }
 
 export const getLocationFilter = async (
+    query?: string,
     status?: string[], 
     hasQuest?: boolean,
     //keywords?: string[],
@@ -65,6 +66,7 @@ export const getLocationFilter = async (
     {
         const params = new URLSearchParams();
 
+        if (query?.length) params.append("query", query);
         if (status?.length) params.append("status", status.join(","));
         if (hasQuest) params.append("hasQuest", hasQuest.toString())
         //if (keywords?.length) params.append("keywords", keywords.join(","));

@@ -1,24 +1,27 @@
 import "./locations-tab.css";
 import { memo, useMemo, useCallback, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
-import type { LocationData } from "../../../utils/types";
+import type { LocationData, LocationFilters } from "../../../utils/types";
 import LocationCard from "../../components/location-card/location-card";
 import ChevronLeft from "../../../assets/icons/chevron-left.svg";
 import ChevronRight from "../../../assets/icons/chevron-right.svg";
 import ChevronDoubleLeft from "../../../assets/icons/chevron-double-left.svg";
 import ChevronDoubleRight from "../../../assets/icons/chevron-double-right.svg";
+import Search from "../../../assets/icons/search.svg";
 
 interface LocationTabProps {
     error: Error | null;
     isLoading: boolean;
+    filters: LocationFilters;
     filterResults: LocationData[] | undefined;
     searchParams: URLSearchParams;
     setSearchParams: (params: URLSearchParams) => void
 }
 
 export const LocationsTab = memo(function LocationsTab (props: LocationTabProps) {
-    const { isLoading, filterResults, searchParams, error, setSearchParams } = props;
+    const { isLoading, filters, filterResults, searchParams, error, setSearchParams } = props;
     const [ isTable, setIsTable ] = useState(false);
+    const [searchInput, setSearchInput] = useState(filters.query ?? "");
 
     const pageSizes = [20, 25, 35, 50, 100];
     const [ numberPerPage, setNumberPerPage ] = useState(pageSizes[2]);
@@ -64,58 +67,97 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         );
     }, [filterResults, page, numberPerPage]);
 
+    console.log(filters.query);
+
+    const handleSearchSubmit = (e?: React.SyntheticEvent) => {
+        e?.preventDefault();
+
+        const params = new URLSearchParams(searchParams);
+        params.set("page", "1");
+
+        if (searchInput.trim()) {
+            params.set("query", searchInput.trim());
+        } else {
+            params.delete("query");
+        }
+
+        // Trigger URL update -> triggers App.tsx -> triggers TanStack Query
+        setSearchParams(params);
+    }
+
     return (
         <div className="hero">
             
             {isLoading && <h2>Loading data...</h2>}
             {error && <h2>{error.message}</h2>}
             
-            <section className="location-card__container-view">
-                <span>View style: </span>
-                <select className="location-card__container-view__select">
-                    <option 
-                        value="Cards"
-                        onClick={() => setIsTable(false)}
-                    >
-                        Cards
-                    </option>
-                    <option 
-                        value="Table"
-                        onClick={() => setIsTable(true)}
-                    >
-                        Table
-                    </option>
-                </select>
-
-                <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>
-                <select 
-                    className="location-card__container-view__select"
-                    value={numberPerPage}
-                    onChange={(e) => 
-                        {setNumberPerPage(Number(e.target.value));
-                        window.scrollTo({top: 0, behavior: "smooth"});
-                    }}
-                    >
-                    {pageSizes.map((number, index) => (
-                        <option key={index} value={number}>
-                            {number}
+            <div className="location-card__container-view">
+                <section className="location-card__container-view__selects">
+                    <span>View style: </span>
+                    <select className="location-card__container-view__select">
+                        <option 
+                            value="Cards"
+                            onClick={() => setIsTable(false)}
+                        >
+                            Cards
                         </option>
-                    ))}
-                </select>
-            </section>
-            
-            <section className={`${isTable ? "location-card__table-container" : "location-card__cards-container"}`}>
+                        <option 
+                            value="Table"
+                            onClick={() => setIsTable(true)}
+                        >
+                            Table
+                        </option>
+                    </select>
 
+                    <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>
+                    <select 
+                        className="location-card__container-view__select"
+                        value={numberPerPage}
+                        onChange={(e) => 
+                            {setNumberPerPage(Number(e.target.value));
+                            window.scrollTo({top: 0, behavior: "smooth"});
+                        }}
+                        >
+                        {pageSizes.map((number, index) => (
+                            <option key={index} value={number}>
+                                {number}
+                            </option>
+                        ))}
+                    </select>
+                </section>
+
+                <form className="location-card__container-view__search" onSubmit={handleSearchSubmit}>
+                    <input 
+                        className="location-card__container-view__search-input"
+                        type="text"
+                        placeholder="Search"
+                        value={searchInput}
+                        onChange={(e) => setSearchInput(e.target.value)}
+                    />
+                    <button 
+                        type="submit"
+                        className="location-card__container-view__search-btn"
+                    >
+                        <img src={Search} width={20}/>
+                    </button>
+                </form>
+                <button 
+                    className="location-card__container-view__clear-btn"
+                    onClick={() => {{setSearchInput(""); handleSearchSubmit()}}}
+                >
+                    Clear
+                </button>
+            </div>
+            
+            <table className={`${isTable ? "location-card__table-container" : "location-card__cards-container"}`}>
                 {isTable && 
                     <tr className="location-card__table-container__header">
-                        
                         <td className="location-card__table-container__header-row__cell">Type</td>
                         <td className="location-card__table-container__header-row__cell">Name</td>
                         <td className="location-card__table-container__header-row__cell">Location</td>
                         <td className="location-card__table-container__header-row__cell">Status</td>
                         <td className="location-card__table-container__header-row__cell">Vikunja</td>
                         <td className="location-card__table-container__header-row__cell">Has Quest</td>
-                        
                     </tr>
                 }
 
