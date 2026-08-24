@@ -35,7 +35,7 @@ export default function Filters(props: FilterProps) {
         }
 
         return values.map(value => ({
-            category: category as Exclude<keyof LocationFilters, "hasAQuest">,
+            category: category as Exclude<keyof LocationFilters, "hasQuest">,
             value
         }))
         .sort()

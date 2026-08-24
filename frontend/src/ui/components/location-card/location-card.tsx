@@ -70,7 +70,7 @@ export default function LocationCard(props: LocationCardProps) {
                     </section>
                 </td>
 
-                <section className="table__location-card__cell">
+                <td className="table__location-card__cell">
                     <section className="table__location-card__labels-icons">
                         {/* <Icons showText={false} text={location.locationType} /> */}
                         {location.relatedQuestName !== "None" &&
@@ -79,7 +79,7 @@ export default function LocationCard(props: LocationCardProps) {
                             </a>
                         }
                     </section>
-                </section>
+                </td>
                         
                     {/* <section className="location-card__labels">
                         <p>{location.locationType}</p>

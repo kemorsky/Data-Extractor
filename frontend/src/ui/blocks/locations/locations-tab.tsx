@@ -67,21 +67,28 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         );
     }, [filterResults, page, numberPerPage]);
 
-    console.log(filters.query);
-
     const handleSearchSubmit = (e?: React.SyntheticEvent) => {
         e?.preventDefault();
 
         const params = new URLSearchParams(searchParams);
-        params.set("page", "1");
-
+        
         if (searchInput.trim()) {
             params.set("query", searchInput.trim());
         } else {
             params.delete("query");
         }
 
-        // Trigger URL update -> triggers App.tsx -> triggers TanStack Query
+        params.set("page", "1");
+        setSearchParams(params);
+    }
+
+    const handleClearSearch = () => {
+        const params = new URLSearchParams(searchParams);
+        params.set("page", "1");
+
+        params.delete("query");
+        
+        setSearchInput("");
         setSearchParams(params);
     }
 
@@ -125,52 +132,71 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                         ))}
                     </select>
                 </section>
-
-                <form className="location-card__container-view__search" onSubmit={handleSearchSubmit}>
-                    <input 
-                        className="location-card__container-view__search-input"
-                        type="text"
-                        placeholder="Search"
-                        value={searchInput}
-                        onChange={(e) => setSearchInput(e.target.value)}
-                    />
+                <section className="location-card__container-view__search">    
+                    <form className="location-card__container-view__search-form" onSubmit={handleSearchSubmit}>
+                        <input 
+                            className="location-card__container-view__search-input"
+                            type="text"
+                            placeholder="Search..."
+                            value={searchInput}
+                            onChange={(e) => setSearchInput(e.target.value)}
+                        />
+                        <button 
+                            type="submit"
+                            className="location-card__container-view__search-btn"
+                        >
+                            <img src={Search} width={24}/>
+                        </button>
+                    </form>
                     <button 
-                        type="submit"
-                        className="location-card__container-view__search-btn"
+                        className="location-card__container-view__clear-btn"
+                        onClick={() => {handleClearSearch()}}
                     >
-                        <img src={Search} width={20}/>
+                        Clear
                     </button>
-                </form>
-                <button 
-                    className="location-card__container-view__clear-btn"
-                    onClick={() => {{setSearchInput(""); handleSearchSubmit()}}}
-                >
-                    Clear
-                </button>
+                </section> 
             </div>
-            
-            <table className={`${isTable ? "location-card__table-container" : "location-card__cards-container"}`}>
-                {isTable && 
-                    <tr className="location-card__table-container__header">
-                        <td className="location-card__table-container__header-row__cell">Type</td>
-                        <td className="location-card__table-container__header-row__cell">Name</td>
-                        <td className="location-card__table-container__header-row__cell">Location</td>
-                        <td className="location-card__table-container__header-row__cell">Status</td>
-                        <td className="location-card__table-container__header-row__cell">Vikunja</td>
-                        <td className="location-card__table-container__header-row__cell">Has Quest</td>
-                    </tr>
-                }
 
-                {pageResults?.map((location) => (
-                    <LocationCard 
-                        key={location.id} 
-                        location={location}
-                        // childrenByParent={childrenByParent}
-                        handleClickName={handleClickName}
-                        isTable={isTable}
-                    />
-                ))}
-            </table>
+            {isTable ? (
+                <table className="location-card__table-container">
+                    {isTable && 
+                        <thead>
+                            <tr className="location-card__table-container__header">
+                                <td className="location-card__table-container__header-row__cell">Type</td>
+                                <td className="location-card__table-container__header-row__cell">Name</td>
+                                <td className="location-card__table-container__header-row__cell">Location</td>
+                                <td className="location-card__table-container__header-row__cell">Status</td>
+                                <td className="location-card__table-container__header-row__cell">Vikunja</td>
+                                <td className="location-card__table-container__header-row__cell">Has Quest</td>
+                            </tr>
+                        </thead>
+                    }
+
+                    <tbody>
+                        {pageResults?.map((location) => (
+                            <LocationCard 
+                                key={location.id} 
+                                location={location}
+                                // childrenByParent={childrenByParent}
+                                handleClickName={handleClickName}
+                                isTable={isTable}
+                            />
+                        ))}
+                    </tbody>
+                </table> 
+                ) :
+                ( <div className="location-card__cards-container">
+                    {pageResults?.map((location) => (
+                        <LocationCard 
+                            key={location.id} 
+                            location={location}
+                            // childrenByParent={childrenByParent}
+                            handleClickName={handleClickName}
+                            isTable={isTable}
+                        />
+                    ))}
+                </div>
+             )}
 
             <div className="pagination">
 
