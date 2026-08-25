@@ -6,5 +6,9 @@ using Mutagen.Bethesda.Skyrim;
 
 public interface IDataService
 {
-    Task<List<LocationDataSheet>> GetLocations(IEnumerable<ILocationGetter> locations, ILinkCache linkCache);
+    Task<List<LocationDataSheet>> GetLocations(
+        IEnumerable<ILocationGetter> locations, 
+        ILinkCache linkCache, 
+        IEnumerable<ICellGetter> cells
+    );
 };

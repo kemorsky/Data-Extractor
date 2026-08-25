@@ -9,6 +9,7 @@ public class LocationDataSheet
     public string ParentLocation { get; set; } = string.Empty;
     public string Region { get; set; } = string.Empty;
     public string[] Keywords { get; set; } = Array.Empty<string>();
+    public CellData[] Cells { get; set; } = Array.Empty<CellData>();
     public string LocationCategory { get; set; } = string.Empty;
     public string LocationType { get; set; } = string.Empty;
     public string[] Inhabitants { get; set; } = Array.Empty<string>();
@@ -18,5 +19,4 @@ public class LocationDataSheet
     public string Status { get; set; } = string.Empty;
     public string VikunjaLink { get; set; } = string.Empty;
     public string Notes { get; set; } = string.Empty;
-    public string Image { get; set; } = string.Empty;
 }

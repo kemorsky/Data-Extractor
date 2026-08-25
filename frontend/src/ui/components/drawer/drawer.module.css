@@ -177,6 +177,27 @@
   overflow: auto;
 }
 
+.ShowMoreCellsBtn {
+  border: none;
+  background-color: transparent;
+  font-size: 0.825rem;
+  line-height: 1;
+  font-weight: 600;
+  color: rgb(0, 113, 185);
+  text-decoration: underline;
+  padding: 0;
+  margin-top: 0.5rem;
+
+  &:hover {
+    color: rgb(1, 139, 224);
+    background-color: transparent;
+  }
+}
+
+.ShowMoreCellsBtnText {
+  margin-right: 0.25rem;
+}
+
 .List {
   min-width: 20rem;
   list-style: none;
@@ -207,11 +228,12 @@
 
 .ListKeywordsItem {
   margin-bottom: 0.33rem;
+  min-width: 6.5rem;
+  text-align: left;
 }
 
 .ListItemText {
   min-width: 6.5rem;
-  max-width: 12rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -298,6 +320,22 @@
 
   @media (max-width: 1024px) {
     bottom: -0.25rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .ListKeywordsItem {
+    max-width: 12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ListItemText {
+    max-width: 12rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 

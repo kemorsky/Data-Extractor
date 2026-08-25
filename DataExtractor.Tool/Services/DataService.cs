@@ -14,12 +14,14 @@ using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Auth.OAuth2;
 using DataExtractor.Tool.Dto;
-using Mutagen.Bethesda.Plugins.Cache.Internals.Implementations;
 using Noggog;
 
 public class DataService : IDataService
 {
-    public async Task<List<LocationDataSheet>> GetLocations(IEnumerable<ILocationGetter?>? locations = null, ILinkCache? linkCache = null)
+    public async Task<List<LocationDataSheet>> GetLocations(
+        IEnumerable<ILocationGetter?>? locations = null, 
+        ILinkCache? linkCache = null,
+        IEnumerable<ICellGetter>? cells = null)
     {
         var masterlistId = Environment.GetEnvironmentVariable("MASTERLIST-ID");
         
@@ -42,9 +44,9 @@ public class DataService : IDataService
 
         var questResponse = await spreadsheetRequest.ExecuteAsync();
 
-        var cells = questResponse.Sheets[0];
-        var questCells = cells.Data[0].RowData;
-        var imageCells = cells.Data[1].RowData;
+        var sheetCells = questResponse.Sheets[0];
+        var questCells = sheetCells.Data[0].RowData;
+        var imageCells = sheetCells.Data[1].RowData;
 
         var request = sheetsService.Spreadsheets.Values.BatchGet(masterlistId);
         request.Ranges = new List<string>
@@ -160,6 +162,39 @@ public class DataService : IDataService
             var displayName = loc?.Name?.ToString() ?? "";
             var keywordsList = new List<string>();
 
+            var cellData = new List<CellData>();
+
+            if (loc != null && cells != null)
+            {
+                var cellsForLocation = System.Linq.Enumerable
+                    .Where(
+                        cells,
+                        cell =>
+                            !cell.Location.IsNull &&
+                            cell.Location.FormKey == loc.FormKey)
+                    .ToList();
+
+                foreach (var cell in cellsForLocation)
+                {
+                    cellData.Add(new CellData
+                    {
+                        Id = id++,
+                        EditorID = cell.EditorID ?? "",
+                        FormKey = cell.FormKey.ToString(),
+                        GridX = cell.Grid?.Point.X,
+                        GridY = cell.Grid?.Point.Y
+                    });
+                }
+
+                // foreach (var cell in cellData)
+                // {
+                //     Console.WriteLine(
+                //     $"  {cell.EditorID} " +
+                //     $"Grid: ({cell.GridX}, {cell.GridY})");
+                // }
+
+            }
+
             sheetLookup.TryGetValue(
                 displayName,
                 out var sheet);
@@ -200,23 +235,6 @@ public class DataService : IDataService
                 }
             };
 
-//             if (loc is ICellGetter cell)
-// {
-//     Console.WriteLine(cell.EditorID);
-
-//     if (cell.Grid != null)
-//     {
-//         Console.WriteLine(
-//             $"Grid: {cell.Grid.Point.X}, {cell.Grid.Point.Y}"
-//         );
-//     }
-
-//     // if (cell.Worldspace.TryResolve(linkCache, out var worldspace))
-//     // {
-//     //     Console.WriteLine($"Worldspace: {worldspace.EditorID}");
-//     // }
-// }
-            
             string parentNameString = "None";
 
             // Use the FormLink directly instead of pulling the FormKey property out
@@ -266,12 +284,13 @@ public class DataService : IDataService
             locationsData.Add(new LocationDataSheet
             {
                 Id = id++,
-                // FormKey = loc?.FormKey.ToString(),
+                FormKey = loc?.FormKey.ToString() ?? "None",
                 EditorID = loc?.EditorID?.ToString() ?? "None",
                 ParentLocation = parentNameString,
                 Region = sheet?.Row.Count > 2 ? sheet.Row[2].ToString() ?? "None" : "None",
                 Name = displayName,
                 Keywords = keywordsList.ToArray(),
+                Cells = cellData.ToArray(),
                 
                 LocationCategory = locationCategory,
                 LocationType = locationType,
@@ -303,12 +322,6 @@ public class DataService : IDataService
                 VikunjaLink = vikunjaLink,
 
                 Notes = !string.IsNullOrWhiteSpace(notesText) ? notesText : "None",
-
-                Image = sheet?.ImageCell?
-                    .Values?
-                    .FirstOrDefault()?
-                    .Hyperlink
-                    ?? "None",
             });
         };
 

@@ -7,6 +7,7 @@ export type LocationData = {
     parentLocation: string;
     region: string;
     keywords: string[];
+    cells: CellData[];
     locationCategory: string;
     locationType: string;
     status: string;
@@ -18,6 +19,14 @@ export type LocationData = {
     notes: string;
     // wishlist: string;
 };
+
+export type CellData = {
+  id: number;
+  editorID: string;
+  formKey: string;
+  gridX: number;
+  gridY: number;
+}
 
 export type LocationFilters = {
   query: string;

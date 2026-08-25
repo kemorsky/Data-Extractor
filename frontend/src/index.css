@@ -81,6 +81,7 @@ body {
 button {
   cursor: pointer;
   background-color: var(--button-bg);
+  color: white;
   box-sizing: border-box;
   display: flex;
   align-items: center;

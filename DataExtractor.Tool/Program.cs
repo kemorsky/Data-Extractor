@@ -35,6 +35,11 @@ var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
 using var mod = SkyrimMod.CreateFromBinaryOverlay(modPathHeartland, SkyrimRelease.SkyrimSE);
 using var mod2 = SkyrimMod.CreateFromBinaryOverlay(modPathAssets, SkyrimRelease.SkyrimSE);
 
+List<ICellGetter> cells = mod
+    .EnumerateMajorRecords<ICellGetter>()
+    .Concat(mod2.EnumerateMajorRecords<ICellGetter>())
+    .ToList();
+
 var modsList = env.LoadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
 modsList.Add(mod);
 modsList.Add(mod2);
@@ -47,7 +52,9 @@ var dataService = new DataService();
 var locations =
     await dataService.GetLocations(
         mod.Locations,
-        combinedCache);
+        combinedCache,
+        cells);
+
 
 var outputPath = Path.Combine(
     "..",

@@ -8,6 +8,8 @@ import Status from '../shared/status';
 import { locationByNameQueryOptions, locationsQueryOptions } from "../../../queries/locationQueryOptions";
 import type { LocationData } from '../../../utils/types';
 import X from "../../../assets/icons/cross.svg"
+import ChevronUp from "../../../assets/icons/chevron-up.svg";
+import ChevronDown from "../../../assets/icons/chevron-down.svg";
 import parse from 'html-react-parser';
 import DrawerCityMap from '../shared/drawer-city-map';
 import Icons from "../shared/icons";
@@ -25,6 +27,11 @@ export default function LocationDrawer() {
     });
 
     const [ showChildren, setShowChildren ] = useState(false);
+    const [ showCells, setShowCells ] = useState(false);
+
+    const visibleCells = showCells
+        ? locationByName?.cells
+        : locationByName?.cells.slice(0, 3);
 
     const rawNotes = locationByName?.notes && locationByName?.notes !== "None" 
         ? locationByName?.notes
@@ -108,7 +115,7 @@ export default function LocationDrawer() {
                                     
                                     <section className={styles.ParentLocationChildren} style={{display: showChildren ? "flex" : "none"}}>
                                         {children.map((child) => (
-                                            <span key={child.name}>{child.name}</span>
+                                            <span key={child.id}>{child.name}</span>
                                         ))}
                                     </section>
 
@@ -130,38 +137,47 @@ export default function LocationDrawer() {
                             </div>
 
                             <ul className={styles.List}>
-                                {/* <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Location:</span> 
-                                    <span 
-                                        className={styles.ListItemText} 
-                                        onClick={() => { handleClick() }} 
-                                        style={{ minWidth: "2rem", cursor: "pointer", position: "relative" }}
-                                    >
-                                        {locationByName?.parentLocation} *
-                                        {locationByName?.region !== "None" && `, ${locationByName?.region}`}                                                                                             
-                                    </span>
-                                    
-                                    <section className={styles.ParentLocationChildren} style={{display: showChildren ? "flex" : "none"}}>
-                                        {children.map((child) => (
-                                            <span key={child.name}>{child.name}</span>
-                                        ))}
-                                    </section>
-
-                                    
-                                </li> */}
                                 <li className={styles.ListItem}>
                                     <span className={styles.ListItemText}>Type:</span> 
                                     <span className={styles.ListItemText}>{locationByName?.locationType}, {locationByName?.locationCategory}</span>
                                 </li>
                                 <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Inhabitants: </span>
+                                    <span className={styles.ListItemText}>Cells: </span>
                                     <ul className={styles.ListKeywords}>
-                                        {locationByName?.inhabitants.map((inhabitant) => (
-                                            <li key={inhabitant} className={styles.ListKeywordsItem}>
-                                                <span className={styles.ListItemText}>{inhabitant}</span>
-                                            </li>))}
+                                        {visibleCells?.map((cell) => (
+                                            <li key={cell.id} className={styles.ListKeywordsItem}>
+                                                <span className={styles.ListItemText}>
+                                                    {cell.editorID} 
+                                                    {cell.gridX !== null && cell.gridY !== null &&
+                                                        ` (${cell.gridX}, ${cell.gridY})`
+                                                    }
+                                                </span>
+                                                {cell == visibleCells?.[2] && !showCells && <span>...</span>}
+                                            </li>))
+                                        }
+                                        {(locationByName?.cells?.length ?? 0) > 3 &&
+                                            <button 
+                                                className={styles.ShowMoreCellsBtn}
+                                                type="button"
+                                                onClick={() => setShowCells(!showCells)}
+                                            >
+                                                <span className={styles.ShowMoreCellsBtnText}>{showCells ? "Show less" : "Show more" }</span>
+                                                <img width={14} src={showCells ? ChevronUp :  ChevronDown } />
+                                            </button>
+                                        }
                                     </ul>
                                 </li>
+                                {locationByName?.relatedQuestName !== "None" && 
+                                    <li className={styles.ListItem}>
+                                        <span className={styles.ListItemText}>Inhabitants: </span>
+                                        <ul className={styles.ListKeywords}>
+                                            {locationByName?.inhabitants.map((inhabitant) => (
+                                                <li key={inhabitant} className={styles.ListKeywordsItem}>
+                                                    <span className={styles.ListItemText}>{inhabitant}</span>
+                                                </li>))}
+                                        </ul>
+                                    </li>
+                                }
                                 {locationByName?.relatedQuestName !== "None" ? 
                                     (   <li className={styles.ListItem}>
                                             <span className={styles.ListItemText}>Quest Link:</span> 
@@ -183,11 +199,11 @@ export default function LocationDrawer() {
                                 {locationByName?.vikunjaLink !== "" ?
                                     (   <li className={styles.ListItem}>
                                             <span className={styles.ListItemText}>Vikunja Link:</span>
-                                            <span className={styles.ListItemText}>
-                                                <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
-                                                    {locationByName?.vikunjaLink}
-                                                </a>
-                                            </span>
+                                            <a className={styles.ListItemText} target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
+                                                <span>
+                                                        {locationByName?.vikunjaLink}
+                                                </span>
+                                            </a>
                                         </li>
                                     ) : 
                                     (
@@ -226,4 +242,4 @@ export default function LocationDrawer() {
             </Drawer.Portal>     
         </Drawer.Root>
     )
-}
+};
