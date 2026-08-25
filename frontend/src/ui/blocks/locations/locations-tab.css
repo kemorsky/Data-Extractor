@@ -62,11 +62,11 @@
 
 .location-card__container-view__search-input {
   width: 100%;
+  font-size: 1rem;
   position: relative;
   background-color: transparent;
   border: 1px solid transparent;
   padding: 0.33rem 0.5rem;
-  font-size: 0.825rem;
   line-height: 1;
   border-radius: 0.5rem;
 }
@@ -93,7 +93,7 @@
 
 .location-card__container-view__clear-btn {
   min-width: 4rem;
-  font-size: 0.825rem;
+  font-size: 1rem;
   font-weight: 500;
   font-family: var(--font-primary);
 }
