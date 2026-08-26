@@ -66,8 +66,17 @@ public class DataService : IDataService
                 QuestCell = questCells.ElementAtOrDefault(i),
             })
             .Where(x => !string.IsNullOrWhiteSpace(x.Name))
+            .Select(x => new
+            {
+                x.Name,
+                NormalizedName = LocationNameNormalizer.Normalize(x.Name!),
+                x.Row,
+                x.QuestCell
+            })
+            .GroupBy(x => x.NormalizedName, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(
-                x => x.Name!,
+                g => g.Key,
+                g => g.First(),
                 StringComparer.OrdinalIgnoreCase);
 
         var npcLookup = mainNpcData
@@ -154,12 +163,6 @@ public class DataService : IDataService
 
             string rawDesc = vikunjaMatch.Task?.Description ?? "";
             string notesText = "None";
-            string vikunjaLink = vikunjaProjectUrl + vikunjaMatch.Task?.Id.ToString() ?? "";
-
-            if (vikunjaMatch.Task?.Id == null)
-            {
-                vikunjaLink = "";
-            }
 
             // Vikunja card description clip (removes list containers)
             if (!string.IsNullOrWhiteSpace(rawDesc))
@@ -292,7 +295,7 @@ public class DataService : IDataService
                     .FormattedValue
                     ?? "None") != "None",
 
-                VikunjaLink = vikunjaLink,
+                VikunjaLink = vikunjaMatch.Url ?? "",
 
                 Notes = !string.IsNullOrWhiteSpace(notesText) ? notesText : "None",
             });

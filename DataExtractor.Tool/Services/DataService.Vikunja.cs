@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Collections.Generic;
 using DataExtractor.Tool.Dto;
+using DataExtractor.Tool.Helpers;
 
 public class VikunjaServices
 {
@@ -71,10 +72,12 @@ public class VikunjaServices
                                 }
                             }
 
+                            var normalizedKey = LocationNameNormalizer.Normalize(trimmedKey);
+
                             if (!string.IsNullOrWhiteSpace(trimmedKey))
                             {
                                 var taskUrl = $"{vikunjaFrontendUrl?.TrimEnd('/')}/tasks/{task.Id}";
-                                lookup.TryAdd(trimmedKey, (Task: task, Url: taskUrl));
+                                lookup.TryAdd(normalizedKey, (Task: task, Url: taskUrl));
                             }
                         }
                     }

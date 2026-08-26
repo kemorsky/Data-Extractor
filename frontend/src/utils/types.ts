@@ -13,6 +13,7 @@ export type LocationData = {
     status: string;
     relatedQuestName: string;
     relatedQuestUrl: string;
+    inhabitingNpcs: NpcData[];
     inhabitants: string[];
     hasQuest: boolean;
     vikunjaLink: string;
@@ -26,6 +27,11 @@ export type CellData = {
   formKey: string;
   gridX: number;
   gridY: number;
+}
+
+export type NpcData = {
+  name: string;
+  url: string;
 }
 
 export type LocationFilters = {

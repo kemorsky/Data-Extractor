@@ -28,10 +28,15 @@ export default function LocationDrawer() {
 
     const [ showChildren, setShowChildren ] = useState(false);
     const [ showCells, setShowCells ] = useState(false);
+    const [ showNpcs, setShowNpcs ] = useState(false);
 
     const visibleCells = showCells
         ? locationByName?.cells
         : locationByName?.cells.slice(0, 3);
+
+    const visibleNpcs = showNpcs
+        ? locationByName?.inhabitingNpcs
+        : locationByName?.inhabitingNpcs.slice(0, 3);
 
     const rawNotes = locationByName?.notes && locationByName?.notes !== "None" 
         ? locationByName?.notes
@@ -131,7 +136,10 @@ export default function LocationDrawer() {
                                 
                             </article>
                             <div className={styles.Actions}>                 
-                                <Drawer.Close className={styles.Button}>
+                                <Drawer.Close 
+                                    className={styles.Button}
+                                    onClick={() => { setShowCells(false); setShowNpcs(false);}} 
+                                >
                                     <img src={X} width={22} height={22} />
                                 </Drawer.Close>               
                             </div>
@@ -152,7 +160,9 @@ export default function LocationDrawer() {
                                                         ` (${cell.gridX}, ${cell.gridY})`
                                                     }
                                                 </span>
-                                                {cell == visibleCells?.[2] && !showCells && <span>...</span>}
+                                                {(locationByName?.cells?.length ?? 0) > 3 && !showCells ?
+                                                    (cell == visibleCells?.[2]&& <span>...</span>) : (null)
+                                                }
                                             </li>))
                                         }
                                         {(locationByName?.cells?.length ?? 0) > 3 &&
@@ -167,7 +177,37 @@ export default function LocationDrawer() {
                                         }
                                     </ul>
                                 </li>
-                                {locationByName?.relatedQuestName !== "None" && 
+                                {(locationByName?.inhabitingNpcs?.length ?? 0) > 0 && 
+                                    <li className={styles.ListItem}>
+                                        <span className={styles.ListItemText}>Inhabitants: </span>
+                                        <ul className={styles.ListKeywords}>
+                                            {visibleNpcs?.map((npc) => (
+                                                <li key={npc.name} className={styles.ListKeywordsItem}>
+                                                    <span className={styles.ListItemText}>
+                                                        <a target="_blank" style={{ fontWeight: 600 }} href={npc.url}>
+                                                            {npc.name}
+                                                        </a>
+                                                    </span>
+                                                    {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 && !showNpcs ?
+                                                        (npc == visibleNpcs?.[2]&& <span>...</span>) : (null)
+                                                    }
+                                                </li>
+                                            ))
+                                            }
+                                            {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 &&
+                                                <button 
+                                                    className={styles.ShowMoreCellsBtn}
+                                                    type="button"
+                                                    onClick={() => setShowNpcs(!showNpcs)}
+                                                >
+                                                    <span className={styles.ShowMoreNpcsBtnText}>{showNpcs ? "Show less" : "Show more" }</span>
+                                                    <img width={14} src={showNpcs ? ChevronUp :  ChevronDown } />
+                                                </button>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                {(locationByName?.inhabitants?.length ?? 0) > 0 && 
                                     <li className={styles.ListItem}>
                                         <span className={styles.ListItemText}>Inhabitants: </span>
                                         <ul className={styles.ListKeywords}>

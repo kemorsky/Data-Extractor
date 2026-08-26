@@ -7,7 +7,7 @@ import type { LocationData, LocationFilters } from "../../../utils/types";
 import { getObjectCount } from "../../../utils/get-object-count";
 import Quest from "../../../assets/location-icons/Quest-Door.svg"
 import { Drawer } from "@base-ui/react";
-import Filter from "../../../assets/icons/filter.svg"
+import Hamburger from "../../../assets/icons/hamburger.svg"
 import X from "../../../assets/icons/cross.svg"
 import HideFilters from '../../../assets/icons/hide-filters.svg';
 
@@ -158,7 +158,7 @@ export default function Filters(props: FilterProps) {
             
             <section className="filter__tags">
                 <Drawer.Trigger className={styles.ButtonOpenFilter}>
-                    <img src={Filter} alt="filter button icon" width={28} />
+                    <img src={Hamburger} alt="filter button icon" width={28} />
                 </Drawer.Trigger>
 
                 <section className="filter__tags-container">

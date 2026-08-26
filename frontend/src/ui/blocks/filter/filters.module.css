@@ -60,6 +60,7 @@
   width: 2.25rem;
   position: sticky;
   top: 0;
+  right: 0;
   align-self: flex-end;
   height: 2.25rem;
   z-index: 50;
@@ -67,8 +68,8 @@
 
 .ButtonClose {
   position: absolute;
-  top: 1.5rem;
-  right: -1rem;
+  top: 2rem;
+  right: 0;
   gap: 0.25rem;
   transform: translateY(-100%);
 }
@@ -124,7 +125,7 @@
   width: calc(17rem + var(--bleed));
   max-width: calc(100vw - 3rem + var(--bleed));
   max-height: calc(100vh + var(--bleed));
-  padding: 1.5rem;
+  padding: 1rem;
   margin-right: calc(-1 * var(--bleed));
   border-right: 1px solid white;
   outline: 0;

@@ -24,9 +24,9 @@ public class LocationNameNormalizer{
             // Remove spaces
             results = results.Replace(" ", "");
 
-            Console.WriteLine(
-                $"[NPC NORMALIZE] " +
-                $"Raw='{name}' -> Normalized='{results}'");
+            // Console.WriteLine(
+            //     $"[NPC NORMALIZE] " +
+            //     $"Raw='{name}' -> Normalized='{results}'");
 
             return results.Trim().ToLowerInvariant();
 

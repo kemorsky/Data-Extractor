@@ -52,6 +52,7 @@
     color: #faf118;
     border-bottom: 1px solid #faf118;
     border-radius: 0.33rem 0.33rem 0 0;
+    background-color: var(--bg-dark);
   }
 
   &:focus-visible {
