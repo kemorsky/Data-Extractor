@@ -93,19 +93,11 @@ public class DataService : IDataService
             .GroupBy(x => x.LocationName!, StringComparer.OrdinalIgnoreCase)
             .ToDictionary(
                 g => g.Key,
-                g => g.First(),
+                g => g.ToList(),
                 StringComparer.OrdinalIgnoreCase);
 
         Console.WriteLine(
             $"[NPC LOOKUP] Created {npcLookup.Count} location entries.");
-
-        foreach (var entry in npcLookup.Take(30))
-        {
-            Console.WriteLine(
-                $"[NPC LOOKUP] " +
-                $"Key='{entry.Key}' -> " +
-                $"NPC='{entry.Value.Name}'");
-        }
 
         var vikunjaProjectUrl = Environment.GetEnvironmentVariable("VIKUNJA_PROJECT_URL");
 
@@ -154,7 +146,9 @@ public class DataService : IDataService
 
             npcLookup.TryGetValue(
                 locationKey,
-                out var npc);
+                out var npcs);
+
+            npcs ??= [];
 
             vikunjaLookup.TryGetValue(locationKey, out var vikunjaMatch);
 
@@ -237,6 +231,14 @@ public class DataService : IDataService
                 {
                     locationType = type;
                 }
+                // if (keyword.StartsWith("LocType", StringComparison.OrdinalIgnoreCase))
+                // {
+                //     locationType = LocationTypeAndCategoryNormalizer.KeywordExtractor(keyword);
+                // }
+                // if (keyword.StartsWith("LocSet", StringComparison.OrdinalIgnoreCase))
+                // {
+                //     locationCategory = LocationTypeAndCategoryNormalizer.KeywordExtractor(keyword);
+                // }
             }
 
             locationsData.Add(new LocationDataSheet
@@ -253,13 +255,16 @@ public class DataService : IDataService
                 LocationCategory = locationCategory,
                 LocationType = locationType,
 
-                InhabitingNpcName = npc?.Name ?? "None",
-
-                InhabitingNpcUrl = npc?.NpcDocCell?
-                    .Values?
-                    .FirstOrDefault()?
-                    .Hyperlink
-                    ?? "None",
+                InhabitingNpcs = npcs
+                    .Select(npc => new NpcData
+                    {
+                        Name = npc.Name ?? "None",
+                        Url = npc.NpcDocCell?
+                        .Values?
+                        .FirstOrDefault()?
+                        .Hyperlink ?? ""
+                    })
+                    .ToArray(),
 
                 Inhabitants = sheet?.Row.Count > 5 && sheet.Row[5] != null
                     ? sheet.Row[5].ToString()!.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
