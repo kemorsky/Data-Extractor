@@ -12,6 +12,8 @@ public class LocationDataSheet
     public CellData[] Cells { get; set; } = Array.Empty<CellData>();
     public string LocationCategory { get; set; } = string.Empty;
     public string LocationType { get; set; } = string.Empty;
+    public string InhabitingNpcName { get; set; } = string.Empty;
+    public string InhabitingNpcUrl { get; set; } = string.Empty;
     public string[] Inhabitants { get; set; } = Array.Empty<string>();
     public string RelatedQuestName { get; set; } = string.Empty;
     public string RelatedQuestUrl { get; set; } = string.Empty;

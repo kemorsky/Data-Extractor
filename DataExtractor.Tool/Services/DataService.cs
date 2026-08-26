@@ -5,165 +5,126 @@ using Mutagen.Bethesda.Skyrim;
 using Mutagen.Bethesda.Plugins.Cache;
 using System;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using Google.Apis.Services;
-using Google.Apis.Sheets.v4;
-using Google.Apis.Auth.OAuth2;
 using DataExtractor.Tool.Dto;
+using DataExtractor.Tool.Helpers;
 using Noggog;
 
 public class DataService : IDataService
 {
-    public async Task<List<LocationDataSheet>> GetLocations(
-        IEnumerable<ILocationGetter?>? locations = null, 
-        ILinkCache? linkCache = null,
-        IEnumerable<ICellGetter>? cells = null)
+    private readonly GoogleServices _googleServices;
+    private readonly VikunjaServices _vikunjaServices;
+
+    public DataService(GoogleServices googleServices, VikunjaServices vikunjaServices)
     {
-        var masterlistId = Environment.GetEnvironmentVariable("MASTERLIST-ID");
+        _googleServices = googleServices;
+        _vikunjaServices = vikunjaServices;
+    }
+
+    public async Task<List<LocationDataSheet>> GetLocations(
+        IEnumerable<ILocationGetter?> locations, 
+        ILinkCache linkCache,
+        IEnumerable<ICellGetter> cells)
+    {
+        // Google envs
+        var masterlistId = Environment.GetEnvironmentVariable("MASTERLIST_ID") 
+            ?? throw new InvalidOperationException("MASTERLIST_ID environment variable is not set.");
+        var npcDatabaseId = Environment.GetEnvironmentVariable("NPC_DATABASE_ID")
+            ?? throw new InvalidOperationException("NPC_DATABASE_ID environment variable is not set.");
         
-        var credential = await GoogleCredential.GetApplicationDefaultAsync();
-        credential = credential.CreateScoped(SheetsService.Scope.SpreadsheetsReadonly);
+        var credential = await _googleServices.GetGoogleCredential();
         
-        var sheetsService = new SheetsService(new BaseClientService.Initializer
-        {
-            HttpClientInitializer = credential,
-            ApplicationName = "MyApp"
-        });
+        var sheetsService = _googleServices.CreateSheetsService(credential);
+        var npcDatabaseService = _googleServices.CreateSheetsService(credential);
 
-        var spreadsheetRequest = sheetsService.Spreadsheets.Get(masterlistId);
-        spreadsheetRequest.Ranges = new List<string>
-            {
-                "Dungeons!J1:J",
-                "Dungeons!Z1:Z"
-            };
-        spreadsheetRequest.IncludeGridData = true;
+        var masterlistData = await _googleServices.LoadMasterListData(
+            sheetsService,
+            masterlistId
+        );
 
-        var questResponse = await spreadsheetRequest.ExecuteAsync();
+         var npcData = await _googleServices.LoadNpcData(
+            sheetsService,
+            npcDatabaseId
+        );
 
-        var sheetCells = questResponse.Sheets[0];
-        var questCells = sheetCells.Data[0].RowData;
-        var imageCells = sheetCells.Data[1].RowData;
+        // Dungeon Masterlist data
+        var mainData = masterlistData.Rows;
+        var questCells = masterlistData.QuestCells;
 
-        var request = sheetsService.Spreadsheets.Values.BatchGet(masterlistId);
-        request.Ranges = new List<string>
-        {
-            "Dungeons!A1:Z",
-        };
+        // Npc Database data
+        var mainNpcData = npcData.Rows;
+        var npcDocCells = npcData.NpcDocCells;
 
-        var response = await request.ExecuteAsync();
-
-        var dungeonData = response.ValueRanges;
-        Console.WriteLine($"Returned ranges: {dungeonData.Count}");
-
-        var mainData = dungeonData.ElementAtOrDefault(0)?.Values ?? [];
+        Console.WriteLine($"[NPC DEBUG] Total NPC rows returned: {mainNpcData.Count}");
 
         var sheetLookup = mainData
             .Select((row, i) => new
             {
-                Name = row.Count > 0 ? row[0].ToString() : "",
+                Name = row.Count > 0 ? row[0].ToString()?.Trim() : "",
                 Row = row,
                 QuestCell = questCells.ElementAtOrDefault(i),
-                ImageCell = imageCells.ElementAtOrDefault(i)
             })
             .Where(x => !string.IsNullOrWhiteSpace(x.Name))
             .ToDictionary(
                 x => x.Name!,
                 StringComparer.OrdinalIgnoreCase);
 
-        // Vikunja Environment Variables
-        var vikunjaApiUrl = Environment.GetEnvironmentVariable("VIKUNJA_API_URL");
-        var vikunjaApiUrlDungeons = Environment.GetEnvironmentVariable("VIKUNJA_API_URL_DUNGEONS");
-        var vikunjaToken = Environment.GetEnvironmentVariable("VIKUNJA_TOKEN");
-        var vikunjaFrontendUrl = Environment.GetEnvironmentVariable("VIKUNJA_FRONTEND_URL");
+        var npcLookup = mainNpcData
+            .Select((row, i) => new
+            {
+                Name = row.Count > 0 ? row[0].ToString()?.Trim() : "",
+                RawLocationName = row.Count > 7
+                    ? row[7]?.ToString()?.Trim()
+                    : "",
+                Row = row,
+                NpcDocCell = npcDocCells.ElementAtOrDefault(i),
+            })
+            .Select((x) => new
+            {
+                x.Name,
+                LocationName = LocationNameNormalizer.Normalize(x.RawLocationName),
+                x.Row,
+                x.NpcDocCell
+            })
+            .Where(x => 
+                !string.IsNullOrWhiteSpace(x.Name) && 
+                !string.IsNullOrWhiteSpace(x.LocationName))
+            .GroupBy(x => x.LocationName!, StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(
+                g => g.Key,
+                g => g.First(),
+                StringComparer.OrdinalIgnoreCase);
+
+        Console.WriteLine(
+            $"[NPC LOOKUP] Created {npcLookup.Count} location entries.");
+
+        foreach (var entry in npcLookup.Take(30))
+        {
+            Console.WriteLine(
+                $"[NPC LOOKUP] " +
+                $"Key='{entry.Key}' -> " +
+                $"NPC='{entry.Value.Name}'");
+        }
+
         var vikunjaProjectUrl = Environment.GetEnvironmentVariable("VIKUNJA_PROJECT_URL");
 
-        var vikunjaLookup = new Dictionary<string, (VikunjaTask Task, string Url)>(StringComparer.OrdinalIgnoreCase);
-
-        // DIAGNOSTIC LOG: Check Environment Variables
-        Console.WriteLine($"[Vikunja Diagnostics] URL configured: {!string.IsNullOrEmpty(vikunjaApiUrl)} ('{vikunjaApiUrl}')");
-        Console.WriteLine($"[Vikunja Diagnostics] Token configured: {!string.IsNullOrEmpty(vikunjaToken)}");
-        
-        if (!string.IsNullOrEmpty(vikunjaApiUrl) && !string.IsNullOrEmpty(vikunjaToken))
-        {
-            var apiUrls = new[] { vikunjaApiUrl, vikunjaApiUrlDungeons }
-                .Where(url => !string.IsNullOrEmpty(url))
-                .ToList();
-            
-            using var localHttpClient = new HttpClient();
-
-            foreach (var url in apiUrls)
-            {
-                try
-                {
-                    // using var localHttpClient = new HttpClient();
-
-                    var httpRequest = new HttpRequestMessage(HttpMethod.Get, url);
-                    httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", vikunjaToken);
-                    httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                    var httpResponse = await localHttpClient.SendAsync(httpRequest);
-
-                    Console.WriteLine($"[Vikunja Diagnostics] HTTP Status Code Received: {httpResponse.StatusCode} ({(int)httpResponse.StatusCode})");
-
-                    if (httpResponse.IsSuccessStatusCode)
-                    {
-                        var jsonString = await httpResponse.Content.ReadAsStringAsync();
-                        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                        var responseData = JsonSerializer.Deserialize<VikunjaResponseContainer>(jsonString, options);
-
-                        var tasks = responseData?.Items ?? new List<VikunjaTask>();
-
-                        Console.Write(tasks);
-                        Console.WriteLine($"[Vikunja Diagnostics] Extracted {tasks.Count} inner tasks from API payload.");
-
-                        foreach (var task in tasks)
-                        {
-                            string rawName = task.Name ?? "";
-                            string trimmedKey = rawName.Trim();
-
-                            if (rawName.Contains('-'))
-                            {
-                                var parts = rawName.Split('-', 2);
-                                if (parts.Length > 1) 
-                                {
-                                    trimmedKey = parts[1].Trim();
-                                }
-                            }
-
-                            if (!string.IsNullOrWhiteSpace(trimmedKey))
-                            {
-                                var taskUrl = $"{vikunjaFrontendUrl?.TrimEnd('/')}/tasks/{task.Id}";
-                                vikunjaLookup.TryAdd(trimmedKey, (Task: task, Url: taskUrl));
-                            }
-                        }
-                    }
-                } catch (Exception ex)
-                {
-                    Console.WriteLine($"Warning: Failed to fetch data from Vikunja API. {ex.Message}");
-                }
-            }
-        }
+        var vikunjaLookup = await _vikunjaServices.LoadVikunjaData();
         
         var locationsData = new List<LocationDataSheet>();
         var id = 0;
-
-        // string rawName = task.Name ?? "";
-
-        // // Strips everything from the start up to the FIRST '.', '-', or ':' and trailing spaces
-        // string trimmedKey = Regex.Replace(rawName, @"^(?:[^.:\-]+[.:\-]\s*)+", "").Trim();
 
         // If mod path is present use both the esm and the masterlist
         foreach (var loc in locations)
         {
             var displayName = loc?.Name?.ToString() ?? "";
+            var locationKey = LocationNameNormalizer.Normalize(displayName);
+
             var keywordsList = new List<string>();
 
             var cellData = new List<CellData>();
 
+            // Grid coordinates pulled from esm
             if (loc != null && cells != null)
             {
                 var cellsForLocation = System.Linq.Enumerable
@@ -185,21 +146,17 @@ public class DataService : IDataService
                         GridY = cell.Grid?.Point.Y
                     });
                 }
-
-                // foreach (var cell in cellData)
-                // {
-                //     Console.WriteLine(
-                //     $"  {cell.EditorID} " +
-                //     $"Grid: ({cell.GridX}, {cell.GridY})");
-                // }
-
             }
 
             sheetLookup.TryGetValue(
-                displayName,
+                locationKey,
                 out var sheet);
 
-            vikunjaLookup.TryGetValue(displayName, out var vikunjaMatch);
+            npcLookup.TryGetValue(
+                locationKey,
+                out var npc);
+
+            vikunjaLookup.TryGetValue(locationKey, out var vikunjaMatch);
 
             string rawDesc = vikunjaMatch.Task?.Description ?? "";
             string notesText = "None";
@@ -210,6 +167,7 @@ public class DataService : IDataService
                 vikunjaLink = "";
             }
 
+            // Vikunja card description clip (removes list containers)
             if (!string.IsNullOrWhiteSpace(rawDesc))
             {
                 // Split on <ul followed by any characters until the closing > bracket <ul>, <ul class="...">, <ul style="...">, etc.
@@ -219,6 +177,7 @@ public class DataService : IDataService
                 notesText = parts[0].Trim();
             }
 
+            // Vikunja label handling and matching
             string displayStatusText = "None";
             if (vikunjaMatch.Task?.Labels != null)
             {
@@ -240,7 +199,6 @@ public class DataService : IDataService
             // Use the FormLink directly instead of pulling the FormKey property out
             if (loc?.ParentLocation != null && loc.ParentLocation.TryResolve(linkCache, out var parentLoc))
             {
-                // Console.WriteLine($"Found the parent location! {parentLoc}");
                 // FormLink successfully found the record in the active load order cache
                 parentNameString = parentLoc.Name?.ToString() ?? parentLoc.EditorID ?? "Unnamed Parent Location";
             }
@@ -294,9 +252,19 @@ public class DataService : IDataService
                 
                 LocationCategory = locationCategory,
                 LocationType = locationType,
+
+                InhabitingNpcName = npc?.Name ?? "None",
+
+                InhabitingNpcUrl = npc?.NpcDocCell?
+                    .Values?
+                    .FirstOrDefault()?
+                    .Hyperlink
+                    ?? "None",
+
                 Inhabitants = sheet?.Row.Count > 5 && sheet.Row[5] != null
                     ? sheet.Row[5].ToString()!.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
                     : Array.Empty<string>(),
+
                 Status = displayStatusText != "None" 
                     ? displayStatusText 
                     : (sheet?.Row.Count > 12 ? sheet.Row[12].ToString()  ?? "None" : "None"),

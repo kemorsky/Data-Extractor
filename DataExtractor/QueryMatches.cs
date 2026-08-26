@@ -18,7 +18,6 @@ public class DataExtractorTools {
                 if (strValue.Contains(query, StringComparison.OrdinalIgnoreCase))
                     return true;
             }
-            // 2. Match against string collections (IEnumerable<string>)
             else if (value is IEnumerable<string> stringList)
             {
                 if (stringList.Any(item => item != null && item.Contains(query, StringComparison.OrdinalIgnoreCase)))

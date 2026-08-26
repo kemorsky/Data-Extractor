@@ -16,8 +16,8 @@ Environment.SetEnvironmentVariable(
     "GOOGLE_APPLICATION_CREDENTIALS",
     credentialPath);
 
-var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA-HEARTLANDS");
-var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA-ASSETS");
+var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA_HEARTLANDS");
+var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA_ASSETS");
 var URL = Environment.GetEnvironmentVariable("URL");
 
 Console.WriteLine("Hello, World!");
@@ -46,7 +46,9 @@ modsList.Add(mod2);
 
 var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter>(modsList, LinkCachePreferences.Default);
 
-var dataService = new DataService();
+var googleServices = new GoogleServices();
+var vikunjaServices = new VikunjaServices();
+var dataService = new DataService(googleServices, vikunjaServices);
 
 // 4. Combine ESM + Google Sheet
 var locations =
