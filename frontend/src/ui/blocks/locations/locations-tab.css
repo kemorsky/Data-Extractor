@@ -28,7 +28,6 @@
 .location-card__container-view__select {
   padding: 0.25rem;
   height: 2.167rem;
-  
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -48,6 +47,7 @@
 .location-card__container-view__search {
   display: flex;
   gap: 0.33rem;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .location-card__container-view__search-form {
@@ -56,8 +56,7 @@
   background-color: #2B2A33;
   position: relative;
   display: flex;
-  gap: 0.25rem;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
 }
 
 .location-card__container-view__search-input {
@@ -66,18 +65,25 @@
   position: relative;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 0.33rem 0.5rem;
+  padding: 0.5rem 0.75rem;
   line-height: 1;
-  border-radius: 0.5rem;
+  border-radius: 1.25rem 0 0 1.25rem;
+  border: 1px solid rgb(207, 207, 207);
+}
+
+.location-card__container-view__search-input:focus {
+  border: 1px solid #1c62b9;
+  outline: none;
+  z-index: 90;
 }
 
 .location-card__container-view__search-btn {
-  min-width: 2rem;
-  position: absolute;
+  min-width: 3rem;
+  /* position: absolute;
   right: 0;
-  top: 0;
-  border-radius: 0 0.5rem 0.5rem 0;
-  
+  top: 0; */
+  border-radius: 0 1.25rem 1.25rem 0;
+  border: 1px solid rgb(207, 207, 207);
   height: 100%;
 }
 
@@ -237,13 +243,13 @@
 @media (max-width: 680px) {
   .location-card__container-view {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
   }
 
   .location-card__container-view__search {
-    width: 100%;
+    order: 2;
   }
 
   .location-card__table-container__header-row__cell{

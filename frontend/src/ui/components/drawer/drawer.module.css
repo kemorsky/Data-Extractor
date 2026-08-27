@@ -52,7 +52,6 @@
 
 .Backdrop {
   --backdrop-opacity: 0.7;
-  --bleed: 3rem;
   position: fixed;
   min-height: 100dvh;
   inset: 0;
@@ -98,7 +97,7 @@
   --bleed: 3rem;
   box-sizing: border-box;
   width: calc(45rem + var(--bleed));
-  max-width: calc(100vw - 3rem + var(--bleed));
+  max-width: calc(100vw - var(--bleed));
   height: 100%;
   padding: 1.5rem;
   padding-right: calc(1.5rem + var(--bleed));
@@ -325,7 +324,7 @@
 
 @media (max-width: 520px) {
   .ListKeywordsItem {
-    max-width: 12rem;
+    max-width: 14rem;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -345,9 +344,10 @@
     right: 1rem;
   }
   .Popup {
+    --bleed: 3rem;
     padding: 1rem;
     
-    max-width: calc(90vw - 3rem + var(--bleed));
+    max-width: 90vw;
     margin-right: calc(0 * var(--bleed));
   }
 

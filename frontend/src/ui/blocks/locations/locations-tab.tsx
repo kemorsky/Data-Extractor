@@ -100,6 +100,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             
             <div className="location-card__container-view">
                 <section className="location-card__container-view__selects">
+                    
                     <span>View style: </span>
                     <select className="location-card__container-view__select">
                         <option 
@@ -115,7 +116,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             Table
                         </option>
                     </select>
-
+                    
                     <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>
                     <select 
                         className="location-card__container-view__select"
@@ -137,7 +138,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                         <input 
                             className="location-card__container-view__search-input"
                             type="text"
-                            placeholder="Search..."
+                            placeholder="Search"
                             value={searchInput}
                             onChange={(e) => setSearchInput(e.target.value)}
                         />
@@ -145,7 +146,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             type="submit"
                             className="location-card__container-view__search-btn"
                         >
-                            <img src={Search} width={24}/>
+                            <img src={Search} width={28}/>
                         </button>
                     </form>
                     <button 
