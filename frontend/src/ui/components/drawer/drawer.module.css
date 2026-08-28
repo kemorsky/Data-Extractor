@@ -319,7 +319,7 @@
 }
 
 @media (max-width: 520px) {
-  .ListKeywordsItem {
+  .ListArrayItem {
     max-width: 13.5rem;
   }
 }
@@ -342,7 +342,7 @@
   }
 
   .List {
-    max-width: 100%;
+    min-width: 4rem;
   }
 
   .ListItem {
