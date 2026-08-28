@@ -232,11 +232,10 @@
 }
 
 .ListItemText {
+  display: block;
   min-width: 6.5rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: left;
+  text-wrap: wrap;
+  overflow-wrap: break-word;
 }
 
 .Title {
@@ -253,14 +252,11 @@
 }
 
 .TitleText {
-  /* max-width: 17rem; */
   width: 100%;
   font-size: 1.5rem;
   line-height: normal;
   font-weight: 700;
   margin: 0;
-  /* text-align: center;
-  align-self: center; */
 }
 
 .NotesContainer {
@@ -324,17 +320,7 @@
 
 @media (max-width: 520px) {
   .ListKeywordsItem {
-    max-width: 14rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .ListItemText {
-    max-width: 12rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    max-width: 13.5rem;
   }
 }
 
@@ -356,7 +342,7 @@
   }
 
   .List {
-    min-width: 4rem;
+    max-width: 100%;
   }
 
   .ListItem {
