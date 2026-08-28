@@ -162,8 +162,8 @@
 .ParentLocationChildren {
   position: absolute;
   /* right: -2.5rem; */
-  right: -1rem;
-  top: 2rem;
+  left: 0;
+  top: 6.5rem;
   max-height: 20rem;
   background-color: var(--bg-dark-80);
   border: 1px solid var(--border);
@@ -197,7 +197,7 @@
   margin-right: 0.25rem;
 }
 
-.List {
+.ListContainer {
   min-width: 20rem;
   list-style: none;
   font-weight: 400;
@@ -216,7 +216,7 @@
   color: var(--text-muted);
 }
 
-.ListKeywords {
+.ListArray {
   min-width: 9rem;
   list-style: none;
   font-weight: 600;
@@ -225,7 +225,7 @@
   padding-left: 0;
 }
 
-.ListKeywordsItem {
+.ListArrayItem {
   margin-bottom: 0.33rem;
   min-width: 6.5rem;
   text-align: left;

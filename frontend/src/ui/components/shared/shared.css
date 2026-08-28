@@ -229,6 +229,7 @@ dialog > button {
     border: 1px solid transparent;
     border-radius: 999px;
     background-color: oklch(14.5% 0 0deg);
+    opacity: 0.8;
     font-family: inherit;
     font-size: 0.875rem;
     font-weight: 400;

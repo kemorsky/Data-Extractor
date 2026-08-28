@@ -42,6 +42,7 @@
 
   /* Transitions */
   --button-colors: background-color 150ms ease-in-out;
+  --button-text: color 150ms ease-in-out;
 
   font: 18px/145% var(--sans);
   font-family: var(--font-primary);
