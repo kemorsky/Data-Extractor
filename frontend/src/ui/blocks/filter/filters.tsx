@@ -189,80 +189,83 @@ export default function Filters(props: FilterProps) {
             <Drawer.Portal>         
                 {/* <Drawer.Backdrop className={styles.Backdrop} />          */}
                 <Drawer.Viewport className={styles.Viewport}>
-                    <Drawer.Popup className={styles.Popup}>   
+                    
+                    <Drawer.Popup className={styles.Popup}>    
+                        <section className={styles.ButtonCloseContainer}>
+                            <Drawer.Close className={styles.ButtonClose}>
+                                <img src={HideFilters} width={28} height={28}/>
+                            </Drawer.Close> 
+                        </section>
                 
-                        <Drawer.Content className={styles.Content}>
-                            <section className={styles.ButtonCloseContainer}>
-                                <Drawer.Close className={styles.ButtonClose}>
-                                    <img src={HideFilters} width={28} height={28}/>
-                                </Drawer.Close> 
-                            </section>             
-                            
-                            <section className="quest-checkbox">
-                                <label className="quest-checkbox__option">
-                                    <input
-                                        type="checkbox"
-                                        className="quest-checkbox__option__checkbox"
-                                        checked={filters.hasQuest === null ? false : filters.hasQuest}
-                                        onChange={toggleHasQuest}
-                                    />
-                                    <section style={{height: 30, width: 30, display: "flex", alignItems: "center", justifyContent: "center"}}>
-                                        <img width={20} src={Quest} alt="Quest anchor icon" />
-                                    </section> 
-                                    <span className="quest-checkbox__option-text">
-                                        Has Quest
-                                    </span>
-                                </label>
-                            </section>
-                            <CheckboxGroup 
-                                key={1}
-                                title="Location Category"
-                                options={locationCategories}
-                                counts={categoryCount}
-                                selected={filters.locationCategories}
-                                onToggle={(value) => toggleFilter("locationCategories", value)}
-                            />
-                            <CheckboxGroup 
-                                key={2}
-                                title="City"
-                                options={parentLocationsCities}
-                                counts={parentLocationCount}
-                                selected={filters.parentLocations}
-                                onToggle={(value) => toggleFilter("parentLocations", value)}
-                            />
-                            <CheckboxGroup 
-                                key={3}
-                                title="County"
-                                options={parentLocations}
-                                counts={parentLocationCount}
-                                selected={filters.parentLocations}
-                                onToggle={(value) => toggleFilter("parentLocations", value)}
-                            />
-                            <CheckboxGroup 
-                                key={4}
-                                title="Location Type"
-                                options={locationTypes}
-                                counts={typeCount}
-                                selected={filters.locationTypes}
-                                onToggle={(value) => toggleFilter("locationTypes", value)}
-                            />
-                            <CheckboxGroup 
-                                key={5}
-                                title="Status"
-                                options={statuses}
-                                counts={statusCount}
-                                selected={filters.statuses}
-                                onToggle={(value) => toggleFilter("statuses", value)}
-                            />
-                            <CheckboxGroup 
-                                key={6}
-                                title="Inhabitants"
-                                options={inhabitants}
-                                counts={inhabitantsCount}
-                                selected={filters.inhabitants}
-                                onToggle={(value) => toggleFilter("inhabitants", value)}
-                            />             
-                        </Drawer.Content>           
+                        <div className={styles.Test}>
+                            <Drawer.Content className={styles.Content}>
+                                            
+                                <section className="quest-checkbox">
+                                    <label className="quest-checkbox__option">
+                                        <input
+                                            type="checkbox"
+                                            className="quest-checkbox__option__checkbox"
+                                            checked={filters.hasQuest === null ? false : filters.hasQuest}
+                                            onChange={toggleHasQuest}
+                                        />
+                                        <section style={{height: 30, width: 30, display: "flex", alignItems: "center", justifyContent: "center"}}>
+                                            <img width={20} src={Quest} alt="Quest anchor icon" />
+                                        </section> 
+                                        <span className="quest-checkbox__option-text">
+                                            Has Quest
+                                        </span>
+                                    </label>
+                                </section>
+                                <CheckboxGroup 
+                                    key={1}
+                                    title="Location Category"
+                                    options={locationCategories}
+                                    counts={categoryCount}
+                                    selected={filters.locationCategories}
+                                    onToggle={(value) => toggleFilter("locationCategories", value)}
+                                />
+                                <CheckboxGroup 
+                                    key={2}
+                                    title="City"
+                                    options={parentLocationsCities}
+                                    counts={parentLocationCount}
+                                    selected={filters.parentLocations}
+                                    onToggle={(value) => toggleFilter("parentLocations", value)}
+                                />
+                                <CheckboxGroup 
+                                    key={3}
+                                    title="County"
+                                    options={parentLocations}
+                                    counts={parentLocationCount}
+                                    selected={filters.parentLocations}
+                                    onToggle={(value) => toggleFilter("parentLocations", value)}
+                                />
+                                <CheckboxGroup 
+                                    key={4}
+                                    title="Location Type"
+                                    options={locationTypes}
+                                    counts={typeCount}
+                                    selected={filters.locationTypes}
+                                    onToggle={(value) => toggleFilter("locationTypes", value)}
+                                />
+                                <CheckboxGroup 
+                                    key={5}
+                                    title="Status"
+                                    options={statuses}
+                                    counts={statusCount}
+                                    selected={filters.statuses}
+                                    onToggle={(value) => toggleFilter("statuses", value)}
+                                />
+                                <CheckboxGroup 
+                                    key={6}
+                                    title="Inhabitants"
+                                    options={inhabitants}
+                                    counts={inhabitantsCount}
+                                    selected={filters.inhabitants}
+                                    onToggle={(value) => toggleFilter("inhabitants", value)}
+                                />             
+                            </Drawer.Content>
+                        </div>      
                     </Drawer.Popup>      
                 </Drawer.Viewport>       
             </Drawer.Portal>     

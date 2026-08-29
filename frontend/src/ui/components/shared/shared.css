@@ -1,11 +1,12 @@
 .nav {
-    height: 4rem;
+    height: 40px;
+    padding: 17.5px 0;
     position: relative;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #4a4e51;
+    border-bottom: 1px solid var(--border);
 }
 
 .nav__logo {
@@ -26,12 +27,12 @@
 
     a {
         text-decoration: none;
-        color: var(--text);
+        color: var(--text-muted);
         
     }
 
     a:hover {
-        color: white
+        color: var(--text);
     }
 
     span {

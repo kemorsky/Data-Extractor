@@ -7,11 +7,9 @@
   font-weight: 500;
   /* color: rgb(0, 113, 185); */
   text-decoration: underline;
-  font-family: var(--font-primary);
-  margin-top: 0.5rem;
+  /* margin-top: 0.5rem; */
   padding: 0.5rem 0;
   /* padding: 0.5rem 0.75rem; */
-  transition: var(--button-colors);
 
   &:hover {
     color: rgb(1, 139, 224);

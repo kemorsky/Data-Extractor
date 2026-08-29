@@ -1,12 +1,8 @@
 import "./shared.css";
-import {useState} from "react"
 import LogoFull from "../../../assets/logo-full.svg"
 import Logo from "../../../assets/logo.svg"
-import Hamburger from "../../../assets/icons/hamburger.svg"
 
 export default function Navbar() {
-    const [ menuOpen, setMenuOpen ] = useState(false);
-
     return (
         <nav className="nav">
             <a href="https://beyondskyrim.org/">
@@ -15,15 +11,6 @@ export default function Navbar() {
                     <img className="nav__logo" src={LogoFull} height={24} alt="Logo" />
                 </picture>
             </a>
-            
-            <button 
-                className="nav__toggle"
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Toggle navigation"
-                aria-expanded={menuOpen}
-            >
-                <img src={Hamburger} width={28} alt="hamburger icon" />
-            </button>
             <article className={`nav__content`}>
                 
                 <a href="https://claims.beyondskyrim.org/">

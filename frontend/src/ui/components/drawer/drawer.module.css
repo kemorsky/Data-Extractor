@@ -103,8 +103,8 @@
   padding-right: calc(1.5rem + var(--bleed));
   margin-right: calc(-1 * var(--bleed));
   border-left: 1px solid #faf118;
-  background-color: var(--bg-dark);
-  color: white;
+  background-color: var(--bg-light);
+  color: var(--text);
   outline: 0;
   box-shadow: 0.25rem 0.25rem 0 rgb(0 0 0 / 12%);
   overflow-y: auto;
@@ -165,8 +165,9 @@
   left: 0;
   top: 6.5rem;
   max-height: 20rem;
-  background-color: var(--bg-dark-80);
+  background-color: var(--bg-dark);
   border: 1px solid var(--border);
+  color: var(--text-muted);
   border-radius: 0.33rem;
   display: flex;
   flex-direction: column;
@@ -278,7 +279,7 @@
 
 .NotesTitle {
   text-align: center;
-  color: white;
+  color: var(--text);
   font-weight: 600;
 }
 

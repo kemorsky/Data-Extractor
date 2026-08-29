@@ -41,7 +41,7 @@
 
 .location-card__quest {
     text-decoration: none;
-    color: white;
+    color: var(--text);
 }
 
 p {
@@ -181,11 +181,6 @@ p {
     justify-content: flex-start;
 }
 
-.location-card__quest {
-    text-decoration: none;
-    color: white;
-}
-
 .table__location-card__vikunja {
     height: 1.35rem;
 }
@@ -203,14 +198,11 @@ p {
     width: 1rem;
 }
 
-
-
 @media (max-width: 740px) {
     .location-card {
         max-width: 12rem;
     }
 }
-
 
 @media (max-width: 680px) {
     .location-card__info__name {

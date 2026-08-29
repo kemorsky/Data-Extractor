@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./checkbox-group.css";
 import Icons from "../shared/icons";
-import ChevronUp from "../../../assets/icons/chevron-up.svg";
-import ChevronDown from "../../../assets/icons/chevron-down.svg";
+import { ShowMoreButton } from "../../components/shared/buttons";
 
 type CheckboxProps = {
   title: string,
@@ -49,14 +48,12 @@ export default function CheckboxGroup(props: CheckboxProps) {
                 ))
             }
             {props.options.length > 3 &&
-                <button 
-                    className="checkbox-group__show-more-button"
-                    type="button"
-                    onClick={() => setShowTypes(!showTypes)}
-                >
-                    <span className="checkbox-group__show-more-button__text">{showTypes ? "Show less" : "Show more" }</span>
-                    <img width={20} src={showTypes ? ChevronUp :  ChevronDown } />
-                </button>
+                <ShowMoreButton 
+                    showState={showTypes} 
+                    setShowState={setShowTypes}
+                    textTrue={"Show less"}
+                    textFalse={"Show more"} 
+                />
             }
         </fieldset>
     )
