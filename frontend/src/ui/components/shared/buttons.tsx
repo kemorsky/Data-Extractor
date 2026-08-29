@@ -23,11 +23,3 @@ export function ShowMoreButton(props: ButtonProps) {
         </button>
     )
 }
-
-export function ClearFiltersButton(props: ButtonProps) {
-    return (
-        <button className="clear-filters-btn">
-
-        </button>
-    )
-}
