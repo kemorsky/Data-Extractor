@@ -36,6 +36,7 @@
   font-family: var(--font-primary);
   border-radius: 0.33rem;
   border: 1px solid var(--border);
+  position: relative;
 }
 
 .location-card__container-view__select:hover  {
@@ -50,28 +51,40 @@
 }
 
 .location-card__container-view__search-form {
-  min-width: 13.5rem;
-  height: 2.25rem;
+  min-width: 18rem;
+  width: 100%;
+  height: 40px;
+  padding-left: 0.75rem;
   background-color: #2B2A33;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   border-radius: 1.5rem;
+  border: 1px solid rgb(207, 207, 207);
+}
+
+.location-card__container-view__search-form:focus-within {
+  border: 1px solid #1c62b9;
+  outline: 2px solid #1c62b9;
 }
 
 .location-card__container-view__search-input {
+  max-width: 10rem;
   width: 100%;
   font-size: 1rem;
   position: relative;
   background-color: transparent;
   border: 1px solid transparent;
-  padding: 0.5rem 0.75rem;
+  margin-right: auto;
+  /* padding: 0.5rem 0.75rem; */
   line-height: 1;
   border-radius: 1.25rem 0 0 1.25rem;
-  border: 1px solid rgb(207, 207, 207);
+  font-family: var(--font-primary);
 }
 
 .location-card__container-view__search-input:focus {
-  border: 1px solid #1c62b9;
   outline: none;
   z-index: 90;
 }
@@ -94,10 +107,14 @@
 }
 
 .location-card__container-view__clear-btn {
-  min-width: 4rem;
+  height: 27px;
+  background-color: transparent;
+  line-height: 1;
+  color: var(--text-muted);
   font-size: 1rem;
   font-weight: 500;
   font-family: var(--font-primary);
+  z-index: 60;
 }
 
 .location-card__cards-container {

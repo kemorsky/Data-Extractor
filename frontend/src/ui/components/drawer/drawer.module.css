@@ -53,7 +53,7 @@
 .Backdrop {
   --backdrop-opacity: 0.7;
   position: fixed;
-  min-height: 100dvh;
+  height: 100%;
   inset: 0;
   background-color: black;
   opacity: calc(var(--backdrop-opacity) * (1 - var(--drawer-swipe-progress)));

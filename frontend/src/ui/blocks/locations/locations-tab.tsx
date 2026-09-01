@@ -21,7 +21,7 @@ interface LocationTabProps {
 export const LocationsTab = memo(function LocationsTab (props: LocationTabProps) {
     const { isLoading, filters, filterResults, searchParams, error, setSearchParams } = props;
     const [ isTable, setIsTable ] = useState(false);
-    const [searchInput, setSearchInput] = useState(filters.query ?? "");
+    const [ searchInput, setSearchInput ] = useState(filters.query ?? "");
 
     const pageSizes = [20, 25, 35, 50, 100];
     const [ numberPerPage, setNumberPerPage ] = useState(pageSizes[2]);
@@ -92,6 +92,8 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         setSearchParams(params);
     }
 
+    console.log(searchInput);
+
     return (
         <div className="hero">
             
@@ -142,6 +144,16 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             value={searchInput}
                             onChange={(e) => setSearchInput(e.target.value)}
                         />
+                        {searchInput.length > 0 && 
+                            <button 
+                                type="reset"
+                                className="location-card__container-view__clear-btn"
+                                onClick={() => {handleClearSearch()}}
+                            >
+                                Clear
+                                {/* <img src={X} width={21} /> */}
+                            </button>
+                        }
                         <button 
                             type="submit"
                             className="location-card__container-view__search-btn"
@@ -149,12 +161,6 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             <img src={Search} width={28}/>
                         </button>
                     </form>
-                    <button 
-                        className="location-card__container-view__clear-btn"
-                        onClick={() => {handleClearSearch()}}
-                    >
-                        Clear
-                    </button>
                 </section> 
             </div>
 

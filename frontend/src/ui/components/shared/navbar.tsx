@@ -7,7 +7,7 @@ export default function Navbar() {
         <nav className="nav">
             <a href="https://beyondskyrim.org/">
                 <picture>
-                    <source media="(max-width: 890px)" srcSet={Logo} height={32} />
+                    <source media="(max-width: 890px)" srcSet={Logo} height={37} />
                     <img className="nav__logo" src={LogoFull} height={24} alt="Logo" />
                 </picture>
             </a>
