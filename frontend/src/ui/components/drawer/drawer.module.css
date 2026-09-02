@@ -53,7 +53,7 @@
 .Backdrop {
   --backdrop-opacity: 0.7;
   position: fixed;
-  height: 100%;
+  
   inset: 0;
   background-color: black;
   opacity: calc(var(--backdrop-opacity) * (1 - var(--drawer-swipe-progress)));
@@ -62,9 +62,9 @@
   transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 
   /* iOS 26+: Ensure the backdrop covers the entire visible viewport. */
-  @supports (-webkit-touch-callout: none) {
+  /* @supports (-webkit-touch-callout: none) {
     position: absolute;
-  }
+  } */
 
   &[data-starting-style],
   &[data-ending-style] {

@@ -197,7 +197,7 @@ export default function Filters(props: FilterProps) {
                             </Drawer.Close> 
                         </section>
                 
-                        <div className={styles.Test}>
+                        <div className={styles.Container}>
                             <Drawer.Content className={styles.Content}>
                                             
                                 <section className="quest-checkbox">

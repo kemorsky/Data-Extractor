@@ -45,40 +45,46 @@
 }
 
 .location-card__container-view__search {
-  display: flex;
-  gap: 0.33rem;
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid transparent;
 }
 
+/* Search bar */
 .location-card__container-view__search-form {
-  min-width: 18rem;
+  min-width: 20rem;
   width: 100%;
   height: 40px;
-  padding-left: 0.75rem;
   background-color: #2B2A33;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
   border-radius: 1.5rem;
-  border: 1px solid rgb(207, 207, 207);
 }
 
-.location-card__container-view__search-form:focus-within {
+.location-card__container-view__search-input__container {
+  width: 100%;
+  height: 40px;
+  border-radius: 1.25rem 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 0.5rem;
+  border: 1px solid rgb(207, 207, 207);
+  z-index: 80;
+}
+
+.location-card__container-view__search-input__container:focus-within {
   border: 1px solid #1c62b9;
-  outline: 2px solid #1c62b9;
 }
 
 .location-card__container-view__search-input {
-  max-width: 10rem;
+  max-width: 12rem;
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.875rem;
   position: relative;
   background-color: transparent;
   border: 1px solid transparent;
-  margin-right: auto;
-  /* padding: 0.5rem 0.75rem; */
   line-height: 1;
   border-radius: 1.25rem 0 0 1.25rem;
   font-family: var(--font-primary);
@@ -86,24 +92,21 @@
 
 .location-card__container-view__search-input:focus {
   outline: none;
-  z-index: 90;
+  z-index: 70;
+}
+
+.location-card__container-view__search-btn__container {
+  border: 1px solid rgb(207, 207, 207);
+  border-left: none;
+  border-radius: 0 1.25rem 1.25rem 0;
+  height: 100%;
 }
 
 .location-card__container-view__search-btn {
   min-width: 3rem;
   border-radius: 0 1.25rem 1.25rem 0;
-  border: 1px solid rgb(207, 207, 207);
+  border-left: 1px solid rgb(207, 207, 207);
   height: 100%;
-}
-
-.location-card__container-view__btn {
-  padding: 0.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.33rem;
-  transition: var(--button-colors);
-
 }
 
 .location-card__container-view__clear-btn {
@@ -111,15 +114,15 @@
   background-color: transparent;
   line-height: 1;
   color: var(--text-muted);
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
   font-family: var(--font-primary);
   z-index: 60;
 }
 
+/* Cards Containers */
 .location-card__cards-container {
   width: 100%;
-  
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

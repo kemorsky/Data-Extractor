@@ -137,29 +137,33 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                 </section>
                 <section className="location-card__container-view__search">    
                     <form className="location-card__container-view__search-form" onSubmit={handleSearchSubmit}>
-                        <input 
-                            className="location-card__container-view__search-input"
-                            type="text"
-                            placeholder="Search"
-                            value={searchInput}
-                            onChange={(e) => setSearchInput(e.target.value)}
-                        />
-                        {searchInput.length > 0 && 
+                        <div className="location-card__container-view__search-input__container">
+                            <input 
+                                className="location-card__container-view__search-input"
+                                type="text"
+                                placeholder="Search"
+                                value={searchInput}
+                                onChange={(e) => setSearchInput(e.target.value)}
+                            />
+                        
+                            {searchInput.length > 0 && 
+                                <button 
+                                    type="reset"
+                                    className="location-card__container-view__clear-btn"
+                                    onClick={() => {handleClearSearch()}}
+                                >
+                                    Clear
+                                </button>
+                            }
+                        </div>
+                        <div className="location-card__container-view__search-btn__container">
                             <button 
-                                type="reset"
-                                className="location-card__container-view__clear-btn"
-                                onClick={() => {handleClearSearch()}}
+                                type="submit"
+                                className="location-card__container-view__search-btn"
                             >
-                                Clear
-                                {/* <img src={X} width={21} /> */}
+                                <img src={Search} width={28}/>
                             </button>
-                        }
-                        <button 
-                            type="submit"
-                            className="location-card__container-view__search-btn"
-                        >
-                            <img src={Search} width={28}/>
-                        </button>
+                        </div>
                     </form>
                 </section> 
             </div>

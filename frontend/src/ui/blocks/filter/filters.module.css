@@ -100,7 +100,7 @@
   min-height: 100%;
 }
 
-.Test {
+.Container {
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 1rem;
@@ -113,9 +113,8 @@
   box-shadow: none;
   box-sizing: border-box;
   width: calc(17rem + var(--bleed));
-  max-width: calc(100vw - 3rem + var(--bleed));
-  height: 100vh; 
-  max-height: 100vh; 
+  max-width: calc(100vw - var(--bleed));
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin-right: calc(-1 * var(--bleed));
@@ -142,7 +141,6 @@
   }
 
   @supports (-webkit-touch-callout: none) {
-    --bleed: 0px;
     margin-right: 0;
   }
 }
