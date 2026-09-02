@@ -237,10 +237,11 @@
   min-width: 6.5rem;
   text-wrap: wrap;
   overflow-wrap: break-word;
+  flex-shrink: 0;
 }
 
 .ListItemLink {
-  display: inline-block;
+  display: block;
   min-width: 6.5rem;
   text-wrap: wrap;
   overflow-wrap: break-word;
