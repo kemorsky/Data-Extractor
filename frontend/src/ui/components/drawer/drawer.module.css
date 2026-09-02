@@ -208,6 +208,7 @@
 }
 
 .ListItem {
+  width: 100%;
   margin-bottom: var(--md);
   display: flex;
   justify-content: flex-start;
