@@ -182,9 +182,6 @@ export default function LocationDrawer() {
                                                             {npc.name}
                                                         </a>
                                                     </span>
-                                                    {/* {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 && !showNpcs ?
-                                                        (npc == visibleNpcs?.[2]&& <span>...</span>) : (null)
-                                                    } */}
                                                 </li>
                                             ))
                                             }
@@ -231,8 +228,8 @@ export default function LocationDrawer() {
                                 {locationByName?.vikunjaLink !== "" ?
                                     (   <li className={styles.ListItem}>
                                             <span className={styles.ListItemText}>Vikunja Link:</span>
-                                            <a className={styles.ListItemText} target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
-                                                <span>
+                                            <a  target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
+                                                <span className={styles.ListItemText}>
                                                         {locationByName?.vikunjaLink}
                                                 </span>
                                             </a>
