@@ -228,13 +228,13 @@ export default function LocationDrawer() {
                                 {locationByName?.vikunjaLink !== "" ?
                                     (   <li className={styles.ListItem}>
                                             <span className={styles.ListItemText}>Vikunja Link:</span>
-                                            <div className={styles.ListItemText}>
-                                                <a className={styles.ListItemText} target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
-                                                    {/* <span className={styles.ListItemText}> */}
-                                                            {locationByName?.vikunjaLink}
-                                                    {/* </span> */}
-                                                </a>
-                                            </div>
+                                            
+                                            <a className={styles.ListItemLink} target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
+                                                {/* <span className={styles.ListItemText}> */}
+                                                        {locationByName?.vikunjaLink}
+                                                {/* </span> */}
+                                            </a>
+                                            
                                         </li>
                                     ) : 
                                     (
