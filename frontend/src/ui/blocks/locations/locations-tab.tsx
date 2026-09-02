@@ -104,19 +104,15 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                 <section className="location-card__container-view__selects">
                     
                     <span>View style: </span>
-                    <select className="location-card__container-view__select">
-                        <option 
-                            value="Cards"
-                            onClick={() => setIsTable(false)}
-                        >
-                            Cards
-                        </option>
-                        <option 
-                            value="Table"
-                            onClick={() => setIsTable(true)}
-                        >
-                            Table
-                        </option>
+                    <select 
+                        className="location-card__container-view__select"
+                        value={isTable ? "Table" : "Cards"}
+                        onChange={(e) => {
+                            setIsTable(e.target.value === "Table")
+                        }}
+                    >
+                        <option value="Cards">Cards</option>
+                        <option value="Table">Table</option>
                     </select>
                     
                     <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>
