@@ -245,8 +245,8 @@
 .ListItemLink {
   display: block;
   min-width: 6.5rem;
-  text-wrap: wrap;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-all;
 }
 
 .Title {
