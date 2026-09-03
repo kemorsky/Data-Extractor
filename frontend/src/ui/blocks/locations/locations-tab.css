@@ -258,14 +258,11 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    margin: 0 0 1rem 0;
   }
 
   .location-card__container-view__select {
     font-size: 0.875rem;
-  }
-
-  .location-card__container-view__search {
-    order: 2;
   }
 
   .location-card__table-container__header-row__cell{

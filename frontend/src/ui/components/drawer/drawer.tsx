@@ -25,6 +25,7 @@ export default function LocationDrawer() {
         enabled: !!name,
     });
 
+    const [ isOpen, setIsOpen ] = useState(false);
     const [ showChildren, setShowChildren ] = useState(false);
     const [ showCells, setShowCells ] = useState(false);
     const [ showNpcs, setShowNpcs ] = useState(false);
@@ -92,14 +93,14 @@ export default function LocationDrawer() {
                 <Drawer.Viewport className={styles.Viewport}>           
                     <Drawer.Popup className={styles.Popup}>             
                         <Drawer.Content className={styles.Content}>               
-                            <article className={styles.Title}>
+                            <article className={styles.Header}>
                                 <div className={styles.Status}>
                                     {locationByName?.status !== "None" &&
                                         <Status text={locationByName?.status ?? ""} />
                                     }
                                 </div>
 
-                                <article className={styles.TitleContainer}>
+                                <article className={styles.Title}>
                                     <Icons width={24} height={24} showText={false} text={locationByName?.locationType ?? ""} />
                                     <h3 className={styles.TitleText}>{locationByName?.name}</h3>
                                 </article>
@@ -124,8 +125,13 @@ export default function LocationDrawer() {
 
                                     {parentLocationsCities.includes(locationByName?.parentLocation ?? "") && 
                                         <>
-                                            <button className={styles.ShowMapButton} popoverTarget="image-modal">Show map</button>
-                                            <DrawerCityMap text={locationByName?.parentLocation ?? ""} showText={false} />
+                                            <button className={styles.ShowMapButton} onClick={() => setIsOpen(true)}>Show map</button>
+                                            <DrawerCityMap 
+                                                text={locationByName?.parentLocation ?? ""} 
+                                                showText={false} 
+                                                isOpen={isOpen}
+                                                onClose={() => setIsOpen(false)}
+                                            />
                                         </>
                                     }
                                 </section>
@@ -156,9 +162,6 @@ export default function LocationDrawer() {
                                                         ` (${cell.gridX}, ${cell.gridY})`
                                                     }
                                                 </span>
-                                                {/* {(locationByName?.cells?.length ?? 0) > 3 && !showCells ?
-                                                    (cell == visibleCells?.[2]&& <span>...</span>) : (null)
-                                                } */}
                                             </li>))
                                         }
                                         {(locationByName?.cells?.length ?? 0) > 3 &&
@@ -230,9 +233,7 @@ export default function LocationDrawer() {
                                             <span className={styles.ListItemText}>Vikunja Link:</span>
                                             <span className={styles.ListItemLink}>
                                                 <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
-                                                    {/* <span className={styles.ListItemText}> */}
-                                                            {locationByName?.vikunjaLink}
-                                                    {/* </span> */}
+                                                        {locationByName?.vikunjaLink}
                                                 </a>
                                             </span>
                                             

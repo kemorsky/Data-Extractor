@@ -49,7 +49,6 @@
 }
 
 @media (max-width: 890px) {
-    
     .nav__logo {
         position: absolute;
         top: 1.2rem;
@@ -59,9 +58,6 @@
 }
 
 .footer {
-    /* position: absolute;
-    bottom: 0;
-    left: 0; */
     max-width: 74.875rem;
     width: 100%;
     display: flex;
@@ -192,29 +188,30 @@
     height: 1.656rem;
 }
 
-.image-modal__image {
-    object-fit: fill;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.5rem;
-    
-    /* filter: blur(1px); */
-}
-
 dialog {
     --bleed: 1rem;
     max-width: calc(30rem - var(--bleed));
     width: calc(100% - var(--bleed));
     max-height: 40rem;
-    position: relative;
     border: none;
     border-radius: 0.5rem;
     padding: 0;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.2;
+    animation-name: zoom;
+    animation-duration: 0.2s;
 }
 
 dialog::backdrop {
     background-color: black;
     opacity: 0.75;
+}
+
+.image-modal__image {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
 }
 
 dialog > button {
@@ -243,41 +240,25 @@ dialog > button {
 
     @media (hover: hover) {
         &:hover:not([data-disabled]) {
-        background-color: oklch(97% 0 0deg);
-
-        @media (prefers-color-scheme: dark) {
             background-color: oklch(26.9% 0 0deg);
-        }
-        }
-    }
-
-    &:active:not([data-disabled]) {
-        background-color: oklch(92.2% 0 0deg);
-
-        @media (prefers-color-scheme: dark) {
-        background-color: oklch(37.1% 0 0deg);
-        }
-    }
-
-    &[data-disabled] {
-        color: oklch(55.6% 0 0deg);
-        border-color: oklch(55.6% 0 0deg);
-
-        @media (prefers-color-scheme: dark) {
-        color: oklch(70.8% 0 0deg);
-        border-color: oklch(70.8% 0 0deg);
         }
     }
 
     &:focus-visible {
         outline: 2px solid oklch(14.5% 0 0deg);
         outline-offset: -1px;
+    }
+    }
 
-        @media (prefers-color-scheme: dark) {
-        outline-color: white;
-        }
-    }
-    }
+@-webkit-keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.5)} 
+    to {transform:scale(1)}
+}
 
 
 @media (max-width: 444px) {

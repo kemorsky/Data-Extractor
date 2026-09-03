@@ -16,16 +16,26 @@ const iconSources = Object.fromEntries(
 interface DrawerCityMapProps {
     text: string;
     showText?: boolean;
-    width?: number | string;
-    height?: number | string;
+    isOpen: boolean;
+    onClose: () => void;
 };
 
-export default function DrawerCityMap({ text, showText = true }: DrawerCityMapProps) {
+export default function DrawerCityMap({ text, showText = true, isOpen, onClose }: DrawerCityMapProps) {
+    if (!isOpen) return null;
+    
     const src = iconSources[text];
 
     return (
-        <dialog id="image-modal" popover={""}>
-            <button popoverTarget="image-modal">
+        <dialog 
+            id="image-modal" 
+            ref={(node) => {
+                if (node && !node.open) {
+                    node.showModal();
+                }
+            }} 
+            onClose={onClose}
+        >
+            <button onClick={onClose} aria-label="Close">
                 <img src={X} width={24} />
             </button>
             <img className="image-modal__image" 

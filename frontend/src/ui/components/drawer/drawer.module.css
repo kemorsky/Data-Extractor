@@ -139,11 +139,43 @@
   gap: var(--lg);
 }
 
-.TitleContainer {
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--sm);
+  width: 100%;
+  position: relative;
+  
+  text-align: left;
+  position: relative;
+}
+
+.Title {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
+}
+
+.TitleText {
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: normal;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ShowMapButton {
+  border-radius: 0.33rem;
+  gap: var(--md);
+  padding: 0.33rem;
+  margin-left: 0.5rem;
+
+  @media (max-width: 1024px) {
+    bottom: -0.25rem;
+  }
 }
 
 .LocationContainer {
@@ -175,27 +207,6 @@
   font-size: 0.825rem;
   z-index: 50;
   overflow: auto;
-}
-
-.ShowMoreCellsBtn {
-  border: none;
-  background-color: transparent;
-  font-size: 0.825rem;
-  line-height: 1;
-  font-weight: 600;
-  color: rgb(0, 113, 185);
-  text-decoration: underline;
-  padding: 0;
-  margin-top: 0.5rem;
-
-  &:hover {
-    color: rgb(1, 139, 224);
-    background-color: transparent;
-  }
-}
-
-.ShowMoreCellsBtnText {
-  margin-right: 0.25rem;
 }
 
 .ListContainer {
@@ -249,27 +260,6 @@
   word-break: break-all;
 }
 
-.Title {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: var(--sm);
-  width: 100%;
-  position: relative;
-  
-  text-align: left;
-  position: relative;
-}
-
-.TitleText {
-  width: 100%;
-  font-size: 1.5rem;
-  line-height: normal;
-  font-weight: 700;
-  margin: 0;
-}
-
 .NotesContainer {
   width: 100%;
   display: flex;
@@ -316,17 +306,6 @@
   position: absolute;
   right: 4.5rem;
   top: 1.5rem;
-}
-
-.ShowMapButton {
-  border-radius: 0.33rem;
-  gap: var(--md);
-  padding: 0.33rem;
-  margin-left: 0.5rem;
-
-  @media (max-width: 1024px) {
-    bottom: -0.25rem;
-  }
 }
 
 @media (max-width: 520px) {
