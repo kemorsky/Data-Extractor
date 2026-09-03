@@ -19,6 +19,7 @@
   --table-row-hover: #494949;
   --button-bg: #282828;
   --button-bg-hover: #4e4e4e;
+  --button-bg-active: #292929;
   /* --bg: hsl(220, 15%, 85%); */
   --highlight: oklch(1 0 278);
   --border-muted: oklch(0.7 0 278);
@@ -95,8 +96,18 @@ button {
   transition: var(--button-colors);
 }
 
-button:hover {
+button:hover:not([disabled]) {
   background-color: var(--button-bg-hover);
+}
+
+button:active {
+  background-color: var(--button-bg-active);
+  scale: 0.99;
+}
+
+button:focus-visible {
+  outline: 2px solid #f1f1f1;
+  outline-offset: -1px;
 }
 
 
