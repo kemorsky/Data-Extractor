@@ -5,14 +5,13 @@ import Logo from "../../../assets/logo.svg"
 export default function Navbar() {
     return (
         <nav className="nav">
-            <a href="https://beyondskyrim.org/">
+            <a href="https://beyondskyrim.org/" tabIndex={0}>
                 <picture>
                     <source media="(max-width: 890px)" srcSet={Logo} height={32} />
                     <img className="nav__logo" src={LogoFull} height={24} alt="Logo" />
                 </picture>
             </a>
-            <article className={`nav__content`}>
-                
+            <article className="nav__content">
                 <a href="https://claims.beyondskyrim.org/">
                     <span>Vikunja</span>
                 </a>

@@ -96,7 +96,7 @@ button {
   transition: var(--button-colors);
 }
 
-button:hover:not([disabled]) {
+button:hover {
   background-color: var(--button-bg-hover);
 }
 
@@ -109,7 +109,6 @@ button:focus-visible {
   outline: 2px solid #f1f1f1;
   outline-offset: -1px;
 }
-
 
 h1,
 h2 {
