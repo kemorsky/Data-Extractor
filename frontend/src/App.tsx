@@ -58,7 +58,6 @@ export default function App() {
           locations={locations}
           filterResults={filterResults}
           filters={filters} 
-          // setFilters={setFilters} 
           searchParams={searchParams} 
           setSearchParams={setSearchParams}
         />
@@ -77,7 +76,6 @@ export default function App() {
               <LocationsTab 
                 error={error}
                 isLoading={isLoading} 
-                // locations={locations} 
                 filters={filters}
                 filterResults={filterResults} 
                 searchParams={searchParams}

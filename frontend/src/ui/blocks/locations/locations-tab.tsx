@@ -92,8 +92,6 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         setSearchParams(params);
     }
 
-    console.log(searchInput);
-
     return (
         <div className="hero">
             

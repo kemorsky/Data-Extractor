@@ -260,7 +260,6 @@ dialog > button {
     to {transform:scale(1)}
 }
 
-
 @media (max-width: 444px) {
     .status {
         gap: 0.25rem;

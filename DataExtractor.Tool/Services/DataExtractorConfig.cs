@@ -33,6 +33,8 @@ public class DataExtractorConfig
         ["Needs: Rework"] = "Redo",
         ["Needs: Extra Work"] = "Needs more work",
         ["Needs: Fixing"] = "Needs more work",
+        ["Needs: Improvement"] = "Needs more work",
+        ["Needs: Lighting Pass"] = "Needs more work",
         ["Not Open"] = "Not started"
     };
 
