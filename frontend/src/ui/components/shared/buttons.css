@@ -3,7 +3,7 @@
   background-color: transparent;
   font-size: 0.825rem;
   line-height: 1;
-  /* font-weight: 600; */
+  align-self: flex-start;
   font-weight: 500;
   /* color: rgb(0, 113, 185); */
   text-decoration: underline;

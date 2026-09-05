@@ -27,9 +27,7 @@ export default function LocationCard(props: LocationCardProps) {
                     }
                 }}
             >
-                {/* <LocationCardBackground width="100%" height="100%" text={location.locationType} showText={false} /> */}
-                
-                
+        
                 <td className="table__location-card__cell">
                     <p className="table__location-card__info__name">
                         <Icons width={24} height={24} showText={false} text={location.locationType} />
@@ -72,7 +70,6 @@ export default function LocationCard(props: LocationCardProps) {
 
                 <td className="table__location-card__cell">
                     <section className="table__location-card__labels-icons">
-                        {/* <Icons showText={false} text={location.locationType} /> */}
                         {location.relatedQuestName !== "None" &&
                             <a target="_blank" href={location.relatedQuestUrl} className="table__location-card__quest">
                                 <img src={Quest} alt="Quest anchor icon" className="table__location-card__quest__icon" />
@@ -80,12 +77,6 @@ export default function LocationCard(props: LocationCardProps) {
                         }
                     </section>
                 </td>
-                        
-                    {/* <section className="location-card__labels">
-                        <p>{location.locationType}</p>
-                        <p className="location-card__labels__status">{location.status}</p>
-                    </section> 
-                </section> */}
             </tr>
             
         ) : (
@@ -101,12 +92,9 @@ export default function LocationCard(props: LocationCardProps) {
                 <div className="location-card__backdrop" />
 
                 <LocationCardBackground width="100%" height="100%" text={location.locationType} showText={false} />
-                {/* <img className="location-card__image" src={ayleidImage} width="100%" height="100%"/> */}
                 <section className="location-card__labels">
                     {location.relatedQuestName !== "None" &&
                         <section className="location-card__labels-icons">
-                            {/* <Icons showText={false} text={location.locationType} /> */}
-                            
                                 <a target="_blank" href={location.relatedQuestUrl} className="location-card__quest">
                                     <img src={Quest} width={18} alt="Quest anchor icon" className="location-card__quest__icon" />
                                 </a>
@@ -128,10 +116,6 @@ export default function LocationCard(props: LocationCardProps) {
                             {location.parentLocation}
                         </p>
                     </section>
-                    {/* <section className="location-card__labels">
-                        <p>{location.locationType}</p>
-                        <p className="location-card__labels__status">{location.status}</p>
-                    </section> */}
                 </section>
             </div>
         )}

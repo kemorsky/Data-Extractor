@@ -93,28 +93,38 @@
 }
 
 .quest-checkbox {
-  width: 12.725rem;
+  width: 100%;
   align-self: flex-start;
   border-radius: 0.5rem;
-  padding-left: 0.8rem;
+  padding-left: 0.55rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   align-items: flex-start;
-  /* margin: 0.33rem 0 1rem 0; */
   margin: 0.175rem 0 1rem 0;
 }
 
 .quest-checkbox__option {
+  width: 100%;
+  max-width: 16.5rem;
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
   position: relative;
   font-size: 0.875rem;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  transition: var(--button-colors);
+
+  @media (hover: hover) {
+          &:hover {
+              background-color: var(--button-bg-hover);
+          }
+      }
 }
 
 .quest-checkbox__option__checkbox {

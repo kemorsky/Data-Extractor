@@ -42,7 +42,7 @@
   @media (hover: hover) {
     &:hover {
       color: white;
-      background-color: var(--bg-dark-80);
+      background-color: var(--button-bg-hover);
       
       border-radius: 0.33rem 0.33rem 0 0;
     }
@@ -52,7 +52,7 @@
     color: #faf118;
     border-bottom: 1px solid #faf118;
     border-radius: 0.33rem 0.33rem 0 0;
-    background-color: var(--bg-dark);
+    background-color: var(--button-bg-active);
   }
 
   &:focus-visible {

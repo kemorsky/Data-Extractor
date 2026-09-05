@@ -209,7 +209,7 @@ export default function Filters(props: FilterProps) {
                                             onChange={toggleHasQuest}
                                         />
                                         <section style={{height: 30, width: 30, display: "flex", alignItems: "center", justifyContent: "center"}}>
-                                            <img width={20} src={Quest} alt="Quest anchor icon" />
+                                            <img width={18} src={Quest} alt="Quest anchor icon" />
                                         </section> 
                                         <span className="quest-checkbox__option-text">
                                             Has Quest

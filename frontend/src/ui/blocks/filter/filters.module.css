@@ -40,14 +40,14 @@
 
 .ButtonCloseContainer {
   --bleed: 3rem;
-  width: calc(15rem + var(--bleed));
-  max-width: calc(100vw - 3rem + var(--bleed));
+  width: 18rem;
   background-color: var(--bg-dark);
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   align-self: center;
   padding: 18px 0;
+  margin: 0 18px;
   height: 40px;
   pointer-events: auto;
   border-bottom: 1px solid var(--border);
@@ -103,7 +103,7 @@
 .Container {
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding: 1rem;
+  padding: 18px;
 }
 
 .Popup {
@@ -112,12 +112,12 @@
   color: var(--text);
   box-shadow: none;
   box-sizing: border-box;
-  width: calc(17rem + var(--bleed));
-  max-width: calc(100vw - var(--bleed));
+  width: 20rem;
+  /* max-width: calc(100vw - var(--bleed)); */
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-right: calc(-1 * var(--bleed));
+  /* margin-right: calc(-1 * var(--bleed)); */
   border-right: 1px solid white;
   outline: 0;
   box-shadow: 0.25rem 0.25rem 0 rgb(0 0 0 / 12%);

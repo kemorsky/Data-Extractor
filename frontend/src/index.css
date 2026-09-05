@@ -6,11 +6,11 @@
   --border: #3e5c76; /* hsl(45, 40%, 50%) */
   --code-bg: #1f2028;
   --shadow:
-    rgba(206, 199, 199, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    rgba(206, 199, 199, 0.4) 0 10px 15px 1px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  --modern-shadow: 0 4px 6px -1px rgba(192, 192, 192, 0.1), 
+                    0 2px 4px -1px rgba(192, 192, 192, 0.15),
+                    0 0px 20px 0px rgba(192, 192, 192, 0.2);
 
-  /* --bg-dark: hsl(322, 14%, 15%);
-  --bg-dark-80: hsla(322, 20%, 15%);
-  --bg: hsl(0, 0%, 90%); */
   --bg: #0E0E0E;
   --bg-light: #111111;
   --bg-dark: #0E0E0E;

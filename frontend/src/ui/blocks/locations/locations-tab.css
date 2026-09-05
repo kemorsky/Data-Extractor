@@ -96,7 +96,7 @@
 }
 
 .location-card__container-view__search-btn__container {
-  border: 1px solid rgb(207, 207, 207);
+  border: 1px solid var(--border);
   border-left: none;
   border-radius: 0 1.25rem 1.25rem 0;
   height: 100%;
@@ -105,7 +105,7 @@
 .location-card__container-view__search-btn {
   min-width: 3rem;
   border-radius: 0 1.25rem 1.25rem 0;
-  border-left: 1px solid rgb(207, 207, 207);
+  border-left: 1px solid var(--border);
   height: 100%;
 }
 
