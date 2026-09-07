@@ -211,7 +211,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                         disabled={page === 1}
                         onClick={() => setPage(page === 1 ? 1 : 1)}
                     >
-                        <img src={ChevronDoubleLeft} width={28} height={28} />
+                        <img src={ChevronDoubleLeft} width={24} height={24} />
                     </button>
         
                     <button
@@ -222,7 +222,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             window.scrollTo({top: 0, behavior: "smooth"});
                         }}
                     >
-                        <img src={ChevronLeft} width={28} height={28} />
+                        <img src={ChevronLeft} width={24} height={24} />
                     </button>
                 </section>
 
@@ -256,7 +256,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             window.scrollTo({top: 0, behavior: "smooth"});
                         }}
                     >
-                        <img src={ChevronRight} width={28} height={28} />
+                        <img src={ChevronRight} width={24} height={24} />
                     </button>
 
                     <button
@@ -264,7 +264,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                         disabled={page === totalPages}
                         onClick={() => setPage(totalPages)}
                     >
-                        <img src={ChevronDoubleRight} width={28} height={28} />
+                        <img src={ChevronDoubleRight} width={24} height={24} />
                     </button>
                 </section>
             </div>

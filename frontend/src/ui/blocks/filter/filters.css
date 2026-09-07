@@ -121,10 +121,10 @@
   transition: var(--button-colors);
 
   @media (hover: hover) {
-          &:hover {
-              background-color: var(--button-bg-hover);
-          }
+      &:hover {
+          background-color: var(--button-bg-hover);
       }
+  }
 }
 
 .quest-checkbox__option__checkbox {

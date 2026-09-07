@@ -1,10 +1,9 @@
 .checkbox-group {
     max-width: 16.5rem;
     width: 100%;
-    /* border: 1px solid #4a4e51; */
     border: none;
     background-color: #272727;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -15,6 +14,7 @@
     .checkbox-group__legend {
         font-size: 1.125rem;
         font-weight: 700;
+        margin-bottom: 0.25rem;
     }
 
     .checkbox-group__option {
@@ -68,5 +68,11 @@
         .checkbox-group__option__checkbox:checked {
             background-color: red;
         }
+    }
+}
+
+@media (max-width: 540px) {
+    .checkbox-group {
+        max-width: 16.188rem;
     }
 }

@@ -74,7 +74,6 @@
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
   border-radius: 0.33rem 0.33rem 0 0;
-  
   background-color: var(--bg-dark);
 }
 
@@ -82,8 +81,6 @@
   box-sizing: border-box;
   width: 100%;
   min-height: 8rem;
-  /* border-inline: 1px solid #4a4e51;
-  border-block: 1px solid #4a4e51; */
   border-radius: 0.5rem;
   height: 100%;
  
@@ -95,25 +92,18 @@
 }
 
 .Panel {
-  /* max-height: calc(100vh - 14.5rem); */
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  /* padding: 1rem 1rem 0 1rem; */
   padding: 1rem 0;
-  /* border-radius: 0.5rem; */
-  /* overflow-y: auto;
-  scrollbar-width: thin; */
   outline: 0;
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
   color: oklch(14.5% 0 0deg);
-  /* background-color: var(--bg-dark); */
   color: var(--text);
-
 
   &:focus-visible {
     outline: 2px solid oklch(14.5% 0 0deg);
