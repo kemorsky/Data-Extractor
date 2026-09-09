@@ -1,6 +1,8 @@
 namespace DataExtractor.Tool.Services;
 
 using Mutagen.Bethesda;
+using Mutagen.Bethesda.Analyzers;
+using Mutagen.Bethesda.Analyzers.Skyrim;
 using Mutagen.Bethesda.Skyrim;
 using Mutagen.Bethesda.Plugins.Cache;
 using System;
@@ -10,16 +12,20 @@ using System.Collections.Generic;
 using DataExtractor.Tool.Dto;
 using DataExtractor.Tool.Helpers;
 using Noggog;
+using System.Reflection;
+using Mutagen.Bethesda.Analyzers.SDK.Analyzers;
 
 public class DataService : IDataService
 {
     private readonly GoogleServices _googleServices;
     private readonly VikunjaServices _vikunjaServices;
+    private readonly ILootService _lootServices;
 
-    public DataService(GoogleServices googleServices, VikunjaServices vikunjaServices)
+    public DataService(GoogleServices googleServices, VikunjaServices vikunjaServices, LootServices lootServices)
     {
         _googleServices = googleServices;
         _vikunjaServices = vikunjaServices;
+        _lootServices = lootServices;
     }
 
     public async Task<List<LocationDataSheet>> GetLocations(
@@ -138,13 +144,20 @@ public class DataService : IDataService
 
                 foreach (var cell in cellsForLocation)
                 {
+                    var loot = _lootServices.AnalyzeCell(cell, linkCache);
+                    // Console.WriteLine(
+                    //     $"[LOOT CHECK] Cell={cell.FormKey} " +
+                    //     $"Items={loot.Items.Count} " +
+                    //     $"TotalValue={loot.TotalValue}");
+
                     cellData.Add(new CellData
                     {
                         Id = id++,
                         EditorID = cell.EditorID ?? "",
                         FormKey = cell.FormKey.ToString(),
                         GridX = cell.Grid?.Point.X,
-                        GridY = cell.Grid?.Point.Y
+                        GridY = cell.Grid?.Point.Y,
+                        Loot = loot
                     });
                 }
             }

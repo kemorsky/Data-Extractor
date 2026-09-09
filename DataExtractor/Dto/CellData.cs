@@ -7,4 +7,5 @@ public class CellData
     public string FormKey { get; set; } = string.Empty;
     public int? GridX { get; set; }
     public int? GridY { get; set; }
+    public CellLootData Loot { get; set; } = new();
 }

@@ -1,11 +1,18 @@
 ﻿using System.IO;
+using System.Linq;
 using Mutagen.Bethesda;
 using Mutagen.Bethesda.Environments;
 using Mutagen.Bethesda.Skyrim;
+using Mutagen.Bethesda.Plugins;
 using Mutagen.Bethesda.Plugins.Cache;
 using Mutagen.Bethesda.Plugins.Cache.Internals.Implementations;
+using Mutagen.Bethesda.Plugins.Order;
+using Mutagen.Bethesda.Analyzers;
+using Mutagen.Bethesda.Analyzers.Skyrim;
+using Mutagen.Bethesda.Analyzers.SDK.Analyzers;
 using DataExtractor.Tool.Services;
 using System.Text.Json;
+using System.Reflection;
 
 var credentialPath = Path.Combine(
     AppContext.BaseDirectory,
@@ -48,7 +55,8 @@ var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter
 
 var googleServices = new GoogleServices();
 var vikunjaServices = new VikunjaServices();
-var dataService = new DataService(googleServices, vikunjaServices);
+var lootServices = new LootServices();
+var dataService = new DataService(googleServices, vikunjaServices, lootServices);
 
 // 4. Combine ESM + Google Sheet
 var locations =
@@ -57,7 +65,6 @@ var locations =
         combinedCache,
         cells);
 
-
 var outputPath = Path.Combine(
     "..",
     "DataExtractor",
@@ -65,6 +72,11 @@ var outputPath = Path.Combine(
     "locations.json");
 
 // 5. Write JSON
-File.WriteAllText(
-    outputPath,
-    JsonSerializer.Serialize(locations));
+var json = JsonSerializer.Serialize(
+    locations,
+    new JsonSerializerOptions
+    {
+        WriteIndented = true
+    });
+
+File.WriteAllText(outputPath, json);

@@ -19,8 +19,11 @@
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.75.0.4178" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.9" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.9" />
-    <PackageReference Include="Mutagen.Bethesda.Core" Version="0.54.0" />
-    <PackageReference Include="Mutagen.Bethesda.Skyrim" Version="0.54.0" />
+    <PackageReference Include="Mutagen.Bethesda.Analyzers" Version="0.1.0-alpha.761" />
+    <PackageReference Include="Mutagen.Bethesda.Analyzers.Skyrim" Version="0.1.0-alpha.761" />
+    <PackageReference Include="Mutagen.Bethesda.Core" Version="0.54.4" />
+    <PackageReference Include="Mutagen.Bethesda.Skyrim" Version="0.54.4" />
+    <PackageReference Include="System.Interactive.Async" Version="7.0.1" />
   </ItemGroup>
 
 </Project>
