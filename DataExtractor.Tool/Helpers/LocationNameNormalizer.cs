@@ -9,9 +9,11 @@ public class LocationNameNormalizer{
             if (string.IsNullOrWhiteSpace(name))
                 return "";
 
-            var results = Regex.Replace(
-                name.Trim(),
-                @"^(?:[^.:]+[.:]\s*|[^-]+-\s*)",
+            var results = name.Trim();
+
+            results = Regex.Replace(
+                results,
+                @"^(?:\d+\.\s*|[^:]+:\s*)",
                 "",
                 RegexOptions.IgnoreCase);
 
@@ -19,7 +21,7 @@ public class LocationNameNormalizer{
             results = Regex.Replace(results, @"\s+", " ");
 
             // Remove punctuation
-            results = Regex.Replace(results, @"[^\p{L}\p{N}\s]", "");
+            results = Regex.Replace(results, @"[^\p{L}\p{N}\s-]", "");
 
             // Remove spaces
             results = results.Replace(" ", "");

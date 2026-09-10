@@ -3876,9 +3876,9 @@
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
     "HasQuest": false,
-    "Status": "Redo",
-    "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14340",
-    "Notes": "\u003Cp\u003ENeeds a second self-contained cell which is a single tower leading to a roof trapdoor\u003C/p\u003E\n\n\n\u003Ch2\u003E Dungeon QA\u003C/h2\u003E"
+    "Status": "Needs more work",
+    "VikunjaLink": "",
+    "Notes": "None"
   },
   {
     "Id": 282,
@@ -3924,7 +3924,14 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Fort Ruin",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Ontarius Philemon",
+        "Url": "https://docs.google.com/document/d/1cpfr7UeByd1Vs1l-cTYM3gPWdj8uFkI8yAX2F0rmYEM/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [
       "Wraiths",
       "Ghosts"
@@ -4141,7 +4148,20 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Legate Colsoreon",
+        "Url": "https://docs.google.com/document/u/0/d/1Ymle7ERYHZvOy0yi8j9SC8Z7pUHtR0_uCTtFUSxfjk4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Aia Wotrus",
+        "Url": "https://docs.google.com/document/u/0/d/1EO9ZBNsXrE8SpTumo5VIsJHvd5de_EkdekOIyhsLr-g/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [
       "Imperial Legion"
     ],
@@ -4586,7 +4606,20 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "General Ukei",
+        "Url": "https://docs.google.com/document/d/19yAQgaSoN2XHQM6wgh27wx2qULamG3dW_Xs-825AMh0/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Tribune Maderius",
+        "Url": "https://docs.google.com/document/u/0/d/1BzJn8TwmdDAkj9TwWM0rSnSGY3TERqwaSzFzSBRa9c0/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -4757,7 +4790,14 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Chaplain Gurza",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [
       "Imperial Legion"
     ],
@@ -5036,7 +5076,14 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "General ?",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [
       "Imperial Legion"
     ],
@@ -5315,7 +5362,14 @@
     ],
     "LocationCategory": "Dungeon",
     "LocationType": "Ayleid Ruin",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "King Eyfor Rigata",
+        "Url": "https://docs.google.com/document/d/1nofPAz0OBYGp1w056BitBoMs4tR-K9yzjLXnrT4t__c/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [
       "Ayleid"
     ],
@@ -7206,7 +7260,26 @@
     ],
     "LocationCategory": "Dungeon",
     "LocationType": "Ayleid Ruin",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Petan",
+        "Url": "https://docs.google.com/document/d/1RlZ3rztHwJnqP-MPmMa7B4w8fehqbcFvng0uQoj-baE/edit?tab=t.0",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Persillus Drecius",
+        "Url": "https://docs.google.com/document/d/1RlZ3rztHwJnqP-MPmMa7B4w8fehqbcFvng0uQoj-baE/edit?tab=t.0",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Velana Oriana",
+        "Url": "https://docs.google.com/document/d/1RlZ3rztHwJnqP-MPmMa7B4w8fehqbcFvng0uQoj-baE/edit?tab=t.0",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [
       "Trolls",
       "Ayleid"
@@ -9613,7 +9686,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "None",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Cedus Perusius",
+        "Url": "https://docs.google.com/document/d/1qCf1wehC8ESPcHc2WA9kwxxfGxo2DbNJPDJzPDxATSA/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -10697,7 +10777,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Felki Silver-Plow",
+        "Url": "https://docs.google.com/document/d/1TUesNMCVGsizua4mj9dg50JI443IHZhIPUYeBMhysUQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Ralgar Silver-Plow",
+        "Url": "https://docs.google.com/document/d/1UawKAhlMa9s9bervHYYgHTmKFa-FeqenaNzS9amHGaE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -13040,7 +13133,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "Inn",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Ornev Bestor",
+        "Url": "https://docs.google.com/document/d/1jQZiW2yAUpuoA3Ch9hvApTt2uGrGLWnvnheZ0jZ_GRs/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Anabel Upton",
+        "Url": "https://docs.google.com/document/d/1ZRMNCMM-odbBBvWrr0lM6GFhvFNP2PqFn_tABTT5RRA/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -13142,7 +13248,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Claxter Bursio",
+        "Url": "https://docs.google.com/document/d/1Pb50WNAOmBF1FQ6sHJCwQYN0fjJEdJEJUmnKJYv4-WY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Grianne Bursio",
+        "Url": "https://docs.google.com/document/d/1cNAAtgvx3nVePgqmvkhWjBl9TQ3AvtIW2GewGdyFlS0/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -13274,7 +13393,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Wolfy",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Eirik Ember-Foot",
+        "Url": "https://docs.google.com/document/u/0/d/1rQWiOmLOPaBRQ5JWq13_K1YASrQkIkNifzizWWnAY9A/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -13526,7 +13658,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Durash gra-Agum",
+        "Url": "https://docs.google.com/document/u/0/d/1O7LvHdYUsxuLCFPMooOAcAJPP3rpoCgMnwfUKqb_1yY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -14014,7 +14153,26 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "Inn",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Lasiana Jiriium",
+        "Url": "https://docs.google.com/document/d/1QLfpcOoUf3wqAvH6bXXxbv6AV_Ck3UTNImt87QN2OdY/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Vilfre Jiriium",
+        "Url": "https://docs.google.com/document/d/1PyxLkfCmUl1yhJiCO1gqm8Ma1ci6iL8xX3N1eg1PkbI/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Aurelia",
+        "Url": "https://docs.google.com/document/u/0/d/17vWR2lOLXve2aM6wWqCq11QS3wadKt1qE4ttVAhoLvE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -15119,7 +15277,7 @@
       "Undead"
     ],
     "RelatedQuestName": "Echoes of the Worm",
-    "RelatedQuestUrl": "None",
+    "RelatedQuestUrl": "https://docs.google.com/document/u/0/d/1UDSfNXSLo-iG49q_Hdu6iY0uyvIEyO9wNcqdGaDj7Dw/edit",
     "HasQuest": true,
     "Status": "First passed",
     "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14320",
@@ -16736,7 +16894,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Hi\u0027jhari",
+        "Url": "https://docs.google.com/document/d/1uf7FXtC5Gvd8IS4cJZosqxehUxo27PzZiYQrrzi3lPU/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Assiri-daro",
+        "Url": "https://docs.google.com/document/d/1b7G6mwq0GmiImNKtFnqS6JN7PMpry5hjeVKyiLp3PCU/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -17161,7 +17332,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Edgar Last-Sight",
+        "Url": "https://docs.google.com/document/d/1g5r6OtOFOnyzdaSpabeDEe0IvJdlJiS4J0J1X_faZDQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -18730,14 +18908,63 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Barshnug the Elder",
+        "Url": "https://docs.google.com/document/d/1hxrC3Igtf-kIfi5DOcOQoQCuIDmh8UudBLV-jzocde8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Taskmaster",
+        "Url": "https://docs.google.com/document/d/1TKSLK81QjmaEHNUWpGTGPqbBMmveVvQ9ZRYMMIHtTTM/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Heir",
+        "Url": "https://docs.google.com/document/d/1cXtqDaavaOF8jqA7Ds48gTRmbGMcg7soBNETGHlP044/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Enforcer",
+        "Url": "https://docs.google.com/document/d/1Oeg5dxAnm8OzKfEoqAQd2oFXrXlvc6GV6xMnpLYhTmE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Ursha gra-Katurz",
+        "Url": "https://docs.google.com/document/d/1nl1X5zuTK8LzVH0bYYDkv5bNXxi9rJJNDVdwdTZvYAI/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Sower",
+        "Url": "https://docs.google.com/document/d/1TNaczWldRIupjx7T_EyCTSbe0KTulAVIKvFcz5lmER4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Winterborn",
+        "Url": "https://docs.google.com/document/d/148sEW09_-H7BO7aae2xvTXpFR51wsH3hlw-8rEipzTQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Meek",
+        "Url": "https://docs.google.com/document/d/1OGICKco70wRZNHI9TPTEhYYbnr1sTsl5ucDgOkwa77c/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
     "HasQuest": false,
-    "Status": "Needs finalization",
-    "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14616",
-    "Notes": "\u003Cp\u003ELarge Orc Farmstead with 8 Orc NPCs. 9th Orc lives in Kvatch.\u003C/p\u003E\u003Ch2\u003EHouse 1\u003C/h2\u003E"
+    "Status": "None",
+    "VikunjaLink": "",
+    "Notes": "None"
   },
   {
     "Id": 1263,
@@ -18765,7 +18992,26 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Arav Gonter",
+        "Url": "https://docs.google.com/document/d/1471HBadqRTrAQ2B03MVSaP7G8PS6bUa1Bjws_DkRbWE/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Coracia Gonter",
+        "Url": "https://docs.google.com/document/d/1m6XGs3r3XJxI3TQ6gSdE2SxR5oGNz0Fqky50hXaK3vU/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Morin Gonter",
+        "Url": "https://docs.google.com/document/d/1U1SibpvtzVhZWlMPVq0Gme5IJ5UKTixWaB-rzpuzi5g/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -19476,7 +19722,26 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Camren Smooth-Tone",
+        "Url": "https://docs.google.com/document/d/1wUfYxm8DPsTF9onrRHmXEkZV-Lt4rMrZFJ4vh62qcpw/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Jules",
+        "Url": "https://docs.google.com/document/u/0/d/1IZFqt9TSVlNHIfuP6g6HfiWHMzc1n0yX7YtGlTFdJaM/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Rosanna",
+        "Url": "https://docs.google.com/document/u/0/d/1pM__ZFS5sWA7L1kykQHszfa1YtGEr1TQ2uEpM4Y9j6g/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -20999,7 +21264,50 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "None",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Zunei",
+        "Url": "https://docs.google.com/document/d/1x_E9szqPpZ0OaYm-oPLlNuw_ok2eLXmQ-WiOEzcgAFs/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Mithriel",
+        "Url": "https://docs.google.com/document/d/1vtI4B_GcMJJv3b29hbGFQQjDJtGiXqUKpJiClIiL794/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Eleanore",
+        "Url": "https://docs.google.com/document/d/1HVq6bEv6I9lqvB5ldNYNAdGk2RRC6DxMC4kWDzVqScs/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Junia",
+        "Url": "https://docs.google.com/document/d/1pmIDxEaT1Q1hqgYBRgvOsbn-HKcqWlebnJMmW1Q085A/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Livius",
+        "Url": "https://docs.google.com/document/d/1tzvxt4Y-qZJZyB7pZ3GIX9-nJUYzXnrnzLI636VEq2w/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Markell",
+        "Url": "https://docs.google.com/document/d/1pKcxrxOH9dnT0NQxM7725upXb2dMtMb1os1DTN_33G8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Odion",
+        "Url": "https://docs.google.com/document/d/1R-1egMgIZQOdl9bRwx3yNfzBYMoXYr2lidv_TyUKBP0/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -22711,8 +23019,8 @@
     "Inhabitants": [
       "Goblins (Bloodyhand)"
     ],
-    "RelatedQuestName": "Pells Gate misc task",
-    "RelatedQuestUrl": "None",
+    "RelatedQuestName": "Misc Task - Kill Chomper the Goblin",
+    "RelatedQuestUrl": "https://docs.google.com/document/d/1FZRtu3tMuTIeQMCA79-AI51VkZUR5UEVjL3rZr0mnTk/edit?tab=t.0",
     "HasQuest": true,
     "Status": "Redo",
     "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14322",
@@ -25165,7 +25473,20 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Caelan",
+        "Url": "https://docs.google.com/document/u/0/d/1br0P9CyWDFE1BIyPh8k0Dfl7J-foKMGU0FZVXs_iosw/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Phyleth",
+        "Url": "https://docs.google.com/document/u/0/d/11qlSVq1rzG6MztSmA39G2aqNeGh61kEXPuNs1YpMqCs/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -26965,7 +27286,26 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Finbald",
+        "Url": "https://docs.google.com/document/d/1UbGiR8n_t6bYcaXs9NXGTaeFZCgMF8-Z/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Adelhaid",
+        "Url": "https://docs.google.com/document/d/1p9n3T5M9t9j9Y8CxibsEBEXsg0QpF_a8/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Chief Godehard",
+        "Url": "https://docs.google.com/document/d/168rTPPeI3168xjyJPQxIQ_kRX3lZRkcT/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -26999,7 +27339,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "Inn",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Jastara Gavel",
+        "Url": "https://docs.google.com/document/d/1XyDOsxZx-aku3xjTxo6C0o1EHWo1loHw/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Diana Gavel",
+        "Url": "https://docs.google.com/document/d/1MgeUjUXyyI9ZW1PJfSpZ1XwtGnM6wLBg/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27033,7 +27386,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Avulus Stokan",
+        "Url": "https://docs.google.com/document/d/1dlgWotdnfdgfo-hdWppNLvi_y0NRCUBO/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27067,7 +27427,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Nadya Goptev",
+        "Url": "https://docs.google.com/document/d/1K0_KPfaw_LzQkKS-ikd2D9VXKz7tpHru/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27111,7 +27478,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Pausan Victus",
+        "Url": "https://docs.google.com/document/d/1d82jl32s-2Y87RUCcHX4v7ap2bPBmMOf/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Nella Victus",
+        "Url": "https://docs.google.com/document/d/15eKCVCaPK4zvJA-XXyuPsPnvAGHUYSay/edit?usp=drive_link\u0026ouid=102161434765115919899\u0026rtpof=true\u0026sd=true",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27234,14 +27614,21 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Brother Celsus",
+        "Url": "https://docs.google.com/document/d/1pjU3lDJ7pabTGYPGsVKkA8Umh1VZTOhRSPzbhseMqQI/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
     "HasQuest": false,
-    "Status": "None",
-    "VikunjaLink": "",
-    "Notes": "None"
+    "Status": "Needs finalization",
+    "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14947",
+    "Notes": "\u003Cp\u003ENeed to figure out what assets to use for exterior!\u003C/p\u003E\u003Ch2\u003ELevel Design\u003C/h2\u003E"
   },
   {
     "Id": 1785,
@@ -27521,7 +27908,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "None",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Narphat Chitonius",
+        "Url": "https://docs.google.com/document/d/1pEbrMeASULTspRRowKQMOB-RH-KWgOkwiaDRXN21cno/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27555,7 +27949,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Dra\u0027zamnini",
+        "Url": "https://docs.google.com/document/d/1stpg0vJeyuzvgbeYuKVI_GVDxiEalVsE_qA0fvtIUtI/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27589,7 +27990,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Valentia Enumidus",
+        "Url": "https://docs.google.com/document/d/1nWnxjHwUZbMbB5HWkBciaSSsxnzd_kcu7FnjDmT4Qvg/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27657,7 +28065,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Scale-Peeler",
+        "Url": "https://docs.google.com/document/d/1VhZV_zFkz6QQFDTx5akigZSPI5QDnXyYGLVFQBtBJe8/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27691,7 +28106,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "Inn",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Ruicaldar",
+        "Url": "https://docs.google.com/document/d/187R_mbdacbnGwnXXFtjXrhFs_kFSFIwsUz_pASYwFZI/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -27905,7 +28327,26 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Clawfather / Baz-ri",
+        "Url": "https://docs.google.com/document/d/1fALuzYc7q4j-UK8KVy1I_jb9R_o7GpTaHoyUecgtB0s/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Clawmother / Areshla",
+        "Url": "https://docs.google.com/document/d/1D0gCU0Q1sCs8KkLsfIo4LtaBrEeqePaKnWgXloSrsHE/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Malan-do",
+        "Url": "https://docs.google.com/document/d/11pM8xAdSUs-L_3jNQR9HQlp5EIC01eru-2Pjsz3Q6Bo/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -28252,14 +28693,63 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Barshnug the Elder",
+        "Url": "https://docs.google.com/document/d/1hxrC3Igtf-kIfi5DOcOQoQCuIDmh8UudBLV-jzocde8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Taskmaster",
+        "Url": "https://docs.google.com/document/d/1TKSLK81QjmaEHNUWpGTGPqbBMmveVvQ9ZRYMMIHtTTM/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Heir",
+        "Url": "https://docs.google.com/document/d/1cXtqDaavaOF8jqA7Ds48gTRmbGMcg7soBNETGHlP044/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Enforcer",
+        "Url": "https://docs.google.com/document/d/1Oeg5dxAnm8OzKfEoqAQd2oFXrXlvc6GV6xMnpLYhTmE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Ursha gra-Katurz",
+        "Url": "https://docs.google.com/document/d/1nl1X5zuTK8LzVH0bYYDkv5bNXxi9rJJNDVdwdTZvYAI/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Sower",
+        "Url": "https://docs.google.com/document/d/1TNaczWldRIupjx7T_EyCTSbe0KTulAVIKvFcz5lmER4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Winterborn",
+        "Url": "https://docs.google.com/document/d/148sEW09_-H7BO7aae2xvTXpFR51wsH3hlw-8rEipzTQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Meek",
+        "Url": "https://docs.google.com/document/d/1OGICKco70wRZNHI9TPTEhYYbnr1sTsl5ucDgOkwa77c/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
     "HasQuest": false,
-    "Status": "Needs finalization",
-    "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14616",
-    "Notes": "\u003Cp\u003ELarge Orc Farmstead with 8 Orc NPCs. 9th Orc lives in Kvatch.\u003C/p\u003E\u003Ch2\u003EHouse 1\u003C/h2\u003E"
+    "Status": "None",
+    "VikunjaLink": "",
+    "Notes": "None"
   },
   {
     "Id": 1848,
@@ -28286,14 +28776,63 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Barshnug the Elder",
+        "Url": "https://docs.google.com/document/d/1hxrC3Igtf-kIfi5DOcOQoQCuIDmh8UudBLV-jzocde8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Taskmaster",
+        "Url": "https://docs.google.com/document/d/1TKSLK81QjmaEHNUWpGTGPqbBMmveVvQ9ZRYMMIHtTTM/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Heir",
+        "Url": "https://docs.google.com/document/d/1cXtqDaavaOF8jqA7Ds48gTRmbGMcg7soBNETGHlP044/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Enforcer",
+        "Url": "https://docs.google.com/document/d/1Oeg5dxAnm8OzKfEoqAQd2oFXrXlvc6GV6xMnpLYhTmE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Ursha gra-Katurz",
+        "Url": "https://docs.google.com/document/d/1nl1X5zuTK8LzVH0bYYDkv5bNXxi9rJJNDVdwdTZvYAI/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Sower",
+        "Url": "https://docs.google.com/document/d/1TNaczWldRIupjx7T_EyCTSbe0KTulAVIKvFcz5lmER4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Winterborn",
+        "Url": "https://docs.google.com/document/d/148sEW09_-H7BO7aae2xvTXpFR51wsH3hlw-8rEipzTQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Barshnug the Meek",
+        "Url": "https://docs.google.com/document/d/1OGICKco70wRZNHI9TPTEhYYbnr1sTsl5ucDgOkwa77c/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
     "HasQuest": false,
-    "Status": "Needs finalization",
-    "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14616",
-    "Notes": "\u003Cp\u003ELarge Orc Farmstead with 8 Orc NPCs. 9th Orc lives in Kvatch.\u003C/p\u003E\u003Ch2\u003EHouse 1\u003C/h2\u003E"
+    "Status": "None",
+    "VikunjaLink": "",
+    "Notes": "None"
   },
   {
     "Id": 1851,
@@ -31086,8 +31625,8 @@
     "RelatedQuestUrl": "None",
     "HasQuest": false,
     "Status": "None",
-    "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14519",
-    "Notes": "\u003Cp\u003E\u003C/p\u003E"
+    "VikunjaLink": "",
+    "Notes": "None"
   },
   {
     "Id": 2030,
@@ -31125,7 +31664,26 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Ottius Nelian",
+        "Url": "https://docs.google.com/document/d/1D99wXdEGJdQmQdI_F6yUvqdwhohvD9-21tlSqz6Vctc/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Ulris Terianis",
+        "Url": "https://docs.google.com/document/d/1gVnyBMsHLJk_ZlmqUELGOVBKTRTIgeUUadEvPKnbzjA/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Henric Ysmi",
+        "Url": "https://docs.google.com/document/d/1w52JTArVjh9YGwzOS5QvuY7nc0ATv5MtOl2HRmk_OJA/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -32717,7 +33275,38 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "Inn",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Nelris",
+        "Url": "https://docs.google.com/document/d/1B4aJgbQZ70lS5opNhJQvlnxsKYCWSpDaPmVtLLtiQqE/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Aventus Rutilus",
+        "Url": "https://docs.google.com/document/d/1vNUhiOqIiWJldIKTfb6_BVLyF9cQi-mTDjvSyMXxQVE/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Jania Rutilus",
+        "Url": "https://docs.google.com/document/d/1pirTVfevoN6a236H4GceTQYkDzDYgmLwexVcBYb-J4Q/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Julius Rutilus",
+        "Url": "https://docs.google.com/document/d/1mKxbz1xJHzRebxwh3p0RB0GC5mwYTGLhkIlNM2R6xVs/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Falkene",
+        "Url": "https://docs.google.com/document/d/1pP8m_m1RzvrFmIgew4Yh0-Mu01qDvRL9E_RayiCE-cY/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -32887,7 +33476,26 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Dorian Bienne",
+        "Url": "https://docs.google.com/document/d/1r5wWQfQ9eOs4D1pT-V2Pr9SIA4HpH644fCiOQoKUy_E/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Gwynedette Bienne",
+        "Url": "https://docs.google.com/document/d/1TzPohQ1Df1_A2FokllyG9R0pMvQjh8bXM6-DDczoTNc/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Freneric Essilias",
+        "Url": "https://docs.google.com/document/d/1nyIdraOtOID7moXHTt2PBuG54IZJL0iYfVxzjnzXQNA/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -33702,7 +34310,14 @@
     ],
     "LocationCategory": "Dungeon",
     "LocationType": "Bandit Camp",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Chief Haric",
+        "Url": "https://docs.google.com/document/u/0/d/1GzIK3z0JyPfmCRIiZ6YHMi7hs-xcLGtuPmeZ7f-T4Ao/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -33745,7 +34360,50 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Lirion",
+        "Url": "https://docs.google.com/document/u/0/d/1nWdJ_Bdoqv1qrhXu0PJcjphxShEc5U52quPBZ0MLFsw/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Malwon",
+        "Url": "https://docs.google.com/document/u/0/d/1SQa_7CyTQydiLjki41I0-fZJ5PUbpGgnV0vFkRor_ds/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Liliwe",
+        "Url": "https://docs.google.com/document/u/0/d/1Z85d1XPwj-slVS8Jtjf_fO70kTEifsFi0niv0vSvQe8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Narilia",
+        "Url": "https://docs.google.com/document/u/0/d/1wl6NQAtMGpXrX5kvVTznMaLFlMF517uSrTyMGKybpho/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Isobel Afronia",
+        "Url": "https://docs.google.com/document/u/0/d/1OJW-007YNHu7HzkOVjJPYh5bVGcKgyXN/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Ijari",
+        "Url": "https://docs.google.com/document/u/0/d/1-fEvD_sjovnk542dRW8BeAmJavPO4AFJwK71Axbc5kE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Tribune Hefjod",
+        "Url": "https://docs.google.com/document/u/0/d/1Hf2LRouupPd6EqE-CXm_T_bK83gabyO6yrWKVovh6BQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34202,7 +34860,38 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Ormac Aethelred",
+        "Url": "https://docs.google.com/document/d/1imAOge4_UeSAWbcXi0K0TIsBMnl0nCk-lJHGnIWxDYY/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Quintia Aethelred",
+        "Url": "https://docs.google.com/document/d/1KN0TxC_dPJpWZfuvgoN0vgUKNGjlWuZniroySt8tu0s/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Jena Goneld",
+        "Url": "https://docs.google.com/document/d/1gL5clR6MitrUCxJJI3Gt1U_na0owyCxu_D3I5KIObz4/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Afer Aethelred",
+        "Url": "https://docs.google.com/document/d/1v6DvcwUM7yeDBGRD8LPY9kxcRLJ-9p9fo1SzL0XIpvQ/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Abelina Aethelred",
+        "Url": "https://docs.google.com/document/d/1S8JMTwX-fqvnN3M3fS9ADS7iYkeUyR0g80htgWCFPZE/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34247,7 +34936,38 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Starius Ceronia",
+        "Url": "https://docs.google.com/document/d/11fTjNPw_302fUsnGYIq9FwwIVyTkJOYtYq-vXZ9YRt4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Rigel Jarlov",
+        "Url": "https://docs.google.com/document/d/1QI_LTrB9eNiv60XmcjvtXHUsmi-AcYzidKD2eFhTQAo/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Sofene Jarlov",
+        "Url": "https://docs.google.com/document/d/14_qm9wFAVySK4LTQIFlAcOBmAJz44NrJqNmwoolhP6c/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Patryk Jarlov",
+        "Url": "https://docs.google.com/document/d/11lPJrOcFvBXfhUdZzfM82wUT2rlXL90my1DAjyDyHPg/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Lillia Jarlov",
+        "Url": "https://docs.google.com/document/d/1LR9_YbRgGg0Urdu0i1V_f8SauoETzdBsuPssoWm1NU4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34280,7 +35000,14 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Tribune Liria Lelestos",
+        "Url": "https://docs.google.com/document/d/1xnUNiz6mYprK4dGUPUSD_Uj0tFius1S0ycAfxJ7SDWE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34345,7 +35072,20 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Lady Morta",
+        "Url": "https://docs.google.com/document/d/1ey43hd0uqDWlqmD0iUUkPZTutgXFBjrJ4WldOOkKEbo/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Lord Jemian",
+        "Url": "https://docs.google.com/document/d/1r87DKVL6-yUjY9rFp0r6DFoq3uVPxSx_W-hqloWLiHs/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34408,7 +35148,38 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Malandwen",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Y\u0027llore",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Polonaren",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Celewe",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Tolowon",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34471,7 +35242,14 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Tribune Syrola Axitius",
+        "Url": "https://docs.google.com/document/d/1nArPZ1VU3C_l1vdjxsLT_Bk8M4xNNdudXwxDyNN2SMM/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34641,7 +35419,32 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Salanius Coster",
+        "Url": "https://docs.google.com/document/d/1fwimC-0sRmCCm-pydODQXKH1HQua8zppes1ZNmMACN4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Lothar Hard-Hands",
+        "Url": "https://docs.google.com/document/d/1ftUS_BPPlZ5mWKI8buzDZkweB6bF3Q8nX6Bg86uJaEY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Shav",
+        "Url": "https://docs.google.com/document/d/1q4JUsGPEOBcnPe2oNYCCBK0XjTHjJE9m9z_vnPHlLns/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Meylah",
+        "Url": "https://docs.google.com/document/d/11Nuq-DuR7s_vXkHuVrhtclc1aG7u2FPf-OlLzExwRcI/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -34696,7 +35499,38 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Nelris",
+        "Url": "https://docs.google.com/document/d/1B4aJgbQZ70lS5opNhJQvlnxsKYCWSpDaPmVtLLtiQqE/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Aventus Rutilus",
+        "Url": "https://docs.google.com/document/d/1vNUhiOqIiWJldIKTfb6_BVLyF9cQi-mTDjvSyMXxQVE/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Jania Rutilus",
+        "Url": "https://docs.google.com/document/d/1pirTVfevoN6a236H4GceTQYkDzDYgmLwexVcBYb-J4Q/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Julius Rutilus",
+        "Url": "https://docs.google.com/document/d/1mKxbz1xJHzRebxwh3p0RB0GC5mwYTGLhkIlNM2R6xVs/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Falkene",
+        "Url": "https://docs.google.com/document/d/1pP8m_m1RzvrFmIgew4Yh0-Mu01qDvRL9E_RayiCE-cY/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -35521,7 +36355,26 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Ship",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Clawfather / Baz-ri",
+        "Url": "https://docs.google.com/document/d/1fALuzYc7q4j-UK8KVy1I_jb9R_o7GpTaHoyUecgtB0s/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Clawmother / Areshla",
+        "Url": "https://docs.google.com/document/d/1D0gCU0Q1sCs8KkLsfIo4LtaBrEeqePaKnWgXloSrsHE/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Malan-do",
+        "Url": "https://docs.google.com/document/d/11pM8xAdSUs-L_3jNQR9HQlp5EIC01eru-2Pjsz3Q6Bo/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -38212,7 +39065,44 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Dwaenil",
+        "Url": "https://docs.google.com/document/d/1nte0ukCZIGzqpSfz9ShuPSCl8VWvX3iTyuBpckg7nqI/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Agathe Corgine",
+        "Url": "https://docs.google.com/document/d/1s_vaE8PHLXIVb7AH2K7yOBiTeeVut0tjm5gw2HU5gGA/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Lanovic Corgine",
+        "Url": "https://docs.google.com/document/d/1Ok8nRXiGVUt4GLEN9PU5Nzrg05khMbGWgXlFPi7Zbks/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Morgane Corgine",
+        "Url": "https://docs.google.com/document/d/1sQBFlhc0pMxz4SCVWyru6oshAFc3m_clagSAZcXYdAw/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Perivia",
+        "Url": "https://docs.google.com/document/d/15_7Dtf94rOJ2HlCj8GnPmTXhZRMI_72VJDKhoMdae3E/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Lester the Lech",
+        "Url": "https://docs.google.com/document/d/17GMY1bMiB0DI5xSrslyR9S13qVktzdEqeXGuSisBFZM/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -38290,7 +39180,14 @@
     ],
     "LocationCategory": "None",
     "LocationType": "Imperial Fort",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Legate Talar",
+        "Url": "https://docs.google.com/document/d/1N3OHu0vQIcau9oqVSzzwyNnYAgRVENCeQccdLjR7Fn8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -38823,7 +39720,32 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "None",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Garog gro-Burgal",
+        "Url": "https://docs.google.com/document/d/171CVgaA8U5-1l-EjQTS1XRBXDoeNtROU-A2xUgPg-uc/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Primate Adria Sundarah",
+        "Url": "https://docs.google.com/document/d/1qu5hSTfoJZPyvtGvUT2VdCKld6_I-pxxG126GMGaRTE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Tharen at-Morad",
+        "Url": "https://docs.google.com/document/d/19MbVg97_c5bSX1YsLmYbPpeAaaZEoEGfR3QA9WIZ9SE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Charlotte",
+        "Url": "https://docs.google.com/document/d/1hVx_GOoNB4lbBrtPl7sjX41GcHAcjM5vZbBv17AsJ9Y/edit#bookmark=id.7kbv4ylhs59k",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -39898,7 +40820,38 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Tribune Salvia Donetor",
+        "Url": "https://docs.google.com/document/u/0/d/1cV92fkiWCBV9aowJ-gAZTGHAmQv1FFGcgx33kZ2dpS0/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Zendric Volso",
+        "Url": "https://docs.google.com/document/u/0/d/17bYS71dQLC-0UkSsu4o10VLrukV4U_MtKkQyfYC7Ysg/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "S\u0027dravai",
+        "Url": "https://docs.google.com/document/u/0/d/1SyTqjvA94ZdXT49BnGy_klVNxMmZysLK-T5nt3FEB5M/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Dulut gra-Shurbaz",
+        "Url": "https://docs.google.com/document/u/0/d/1dJiytnPwi6u0Be66vC-aEhTOx0bfpNhru_IwYJ7a4RA/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Overseer Garalo",
+        "Url": "https://docs.google.com/document/u/0/d/1w2wEI5j8RgQkFv2e-ROzs5idtxbBWODqO6JPXtM715I/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -39988,7 +40941,20 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Parvia Montesci",
+        "Url": "https://docs.google.com/document/d/1p9_6ID4nIbJC0Jwt6bujClxKuBkA1zOSezFuk5lXoEI/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Sarmosus Montesci",
+        "Url": "https://docs.google.com/document/d/1kbmiHqVU5gBR9nTu2SMmr48bxzbgH_uPZ_nofcZBvkI/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -42491,7 +43457,14 @@
     "Cells": [],
     "LocationCategory": "Dungeon",
     "LocationType": "Bandit Camp",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "King Rarnac",
+        "Url": "https://docs.google.com/document/d/1QyfDBfcJPfkxazog1GOEcWK8Lrboc94TBXZjVmm5-Q8/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -43391,7 +44364,32 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Latia Syrul",
+        "Url": "https://docs.google.com/document/d/1iOyDQt4eViAFCEH1gQ-tLfrl1y7EyL3GXabF72hs5xg/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Britn Syrul",
+        "Url": "https://docs.google.com/document/d/1Dfq2Cv-lSc_DOypcx0o2k0GgpqegIDk7S5prKTMDN50/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Janare Syrul",
+        "Url": "https://docs.google.com/document/d/1Pgven7gpJOzbkw6MuuTt9l78R0ulXiTdve7Dj5OszWw/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Cefous Villius",
+        "Url": "https://docs.google.com/document/d/1cqMCdN7Mna3BTa8ZtYfxFgmAdgll7LEy6p6j20uvkxE/",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -43835,7 +44833,14 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Mariana Copperhart",
+        "Url": "https://docs.google.com/document/u/0/d/1jY4PQXBRGFFYLLgVnWq3vuw8sWGX4U3crjPGMWciZsM/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -43961,7 +44966,26 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Farm",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Sabinus Hercinius",
+        "Url": "https://docs.google.com/document/u/0/d/1YJxCwLNDjw6kHkOyujjTU4ukUSJMSP_cdp2YYyK0wmY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Pustula Hercinius",
+        "Url": "https://docs.google.com/document/u/0/d/1M2-ElOvnR0wqkmb0TsFTGfAd8sB21mIA52GPJ0I3KiQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Vilbaine Hercinius",
+        "Url": "https://docs.google.com/document/u/0/d/1Zyi7k2yhUSrl5CYxpieXS5iq37feRsOTmiVwwl_gRw8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -44015,7 +45039,56 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Brother Levan Aleschal",
+        "Url": "https://docs.google.com/document/d/14BLMIVFru152OHhMa5ms-baeJ8HeB88vK3u_0gzO9ww/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Brother Grassav Seto",
+        "Url": "https://docs.google.com/document/d/1tuiUeISAVFryWhKEtYlcEV6Oot3OsbwxLublRK_sDZg/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Brother Agar Tyialmar",
+        "Url": "https://docs.google.com/document/d/15Mxypcbzoc7qH-L6VLUZtHRfppi-QUXPp4totL8CAxY/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Captain Ascilla Magnerel",
+        "Url": "https://docs.google.com/document/d/1yXWvazgANxon7KibHB5gfJV026IpNiLTEsBNQXFdyeY/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Qyro Silaparus",
+        "Url": "https://docs.google.com/document/d/1_14recgU4mjqgMUP1aeN4DQPS7i9BFJ5VIAvTo-NK2c/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Prior Septimal Vidulchur",
+        "Url": "https://docs.google.com/document/d/1INaEIC-CR8OhNaKP6ImAj4ce0ks9JE_BS6EjcdKKIHs/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Veru Magnerel",
+        "Url": "https://docs.google.com/document/d/1llNLaZXX3W4rDUf43URdYM6_VM39RTbe7IMe-tMDO1k/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Marvin Monet",
+        "Url": "https://docs.google.com/document/d/1r9gwZthFTVxBvYTkYMzeS6DDj3MYYblRcB41JH5fQhc/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -44498,7 +45571,20 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Ugrum gro-Sagohg",
+        "Url": "https://docs.google.com/document/d/1pH9uGcpXfLOcQZ5O_MlUmBiPG6WWp2-urxZswALmrEY/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Khasha gra-Sagohg",
+        "Url": "https://docs.google.com/document/d/10iwdKlBIf0XrLgdn29xLqdJMVC29BfhkITkXmCCHmPs/",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -44586,7 +45672,86 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Geel-Tei",
+        "Url": "https://drive.google.com/open?id=1gwPwQ_3ZZSnwfUnN01hR7I3W6uEr0z4kBD1hhQv8sng",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Okadeek",
+        "Url": "https://docs.google.com/document/d/1Ocwz5vpyYBj4pTbSO3isotI5homQXzXPciEThyiK03I/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Avora Veran",
+        "Url": "https://drive.google.com/open?id=1DKpbwP8Pf95Q9GGXiaTVhWbafcuj_xxxckE0sK_eSis",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Suvesie Veran",
+        "Url": "https://drive.google.com/open?id=1YrVK9-bKI1HqIz-7Sk8rwle_Ejwdlgh8lY9eYeA14mw",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Erronius Fortuitous",
+        "Url": "https://docs.google.com/document/d/1couEw-qEWWUM-upPW8JYDaHxGpjrxazAvKTQOvnT3p4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Oli Calx",
+        "Url": "https://drive.google.com/open?id=1oDx5yb35H7mWSCY3-_9wnZKb0Pkkryl2elgr9UrUdcU",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "K\u0027jherra",
+        "Url": "https://drive.google.com/open?id=1adR_-5RA2EQtmDJ856Q_6Oc4Q-s7_il-4WXohPApKJA",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "J\u0027abhiri",
+        "Url": "https://drive.google.com/open?id=1UWgdmR2WGSzPZxP0Sb-Lu2lSN9hVs0Lvs_1_nDZHYSE",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Yvana Crag-Climber",
+        "Url": "https://drive.google.com/open?id=1Tex0aTgOg61gryb-4S16GoaHrINmZfjnLwa-jwrs9kg",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Skuric Sorgensson",
+        "Url": "https://drive.google.com/open?id=18V0B8B5OlQwp4LEG2hKuK2mDbwMhmiq6aX9KBnqG2hc",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Jurham",
+        "Url": "https://drive.google.com/open?id=1yJQMZ4iW2QA0j3VL4V3vrHl16HH_nds-BPvZ_96oxFU",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Sam of Rihad",
+        "Url": "https://drive.google.com/open?id=1y6aacHyWKDv6as_SdfE5_Gzrq-hgwVO166FrzjkFVqI",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Tobias",
+        "Url": "https://drive.google.com/open?id=1eYzHopd2jPsX7LlQcbQrpRk19zgQOdx81ufc5LQKml0",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -44620,7 +45785,26 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Sabinus Hercinius",
+        "Url": "https://docs.google.com/document/u/0/d/1YJxCwLNDjw6kHkOyujjTU4ukUSJMSP_cdp2YYyK0wmY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Pustula Hercinius",
+        "Url": "https://docs.google.com/document/u/0/d/1M2-ElOvnR0wqkmb0TsFTGfAd8sB21mIA52GPJ0I3KiQ/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Vilbaine Hercinius",
+        "Url": "https://docs.google.com/document/u/0/d/1Zyi7k2yhUSrl5CYxpieXS5iq37feRsOTmiVwwl_gRw8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -44952,7 +46136,56 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Brother Levan Aleschal",
+        "Url": "https://docs.google.com/document/d/14BLMIVFru152OHhMa5ms-baeJ8HeB88vK3u_0gzO9ww/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Brother Grassav Seto",
+        "Url": "https://docs.google.com/document/d/1tuiUeISAVFryWhKEtYlcEV6Oot3OsbwxLublRK_sDZg/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Brother Agar Tyialmar",
+        "Url": "https://docs.google.com/document/d/15Mxypcbzoc7qH-L6VLUZtHRfppi-QUXPp4totL8CAxY/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Captain Ascilla Magnerel",
+        "Url": "https://docs.google.com/document/d/1yXWvazgANxon7KibHB5gfJV026IpNiLTEsBNQXFdyeY/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Qyro Silaparus",
+        "Url": "https://docs.google.com/document/d/1_14recgU4mjqgMUP1aeN4DQPS7i9BFJ5VIAvTo-NK2c/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Prior Septimal Vidulchur",
+        "Url": "https://docs.google.com/document/d/1INaEIC-CR8OhNaKP6ImAj4ce0ks9JE_BS6EjcdKKIHs/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Veru Magnerel",
+        "Url": "https://docs.google.com/document/d/1llNLaZXX3W4rDUf43URdYM6_VM39RTbe7IMe-tMDO1k/",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Marvin Monet",
+        "Url": "https://docs.google.com/document/d/1r9gwZthFTVxBvYTkYMzeS6DDj3MYYblRcB41JH5fQhc/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -45464,7 +46697,44 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "None",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Melyndra",
+        "Url": "https://docs.google.com/document/d/15t9sh6TVLmJqTAHES-YNux_KOOVPWmCZtuOzlZw4OZM/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Left-Hand",
+        "Url": "https://docs.google.com/document/d/1pKDVhyKucqnUfn3-T3cfwmZwVbCGqashOh9-04-wFmc/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Telwyne",
+        "Url": "https://docs.google.com/document/u/0/d/1Ssqw6qkgNpzCya2726JvrZnMF0MeqkgR-qeJqkB4_kE/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Carpius",
+        "Url": "https://docs.google.com/document/d/1A6z8r0KVVnmCQ1KeZwjLPGg4z1xCEXRvYuOqbhxyiRY/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Devario",
+        "Url": "https://docs.google.com/document/d/1nRyNh2v8Ow0mn6yMQV7EhYp7ohqTMLPibttoVFFC4zE/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Havjold the Observant",
+        "Url": "https://docs.google.com/document/d/1NKhy93iAhLZ0Bh6J5R3qtrM1TsMSThQaKkSHWZEFzSM/edit?usp=drive_link",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -45820,7 +47090,32 @@
     "Cells": [],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Saenemon Doran",
+        "Url": "https://docs.google.com/document/d/1woEaJivxDbYNWGvTx5v5Xqi2T1uTI-5bpZ_c5Cik4ag/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Cleiva Doran",
+        "Url": "https://docs.google.com/document/u/0/d/1rSwKmJtxGoqRuzmkWI0zW8smv_6miF8svq6xDAHorgY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Joffre Doran",
+        "Url": "https://docs.google.com/document/u/0/d/1NEMu2X1N9pWskspTI3hy5Lrbm8X6Li0DIPUIFVu4J-E/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Lacania Doran",
+        "Url": "https://docs.google.com/document/u/0/d/10hmtv3e907l0JcXhWRr4fTGrdE1UklmcQeYTxrbk1Bk/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -46292,7 +47587,32 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Exterior",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Saenemon Doran",
+        "Url": "https://docs.google.com/document/d/1woEaJivxDbYNWGvTx5v5Xqi2T1uTI-5bpZ_c5Cik4ag/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Cleiva Doran",
+        "Url": "https://docs.google.com/document/u/0/d/1rSwKmJtxGoqRuzmkWI0zW8smv_6miF8svq6xDAHorgY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Joffre Doran",
+        "Url": "https://docs.google.com/document/u/0/d/1NEMu2X1N9pWskspTI3hy5Lrbm8X6Li0DIPUIFVu4J-E/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Lacania Doran",
+        "Url": "https://docs.google.com/document/u/0/d/10hmtv3e907l0JcXhWRr4fTGrdE1UklmcQeYTxrbk1Bk/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -49096,7 +50416,26 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Heem-Ei",
+        "Url": "https://docs.google.com/document/d/1tKgtBS1zxG1qGzQ0tCVP126Im7PVJH8u7YGzcg6hp2w/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Sisei",
+        "Url": "https://docs.google.com/document/d/1jydzKWRyotM-EOzUFY4e3PsgWLtw5rW37q5OTz_5kBY/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Memathik",
+        "Url": "https://docs.google.com/document/d/1J7-q3yqwdZMDkqmv-zZ7PU0AlN1e0SaqY_ktN7xvm3c/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -49130,7 +50469,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Reelo-Shei",
+        "Url": "https://docs.google.com/document/d/1opdFqEy7IzomS0Mj5AmeooNlipKbGIEMJzcoquZktfI/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -49374,7 +50720,32 @@
     ],
     "LocationCategory": "Settlement",
     "LocationType": "Farm",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Appius Desilius",
+        "Url": "https://docs.google.com/document/u/0/d/1N-i9wZ_p5UJX4t3fwWEqbTywWqjjiMnvoY0KMfrO6v8/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Livinia Desilius",
+        "Url": "https://docs.google.com/document/u/0/d/1X7XnXXjo9FmF9aU3m2-O9upS4tk-8GROWv3LgnB2KMs/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Ma\u0027zhesh",
+        "Url": "https://docs.google.com/document/u/0/d/1E_oGA4XxWvqwsCoQmAVLp3PyWZBVxupvfsdgCjZRtr4/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Mobock gro-Urgz",
+        "Url": "https://docs.google.com/document/d/1Wy5TpyQU8fNcRUy8kfqdZj7f-yUDPUdwUnqfmHn5Y44/edit?usp=sharing",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
@@ -49933,7 +51304,14 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Yagal gra-Grusha",
+        "Url": "https://docs.google.com/document/d/1aMywwtcLoNbrdDc0QV_vM_oyYu5eUE5aaE4qAmNLvA0/",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
