@@ -14,39 +14,23 @@
 
   @media (hover: hover) {
     &:hover:not([data-disabled]) {
-      background-color: oklch(97% 0 0deg);
-
-      @media (prefers-color-scheme: dark) {
-        background-color: oklch(26.9% 0 0deg);
-      }
+      background-color: oklch(26.9% 0 0deg);
     }
   }
 
   &:active:not([data-disabled]) {
-    background-color: oklch(92.2% 0 0deg);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: oklch(37.1% 0 0deg);
-    }
+    background-color: oklch(37.1% 0 0deg);
   }
 
   &[data-disabled] {
-    color: oklch(55.6% 0 0deg);
-    border-color: oklch(55.6% 0 0deg);
-
-    @media (prefers-color-scheme: dark) {
-      color: oklch(70.8% 0 0deg);
-      border-color: oklch(70.8% 0 0deg);
-    }
+    color: oklch(70.8% 0 0deg);
+    border-color: oklch(70.8% 0 0deg);
   }
 
   &:focus-visible {
     outline: 2px solid oklch(14.5% 0 0deg);
     outline-offset: -1px;
-
-    @media (prefers-color-scheme: dark) {
-      outline-color: white;
-    }
+    outline-color: white;
   }
 }
 
@@ -97,7 +81,7 @@
   --bleed: 3rem;
   box-sizing: border-box;
   width: calc(45rem + var(--bleed));
-  max-width: calc(100vw - var(--bleed));
+  max-width: calc(100% - var(--bleed));
   height: 100%;
   padding: 1.5rem;
   padding-right: calc(1.5rem + var(--bleed));

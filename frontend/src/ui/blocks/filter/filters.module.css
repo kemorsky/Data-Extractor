@@ -103,6 +103,8 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: 18px;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
 }
 
 .Popup {
@@ -112,11 +114,9 @@
   box-shadow: none;
   box-sizing: border-box;
   width: 20rem;
-  /* max-width: calc(100vw - var(--bleed)); */
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* margin-right: calc(-1 * var(--bleed)); */
   border-right: 1px solid white;
   outline: 0;
   box-shadow: 0.25rem 0.25rem 0 rgb(0 0 0 / 12%);
