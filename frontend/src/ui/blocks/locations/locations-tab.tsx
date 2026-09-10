@@ -122,7 +122,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             window.scrollTo({top: 0, behavior: "smooth"});
                         }}
                         >
-                        <option value="">Items per page:</option>
+                        {/* <option value="">Items per page:</option> */}
                         {pageSizes.map((number, index) => (
                             <option key={index} value={number}>
                                 {number}
