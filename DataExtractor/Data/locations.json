@@ -46829,7 +46829,32 @@
     ],
     "LocationCategory": "Interior",
     "LocationType": "House",
-    "InhabitingNpcs": [],
+    "InhabitingNpcs": [
+      {
+        "Name": "Rex",
+        "Url": "",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Armelia Fatelia",
+        "Url": "https://drive.google.com/open?id=1WfSrFavHqG_uI_8N0AqSEUeHr81T9dbd3UPDk0z4MzM",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Kisari",
+        "Url": "https://docs.google.com/document/u/0/d/1IL7qL_E7VTnUmamW9Xp5kc_1VZa1mf7D_YuHoAiNWQI/edit",
+        "Rows": [],
+        "NpcDocCells": []
+      },
+      {
+        "Name": "Deputy Zaida",
+        "Url": "https://drive.google.com/open?id=12BlpMVN3qu_Q76BKzpHax7CcT4a0dCHUQSteRhLIs5M",
+        "Rows": [],
+        "NpcDocCells": []
+      }
+    ],
     "Inhabitants": [],
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
