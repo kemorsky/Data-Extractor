@@ -215,7 +215,7 @@
 .pagination__select {
   background-color: var(--button-bg);
   padding: 0.25rem 0.5rem;
-  height: 2.167rem;
+  height: 39px;
   width: 3.25rem;
   cursor: pointer;
   display: flex;
