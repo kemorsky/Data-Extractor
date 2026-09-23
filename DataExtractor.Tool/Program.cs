@@ -53,7 +53,12 @@ if (!File.Exists(modPathAssets))
 
 Console.WriteLine("Hello, World!");
 
-using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
+// using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
+
+using var env = GameEnvironment.Typical
+    .Builder<ISkyrimMod, ISkyrimModGetter>(GameRelease.SkyrimSE)
+    .WithTargetDataFolder(pluginDirectory)
+    .Build();
 
 if (string.IsNullOrWhiteSpace(modPathHeartland) || string.IsNullOrWhiteSpace(modPathAssets))
 {
