@@ -12,6 +12,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      MASTERLIST_ID: ${{ vars.MASTERLIST_ID }}
+      NPC_DATABASE_ID: ${{ vars.NPC_DATABASE_ID }}
+      VIKUNJA_API_URL: ${{ vars.VIKUNJA_API_URL }}
+      VIKUNJA_API_URL_DUNGEONS: ${{ vars.VIKUNJA_API_URL_DUNGEONS }}
+      VIKUNJA_FRONTEND_URL: ${{ vars.VIKUNJA_FRONTEND_URL }}
+      VIKUNJA_PROJECT_URL: ${{ vars.VIKUNJA_PROJECT_URL }}
+      VIKUNJA_TOKEN: ${{ secrets.VIKUNJA_TOKEN }}
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,6 +31,72 @@ jobs:
         with:
           dotnet-version: '10.0'
 
+      # Download ESM files
+      # -------------------------
+
+      - name: Install 7zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+
+      - name: Download ESM files
+        run: | 
+          mkdir -p plugins
+
+          curl --fail --location \
+            'https://drive.usercontent.google.com/download?id=112DA5AgbjPT0B0ufbxW7wkguMoxx4fhf&export=download&confirm=t' \
+            --output plugins/Plugins.7z
+
+          7z x plugins/Plugins.7z -oplugins -y
+          rm plugins/Plugins.7z
+
+          cp plugins/*.esm .
+
+          curl --fail --location \
+            --header "PRIVATE-TOKEN: ${{ secrets.TOKEN }}" \
+            "https://gitlab.beyondskyrim.org/api/v4/projects/34/repository/files/BSAssets.esm/raw" \
+            --output plugins/BSAssets.esm
+
+          curl --fail --location \
+            --header "PRIVATE-TOKEN: ${{ secrets.TOKEN }}" \
+            "https://gitlab.beyondskyrim.org/api/v4/projects/35/repository/files/BSHeartland.esm/raw" \
+            --output plugins/BSHeartland.esm
+
+      # Build and run extractor
+      # -------------------------
+
+      - name: Create Google service account credentials
+        run: |
+          mkdir -p DataExtractor.Tool/utils
+          printf '%s' "$GOOGLE_SERVICE_ACCOUNT_JSON" > DataExtractor.Tool/utils/service-account.json
+
+      - name: Restore extractor tool
+        run: dotnet restore DataExtractor.Tool/DataExtractor.Tool.csproj    
+      
+      - name: Build extractor tool
+        run: dotnet build DataExtractor.Tool/DataExtractor.Tool.csproj --configuration Release --no-restore
+
+      - name: Test extractor tool
+        run: dotnet test DataExtractor.Tool/DataExtractor.Tool.csproj --configuration Release --no-build --verbosity normal
+
+      - name: Run extractor tool
+        run: |
+          dotnet run \
+            --project DataExtractor.Tool/DataExtractor.Tool.csproj \
+            --configuration Release
+
+      - name: Verify generated data
+        run: |
+          ls -lh DataExtractor/Data/locations.json
+          head -c 500 DataExtractor/Data/locations.json
+
+      - name: Cleanup credentials
+        if: always()
+        run: rm -f DataExtractor.Tool/utils/service-account.json
+
+      # Build and run backend
+      # -------------------------
+
       - name: Restore
         run: dotnet restore DataExtractor/DataExtractor.csproj    
       
@@ -28,11 +104,13 @@ jobs:
         run: dotnet build DataExtractor/DataExtractor.csproj --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test DataExtractor/DataExtractor.csproj --configuration Release --no-build --verbosity normal
+
+      # - name: Generate data
+      #   run: |
+      #     dotnet run \
+      #       --project DataExtractor/DataExtractor.csproj \
+      #       --configuration Release
 
       - name: Publish backend
         run: dotnet publish DataExtractor/DataExtractor.csproj -c Release -o publish  
-
-
-        
-          

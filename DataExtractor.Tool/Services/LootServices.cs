@@ -27,19 +27,20 @@ public class LootServices : ILootService
         foreach (var group in groupedObjects)
         {
             // var baseLink = group.First().Base;
+            var baseLink = group.First().Base;
 
             // var baseObject = baseLink.TryResolve(linkCache);
-            var baseObject = group.First().Base.TryResolve(linkCache);
+            var baseObject = baseLink.TryResolve(linkCache);
 
-            if (baseObject == null)
-            {
-                Console.WriteLine(
-                    $"Could not resolve: {group.Key}");
-                continue;
-            }
+            // Console.WriteLine(
+            //     $"OK: {baseLink.FormKey} -> {baseObject?.GetType().Name}");
 
             if (baseObject is IContainerGetter container)
             {
+                // Console.WriteLine(
+                //     $"CONTAINER FOUND: {container.FormKey}, " +
+                //     $"Items={container.Items?.Count ?? 0}");
+
                 if (container.Items == null)
                 {
                     // Console.WriteLine("CONTAINER ENTRY IS NULL");
@@ -49,7 +50,6 @@ public class LootServices : ILootService
                 foreach (var entry in container.Items)
                 {
                     var containerItem = entry.Item;
-
                     var itemLink = containerItem.Item;
 
                     if (itemLink.IsNull)
@@ -88,9 +88,9 @@ public class LootServices : ILootService
                 }
 
                 continue;
-            }
+            };
 
-            var value = baseObject
+            var value = baseObject?
                 .GetType()
                 .GetProperty("Value")?
                 .GetValue(baseObject);
@@ -132,13 +132,13 @@ public class LootServices : ILootService
 
         results.TotalValue = directItemValue + containerValues;
 
-        Console.WriteLine("========================================");
-        Console.WriteLine($"LOOT VALUE: {cell.FormKey}");
-        Console.WriteLine($"  Direct Items : {directItemValue}");
-        Console.WriteLine($"  Containers   : {containerValues}");
-        Console.WriteLine($"  -------------------------");
-        Console.WriteLine($"  TOTAL        : {results.TotalValue}");
-        Console.WriteLine("========================================");
+        // Console.WriteLine("========================================");
+        // Console.WriteLine($"LOOT VALUE: {cell.FormKey}");
+        // Console.WriteLine($"  Direct Items : {directItemValue}");
+        // Console.WriteLine($"  Containers   : {containerValues}");
+        // Console.WriteLine($"  -------------------------");
+        // Console.WriteLine($"  TOTAL        : {results.TotalValue}");
+        // Console.WriteLine("========================================");
 
         // results.TotalValue = results.Items.Sum(x => x.TotalValue);
 

@@ -23,21 +23,71 @@ Environment.SetEnvironmentVariable(
     "GOOGLE_APPLICATION_CREDENTIALS",
     credentialPath);
 
-var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA_HEARTLANDS");
-var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA_ASSETS");
+// var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA_HEARTLANDS");
+// var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA_ASSETS");
 var URL = Environment.GetEnvironmentVariable("URL");
+
+var pluginDirectory = Path.Combine(
+    Directory.GetCurrentDirectory(),
+    "plugins");
+
+var modPathHeartland = Path.Combine(
+    pluginDirectory,
+    "BSHeartland.esm");
+
+var modPathAssets = Path.Combine(
+    pluginDirectory,
+    "BSAssets.esm");
+
+if (!File.Exists(modPathHeartland))
+{
+    throw new FileNotFoundException(
+        $"BSHeartland.esm not found: {modPathHeartland}");
+}
+
+if (!File.Exists(modPathAssets))
+{
+    throw new FileNotFoundException(
+        $"BSAssets.esm not found: {modPathAssets}");
+}
 
 Console.WriteLine("Hello, World!");
 
-using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
+// using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 
-if (string.IsNullOrWhiteSpace(pathToModHeartlandESM) || string.IsNullOrWhiteSpace(pathToModAssetsESM))
+// using var env = GameEnvironment.Typical
+//     .Builder<ISkyrimMod, ISkyrimModGetter>(GameRelease.SkyrimSE)
+//     .WithTargetDataFolder(pluginDirectory)
+//     .Build();
+
+var listings = new List<LoadOrderListing>
+{
+    new LoadOrderListing(ModKey.FromFileName("Skyrim.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Update.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Dawnguard.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Dragonborn.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Hearthfire.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("BSAssets.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("BSHeartland.esm"), enabled: true),
+};
+
+var loadOrder = LoadOrder.Import<ISkyrimModGetter>(
+    pluginDirectory,
+    listings,
+    GameRelease.SkyrimSE);
+
+if (string.IsNullOrWhiteSpace(modPathHeartland) || string.IsNullOrWhiteSpace(modPathAssets))
 {
     throw new Exception("DATA-HEARTLANDS is not configured.");
 }
 
-var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
-var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
+// if (string.IsNullOrWhiteSpace(pathToModHeartlandESM) || string.IsNullOrWhiteSpace(pathToModAssetsESM))
+// {
+//     throw new Exception("DATA-HEARTLANDS is not configured.");
+// }
+
+// var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
+// var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
 
 using var mod = SkyrimMod.CreateFromBinaryOverlay(modPathHeartland, SkyrimRelease.SkyrimSE);
 using var mod2 = SkyrimMod.CreateFromBinaryOverlay(modPathAssets, SkyrimRelease.SkyrimSE);
@@ -47,9 +97,23 @@ List<ICellGetter> cells = mod
     .Concat(mod2.EnumerateMajorRecords<ICellGetter>())
     .ToList();
 
-var modsList = env.LoadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
-modsList.Add(mod);
-modsList.Add(mod2);
+var modsList = loadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
+// modsList.Add(mod2);
+// modsList.Add(mod);
+
+Console.WriteLine($"Heartlands: {mod.ModKey}");
+
+foreach (var master in mod.ModHeader.MasterReferences)
+{
+    Console.WriteLine($"  Master: {master.Master.FileName}");
+}
+
+Console.WriteLine($"Assets: {mod2.ModKey}");
+
+foreach (var master in mod2.ModHeader.MasterReferences)
+{
+    Console.WriteLine($"  Master: {master.Master.FileName}");
+}
 
 var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter>(modsList, LinkCachePreferences.Default);
 
@@ -66,7 +130,7 @@ var locations =
         cells);
 
 var outputPath = Path.Combine(
-    "..",
+    // "..",
     "DataExtractor",
     "Data",
     "locations.json");
