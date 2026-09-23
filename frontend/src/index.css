@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
+  interpolate-size: allow-keywords;
   /* --bg: #1c1c1c; */
   --border: #3e5c76; /* hsl(45, 40%, 50%) */
   --code-bg: #1f2028;

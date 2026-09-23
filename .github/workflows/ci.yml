@@ -21,6 +21,35 @@ jobs:
         with:
           dotnet-version: '10.0'
 
+      - name: Install 7zip
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y p7zip-full
+
+      - name: Download ESM files
+        run: | 
+          mkdir -p plugins
+
+          curl --fail --location \
+            'https://drive.usercontent.google.com/download?id=112DA5AgbjPT0B0ufbxW7wkguMoxx4fhf&export=download&confirm=t' \
+            --output plugins/Plugins.7z
+
+          7z x plugins/Plugins.7z -oplugins -y
+          rm plugins/Plugins.7z
+
+          cp plugins/*.esm .
+
+          curl --fail --location \
+            --header "PRIVATE-TOKEN: ${{ secrets.TOKEN }}" \
+            "https://gitlab.beyondskyrim.org/api/v4/projects/34/repository/files/BSAssets.esm/raw" \
+            --output plugins/BSAssets.esm
+
+          curl --fail --location \
+            --header "PRIVATE-TOKEN: ${{ secrets.TOKEN }}" \
+            "https://gitlab.beyondskyrim.org/api/v4/projects/35/repository/files/BSHeartland.esm/raw" \
+            --output plugins/BSHeartland.esm
+
+
       - name: Restore
         run: dotnet restore DataExtractor/DataExtractor.csproj    
       
@@ -29,6 +58,12 @@ jobs:
 
       - name: Test
         run: dotnet test --no-build --verbosity normal
+
+      - name: Generate data
+        run: |
+          dotnet run \
+            --project DataExtractor/DataExtractor.csproj \
+            --configuration Release
 
       - name: Publish backend
         run: dotnet publish DataExtractor/DataExtractor.csproj -c Release -o publish  
