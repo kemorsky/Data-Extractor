@@ -28,7 +28,7 @@ Environment.SetEnvironmentVariable(
 var URL = Environment.GetEnvironmentVariable("URL");
 
 var pluginDirectory = Path.Combine(
-    AppContext.BaseDirectory,
+    Directory.GetCurrentDirectory(),
     "plugins");
 
 var modPathHeartland = Path.Combine(

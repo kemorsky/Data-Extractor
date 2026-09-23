@@ -70,6 +70,12 @@ jobs:
             --project DataExtractor.Tool/DataExtractor.Tool.csproj \
             --configuration Release
 
+      - name: Verify generated data
+        run: |
+          ls -lh DataExtractor/Data/locations.json
+          head -c 500 DataExtractor/Data/locations.json
+
+
       # Build and run backend
       # -------------------------
 
