@@ -60,8 +60,20 @@ Console.WriteLine("Hello, World!");
 //     .WithTargetDataFolder(pluginDirectory)
 //     .Build();
 
+var listings = new List<LoadOrderListing>
+{
+    new LoadOrderListing(ModKey.FromFileName("Skyrim.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Update.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Dawnguard.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Dragonborn.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Hearthfire.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("BSAssets.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("BSHeartland.esm"), enabled: true),
+};
+
 var loadOrder = LoadOrder.Import<ISkyrimModGetter>(
     pluginDirectory,
+    listings,
     GameRelease.SkyrimSE);
 
 if (string.IsNullOrWhiteSpace(modPathHeartland) || string.IsNullOrWhiteSpace(modPathAssets))
@@ -86,8 +98,8 @@ List<ICellGetter> cells = mod
     .ToList();
 
 var modsList = loadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
-modsList.Add(mod2);
-modsList.Add(mod);
+// modsList.Add(mod2);
+// modsList.Add(mod);
 
 Console.WriteLine($"Heartlands: {mod.ModKey}");
 
