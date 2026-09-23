@@ -130,7 +130,7 @@ var locations =
         cells);
 
 var outputPath = Path.Combine(
-    "..",
+    // "..",
     "DataExtractor",
     "Data",
     "locations.json");
