@@ -55,10 +55,14 @@ Console.WriteLine("Hello, World!");
 
 // using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 
-using var env = GameEnvironment.Typical
-    .Builder<ISkyrimMod, ISkyrimModGetter>(GameRelease.SkyrimSE)
-    .WithTargetDataFolder(pluginDirectory)
-    .Build();
+// using var env = GameEnvironment.Typical
+//     .Builder<ISkyrimMod, ISkyrimModGetter>(GameRelease.SkyrimSE)
+//     .WithTargetDataFolder(pluginDirectory)
+//     .Build();
+
+var loadOrder = LoadOrder.Import<ISkyrimModGetter>(
+    pluginDirectory,
+    GameRelease.SkyrimSE);
 
 if (string.IsNullOrWhiteSpace(modPathHeartland) || string.IsNullOrWhiteSpace(modPathAssets))
 {
@@ -81,7 +85,7 @@ List<ICellGetter> cells = mod
     .Concat(mod2.EnumerateMajorRecords<ICellGetter>())
     .ToList();
 
-var modsList = env.LoadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
+var modsList = loadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
 modsList.Add(mod2);
 modsList.Add(mod);
 
