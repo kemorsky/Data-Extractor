@@ -21,6 +21,9 @@ jobs:
         with:
           dotnet-version: '10.0'
 
+      # Download ESM files
+      # -------------------------
+
       - name: Install 7zip
         run: |
           sudo apt-get update
@@ -49,6 +52,26 @@ jobs:
             "https://gitlab.beyondskyrim.org/api/v4/projects/35/repository/files/BSHeartland.esm/raw" \
             --output plugins/BSHeartland.esm
 
+      # Build and run extractor
+      # -------------------------
+
+      - name: Restore extractor tool
+        run: dotnet restore DataExtractor.Tool/DataExtractor.Tool.csproj    
+      
+      - name: Build extractor tool
+        run: dotnet build DataExtractor.Tool/DataExtractor.Tool.csproj --configuration Release --no-restore
+
+      - name: Test extractor tool
+        run: dotnet test DataExtractor.Tool/DataExtractor.Tool.csproj --configuration Release --no-build --verbosity normal
+
+      - name: Run extractor tool
+        run: |
+          dotnet run \
+            --project DataExtractor.Tool/DataExtractor.Tool.csproj \
+            --configuration Release
+
+      # Build and run backend
+      # -------------------------
 
       - name: Restore
         run: dotnet restore DataExtractor/DataExtractor.csproj    
@@ -57,13 +80,13 @@ jobs:
         run: dotnet build DataExtractor/DataExtractor.csproj --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test --no-build --verbosity normal
+        run: dotnet test DataExtractor/DataExtractor.csproj --configuration Release --no-build --verbosity normal
 
-      - name: Generate data
-        run: |
-          dotnet run \
-            --project DataExtractor/DataExtractor.csproj \
-            --configuration Release
+      # - name: Generate data
+      #   run: |
+      #     dotnet run \
+      #       --project DataExtractor/DataExtractor.csproj \
+      #       --configuration Release
 
       - name: Publish backend
         run: dotnet publish DataExtractor/DataExtractor.csproj -c Release -o publish  
