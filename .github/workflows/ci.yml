@@ -20,6 +20,7 @@ jobs:
       VIKUNJA_FRONTEND_URL: ${{ vars.VIKUNJA_FRONTEND_URL }}
       VIKUNJA_PROJECT_URL: ${{ vars.VIKUNJA_PROJECT_URL }}
       VIKUNJA_TOKEN: ${{ secrets.VIKUNJA_TOKEN }}
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
 
     steps:
       - name: Checkout
@@ -64,6 +65,11 @@ jobs:
       # Build and run extractor
       # -------------------------
 
+      - name: Create Google service account credentials
+        run: |
+          mkdir -p DataExtractor.Tool/utils
+          printf '%s' "$GOOGLE_SERVICE_ACCOUNT_JSON" > DataExtractor.Tool/utils/service-account.json
+
       - name: Restore extractor tool
         run: dotnet restore DataExtractor.Tool/DataExtractor.Tool.csproj    
       
@@ -84,6 +90,9 @@ jobs:
           ls -lh DataExtractor/Data/locations.json
           head -c 500 DataExtractor/Data/locations.json
 
+      - name: Cleanup credentials
+        if: always()
+        run: rm -f DataExtractor.Tool/utils/service-account.json
 
       # Build and run backend
       # -------------------------
