@@ -1,7 +1,7 @@
 .show-more-btn {
   border: none;
   background-color: transparent;
-  font-size: 0.825rem;
+  font-size: 0.875rem;
   line-height: 1;
   align-self: flex-start;
   font-weight: 500;
@@ -17,4 +17,38 @@
 
 .show-more-btn__text {
   margin-right: 0.25rem;
+}
+
+.show-more-filters-btn {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1;
+  align-self: flex-start;
+  justify-content: space-between;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 0.75rem;
+
+  &:hover {
+    color: rgb(1, 139, 224);
+    transition: var(--button-text);
+    background-color: transparent;
+  }
+
+  &:active {
+    scale: 1;
+  }
+}
+
+.show-more-filters-btn__text {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.show-more-filters-btn__icon {
+  color: blue;
+  stroke: blue;
+  fill: blue;
 }

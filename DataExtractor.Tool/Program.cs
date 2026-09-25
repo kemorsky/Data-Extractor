@@ -55,11 +55,6 @@ Console.WriteLine("Hello, World!");
 
 // using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 
-// using var env = GameEnvironment.Typical
-//     .Builder<ISkyrimMod, ISkyrimModGetter>(GameRelease.SkyrimSE)
-//     .WithTargetDataFolder(pluginDirectory)
-//     .Build();
-
 var listings = new List<LoadOrderListing>
 {
     new LoadOrderListing(ModKey.FromFileName("Skyrim.esm"), enabled: true),

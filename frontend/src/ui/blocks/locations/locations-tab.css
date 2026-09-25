@@ -22,6 +22,10 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0.25rem;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
 }
 
 .location-card__container-view__select {
@@ -38,11 +42,22 @@
   border-radius: 0.33rem;
   border: 1px solid transparent;
   position: relative;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+    height: 36px;
+  }
 }
 
 .location-card__container-view__select:hover  {
   background-color: var(--button-bg-hover);
   transition: var(--button-colors);
+}
+
+.location-card__container-view__select__option {
+  /* font-size: 0.875rem; */
+  font-family: var(--font-primary);
+  font-weight: 500;
 }
 
 .location-card__container-view__search {
@@ -222,7 +237,7 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
   font-family: var(--font-primary);
   border-radius: 0.33rem;
   border: 1px solid transparent;
@@ -261,7 +276,7 @@
   }
 
   .location-card__container-view__select {
-    font-size: 0.875rem;
+    /* font-size: 0.875rem; */
   }
 
   .location-card__table-container__header-row__cell{

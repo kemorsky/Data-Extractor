@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./checkbox-group.css";
 import Icons from "../shared/icons";
-import { ShowMoreButton } from "../../components/shared/buttons";
+import { ShowMoreFiltersButton } from "../../components/shared/buttons";
 
 type CheckboxProps = {
   title: string,
@@ -21,13 +21,27 @@ export default function CheckboxGroup(props: CheckboxProps) {
 
     return (
         <fieldset className="checkbox-group">
-            <legend 
+            {/* <legend 
                 className="checkbox-group__legend"
                 // onClick={props.onOpen}
             >
                 <span>{props.title}</span>
                 
-            </legend>
+            </legend> */}
+            <header className="checkbox-group__header">
+
+            
+                {/* <span className="checkbox-group__legend">{props.title.toUpperCase()}</span> */}
+                {props.options.length > 3 &&
+                    <ShowMoreFiltersButton 
+                        title={props.title}
+                        showState={showTypes} 
+                        setShowState={setShowTypes}
+                        textTrue={"Show less"}
+                        textFalse={"Show more"} 
+                    />
+                }
+            </header>
             {visibleOptions.map(option => (
                 <label key={option} 
                     className="checkbox-group__option"
@@ -47,14 +61,14 @@ export default function CheckboxGroup(props: CheckboxProps) {
                 </label>
                 ))
             }
-            {props.options.length > 3 &&
+            {/* {props.options.length > 3 &&
                 <ShowMoreButton 
                     showState={showTypes} 
                     setShowState={setShowTypes}
                     textTrue={"Show less"}
                     textFalse={"Show more"} 
                 />
-            }
+            } */}
         </fieldset>
     )
 }

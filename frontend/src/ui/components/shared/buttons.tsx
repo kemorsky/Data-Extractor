@@ -4,6 +4,7 @@ import ChevronUp from "../../../assets/icons/chevron-up.svg";
 import ChevronDown from "../../../assets/icons/chevron-down.svg";
 
 interface ButtonProps {
+    title?: string;
     textTrue?: string,
     textFalse?: string;
     onClick?: () => void
@@ -20,6 +21,20 @@ export function ShowMoreButton(props: ButtonProps) {
         >
             <span className="show-more-btn__text">{props.showState ? `${props.textTrue}` : `${props.textFalse}` }</span>
             <img width={14} src={props.showState ? ChevronUp :  ChevronDown } />
+        </button>
+    )
+}
+
+export function ShowMoreFiltersButton(props: ButtonProps) {
+    return (
+        <button 
+            className="show-more-filters-btn"
+            type="button"
+            onClick={() => props.setShowState?.(!props.showState)}
+        >
+            {/* <span className="show-more-btn__text">{props.showState ? `${props.textTrue}` : `${props.textFalse}` }</span> */}
+            <span className="show-more-filters-btn__text">{props.title?.toUpperCase()}</span>
+            <img className="show-more-filters-btn__icon" width={24} src={props.showState ? ChevronUp :  ChevronDown } />
         </button>
     )
 }

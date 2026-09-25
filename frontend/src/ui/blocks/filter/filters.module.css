@@ -1,7 +1,7 @@
 .Button {
   gap: 0.25rem;
   height: 32px;
-  font-size: 0.825rem;
+  /* font-size: 0.825rem; */
   font-weight: 500;
   line-height: 1;
   white-space: nowrap;
@@ -39,7 +39,7 @@
 
 .ButtonCloseContainer {
   --bleed: 3rem;
-  width: 18rem;
+  width: 20.25rem;
   background-color: var(--bg-dark);
   display: flex;
   align-items: flex-end;
@@ -113,7 +113,7 @@
   color: var(--text);
   box-shadow: none;
   box-sizing: border-box;
-  width: 20rem;
+  width: 22.5rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -198,7 +198,7 @@
   color: var(--text);
   border-radius: 0.5rem;
   padding: 0.33rem;
-  font-size: 0.75rem;
+  /* font-size: 0.75rem; */
 }
 
 .Title {

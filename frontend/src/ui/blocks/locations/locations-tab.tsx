@@ -109,8 +109,8 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                             setIsTable(e.target.value === "Table")
                         }}
                     >
-                        <option value="Cards">Cards</option>
-                        <option value="Table">Table</option>
+                        <option className="location-card__container-view__select__option" value="Cards">Cards</option>
+                        <option className="location-card__container-view__select__option" value="Table">Table</option>
                     </select>
                     
                     <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>

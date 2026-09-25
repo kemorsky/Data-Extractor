@@ -1,7 +1,7 @@
 /* Card view styling */
 
 .location-card {
-    max-width: 17.85rem;
+    max-width: 21rem;
     min-height: 8rem;
     width: 100%;
     border-radius: 0.33rem;
@@ -81,7 +81,7 @@ p {
     gap: 0.25rem;
     text-align: left;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 1rem;
 }
 
 .location-card__info__parentLocation {
@@ -89,7 +89,7 @@ p {
     align-items: center;
     gap: 0.25rem;
     font-weight: 500;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
 }
 
 /* Table view styling */
@@ -218,7 +218,7 @@ p {
 
 @media (max-width: 680px) {
     .location-card__info__name {
-        font-size: 0.8rem;
+        font-size: 0.875rem;
     }
 
     .table__location-card {
@@ -246,6 +246,10 @@ p {
     }
 
     .location-card__info__name {
+        font-size: 0.75rem;
+    }
+
+    .location-card__info__parentLocation {
         font-size: 0.75rem;
     }
 

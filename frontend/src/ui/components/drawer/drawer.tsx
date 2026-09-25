@@ -30,13 +30,9 @@ export default function LocationDrawer() {
     const [ showCells, setShowCells ] = useState(false);
     const [ showNpcs, setShowNpcs ] = useState(false);
 
-    const visibleCells = showCells
-        ? locationByName?.cells
-        : locationByName?.cells.slice(0, 3);
+    const visibleCells = locationByName?.cells;
 
-    const visibleNpcs = showNpcs
-        ? locationByName?.inhabitingNpcs
-        : locationByName?.inhabitingNpcs.slice(0, 3);
+    const visibleNpcs = locationByName?.inhabitingNpcs;
 
     const rawNotes = locationByName?.notes && locationByName?.notes !== "None" 
         ? locationByName?.notes
@@ -177,26 +173,31 @@ export default function LocationDrawer() {
                                 {(locationByName?.inhabitingNpcs?.length ?? 0) > 0 && 
                                     <li className={styles.ListItem}>
                                         <span className={styles.ListItemText}>Inhabitants: </span>
-                                        <ul className={styles.ListArray}>
-                                            {visibleNpcs?.map((npc) => (
-                                                <li key={npc.name} className={styles.ListArrayItem}>
-                                                    <span className={styles.ListItemText}>
-                                                        <a target="_blank" style={{ fontWeight: 600 }} href={npc.url}>
-                                                            {npc.name}
-                                                        </a>
-                                                    </span>
-                                                </li>
-                                            ))
-                                            }
+                                        <section>
+
+                                        
+                                            <ul className={`${styles.ListArray} ${showNpcs ? styles.expanded : ''}`}>
+                                                {visibleNpcs?.map((npc) => (
+                                                    <li key={npc.name} className={`${styles.ListArrayItem} ${showNpcs ? styles.item__expanded : ''}`}>
+                                                        <span className={styles.ListItemText}>
+                                                            <a target="_blank" style={{ fontWeight: 600 }} href={npc.url}>
+                                                                {npc.name}
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                ))
+                                                }
+                                                
+                                            </ul>
                                             {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 &&
-                                                <ShowMoreButton 
-                                                    showState={showNpcs} 
-                                                    setShowState={setShowNpcs} 
-                                                    textTrue={"Show less"}
-                                                    textFalse={"Show more"}
-                                                />
-                                            }
-                                        </ul>
+                                                    <ShowMoreButton 
+                                                        showState={showNpcs} 
+                                                        setShowState={setShowNpcs} 
+                                                        textTrue={"Show less"}
+                                                        textFalse={"Show more"}
+                                                    />
+                                                }
+                                        </section>
                                     </li>
                                 }
                                 {(locationByName?.inhabitants?.length ?? 0) > 0 && 

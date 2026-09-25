@@ -49,7 +49,6 @@
 } */
 
 .filter__tags-container {
-  
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -61,7 +60,7 @@
 .filter__tags-clear-btn {
   border: none;
   background-color: transparent;
-  font-size: 0.825rem;
+  font-size: 1rem;
   line-height: 1;
   font-weight: 600;
   color: rgb(0, 113, 185);
@@ -82,7 +81,7 @@
   border-radius: 0.33rem;
   background-color: rgb(68, 17, 83);
   color: var(--text);
-  font-size: 0.825rem;
+  /* font-size: 0.825rem; */
   border: 1px solid rgb(227, 145, 252);
   transition: var(--button-colors);
 }
@@ -95,7 +94,7 @@
   width: 100%;
   align-self: flex-start;
   border-radius: 0.5rem;
-  padding-left: 0.55rem;
+  padding-left: 0.72rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -105,14 +104,14 @@
 
 .quest-checkbox__option {
   width: 100%;
-  max-width: 16.5rem;
+  max-width: 18.75rem;
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.25rem;
+  padding: 0.33rem;
   border-radius: 0.25rem;
   position: relative;
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -128,12 +127,12 @@
 
 .quest-checkbox__option__checkbox {
   accent-color:  #4e7900;
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin: 0;
   cursor: pointer;
   background-color: #eee;
-  margin-right: 0.25rem;
+  
 }
 
 .quest-checkbox__option-text {
