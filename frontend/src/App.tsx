@@ -52,7 +52,9 @@ export default function App() {
   
   return (
     <main id="center">
-      <Navbar />
+      <div className="main__navbar">
+        <Navbar />
+      </div>
       <section className="main__wrapper">
         <Filters 
           locations={locations}

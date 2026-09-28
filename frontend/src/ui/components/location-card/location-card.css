@@ -1,14 +1,13 @@
 /* Card view styling */
 
 .location-card {
-    max-width: 21rem;
+    max-width: 17.469rem;
     min-height: 8rem;
     width: 100%;
     border-radius: 0.33rem;
     overflow: hidden;
     cursor: pointer;
     position: relative;
-    /* border: 1px solid transparent; */
     transition: box-shadow 200ms ease-in-out, outline-color 300ms ease, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
     outline: 1px solid transparent;
     outline-offset: -1px;
@@ -25,9 +24,6 @@
 }
 
 .location-card:hover {
-    /* box-shadow: var(--shadow); */
-    /* transition: transform 200ms ease-in-out; */
-    /* border: 1px solid green; */
     transform: scale(1.02) translateY(-2px); /* Scales UP slightly instead of just sliding */
     outline-color: rgba(192, 192, 192, 0.25);
     box-shadow: var(--modern-shadow);
@@ -49,10 +45,6 @@
 .location-card__quest {
     text-decoration: none;
     color: var(--text);
-}
-
-p {
-    font-size: 0.75rem;
 }
 
 .location-card__labels-status {
@@ -210,13 +202,13 @@ p {
     to {transform: translateY(-12px)}
 }
 
-@media (max-width: 740px) {
+/* @media (max-width: 740px) {
     .location-card {
-        max-width: 12rem;
+        max-width: 14rem;
     }
-}
+} */
 
-@media (max-width: 680px) {
+@media (max-width: 610px) {
     .location-card__info__name {
         font-size: 0.875rem;
     }
@@ -240,9 +232,25 @@ p {
 }
 
 @media (max-width: 444px) {
-    .location-card {
+    /* .location-card {
         min-height: 7.5rem;
         max-width: 11rem;
+    } */
+
+    /* .location-card__info__name {
+        font-size: 0.75rem;
+    }
+
+    .location-card__info__parentLocation {
+        font-size: 0.75rem;
+    } */
+
+}
+
+@media (max-width: 612px) {
+    .location-card {
+        min-height: 7.5rem;
+        max-width: 10rem;
     }
 
     .location-card__info__name {
@@ -251,13 +259,5 @@ p {
 
     .location-card__info__parentLocation {
         font-size: 0.75rem;
-    }
-
-}
-
-@media (max-width: 400px) {
-    .location-card {
-        min-height: 7.5rem;
-        max-width: 10rem;
     }
 }

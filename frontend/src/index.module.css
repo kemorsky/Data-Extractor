@@ -1,7 +1,8 @@
 .Root {
   box-sizing: border-box;
   width: 100%;
-  max-width: 90rem;
+  /* padding: 0 1rem; */
+  /* max-width: 90rem; */
   /* max-height: 100vh; */
 }
 
@@ -97,7 +98,6 @@
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 1rem 0;
   outline: 0;
   /* font-size: 0.875rem; */
   line-height: 1.25rem;

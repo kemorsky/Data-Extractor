@@ -30,20 +30,16 @@
   font-weight: 500;
   padding: 0;
   margin-bottom: 0.75rem;
+}
 
-  &:hover {
-    color: rgb(1, 139, 224);
-    transition: var(--button-text);
-    background-color: transparent;
-  }
-
-  &:active {
-    scale: 1;
-  }
+.show-more-filters-btn:hover {
+  color: var(--text-muted);
+  transition: var(--button-text);
+  background-color: transparent;
 }
 
 .show-more-filters-btn__text {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
