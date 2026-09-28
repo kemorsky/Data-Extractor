@@ -132,7 +132,6 @@
   transform: translateX(var(--drawer-swipe-movement-x));
   position: relative;
   z-index: 60;
-  
 
   &[data-starting-style],
   &[data-ending-style] {

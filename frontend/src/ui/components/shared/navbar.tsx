@@ -1,14 +1,8 @@
 import "./shared.css";
-import styles from '../../../index.module.css';
 import LogoFull from "../../../assets/logo-full.svg"
 import Logo from "../../../assets/logo.svg"
-import { Tabs } from '@base-ui/react/tabs';
-import { useState } from "react";
-import Hamburger from "../../../assets/icons/hamburger.svg"
 
 export default function Navbar() {
-    const [ menuOpen, setMenuOpen ] = useState(false);
-    
     return (
         <nav className="nav">
             <header className="nav__header">
