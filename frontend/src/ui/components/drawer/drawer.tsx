@@ -188,14 +188,16 @@ export default function LocationDrawer() {
                                                 </li>
                                             ))
                                             }
+                                            
+                                        
                                             {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 &&
-                                                <ShowMoreButton 
-                                                    showState={showNpcs} 
-                                                    setShowState={setShowNpcs} 
-                                                    textTrue={"Show less"}
-                                                    textFalse={"Show more"}
-                                                />
-                                            }
+                                                    <ShowMoreButton 
+                                                        showState={showNpcs} 
+                                                        setShowState={setShowNpcs} 
+                                                        textTrue={"Show less"}
+                                                        textFalse={"Show more"}
+                                                    />
+                                                }
                                         </ul>
                                     </li>
                                 }

@@ -44,7 +44,8 @@
   --button-colors: background-color 150ms ease-in-out;
   --button-text: color 150ms ease-in-out;
 
-  font: 18px/145% var(--sans);
+  
+  font-size: 16px;
   font-family: var(--font-primary);
   letter-spacing: 0.18px;
   color-scheme: light dark;
@@ -57,24 +58,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+
+  /* @media (max-width: 1024px) {
+    font-size: 14px;
+  } */
 }
 
+html {
+  font-size: 16px;
+}
+
+
 #root {
-  max-width: 1200px;
+  max-width: 1232px;
   width: 100%;
   margin: auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   height: 100%;
   display: flex;
-  flex-direction: column;
   box-sizing: border-box;
   isolation: isolate;
   background-color: var(--bg);
+  
 }
 
 body {
@@ -88,6 +94,7 @@ button {
   background-color: var(--button-bg);
   color: var(--text);
   font-family: var(--font-primary);
+  font-size: 1rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -97,6 +104,10 @@ button {
   border: 1px solid transparent;
   border-radius: 0.33rem;
   transition: var(--button-colors);
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
 }
 
 button:hover {

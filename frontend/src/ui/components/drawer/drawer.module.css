@@ -223,7 +223,7 @@
 }
 
 .ListArrayItem {
-  margin-bottom: 0.33rem;
+  margin-bottom: 0.5rem;
   min-width: 6.5rem;
   text-align: left;
 }
@@ -283,6 +283,7 @@
 .NotesText > p {
   width: 100%;
   text-wrap: wrap;
+  font-size: 0.875rem;
 }
 
 .Actions {
@@ -302,6 +303,7 @@
     top: 1rem;
     right: 1rem;
   }
+
   .Popup {
     --bleed: 3rem;
     padding: 1rem;

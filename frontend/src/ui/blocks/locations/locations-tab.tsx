@@ -23,8 +23,8 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
     const [ isTable, setIsTable ] = useState(false);
     const [ searchInput, setSearchInput ] = useState(filters.query ?? "");
 
-    const pageSizes = [20, 25, 35, 50, 100];
-    const [ numberPerPage, setNumberPerPage ] = useState(pageSizes[2]);
+    const pageSizes = [24, 36, 48, 96];
+    const [ numberPerPage, setNumberPerPage ] = useState(pageSizes[1]);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -99,37 +99,7 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
             {error && <h2>{error.message}</h2>}
             
             <div className="location-card__container-view">
-                <section className="location-card__container-view__selects">
-                    
-                    <span>View style: </span>
-                    <select 
-                        className="location-card__container-view__select"
-                        value={isTable ? "Table" : "Cards"}
-                        onChange={(e) => {
-                            setIsTable(e.target.value === "Table")
-                        }}
-                    >
-                        <option value="Cards">Cards</option>
-                        <option value="Table">Table</option>
-                    </select>
-                    
-                    <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>
-                    <select 
-                        className="location-card__container-view__select"
-                        value={numberPerPage}
-                        onChange={(e) => 
-                            {setNumberPerPage(Number(e.target.value));
-                            window.scrollTo({top: 0, behavior: "smooth"});
-                        }}
-                        >
-                        {/* <option value="">Items per page:</option> */}
-                        {pageSizes.map((number, index) => (
-                            <option key={index} value={number}>
-                                {number}
-                            </option>
-                        ))}
-                    </select>
-                </section>
+                
                 <section className="location-card__container-view__search">    
                     <form className="location-card__container-view__search-form" onSubmit={handleSearchSubmit}>
                         <div className="location-card__container-view__search-input__container">
@@ -161,6 +131,37 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                         </div>
                     </form>
                 </section> 
+                <section className="location-card__container-view__selects">
+                    
+                    <span>View style: </span>
+                    <select 
+                        className="location-card__container-view__select"
+                        value={isTable ? "Table" : "Cards"}
+                        onChange={(e) => {
+                            setIsTable(e.target.value === "Table")
+                        }}
+                    >
+                        <option className="location-card__container-view__select__option" value="Cards">Cards</option>
+                        <option className="location-card__container-view__select__option" value="Table">Table</option>
+                    </select>
+                    
+                    <span style={{ marginLeft: "0.25rem" }}>Items per page: </span>
+                    <select 
+                        className="location-card__container-view__select"
+                        value={numberPerPage}
+                        onChange={(e) => 
+                            {setNumberPerPage(Number(e.target.value));
+                            window.scrollTo({top: 0, behavior: "smooth"});
+                        }}
+                        >
+                        {/* <option value="">Items per page:</option> */}
+                        {pageSizes.map((number, index) => (
+                            <option key={index} value={number}>
+                                {number}
+                            </option>
+                        ))}
+                    </select>
+                </section>
             </div>
 
             {isTable ? (

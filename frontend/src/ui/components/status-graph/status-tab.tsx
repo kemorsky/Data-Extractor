@@ -37,8 +37,6 @@ export default function StatusTab(props: StatusTabProps) {
           .map(location => location.name)
       ),
       ].sort();
-
-  console.log(parentLocations);
   
   const statuses = getUniqueProperties(locations, "status")
     .filter(status => status !== "None")
