@@ -11,8 +11,6 @@ import Hamburger from "../../../assets/icons/hamburger.svg"
 import X from "../../../assets/icons/cross.svg"
 import HideFilters from '../../../assets/icons/hide-filters.svg';
 import Navbar from "../../../ui/components/shared/navbar";
-import LogoFull from "../../../assets/logo-full.svg"
-import Logo from "../../../assets/logo.svg"
 
 interface FilterProps {
     locations: NoInfer<LocationData[]> | undefined
