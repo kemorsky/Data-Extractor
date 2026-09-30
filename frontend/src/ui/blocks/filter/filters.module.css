@@ -32,9 +32,12 @@
 
 .ButtonOpenFilter {
   position: absolute;
-  top: 18px;
+  top: 1rem;
   left: 1rem;
-  gap: 0.25rem;
+}
+
+.ButtonOpenFilter[data-popup-open] {
+  display: none;
 }
 
 .ButtonCloseContainer {
@@ -44,7 +47,7 @@
   align-items: flex-start;
   justify-content: space-between;
   align-self: center;
-  padding: 18px 1rem;
+  padding: 1rem;
   pointer-events: auto;
   border-bottom: 1px solid var(--border);
 
@@ -133,6 +136,11 @@
   position: relative;
   z-index: 60;
 
+  &[data-open] {
+    
+  }
+  
+
   &[data-starting-style],
   &[data-ending-style] {
     transform: translateX(calc(-100% - var(--bleed) + var(--viewport-padding) + 2px));
@@ -147,6 +155,7 @@
     margin-right: 0;
   }
 }
+
 
 .Content {
   width: 100%;

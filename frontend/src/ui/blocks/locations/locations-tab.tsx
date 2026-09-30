@@ -8,6 +8,7 @@ import ChevronRight from "../../../assets/icons/chevron-right.svg";
 import ChevronDoubleLeft from "../../../assets/icons/chevron-double-left.svg";
 import ChevronDoubleRight from "../../../assets/icons/chevron-double-right.svg";
 import Search from "../../../assets/icons/search.svg";
+import X from "../../../assets/icons/cross.svg"
 
 interface LocationTabProps {
     error: Error | null;
@@ -92,12 +93,91 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
         setSearchParams(params);
     }
 
+    const allFilters = Object.entries(filters).flatMap(([category, values]) => {
+        if (category === "query") {
+            return values ? [{
+                category: "query" as const,
+                value: searchInput
+            }] :[];
+        }
+
+        if (!Array.isArray(values)) {
+            return values ? [{
+                category: category as keyof LocationFilters,
+                value: "Has Quest"
+            }] : [];
+        }
+
+        return values.map(value => ({
+            category: category as Exclude<keyof LocationFilters, "hasQuest">,
+            value
+        }))
+        .sort()
+    });
+
+    const toggleFilter = (
+        category: Exclude<keyof LocationFilters, "hasAQuest">,
+        value: string
+    ) => {
+        const values = filters[category];
+
+        const next = {
+            ...filters,
+            [category]: Array.isArray(values) 
+                ? values.includes(value)
+                    ? values.filter(v => v !== value)
+                    : [...values, value]
+                : values,
+            };
+        
+        const params = new URLSearchParams(searchParams);
+        params.set("page", "1");
+
+        Object.entries(next).forEach(([key, values]) => {
+            if (Array.isArray(values)) {
+                if (values.length === 0) {
+                    params.delete(key);
+                } else {
+                    params.set(key, values.join(","));
+                }
+            } else {
+                if (values) {
+                    params.set(key, "true");
+                } else {
+                    params.delete(key);
+                }
+            }
+        });
+
+        setSearchParams(params);
+    };
+
+    const toggleHasQuest = () => {
+        const next = {
+            ...filters,
+            hasQuest: !filters.hasQuest,
+        };
+
+        const params = new URLSearchParams(searchParams);
+        params.set("page", "1");
+
+        if (next.hasQuest === true) {
+            params.set("hasQuest", "true");
+        } else {
+            params.delete("hasQuest");
+        }
+
+        setSearchParams(params);
+    };
+
+    const handleClearFilters = () => {
+        const params = new URLSearchParams();
+        params.set("page", "1");
+        setSearchParams(params);
+    };
+
     return (
         <div className="hero">
-            
-            {isLoading && <h2>Loading data...</h2>}
-            {error && <h2>{error.message}</h2>}
-            
             <div className="location-card__container-view">
                 
                 <section className="location-card__container-view__search">    
@@ -163,6 +243,35 @@ export const LocationsTab = memo(function LocationsTab (props: LocationTabProps)
                     </select>
                 </section>
             </div>
+
+            <section className="filter__tags-container">
+                {allFilters.map(({category, value}) => (
+                    <button 
+                        className="filter__tags-tag" key={`${category}-${value}`}
+                        onClick={() => {
+                            if (category === "hasQuest") {
+                                toggleHasQuest();
+                            } else if (category === "query") {
+                                handleClearSearch();
+                            } else {
+                                toggleFilter(category, value);
+                            }
+                        }}>
+                        {value} <img src={X} alt="delete filter icon" width={18} />
+                    </button>
+                ))}
+
+                {allFilters.length > 0 &&
+                    <button 
+                        className="filter__tags-clear-btn"
+                        onClick={() => handleClearFilters()}>
+                        Clear Filters
+                    </button>
+                }
+            </section>
+
+            {isLoading && <h2>Loading data...</h2>}
+            {error && <h2>{error.message}</h2>}
 
             {isTable ? (
                 <table className="location-card__table-container">

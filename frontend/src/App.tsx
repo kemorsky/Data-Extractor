@@ -67,9 +67,11 @@ export default function App() {
           <Tabs.List className={styles.List}>
             <Tabs.Tab className={styles.Tab} value="locations">
               Locations
+              <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Tab className={styles.Tab} value="graphs">
               Graphs
+              <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Indicator className={styles.Indicator} />
           </Tabs.List>

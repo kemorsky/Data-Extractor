@@ -61,9 +61,9 @@ export default function StatusTab(props: StatusTabProps) {
 
   const colors = [
     'rgb(0, 94, 31)',
-    'rgb(118, 151, 0)',
+    'rgb(198, 199, 255)',
     'rgb(43, 255, 43)',
-    'rgb(156, 157, 255)',
+    'rgb(33, 34, 128)',
     'rgb(192, 192, 192)',
     'rgb(150, 0, 0)',
   ];

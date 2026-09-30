@@ -16,6 +16,7 @@
 
 .Tab {
   box-sizing: border-box;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,11 +33,9 @@
   user-select: none;
   white-space: nowrap;
   word-break: keep-all;
-  padding-inline: 0.75rem;
-  padding-block: 0;
-  height: calc(2rem + 1px);
+  padding: 0.75rem;
   cursor: pointer;
-  border-radius: 0.33rem;
+  border-radius: 0.33rem 0.33rem 0 0;
   transition: var(--button-colors);
   border-bottom: 1px solid transparent;
 
@@ -44,22 +43,35 @@
     &:hover {
       color: white;
       background-color: var(--button-bg-hover);
-      
-      border-radius: 0.33rem 0.33rem 0 0;
     }
   }
 
   &[data-active] {
     color: #faf118;
-    border-bottom: 1px solid #faf118;
+    /* border-bottom: 1px solid #faf118; */
     border-radius: 0.33rem 0.33rem 0 0;
     background-color: var(--button-bg-active);
+
+    .Highlight {
+      background: #faf118;
+      border-radius: 0.33rem 0.33rem 0 0;
+    }
   }
 
   &:focus-visible {
     outline: 2px solid oklch(14.5% 0 0deg);
     outline-offset: -1px;
   }
+}
+
+.Highlight {
+  position: absolute;
+  inset-block-end: 0px;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 32px;
+  background: transparent;
 }
 
 .Indicator {

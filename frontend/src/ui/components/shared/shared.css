@@ -128,6 +128,7 @@
     display: flex;
     justify-content: center;
     margin: auto auto 1.75rem auto;
+    align-self: flex-end;
 }
 
 .footer__content {
@@ -187,15 +188,15 @@
 }
 
 .status__circle__needs-finalization {
-    background-color: rgb(118, 151, 0);
+    background-color: rgb(43, 255, 43);
 }
 
 .status__circle__first-passed {
-    background-color: rgb(73, 145, 73);
+    background-color: rgb(198, 199, 255);
 }
 
 .status__circle__needs-more-work {
-    background-color: rgb(156, 157, 255);
+    background-color: rgb(33, 34, 128);
 }
 
 .status__circle__not-started {
@@ -211,15 +212,15 @@
 }
 
 .status__needs-finalization {
-    border: 1px solid rgb(118, 151, 0);
+    border: 1px solid rgb(43, 255, 43);
 }
 
 .status__first-passed {
-    border: 1px solid rgb(73, 145, 73);
+    border: 1px solid rgb(198, 199, 255);
 }
 
 .status__needs-more-work {
-    border: 1px solid rgb(156, 157, 255);
+    border: 1px solid rgb(33, 34, 128);
 }
 
 .status__not-started {
