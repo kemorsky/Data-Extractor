@@ -51,8 +51,6 @@ if (!File.Exists(modPathAssets))
         $"BSAssets.esm not found: {modPathAssets}");
 }
 
-Console.WriteLine("Hello, World!");
-
 // using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 
 var listings = new List<LoadOrderListing>
@@ -92,6 +90,7 @@ List<ICellGetter> cells = mod
     .Concat(mod2.EnumerateMajorRecords<ICellGetter>())
     .ToList();
 
+// env.LoadOrder.
 var modsList = loadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
 // modsList.Add(mod2);
 // modsList.Add(mod);
@@ -125,7 +124,7 @@ var locations =
         cells);
 
 var outputPath = Path.Combine(
-    // "..",
+    "..",
     "DataExtractor",
     "Data",
     "locations.json");
