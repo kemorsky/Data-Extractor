@@ -123,11 +123,18 @@ var locations =
         combinedCache,
         cells);
 
+var repositoryRoot = Directory.GetCurrentDirectory();
+
 var outputPath = Path.Combine(
-    "..",
+    repositoryRoot,
     "DataExtractor",
     "Data",
     "locations.json");
+
+var outputDirectory = Path.GetDirectoryName(outputPath) ?? 
+    throw new InvalidOperationException("Failed to get output directory.");
+
+Directory.CreateDirectory(outputDirectory);
 
 // 5. Write JSON
 var json = JsonSerializer.Serialize(

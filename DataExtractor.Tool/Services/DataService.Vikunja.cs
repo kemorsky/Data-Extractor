@@ -24,7 +24,7 @@ public class VikunjaServices
         var lookup = new Dictionary<string, (VikunjaTask Task, string Url)>(StringComparer.OrdinalIgnoreCase);
 
         // DIAGNOSTIC LOG: Check Environment Variables
-        Console.WriteLine($"[Vikunja Diagnostics] URL configured: {!string.IsNullOrEmpty(vikunjaApiUrl)} ('{vikunjaApiUrl}')");
+        // Console.WriteLine($"[Vikunja Diagnostics] URL configured: {!string.IsNullOrEmpty(vikunjaApiUrl)} ('{vikunjaApiUrl}')");
         Console.WriteLine($"[Vikunja Diagnostics] Token configured: {!string.IsNullOrEmpty(vikunjaToken)}");
         
         if (!string.IsNullOrEmpty(vikunjaApiUrl) && !string.IsNullOrEmpty(vikunjaToken))
