@@ -20,12 +20,14 @@ public class DataService : IDataService
     private readonly GoogleServices _googleServices;
     private readonly VikunjaServices _vikunjaServices;
     private readonly ILootService _lootServices;
+    private readonly INpcService _npcServices;
 
-    public DataService(GoogleServices googleServices, VikunjaServices vikunjaServices, LootServices lootServices)
+    public DataService(GoogleServices googleServices, VikunjaServices vikunjaServices, LootServices lootServices, NpcServices npcServices)
     {
         _googleServices = googleServices;
         _vikunjaServices = vikunjaServices;
         _lootServices = lootServices;
+        _npcServices = npcServices;
     }
 
     public async Task<List<LocationDataSheet>> GetLocations(
@@ -49,7 +51,7 @@ public class DataService : IDataService
             masterlistId
         );
 
-         var npcData = await _googleServices.LoadNpcData(
+        var npcData = await _googleServices.LoadNpcData(
             sheetsService,
             npcDatabaseId
         );
@@ -145,9 +147,9 @@ public class DataService : IDataService
                 foreach (var cell in cellsForLocation)
                 {
                     var loot = _lootServices.AnalyzeCell(cell, linkCache);
+                    
                     // Console.WriteLine(
                     //     $"[LOOT CHECK] Cell={cell.FormKey} " +
-                    //     $"Items={loot.Items.Count} " +
                     //     $"TotalValue={loot.TotalValue}");
 
                     cellData.Add(new CellData
@@ -161,6 +163,33 @@ public class DataService : IDataService
                     });
                 }
             }
+
+            var npcResults = _npcServices.GetNpcsAtLocation(
+                loc,
+                cells,
+                linkCache);
+
+            var groupedNpcResults = npcResults
+                .GroupBy(
+                    npc => LocationNameNormalizer.Normalize(npc.Name),
+                    StringComparer.OrdinalIgnoreCase)
+                .Select(group => new
+                {
+                    Name = group.First().Name ?? "Unknown NPC",
+                    Count = group.Count(),
+                    NpcFormKey = group.First().NpcFormKey
+                })
+                .ToList();
+
+            // foreach (var npc in npcResults)
+            // {
+            //     Console.WriteLine(
+            //         $"NPC: {npc.Name} | " +
+            //         $"EditorID: {npc.NpcEditorId} | " +
+            //         $"FormKey: {npc.NpcFormKey} | " +
+            //         $"Reference: {npc.ReferenceFormKey} | " +
+            //         $"Cell: {npc.CellFormKey}");
+            // }
 
             sheetLookup.TryGetValue(
                 locationKey,
@@ -247,14 +276,6 @@ public class DataService : IDataService
                 {
                     locationType = type;
                 }
-                // if (keyword.StartsWith("LocType", StringComparison.OrdinalIgnoreCase))
-                // {
-                //     locationType = LocationTypeAndCategoryNormalizer.KeywordExtractor(keyword);
-                // }
-                // if (keyword.StartsWith("LocSet", StringComparison.OrdinalIgnoreCase))
-                // {
-                //     locationCategory = LocationTypeAndCategoryNormalizer.KeywordExtractor(keyword);
-                // }
             }
 
             locationsData.Add(new LocationDataSheet
@@ -271,14 +292,22 @@ public class DataService : IDataService
                 LocationCategory = locationCategory,
                 LocationType = locationType,
 
-                InhabitingNpcs = npcs
+                InhabitingNpcs = groupedNpcResults
                     .Select(npc => new NpcData
                     {
-                        Name = npc.Name ?? "None",
-                        Url = npc.NpcDocCell?
-                        .Values?
-                        .FirstOrDefault()?
-                        .Hyperlink ?? ""
+                        Name = npc.Count > 1 
+                            ? $"{npc.Name} ({npc.Count})"
+                            : npc.Name,
+                        Url = npcs
+                            .FirstOrDefault(sheetNpc =>
+                                string.Equals(
+                                    LocationNameNormalizer.Normalize(sheetNpc.Name),
+                                    LocationNameNormalizer.Normalize(npc.Name),
+                                    StringComparison.OrdinalIgnoreCase))
+                            ?.NpcDocCell?
+                            .Values?
+                            .FirstOrDefault()?
+                            .Hyperlink ?? ""
                     })
                     .ToArray(),
 

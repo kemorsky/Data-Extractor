@@ -114,7 +114,8 @@ var combinedCache = new ImmutableLoadOrderLinkCache<ISkyrimMod, ISkyrimModGetter
 var googleServices = new GoogleServices();
 var vikunjaServices = new VikunjaServices();
 var lootServices = new LootServices();
-var dataService = new DataService(googleServices, vikunjaServices, lootServices);
+var npcServices = new NpcServices();
+var dataService = new DataService(googleServices, vikunjaServices, lootServices, npcServices);
 
 // 4. Combine ESM + Google Sheet
 var locations =

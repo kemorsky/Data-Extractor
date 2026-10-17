@@ -25,6 +25,8 @@ export default function LocationDrawer() {
         enabled: !!name,
     });
 
+    console.log(locationByName);
+
     const [ isOpen, setIsOpen ] = useState(false);
     const [ showChildren, setShowChildren ] = useState(false);
     const [ showCells, setShowCells ] = useState(false);
@@ -181,14 +183,20 @@ export default function LocationDrawer() {
                                             {visibleNpcs?.map((npc) => (
                                                 <li key={npc.name} className={styles.ListArrayItem}>
                                                     <span className={styles.ListItemText}>
-                                                        <a target="_blank" style={{ fontWeight: 600 }} href={npc.url}>
-                                                            {npc.name}
-                                                        </a>
+                                                        {npc.url !== "" ? (
+                                                            <a target="_blank" style={{ fontWeight: 600 }} href={npc.url}>
+                                                                {npc.name}
+                                                            </a>
+                                                            ) : (
+                                                                <span style={{ fontWeight: 600 }}>
+                                                                    {npc.name}
+                                                                </span>
+                                                            )
+                                                        }
                                                     </span>
                                                 </li>
                                             ))
                                             }
-                                            
                                         
                                             {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 &&
                                                     <ShowMoreButton 
