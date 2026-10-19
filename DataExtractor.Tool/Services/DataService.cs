@@ -164,6 +164,7 @@ public class DataService : IDataService
                 }
             }
 
+            // Npc placement data pulled from esm
             var npcResults = _npcServices.GetNpcsAtLocation(
                 loc,
                 cells,
@@ -295,7 +296,7 @@ public class DataService : IDataService
                 InhabitingNpcs = groupedNpcResults
                     .Select(npc => new NpcData
                     {
-                        Name = npc.Count > 1 
+                        Name = npc.Count > 1 // If multiple copies of an NPC in a cell group them together
                             ? $"{npc.Name} ({npc.Count})"
                             : npc.Name,
                         Url = npcs
