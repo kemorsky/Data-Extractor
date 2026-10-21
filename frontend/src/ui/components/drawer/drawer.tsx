@@ -12,6 +12,7 @@ import parse from 'html-react-parser';
 import DrawerCityMap from '../shared/drawer-city-map';
 import Icons from "../shared/icons";
 import { ShowMoreButton } from '../shared/buttons';
+import { FiExternalLink } from "react-icons/fi";
 
 export default function LocationDrawer() {
     const navigate = useNavigate();
@@ -106,9 +107,10 @@ export default function LocationDrawer() {
                                     <Icons width={24} height={24} showText={false} text={locationByName?.locationType ?? ""} />
                                     <h3 className={styles.TitleText}>{locationByName?.name}</h3>
                                 </article>
-
+                                
                                 <section className={styles.LocationContainer}>
                                     <Icons width={24} height={24} showText={false} text={locationByName?.parentLocation ?? ""} />
+                                    
                                     <span 
                                         className={styles.LocationText} 
                                         onClick={() => { handleClick() }} 
@@ -137,6 +139,13 @@ export default function LocationDrawer() {
                                         </>
                                     }
                                 </section>
+                                 
+                                <section className={styles.ListKeywords}>
+                                    {locationByName?.keywords.map((keyword) => (
+                                        <span key={keyword} className={styles.ListKeyword}>
+                                            {keyword}
+                                        </span>))}
+                                </section>
                             </article>
 
                             <div className={styles.Actions}>                 
@@ -149,85 +158,88 @@ export default function LocationDrawer() {
                             </div>
 
                             <ul className={styles.ListContainer}>
-                                <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Type:</span> 
+                                <li className={styles.LocationType}>
+                                    <span className={styles.LocationText}>Type</span>
                                     <span className={styles.ListItemText}>{locationByName?.locationType}, {locationByName?.locationCategory}</span>
                                 </li>
-                                <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Cells: </span>
-                                    <ul className={styles.ListArray}>
-                                        {visibleCells?.map((cell) => (
-                                            <li key={cell.id} className={styles.ListArrayItem}>
-                                                <span className={styles.ListItemText}>
-                                                    {cell.editorID} 
-                                                    {cell.gridX !== null && cell.gridY !== null &&
-                                                        ` (${cell.gridX}, ${cell.gridY})`
-                                                    }
-                                                </span>
-                                            </li>))
-                                        }
-                                        {(locationByName?.cells?.length ?? 0) > 3 &&
-                                            <ShowMoreButton 
-                                                showState={showCells} 
-                                                setShowState={setShowCells} 
-                                                textTrue={"Show less"}
-                                                textFalse={"Show more"}
-                                            />
-                                        }
-                                    </ul>
-                                </li>
-                                {(locationByName?.inhabitingNpcs?.length ?? 0) > 0 && 
-                                    <li className={styles.ListItem}>
-                                        <span className={styles.ListItemText}>Inhabitants: </span>
+                                
+                                <div className={styles.ListsContainer}>     
+                                    <section className={styles.List} style={{ flexDirection: "column"}}>
+                                        <span className={styles.ListText}>Cells</span>
                                         <ul className={styles.ListArray}>
-                                            {visibleNpcs?.map((npc) => (
-                                                <li key={npc.name} className={styles.ListArrayItem}>
+                                            {visibleCells?.map((cell) => (
+                                                <li key={cell.id} className={styles.ListArrayItem}>
                                                     <span className={styles.ListItemText}>
-                                                        {npc.url !== "" ? (
-                                                            <a target="_blank" style={{ fontWeight: 600 }} href={npc.url}>
-                                                                {npc.name}
-                                                            </a>
-                                                            ) : (
-                                                                <span style={{ fontWeight: 600 }}>
-                                                                    {npc.name}
-                                                                </span>
-                                                            )
+                                                        {cell.editorID} 
+                                                        {cell.gridX !== null && cell.gridY !== null &&
+                                                            ` (${cell.gridX}, ${cell.gridY})`
                                                         }
                                                     </span>
-                                                </li>
-                                            ))
+                                                </li>))
                                             }
-                                        
-                                            {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 &&
-                                                    <ShowMoreButton 
-                                                        showState={showNpcs} 
-                                                        setShowState={setShowNpcs} 
-                                                        textTrue={"Show less"}
-                                                        textFalse={"Show more"}
-                                                    />
+                                            {(locationByName?.cells?.length ?? 0) > 3 &&
+                                                <ShowMoreButton 
+                                                    showState={showCells} 
+                                                    setShowState={setShowCells} 
+                                                    textTrue={"Show less"}
+                                                    textFalse={"Show more"}
+                                                />
+                                            }
+                                        </ul>
+                                    </section>
+                                    {(locationByName?.inhabitingNpcs?.length ?? 0) > 0 && 
+                                        <section className={styles.List} style={{ flexDirection: "column"}}>
+                                            <span className={styles.ListText}>Inhabitants</span>
+                                            <ul className={styles.ListArray}>
+                                                {visibleNpcs?.map((npc) => (
+                                                    <li key={npc.name} className={styles.ListArrayItem}>
+                                                        <span className={styles.ListItemText}>
+                                                            {npc.url !== "" ? (
+                                                                <a target="_blank" style={{ fontWeight: 600 }} href={npc.url}>
+                                                                    {npc.name}
+                                                                </a>
+                                                                ) : (
+                                                                    <span style={{ fontWeight: 600 }}>
+                                                                        {npc.name}
+                                                                    </span>
+                                                                )
+                                                            }
+                                                        </span>
+                                                    </li>
+                                                ))
                                                 }
-                                        </ul>
-                                    </li>
-                                }
-                                {(locationByName?.inhabitants?.length ?? 0) > 0 && 
-                                    <li className={styles.ListItem}>
-                                        <span className={styles.ListItemText}>Inhabitants: </span>
-                                        <ul className={styles.ListArray}>
-                                            {locationByName?.inhabitants.map((inhabitant) => (
-                                                <li key={inhabitant} className={styles.ListArrayItem}>
-                                                    <span className={styles.ListItemText}>{inhabitant}</span>
-                                                </li>))}
-                                        </ul>
-                                    </li>
-                                }
+                                            
+                                                {(locationByName?.inhabitingNpcs?.length ?? 0) > 3 &&
+                                                        <ShowMoreButton 
+                                                            showState={showNpcs} 
+                                                            setShowState={setShowNpcs} 
+                                                            textTrue={"Show less"}
+                                                            textFalse={"Show more"}
+                                                        />
+                                                    }
+                                            </ul>
+                                        </section>
+                                    }
+                                    {/* {(locationByName?.inhabitants?.length ?? 0) > 0 && 
+                                        <li className={styles.List}>
+                                            <span className={styles.ListText}>Inhabitants</span>
+                                            <ul className={styles.ListArray}>
+                                                {locationByName?.inhabitants.map((inhabitant) => (
+                                                    <li key={inhabitant} className={styles.ListArrayItem}>
+                                                        <span className={styles.ListItemText}>{inhabitant}</span>
+                                                    </li>))}
+                                            </ul>
+                                        </li>
+                                    } */}
+                                </div>
                                 {locationByName?.relatedQuestName !== "None" ? 
                                     (   <li className={styles.ListItem}>
-                                            <span className={styles.ListItemText}>Quest Link:</span> 
-                                            <span className={styles.ListItemText}>
-                                                <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.relatedQuestUrl}>
-                                                    {locationByName?.relatedQuestName}
-                                                </a>
-                                            </span>
+                                            <span className={styles.ListItemText}>Quest:</span>                                                                                    
+                                            <a target="_blank" className={styles.ListItemLink} href={locationByName?.relatedQuestUrl}>
+                                                {locationByName?.relatedQuestName}
+                                                <FiExternalLink className={styles.ListItemLink} size={21}/>
+                                            </a>
+                                            
                                         </li>
                                     ) :
                                     (   <li className={styles.ListItem}>
@@ -240,13 +252,10 @@ export default function LocationDrawer() {
                                 }
                                 {locationByName?.vikunjaLink !== "" ?
                                     (   <li className={styles.ListItem}>
-                                            <span className={styles.ListItemText}>Vikunja Link:</span>
-                                            <span className={styles.ListItemLink}>
-                                                <a target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
-                                                        {locationByName?.vikunjaLink}
-                                                </a>
-                                            </span>
-                                            
+                                            <span className={styles.ListItemText}>Vikunja Card:</span>                                 
+                                            <a className={styles.ListItemLink} target="_blank" style={{ fontWeight: 600 }} href={locationByName?.vikunjaLink}>
+                                                    <FiExternalLink className={styles.ListItemLinkIcon} size={21}/>
+                                            </a>                              
                                         </li>
                                     ) : 
                                     (
@@ -259,15 +268,6 @@ export default function LocationDrawer() {
                                     ) 
 
                                 }
-                                <li className={styles.ListItem}>
-                                    <span className={styles.ListItemText}>Keywords: </span>
-                                    <ul className={styles.ListArray}>
-                                        {locationByName?.keywords.map((keyword) => (
-                                            <li key={keyword} className={styles.ListArrayItem}>
-                                                <span className={styles.ListItemText}>{keyword}</span>
-                                            </li>))}
-                                    </ul>
-                                </li>
                             </ul>
 
                             <div className={styles.NotesContainer}>

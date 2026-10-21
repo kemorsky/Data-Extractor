@@ -80,7 +80,7 @@
 .Popup {
   --bleed: 3rem;
   box-sizing: border-box;
-  width: calc(45rem + var(--bleed));
+  width: calc(50rem + var(--bleed));
   max-width: calc(100% - var(--bleed));
   height: 100%;
   padding: 1.5rem;
@@ -134,6 +134,8 @@
   
   text-align: left;
   position: relative;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
 }
 
 .Title {
@@ -149,6 +151,20 @@
   line-height: normal;
   font-weight: 700;
   margin: 0;
+}
+
+.LocationType {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start;
+  align-items: flex-start; */
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.LocationText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
 }
 
 .ShowMapButton {
@@ -193,24 +209,117 @@
 }
 
 .ListContainer {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
   min-width: 20rem;
   list-style: none;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    display: block;
+  }
+}
+
+.ListsContainer {
+  display: flex;
+  gap: 3rem;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.List {
+  margin-bottom: var(--md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 0.5rem;
+  position: relative;
+  color: var(--text-muted);
+
+  @media (max-width: 640px) {
+    width: 100%;
+    /* gap: 4rem; */
+    flex-direction: row;
+  }
 }
 
 .ListItem {
-  display: block;
-  width: 100%;
+  /* display: block; */
+  /* flex-direction: column; */
+  /* width: 100%; */
   margin-bottom: var(--md);
   display: flex;
   justify-content: flex-start;
-  align-items: start;
-  gap: 4rem;
+  align-items: center;
+  /* gap: 4rem; */
+  gap: 1rem;
   position: relative;
   color: var(--text-muted);
+
+  @media (max-width: 640px) {
+    width: 100%;
+    gap: 4rem;
+    flex-direction: row;
+  }
+}
+
+.ListText {
+  font-size: 0.875rem;
+}
+
+.ListItemLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: var(--button-text);
+
+  &:hover {
+    color: blue;
+  }
+}
+
+.ListItemLinkIcon {
+  color: white;
+  transition: var(--button-text);
+
+  &:hover {
+    color: blue;
+  }
+}
+
+.ListKeywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-width: 9rem;
+  font-weight: 600;
+}
+
+.ListKeyword {
+  font-size: 0.75rem;
+  background-color: var(--button-bg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .ListArray {
@@ -236,12 +345,12 @@
   flex-shrink: 0;
 }
 
-.ListItemLink {
+/* .ListItemLink {
   display: block;
   min-width: 6.5rem;
   overflow-wrap: anywhere;
   word-break: break-all;
-}
+} */
 
 .NotesContainer {
   width: 100%;
@@ -325,7 +434,7 @@
   }
 
   .ListItemText, .ListItemLink {
-    min-width: 6rem;
+    /* min-width: 6rem; */
     font-size: 0.875rem;
   }
 }
