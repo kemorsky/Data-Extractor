@@ -76128,7 +76128,7 @@
     "InhabitingNpcs": [
       {
         "Name": "Inma",
-        "Url": "",
+        "Url": "https://drive.google.com/open?id=1SYzofbjQhN3NOF9fl6egCTka8gND9vHiRQjfu_-q7MU",
         "NpcEditorId": "",
         "NpcFormKey": "",
         "ReferenceFormKey": "",
@@ -76141,9 +76141,9 @@
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
     "HasQuest": false,
-    "Status": "None",
-    "VikunjaLink": "",
-    "Notes": "None"
+    "Status": "Needs finalization",
+    "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14571",
+    "Notes": "\u003Cp\u003EFull sized Sanguine Shrine is in the basement. Run by Inma al-Rihad. She is the sole worshipper of Sanguine and has the shrine to sanguine built up in his basement - is fairly well off, used to work with the Duke, the FG antagonist, and is used during the FG questline. She is also a famous sculptor who built the Dibella statues in the city.\u003C/p\u003E\n\n\n\u003Ch2\u003E Lighthouse\u003C/h2\u003E"
   },
   {
     "Id": 2897,
