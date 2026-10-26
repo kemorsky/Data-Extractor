@@ -923,8 +923,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": "Barby One-Eye",
@@ -2578,8 +2578,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": " (4)",
@@ -3475,8 +3475,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -3989,8 +3989,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -4694,8 +4694,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": " (8)",
@@ -10392,8 +10392,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -11138,8 +11138,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": "\u0022Avatar of Akatosh\u0022",
@@ -11652,8 +11652,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": "Calia Iroxus",
@@ -14533,8 +14533,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -16396,8 +16396,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": " (4)",
@@ -16543,8 +16543,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Bay Horse",
@@ -20651,8 +20651,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -21952,7 +21952,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -22595,7 +22595,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -24756,8 +24756,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (7)",
@@ -25531,8 +25531,8 @@
         }
       }
     ],
-    "LocationCategory": "Interior",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Eirik Ember-Foot",
@@ -26252,7 +26252,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -28063,8 +28063,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlAmbientCreaturesForest",
@@ -28396,8 +28396,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlHorseSaddled (2)",
@@ -29171,8 +29171,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -29609,8 +29609,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRSoldierImperial01Melee (2)",
@@ -29902,7 +29902,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -30002,8 +30002,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Chestnut Horse (2)",
@@ -30145,8 +30145,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "House",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -30323,8 +30323,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -34704,7 +34704,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -35442,7 +35442,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -37605,8 +37605,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Burwik",
@@ -37661,8 +37661,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": "Bruma Guard (2)",
@@ -37717,8 +37717,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "City",
     "InhabitingNpcs": [
       {
         "Name": "Bruma Guard (2)",
@@ -38174,7 +38174,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Bull",
@@ -45161,7 +45161,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Caelan",
@@ -45236,7 +45236,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Skeleton (2)",
@@ -46730,7 +46730,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRSoldierImperial01Melee",
@@ -49008,7 +49008,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -49393,7 +49393,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (5)",
@@ -49820,7 +49820,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -52687,7 +52687,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -53032,7 +53032,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -53378,7 +53378,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "",
@@ -53638,7 +53638,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "",
@@ -55058,8 +55058,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -55672,7 +55672,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -56066,7 +56066,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -56472,7 +56472,7 @@
         }
       }
     ],
-    "LocationCategory": "Town",
+    "LocationCategory": "Settlement",
     "LocationType": "Farm",
     "InhabitingNpcs": [
       {
@@ -57492,7 +57492,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Guild",
     "InhabitingNpcs": [
       {
         "Name": "Alda",
@@ -58682,8 +58682,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Cow (3)",
@@ -58830,7 +58830,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -58885,7 +58885,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Alfaz",
@@ -58961,7 +58961,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -59133,7 +59133,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "CYRDerrolFarmSheep",
@@ -59251,8 +59251,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -59427,8 +59427,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Colovian Shepherd",
@@ -60034,7 +60034,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlAnimalForestPrey",
@@ -60130,7 +60130,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -60176,7 +60176,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -60328,7 +60328,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -60414,7 +60414,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (4)",
@@ -60510,7 +60510,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlAmbientCreaturesForest",
@@ -60566,7 +60566,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -60652,7 +60652,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -60802,7 +60802,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -61126,7 +61126,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -61261,7 +61261,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Mine",
     "InhabitingNpcs": [
       {
         "Name": "CYRGuardWolfGulchQuarry",
@@ -61347,7 +61347,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlAmbientCreaturesCoast",
@@ -61423,7 +61423,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlAmbientCreaturesCoast",
@@ -61529,7 +61529,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Marvin Monet",
@@ -61654,7 +61654,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRDuskwatchMS01CeliaMortonDead",
@@ -62198,7 +62198,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -62321,7 +62321,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Appaloosa Horse (3)",
@@ -62387,7 +62387,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -62451,7 +62451,7 @@
         }
       }
     ],
-    "LocationCategory": "None",
+    "LocationCategory": "Settlement",
     "LocationType": "Ship",
     "InhabitingNpcs": [],
     "Inhabitants": [],
@@ -62541,7 +62541,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -62606,7 +62606,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -62845,7 +62845,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -63866,8 +63866,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Sheep (5)",
@@ -63969,7 +63969,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (4)",
@@ -64080,7 +64080,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -64198,7 +64198,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Pig (2)",
@@ -64251,8 +64251,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -64287,7 +64287,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Lumberjack",
@@ -64441,7 +64441,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -64522,7 +64522,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -64568,7 +64568,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -64623,7 +64623,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -64703,7 +64703,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Black Horse",
@@ -64769,7 +64769,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Bay Horse",
@@ -65390,7 +65390,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -65488,7 +65488,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlMudcrab (3)",
@@ -65564,7 +65564,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Mine",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -65597,8 +65597,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -65653,7 +65653,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Mine",
     "InhabitingNpcs": [],
     "Inhabitants": [
       "Miners/Undead"
@@ -65720,7 +65720,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Cow (5)",
@@ -65826,7 +65826,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -65892,7 +65892,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -65958,7 +65958,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -66207,8 +66207,8 @@
         }
       }
     ],
-    "LocationCategory": "Town",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Colovian Shepherd",
@@ -66710,8 +66710,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Bay Horse (2)",
@@ -68735,7 +68735,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Mine",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -68887,7 +68887,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -71030,7 +71030,7 @@
         }
       }
     ],
-    "LocationCategory": "Town",
+    "LocationCategory": "None",
     "LocationType": "None",
     "InhabitingNpcs": [
       {
@@ -71410,8 +71410,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Captain Austratis",
@@ -72307,8 +72307,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Admiral Nexin Tystus",
@@ -72602,7 +72602,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "",
@@ -74214,7 +74214,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -74269,7 +74269,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "",
@@ -74334,7 +74334,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Horse",
@@ -74380,8 +74380,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRImperialSoldierSutchDay (16)",
@@ -74456,7 +74456,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -74566,7 +74566,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "Wildling Servant of the Deep",
@@ -74874,7 +74874,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlAnimalCoastPredator",
@@ -75120,7 +75120,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Qyro Silaparus",
@@ -75175,7 +75175,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Appaloosa Horse",
@@ -75220,7 +75220,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -76169,7 +76169,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -77289,8 +77289,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -77556,7 +77556,7 @@
     ],
     "Cells": [],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -77578,8 +77578,8 @@
       "CYRLocUniqueElvenGardens"
     ],
     "Cells": [],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -78149,8 +78149,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlHunterColovian (3)",
@@ -78445,7 +78445,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Farm",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -78583,8 +78583,8 @@
         }
       }
     ],
-    "LocationCategory": "None",
-    "LocationType": "Exterior",
+    "LocationCategory": "Settlement",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Nolir",
@@ -79375,7 +79375,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "None",
     "InhabitingNpcs": [
       {
         "Name": "Chestnut Horse (2)",
@@ -80304,7 +80304,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "Exterior",
+    "LocationType": "Guild",
     "InhabitingNpcs": [
       {
         "Name": "CYRLvlAmbientCreaturesPlains (2)",
