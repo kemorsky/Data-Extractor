@@ -65,6 +65,7 @@ public class DataExtractorConfig
         ["LocTypeInn"] = "Inn",
         ["LocTypeBanditCamp"] = "Bandit Camp",
         ["LocTypeTown"] = "Town",
+        ["LocTypeLumberMill"] = "Lumber Mill",
         ["BSKLocTypeAyleid"] = "Ayleid Ruin",
         ["BSKLocSetTombColovian"] = "Colovian Tomb",
         ["BSKLocSetTombNibenese"] = "Nibenese Tomb",
