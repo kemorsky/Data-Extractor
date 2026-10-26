@@ -1,7 +1,7 @@
 import { type LocationData } from "../utils/types"
 import { MapContainer, ImageOverlay, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import map from "../assets/map/Cyrodiil-Map-5055x3456.png"
+import map from "../assets/map/Cyrodiil-Map-5055x3456.webp";
 import Icons from "../ui/components/shared/icons";
 
 import 'leaflet/dist/leaflet.css';
