@@ -14534,7 +14534,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -16544,7 +16544,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": "Bay Horse",
@@ -20652,7 +20652,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": " (3)",
@@ -24757,7 +24757,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": " (7)",
@@ -29172,7 +29172,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
@@ -29610,7 +29610,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": "CYRSoldierImperial01Melee (2)",
@@ -30003,7 +30003,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": "Chestnut Horse (2)",
@@ -55059,7 +55059,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -58683,7 +58683,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": "Cow (3)",
@@ -66208,7 +66208,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": "Colovian Shepherd",
@@ -71031,7 +71031,7 @@
       }
     ],
     "LocationCategory": "None",
-    "LocationType": "None",
+    "LocationType": "Town",
     "InhabitingNpcs": [
       {
         "Name": " (2)",
