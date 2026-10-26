@@ -12,12 +12,11 @@ const iconSources = Object.fromEntries(
     })
 );
 
-interface IconsProps {
+export interface IconsProps {
     text: string;
     showText?: boolean;
     width?: number;
     height?: number;
-    
 };
 
 export default function Icons({ text, showText = true, width = 30, height = 30 }: IconsProps) {

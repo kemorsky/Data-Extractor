@@ -20,6 +20,7 @@ export type LocationData = {
   notes: string;
   // wishlist: string;
 };
+
 export type CellData = {
   id: number;
   editorID: string;
@@ -28,13 +29,16 @@ export type CellData = {
   gridY: number;
   loot: Loot;
 }
+
 export type Loot = {
   totalValue: number;
 }
+
 export type NpcData = {
   name: string;
   url: string;
 }
+
 export type LocationFilters = {
   query: string;
   statuses: string[];

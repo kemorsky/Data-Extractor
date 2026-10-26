@@ -13,6 +13,7 @@ import { Tabs } from '@base-ui/react/tabs';
 import { useLocation, useSearchParams } from 'react-router';
 import Footer from './ui/components/shared/footer';
 import Navbar from './ui/components/shared/navbar';
+import { Map } from './pages/map';
 
 export default function App() {
   const [_, setSearchParams] = useSearchParams();
@@ -73,6 +74,9 @@ export default function App() {
               Graphs
               <div className={styles.Highlight} />
             </Tabs.Tab>
+            <Tabs.Tab className={styles.Tab} value="map">
+              Map
+            </Tabs.Tab>
             <Tabs.Indicator className={styles.Indicator} />
           </Tabs.List>
           <div className={styles.PanelViewport}>
@@ -89,6 +93,9 @@ export default function App() {
             </Tabs.Panel>
             <Tabs.Panel key={"graphs"} className={styles.Panel} value="graphs">
               <StatusTab locations={locations} />
+            </Tabs.Panel>
+            <Tabs.Panel key={"map"} className={styles.Panel} value="map">
+              <Map locations={locations}/>
             </Tabs.Panel>
           </div>
         </Tabs.Root>        
