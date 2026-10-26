@@ -288,7 +288,9 @@ public class DataService : IDataService
                 Region = sheet?.Row.Count > 2 ? sheet.Row[2].ToString() ?? "None" : "None",
                 Name = displayName,
                 Keywords = keywordsList.ToArray(),
-                Cells = cellData.ToArray(),
+                Cells = cellData
+                    .OrderBy(c => c.EditorID)
+                    .ToArray(),
                 
                 LocationCategory = locationCategory,
                 LocationType = locationType,
@@ -310,6 +312,7 @@ public class DataService : IDataService
                             .FirstOrDefault()?
                             .Hyperlink ?? ""
                     })
+                    .OrderBy(n => n.Name)
                     .ToArray(),
 
                 Inhabitants = sheet?.Row.Count > 5 && sheet.Row[5] != null
