@@ -24,7 +24,6 @@ public class VikunjaServices
         var lookup = new Dictionary<string, (VikunjaTask Task, string Url)>(StringComparer.OrdinalIgnoreCase);
 
         // DIAGNOSTIC LOG: Check Environment Variables
-        // Console.WriteLine($"[Vikunja Diagnostics] URL configured: {!string.IsNullOrEmpty(vikunjaApiUrl)} ('{vikunjaApiUrl}')");
         Console.WriteLine($"[Vikunja Diagnostics] Token configured: {!string.IsNullOrEmpty(vikunjaToken)}");
         
         if (!string.IsNullOrEmpty(vikunjaApiUrl) && !string.IsNullOrEmpty(vikunjaToken))
@@ -39,46 +38,72 @@ public class VikunjaServices
             {
                 try
                 {
-                    var httpRequest = new HttpRequestMessage(HttpMethod.Get, url);
-                    httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", vikunjaToken);
-                    httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    // Clean out existing parameters
+                    var baseCleanUrl = url.Contains("?") ? url.Split('?')[0] : url;
 
-                    var httpResponse = await localHttpClient.SendAsync(httpRequest);
+                    int currentPage = 1;
+                    bool hasMorePages = true;
+                    int projectTotalTasks = 0;
 
-                    Console.WriteLine($"[Vikunja Diagnostics] HTTP Status Code Received: {httpResponse.StatusCode} ({(int)httpResponse.StatusCode})");
-
-                    if (httpResponse.IsSuccessStatusCode)
+                    while (hasMorePages)
                     {
-                        var jsonString = await httpResponse.Content.ReadAsStringAsync();
-                        var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-                        var responseData = JsonSerializer.Deserialize<VikunjaResponseContainer>(jsonString, options);
 
-                        var tasks = responseData?.Items ?? new List<VikunjaTask>();
+                        string pagedUrl = $"{baseCleanUrl}?per_page=50&page={currentPage}";
 
-                        Console.Write(tasks);
-                        Console.WriteLine($"[Vikunja Diagnostics] Extracted {tasks.Count} inner tasks from API payload.");
+                        var httpRequest = new HttpRequestMessage(HttpMethod.Get, pagedUrl);
+                        httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", vikunjaToken);
+                        httpRequest.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                        foreach (var task in tasks)
+                        var httpResponse = await localHttpClient.SendAsync(httpRequest);
+
+                        Console.WriteLine($"[Vikunja Diagnostics] HTTP Status Code Received: {httpResponse.StatusCode} ({(int)httpResponse.StatusCode})");
+
+                        if (httpResponse.IsSuccessStatusCode)
                         {
-                            string rawName = task.Name ?? "";
-                            string trimmedKey = rawName.Trim();
+                            var jsonString = await httpResponse.Content.ReadAsStringAsync();
+                            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                            var responseData = JsonSerializer.Deserialize<VikunjaResponseContainer>(jsonString, options);
 
-                            if (rawName.Contains('-'))
+                            var tasks = responseData?.Items ?? new List<VikunjaTask>();
+
+                            projectTotalTasks += tasks.Count;
+                            Console.WriteLine($"[Vikunja Diagnostics] Page {currentPage}: Found {tasks.Count} inner tasks in this batch.");
+
+                            foreach (var task in tasks)
                             {
-                                var parts = rawName.Split('-', 2);
-                                if (parts.Length > 1) 
+                                string rawName = task.Name ?? "";
+                                string trimmedKey = rawName.Trim();
+
+                                if (rawName.Contains('-'))
                                 {
-                                    trimmedKey = parts[1].Trim();
+                                    var parts = rawName.Split('-', 2);
+                                    if (parts.Length > 1) 
+                                    {
+                                        trimmedKey = parts[1].Trim();
+                                    }
+                                }
+
+                                var normalizedKey = LocationNameNormalizer.Normalize(trimmedKey);
+
+                                if (!string.IsNullOrWhiteSpace(trimmedKey))
+                                {
+                                    var taskUrl = $"{vikunjaFrontendUrl?.TrimEnd('/')}/tasks/{task.Id}";
+                                    lookup.TryAdd(normalizedKey, (Task: task, Url: taskUrl));
                                 }
                             }
-
-                            var normalizedKey = LocationNameNormalizer.Normalize(trimmedKey);
-
-                            if (!string.IsNullOrWhiteSpace(trimmedKey))
+                            if (tasks.Count < 50)
                             {
-                                var taskUrl = $"{vikunjaFrontendUrl?.TrimEnd('/')}/tasks/{task.Id}";
-                                lookup.TryAdd(normalizedKey, (Task: task, Url: taskUrl));
+                                hasMorePages = false;
                             }
+                            else
+                            {
+                                currentPage++;
+                            }
+                        }
+                        else
+                        {
+                            // Break the loop if an individual network request fails
+                            hasMorePages = false;
                         }
                     }
                 } catch (Exception ex)
