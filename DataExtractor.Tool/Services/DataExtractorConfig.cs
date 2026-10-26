@@ -64,6 +64,7 @@ public class DataExtractorConfig
         ["LocTypeMilitaryFort"] = "Imperial Fort",
         ["LocTypeInn"] = "Inn",
         ["LocTypeBanditCamp"] = "Bandit Camp",
+        ["LocTypeTown"] = "Town",
         ["BSKLocTypeAyleid"] = "Ayleid Ruin",
         ["BSKLocSetTombColovian"] = "Colovian Tomb",
         ["BSKLocSetTombNibenese"] = "Nibenese Tomb",
