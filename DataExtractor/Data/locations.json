@@ -55780,7 +55780,7 @@
       }
     ],
     "LocationCategory": "None",
-    "LocationType": "None",
+    "LocationType": "Lumber Mill",
     "InhabitingNpcs": [
       {
         "Name": "Rabbit (2)",
@@ -58830,7 +58830,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Lumber Mill",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -64287,7 +64287,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Lumber Mill",
     "InhabitingNpcs": [
       {
         "Name": "Lumberjack",
@@ -64568,7 +64568,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Lumber Mill",
     "InhabitingNpcs": [],
     "Inhabitants": [],
     "RelatedQuestName": "None",
@@ -72602,7 +72602,7 @@
       }
     ],
     "LocationCategory": "Settlement",
-    "LocationType": "None",
+    "LocationType": "Lumber Mill",
     "InhabitingNpcs": [
       {
         "Name": "",
