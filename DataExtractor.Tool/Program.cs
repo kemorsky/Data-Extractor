@@ -23,51 +23,51 @@ Environment.SetEnvironmentVariable(
     "GOOGLE_APPLICATION_CREDENTIALS",
     credentialPath);
 
-var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA_HEARTLANDS");
-var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA_ASSETS");
+// var pathToModHeartlandESM = Environment.GetEnvironmentVariable("DATA_HEARTLANDS");
+// var pathToModAssetsESM = Environment.GetEnvironmentVariable("DATA_ASSETS");
 var URL = Environment.GetEnvironmentVariable("URL");
 
-// var pluginDirectory = Path.Combine(
-//     Directory.GetCurrentDirectory(),
-//     "plugins");
+var pluginDirectory = Path.Combine(
+    Directory.GetCurrentDirectory(),
+    "plugins");
 
-// var modPathHeartland = Path.Combine(
-//     pluginDirectory,
-//     "BSHeartland.esm");
+var modPathHeartland = Path.Combine(
+    pluginDirectory,
+    "BSHeartland.esm");
 
-// var modPathAssets = Path.Combine(
-//     pluginDirectory,
-//     "BSAssets.esm");
+var modPathAssets = Path.Combine(
+    pluginDirectory,
+    "BSAssets.esm");
 
-// if (!File.Exists(modPathHeartland))
-// {
-//     throw new FileNotFoundException(
-//         $"BSHeartland.esm not found: {modPathHeartland}");
-// }
+if (!File.Exists(modPathHeartland))
+{
+    throw new FileNotFoundException(
+        $"BSHeartland.esm not found: {modPathHeartland}");
+}
 
-// if (!File.Exists(modPathAssets))
-// {
-//     throw new FileNotFoundException(
-//         $"BSAssets.esm not found: {modPathAssets}");
-// }
+if (!File.Exists(modPathAssets))
+{
+    throw new FileNotFoundException(
+        $"BSAssets.esm not found: {modPathAssets}");
+}
 
 using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 
-// var listings = new List<LoadOrderListing>
-// {
-//     new LoadOrderListing(ModKey.FromFileName("Skyrim.esm"), enabled: true),
-//     new LoadOrderListing(ModKey.FromFileName("Update.esm"), enabled: true),
-//     new LoadOrderListing(ModKey.FromFileName("Dawnguard.esm"), enabled: true),
-//     new LoadOrderListing(ModKey.FromFileName("Dragonborn.esm"), enabled: true),
-//     new LoadOrderListing(ModKey.FromFileName("Hearthfire.esm"), enabled: true),
-//     new LoadOrderListing(ModKey.FromFileName("BSAssets.esm"), enabled: true),
-//     new LoadOrderListing(ModKey.FromFileName("BSHeartland.esm"), enabled: true),
-// };
+var listings = new List<LoadOrderListing>
+{
+    new LoadOrderListing(ModKey.FromFileName("Skyrim.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Update.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Dawnguard.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Dragonborn.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("Hearthfire.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("BSAssets.esm"), enabled: true),
+    new LoadOrderListing(ModKey.FromFileName("BSHeartland.esm"), enabled: true),
+};
 
-// var loadOrder = LoadOrder.Import<ISkyrimModGetter>(
-//     pluginDirectory,
-//     listings,
-//     GameRelease.SkyrimSE);
+var loadOrder = LoadOrder.Import<ISkyrimModGetter>(
+    pluginDirectory,
+    listings,
+    GameRelease.SkyrimSE);
 
 // if (string.IsNullOrWhiteSpace(modPathHeartland) || string.IsNullOrWhiteSpace(modPathAssets))
 // {
@@ -79,8 +79,8 @@ using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 //     throw new Exception("DATA-HEARTLANDS is not configured.");
 // }
 
-var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
-var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
+// var modPathHeartland = Path.Combine(pathToModHeartlandESM, "BSHeartland.esm");
+// var modPathAssets = Path.Combine(pathToModAssetsESM, "BSAssets.esm");
 
 using var mod = SkyrimMod.CreateFromBinaryOverlay(modPathHeartland, SkyrimRelease.SkyrimSE);
 using var mod2 = SkyrimMod.CreateFromBinaryOverlay(modPathAssets, SkyrimRelease.SkyrimSE);
@@ -91,7 +91,7 @@ List<ICellGetter> cells = mod
     .ToList();
 
 // env.LoadOrder.
-var modsList = env.LoadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
+var modsList = loadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
 modsList.Add(mod2);
 modsList.Add(mod);
 
