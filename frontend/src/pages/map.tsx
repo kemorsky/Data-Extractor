@@ -1,5 +1,5 @@
 import { type LocationData } from "../utils/types"
-import { MapContainer, ImageOverlay, Marker, Popup, useMapEvents, useMap } from 'react-leaflet';
+import { MapContainer, ImageOverlay, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import map from "../assets/map/Cyrodiil-Map-5055x3456.png"
 import Icons from "../ui/components/shared/icons";
@@ -96,7 +96,7 @@ export const Map = (props: MapProps) => {
 
                 {locations?.map((loc) => {
                     const position = gridToLeaflet(loc.cells[1]?.gridX ?? 0, loc.cells[1]?.gridY ?? 0);
-                    const size = 24 + zoom * 4;
+                    // const size = 24 + zoom * 4;
 
                     const baseIcon = getMarkerIcon(loc.locationType ?? "");
                     // const iconUrl = baseIcon.options.iconUrl;
