@@ -51,7 +51,7 @@ if (!File.Exists(modPathAssets))
         $"BSAssets.esm not found: {modPathAssets}");
 }
 
-using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
+// using var env = GameEnvironment.Typical.Skyrim(SkyrimRelease.SkyrimSE);
 
 var listings = new List<LoadOrderListing>
 {
@@ -92,8 +92,8 @@ List<ICellGetter> cells = mod
 
 // env.LoadOrder.
 var modsList = loadOrder.PriorityOrder.Select(m => m.Mod).Where(m => m != null).Cast<ISkyrimModGetter>().ToList();
-modsList.Add(mod2);
-modsList.Add(mod);
+// modsList.Add(mod2);
+// modsList.Add(mod);
 
 Console.WriteLine($"Heartlands: {mod.ModKey}");
 
