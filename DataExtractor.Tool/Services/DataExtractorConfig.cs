@@ -43,7 +43,9 @@ public class DataExtractorConfig
         ["LocTypeDwelling"] = "Interior",
         ["LocTypeDungeon"] = "Dungeon",
         ["LocTypeSettlement"] = "Settlement",
-        ["LocTypeTown"] = "Town",
+        ["LocTypeHabitation"] = "Settlement",
+        // ["LocTypeTown"] = "Town",
+        // ["LocTypeCity"] = "City",
     };
 
     public static readonly Dictionary<string, string> LocationTypeMap = new(StringComparer.OrdinalIgnoreCase)
@@ -52,11 +54,11 @@ public class DataExtractorConfig
         ["LocTypeHouse"] = "House",
         ["CYRLocUniqueBattlehornCastle"] = "Castle",
         ["LocTypeCastle"] = "Castle",
+        ["LocTypeCity"] = "City",
         ["LocSetCave"] = "Cave",
         ["LocTypeMine"] = "Mine",
         ["LocTypeFarm"] = "Farm",
         ["LocTypeGuild"] = "Guild",
-        ["LocTypeHabitation"] = "Exterior",
         ["LocSetOutdoor"] = "Exterior",
         ["LocTypeShip"] = "Ship",
         ["LocTypeMilitaryFort"] = "Imperial Fort",
