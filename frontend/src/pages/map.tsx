@@ -5,6 +5,7 @@ import map from "../assets/map/Cyrodiil-Map-5055x3456.webp";
 import Icons from "../ui/components/shared/icons";
 
 import 'leaflet/dist/leaflet.css';
+import { useNavigate, useLocation } from "react-router";
 
 // import icon from 'leaflet/dist/images/marker-icon.png';
 // import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -42,13 +43,13 @@ const IMG_HEIGHT = 3456;
 const IMAGE_BOUNDS: L.LatLngBoundsExpression = [[0, 0], [IMG_HEIGHT, IMG_WIDTH]];
 
 function gridToLeaflet(gridX: number, gridY: number): L.LatLngTuple {
-    const CELL_SIZE_PX = 32.404;  // 5150 width / 156 cells
+    const CELL_SIZE_PX = 32;  // 5150 width / 156 cells
 
     const ORIGIN_LEAFLET_X = 2050;
     const ORIGIN_LEAFLET_Y = 1420;
 
-    const finalLeafletX = ORIGIN_LEAFLET_X + (gridX * CELL_SIZE_PX);
-    const finalLeafletY = ORIGIN_LEAFLET_Y - CELL_SIZE_PX + (gridY * CELL_SIZE_PX);
+    const finalLeafletX = ORIGIN_LEAFLET_X - (CELL_SIZE_PX / 2) + (gridX * CELL_SIZE_PX);
+    const finalLeafletY = ORIGIN_LEAFLET_Y - (CELL_SIZE_PX / 2) + (gridY * CELL_SIZE_PX);
 
     return [finalLeafletY, finalLeafletX];
 }
@@ -73,7 +74,27 @@ function gridToLeaflet(gridX: number, gridY: number): L.LatLngTuple {
 export const Map = (props: MapProps) => {
     const { locations } = props;
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    function slugify(value: string) {
+        return value
+            .toLowerCase()
+            .trim()
+            .replace(/['']/g, "")
+            .replace(/\s+/g, "-");
+    }
+
     // const [zoom, setZoom] = useState(0);
+
+    const handleClickName = (name: string) => {
+        navigate(`/locations/${slugify(name)}`, {
+            state: { 
+                drawer: true,
+                backgroundLocation: location.state?.backgroundLocation ?? location,
+            },
+        });
+    };
     
     return (
         <div className="map" style={{ width: '100vw', height: '100vh', background: '#0b0b0b' }}>
@@ -95,32 +116,37 @@ export const Map = (props: MapProps) => {
                 />
 
                 {locations?.map((loc) => {
-                    const position = gridToLeaflet(loc.cells[1]?.gridX ?? 0, loc.cells[1]?.gridY ?? 0);
+                    const locationOrigin = loc.cells.find(l => l.gridX !== null && l.gridY !== null);
+
+                    if (!locationOrigin) {
+                        return null;
+                    };
+                    
+                    const position = gridToLeaflet(locationOrigin.gridX, locationOrigin.gridY);
                     // const size = 24 + zoom * 4;
 
                     const baseIcon = getMarkerIcon(loc.locationType ?? "");
-                    // const iconUrl = baseIcon.options.iconUrl;
 
-                    // const markerIcon = L.icon({
-                    //     iconUrl: typeof iconUrl === "string" ? iconUrl : "",
-                    //     iconSize: [size * 1.5, size * 1.5],
-                    //     iconAnchor: [size / 2, size * 1.5],
-                    //     popupAnchor: [1, -(size * 1.4)],
-                    // });
-
-                    return (
-                        <Marker key={loc.id} position={position} icon={baseIcon}>
-                            <Popup>
-                                <div className="map-popup">
-                                    <h3 style={{ margin: '0 0 5px 0' }}>{loc.name}</h3>
-                                    <p style={{ margin: 0, color: '#666' }}>{loc.parentLocation}</p>
-                                    {/* <small style={{ color: '#999' }}>Grid: {loc.cells[1]?.gridX !== null && loc.cells[1].gridY !== null &&
-                                                            ` (${loc.cells[1].gridX}, ${loc.cells[1].gridY})`}
-                                    </small> */}
-                                </div>
-                            </Popup>
-                        </Marker>
-                    )
+                    if (loc.cells[1]?.gridX !== null && loc.cells[1]?.gridY !== null) {
+                        
+                        return (
+                            <Marker key={loc.id} position={position} icon={baseIcon}>
+                                <Popup>
+                                    <div className="map-popup">
+                                        <h3 style={{ margin: '0 0 5px 0' }}>{loc.name}</h3>
+                                        <p style={{ margin: 0, color: '#666' }}>{loc.parentLocation}</p>
+                                        <small style={{ color: '#999' }}>
+                                            Cell: {locationOrigin.editorID} <br></br>
+                                            Grid: ({locationOrigin.gridX}, {locationOrigin.gridY})
+                                        </small>
+                                        <button onClick={() => {handleClickName(loc.name)}}>View</button>
+                                    </div>
+                                </Popup>
+                            </Marker>
+                        )
+                    } else {
+                        return null;
+                    };
                 })}
             </MapContainer>
         </div>
