@@ -1,3 +1,4 @@
+import "./map.css";
 import { type LocationData } from "../utils/types"
 import { MapContainer, ImageOverlay, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
@@ -131,16 +132,16 @@ export const Map = (props: MapProps) => {
                         
                         return (
                             <Marker key={loc.id} position={position} icon={baseIcon}>
-                                <Popup>
-                                    <div className="map-popup">
-                                        <h3 style={{ margin: '0 0 5px 0' }}>{loc.name}</h3>
-                                        <p style={{ margin: 0, color: '#666' }}>{loc.parentLocation}</p>
-                                        <small style={{ color: '#999' }}>
-                                            Cell: {locationOrigin.editorID} <br></br>
-                                            Grid: ({locationOrigin.gridX}, {locationOrigin.gridY})
-                                        </small>
-                                        <button onClick={() => {handleClickName(loc.name)}}>View</button>
-                                    </div>
+                                <Popup className="custom-popup"> 
+                                    <h3 className="location-name">{loc.name}</h3>
+                                    <p>{loc.parentLocation}</p>
+                                    <small style={{ color: '#999' }}>
+                                        Cell: {locationOrigin.editorID} <br></br>
+                                        Grid: ({locationOrigin.gridX}, {locationOrigin.gridY})
+                                    </small>
+                                    <button className="location-open-button" onClick={() => {handleClickName(loc.name)}}>
+                                        View
+                                    </button>                                  
                                 </Popup>
                             </Marker>
                         )
