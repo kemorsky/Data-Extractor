@@ -89,8 +89,6 @@ public class GoogleServices
             Rows = npcsResponse.ValueRanges
             .ElementAtOrDefault(0)?
             .Values ?? [],
-                .ElementAtOrDefault(0)?
-                .Values ?? [],
             NpcDocCells = npcDocCells
         };
     }
@@ -122,8 +120,8 @@ public class GoogleServices
         return new BetacommentData
         {
             Rows = betacommentsResponse.ValueRanges
-                .ElementAtOrDefault(0)?
-                .Values ?? [],
+            .ElementAtOrDefault(0)?
+            .Values ?? [],
         };
     }
 }
