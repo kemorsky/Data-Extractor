@@ -41,7 +41,7 @@ public class DataService : IDataService
         var npcDatabaseId = Environment.GetEnvironmentVariable("NPC_DATABASE_ID")
             ?? throw new InvalidOperationException("NPC_DATABASE_ID environment variable is not set.");
         var betacommentDatabaseId = Environment.GetEnvironmentVariable("BETACOMMENTS_DATABASE_ID")
-            ?? throw new InvalidOperationException("NPC_DATABASE_ID environment variable is not set.");
+            ?? throw new InvalidOperationException("BETACOMMENTS_DATABASE_ID environment variable is not set.");
         
         var credential = await _googleServices.GetGoogleCredential();
         
