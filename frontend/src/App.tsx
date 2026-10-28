@@ -76,6 +76,7 @@ export default function App() {
             </Tabs.Tab>
             <Tabs.Tab className={styles.Tab} value="map">
               Map
+              <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Indicator className={styles.Indicator} />
           </Tabs.List>
@@ -98,7 +99,7 @@ export default function App() {
               <Map locations={locations}/>
             </Tabs.Panel>
           </div>
-        </Tabs.Root>        
+        </Tabs.Root>
 
         <LocationDrawer />
       </section>

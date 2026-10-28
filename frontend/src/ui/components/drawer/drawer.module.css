@@ -134,8 +134,8 @@
   
   text-align: left;
   position: relative;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1.5rem;
+  /* border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem; */
 }
 
 .Title {
@@ -178,6 +178,10 @@
   }
 }
 
+/* Tabs */
+
+
+
 .LocationContainer {
   display: flex;
   justify-content: center;
@@ -189,6 +193,7 @@
   white-space: nowrap;
   text-align: left;
   line-height: 1;
+  font-size: 1rem;
 }
 
 .ParentLocationChildren {
@@ -343,6 +348,7 @@
   text-wrap: wrap;
   overflow-wrap: break-word;
   flex-shrink: 0;
+  text-align: left;
 }
 
 /* .ListItemLink {
