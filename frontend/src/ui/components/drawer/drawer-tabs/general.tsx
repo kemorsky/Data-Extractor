@@ -5,11 +5,11 @@ import type { LocationData } from '../../../../utils/types';
 import { ShowMoreButton } from '../../shared/buttons';
 import { FiExternalLink } from "react-icons/fi";
 
-interface DrawerGeneralTabProps {
+interface DrawerTabProps {
     locationByName: LocationData | undefined;
 }
 
-export default function DrawerGeneralTab(props: DrawerGeneralTabProps) {
+export default function DrawerGeneralTab(props: DrawerTabProps) {
     const { locationByName } = props;
 
     const [ showCells, setShowCells ] = useState(false);

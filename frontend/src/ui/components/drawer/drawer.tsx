@@ -13,6 +13,7 @@ import DrawerCityMap from '../shared/drawer-city-map';
 import Icons from "../shared/icons";
 import { Tabs } from '@base-ui/react/tabs';
 import DrawerGeneralTab from './drawer-tabs/general';
+import DrawerBetaCommentsTab from './drawer-tabs/betacomments';
 
 export default function LocationDrawer() {
     const navigate = useNavigate();
@@ -165,7 +166,7 @@ export default function LocationDrawer() {
                                         <span>Implementation</span>
                                     </Tabs.Panel>
                                     <Tabs.Panel key={"betacomments"} className={tabsStyles.Panel} value="betacomments">
-                                        <span>Beta Comments</span>
+                                        <DrawerBetaCommentsTab locationByName={locationByName} />
                                     </Tabs.Panel>
                                     <Tabs.Panel key={"parent-map"} className={tabsStyles.Panel} value="parent-map">
                                         

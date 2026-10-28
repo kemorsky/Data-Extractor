@@ -8,6 +8,7 @@ export type LocationData = {
   region: string;
   keywords: string[];
   cells: CellData[];
+  betacomments: BetacommentData[];
   locationCategory: string;
   locationType: string;
   status: string;
@@ -28,6 +29,14 @@ export type CellData = {
   gridX: number;
   gridY: number;
   loot: Loot;
+}
+
+export type BetacommentData = {
+  id: number;
+  cell: string;
+  referenceFormKey: string;
+  rawReference: string;
+  comment: string;
 }
 
 export type Loot = {

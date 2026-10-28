@@ -66,7 +66,7 @@ public class GoogleServices
         var npcSpreadsheetRequest = sheetsService.Spreadsheets.Get(npcDatabaseId);
         npcSpreadsheetRequest.Ranges = new List<string>
             {
-                "Full List!A1:A",
+                "Full List!A1:Z",
             };
         npcSpreadsheetRequest.IncludeGridData = true;
 
@@ -89,7 +89,41 @@ public class GoogleServices
             Rows = npcsResponse.ValueRanges
             .ElementAtOrDefault(0)?
             .Values ?? [],
+                .ElementAtOrDefault(0)?
+                .Values ?? [],
             NpcDocCells = npcDocCells
+        };
+    }
+
+    public async Task<BetacommentData> GetBetacomments(
+        SheetsService sheetsService,
+        string betacommentDatabaseId)
+    {
+        var betacommentSpreadsheetRequest = sheetsService.Spreadsheets.Get(betacommentDatabaseId);
+        betacommentSpreadsheetRequest.Ranges = new List<string>
+            {
+                "Database!A1:Z",
+            };
+        betacommentSpreadsheetRequest.IncludeGridData = true;
+
+        var betacommentResponse = await betacommentSpreadsheetRequest.ExecuteAsync();
+
+        // var betacommentSheetCells = betacommentResponse.Sheets[0];
+
+        // betacomment Database ranges
+        var betacommentRequest = sheetsService.Spreadsheets.Values.BatchGet(betacommentDatabaseId);
+        betacommentRequest.Ranges = new List<string>
+        {
+            "Database!A1:Z",
+        };
+
+        var betacommentsResponse = await betacommentRequest.ExecuteAsync();
+
+        return new BetacommentData
+        {
+            Rows = betacommentsResponse.ValueRanges
+                .ElementAtOrDefault(0)?
+                .Values ?? [],
         };
     }
 }

@@ -10,6 +10,7 @@ public class LocationDataSheet
     public string Region { get; set; } = string.Empty;
     public string[] Keywords { get; set; } = [];
     public CellData[] Cells { get; set; } = [];
+    public BetacommentData[] Betacomments { get; set; } = [];
     public string LocationCategory { get; set; } = string.Empty;
     public string LocationType { get; set; } = string.Empty;
     public NpcData[] InhabitingNpcs { get; set; } = [];

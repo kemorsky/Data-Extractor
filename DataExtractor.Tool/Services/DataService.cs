@@ -40,6 +40,8 @@ public class DataService : IDataService
             ?? throw new InvalidOperationException("MASTERLIST_ID environment variable is not set.");
         var npcDatabaseId = Environment.GetEnvironmentVariable("NPC_DATABASE_ID")
             ?? throw new InvalidOperationException("NPC_DATABASE_ID environment variable is not set.");
+        var betacommentDatabaseId = Environment.GetEnvironmentVariable("BETACOMMENTS_DATABASE_ID")
+            ?? throw new InvalidOperationException("NPC_DATABASE_ID environment variable is not set.");
         
         var credential = await _googleServices.GetGoogleCredential();
         
@@ -56,6 +58,11 @@ public class DataService : IDataService
             npcDatabaseId
         );
 
+        var betacommentData = await _googleServices.GetBetacomments(
+            sheetsService,
+            betacommentDatabaseId
+        );
+
         // Dungeon Masterlist data
         var mainData = masterlistData.Rows;
         var questCells = masterlistData.QuestCells;
@@ -64,7 +71,12 @@ public class DataService : IDataService
         var mainNpcData = npcData.Rows;
         var npcDocCells = npcData.NpcDocCells;
 
+        // Betacomment Database data
+        var mainBetacommentData = betacommentData.Rows;
+
         Console.WriteLine($"[NPC DEBUG] Total NPC rows returned: {mainNpcData.Count}");
+
+        Console.WriteLine($"[NPC DEBUG] Total Betacomment rows returned: {mainBetacommentData.Count}");
 
         var sheetLookup = mainData
             .Select((row, i) => new
@@ -116,6 +128,42 @@ public class DataService : IDataService
         Console.WriteLine(
             $"[NPC LOOKUP] Created {npcLookup.Count} location entries.");
 
+        var betacommentLookup = mainBetacommentData
+            .Select((row, i) => new BetacommentData
+            {
+                Cell = row.Count > 9 ? row[9].ToString()?.Trim() ?? "" : "",
+                ReferenceFormKey = row.Count > 10 ? row[10].ToString()?.Trim() ?? "" : "",
+                RawReference = row.Count > 12 ? row[12].ToString()?.Trim() ?? "" : "",
+                Comment = row.Count > 11 ? row[11].ToString()?.Trim() ?? "" : "",
+            })
+            // .Select((x) => new
+            // {
+            //     x.Cell,
+            //     x.ReferenceFormKey,
+            //     x.Comment,
+            //     x.RawReferenceWithComment,
+            //     LocationName = LocationNameNormalizer.Normalize(x.Cell),
+            //     x.Row,
+            // })
+            .Where(x => 
+                !string.IsNullOrWhiteSpace(x.Cell))
+            .GroupBy(x => LocationNameNormalizer.Normalize(x.Cell), StringComparer.OrdinalIgnoreCase)
+            .ToDictionary(
+                g => g.Key,
+                g => g.ToList(),
+                StringComparer.OrdinalIgnoreCase);
+
+        // Console.WriteLine(
+        //     $"[BETA DEBUG] Lookup keys: {betacommentLookup.Count}");
+
+        // foreach (var entry in betacommentLookup.Take(10))
+        // {
+        //     Console.WriteLine(
+        //         $"[BETA DB KEY] '{entry.Key}' | " +
+        //         $"Original cell: '{entry.Value.First().Cell}' | " +
+        //         $"Comments: {entry.Value.Count}");
+        // }
+
         var vikunjaProjectUrl = Environment.GetEnvironmentVariable("VIKUNJA_PROJECT_URL");
 
         var vikunjaLookup = await _vikunjaServices.LoadVikunjaData();
@@ -130,6 +178,7 @@ public class DataService : IDataService
             var locationKey = LocationNameNormalizer.Normalize(displayName);
 
             var keywordsList = new List<string>();
+            var betacommentsList = new List<BetacommentData>();
 
             var cellData = new List<CellData>();
 
@@ -161,6 +210,27 @@ public class DataService : IDataService
                         GridY = cell.Grid?.Point.Y,
                         Loot = loot
                     });
+                
+
+                betacommentsList = cellsForLocation
+                    .Where(cell => !string.IsNullOrWhiteSpace(cell.EditorID))
+                    .SelectMany(cell =>
+                    {
+                        var cellKey = LocationNameNormalizer.Normalize(cell.EditorID);
+
+                        return betacommentLookup.TryGetValue(cellKey, out var matches)
+                            ? matches
+                            : Enumerable.Empty<BetacommentData>();
+                    })
+                    .Select(comment => new BetacommentData
+                    {
+                        Id = ++id,
+                        Cell = comment.Cell,
+                        ReferenceFormKey = comment.ReferenceFormKey,
+                        Comment = comment.Comment,
+                        RawReference = comment.RawReference
+                    })
+                    .ToList();
                 }
             }
 
@@ -199,6 +269,16 @@ public class DataService : IDataService
             npcLookup.TryGetValue(
                 locationKey,
                 out var npcs);
+
+            // betacommentLookup.TryGetValue(
+            //     locationKey,
+            //     out var betacomments);
+
+            // Console.WriteLine(
+            //     $"[BETACOMMENT MATCH] Location='{displayName}', " +
+            //     $"Key='{locationKey}', " +
+            //     $"Found={foundBetacomments}, " +
+            //     $"Count={betacomments?.Count ?? 0}");
 
             npcs ??= [];
 
@@ -290,6 +370,10 @@ public class DataService : IDataService
                 Keywords = keywordsList.ToArray(),
                 Cells = cellData
                     .OrderBy(c => c.EditorID)
+                    .ToArray(),
+                
+                Betacomments = betacommentsList
+                    .OrderBy(c => c.Cell)
                     .ToArray(),
                 
                 LocationCategory = locationCategory,
