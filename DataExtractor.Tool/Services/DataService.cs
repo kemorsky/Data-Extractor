@@ -156,14 +156,6 @@ public class DataService : IDataService
         // Console.WriteLine(
         //     $"[BETA DEBUG] Lookup keys: {betacommentLookup.Count}");
 
-        // foreach (var entry in betacommentLookup.Take(10))
-        // {
-        //     Console.WriteLine(
-        //         $"[BETA DB KEY] '{entry.Key}' | " +
-        //         $"Original cell: '{entry.Value.First().Cell}' | " +
-        //         $"Comments: {entry.Value.Count}");
-        // }
-
         var vikunjaProjectUrl = Environment.GetEnvironmentVariable("VIKUNJA_PROJECT_URL");
 
         var vikunjaLookup = await _vikunjaServices.LoadVikunjaData();
