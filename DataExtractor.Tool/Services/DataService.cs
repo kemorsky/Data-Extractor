@@ -202,7 +202,6 @@ public class DataService : IDataService
                         GridY = cell.Grid?.Point.Y,
                         Loot = loot
                     });
-                
 
                 betacommentsList = cellsForLocation
                     .Where(cell => !string.IsNullOrWhiteSpace(cell.EditorID))

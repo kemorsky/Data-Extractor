@@ -14,7 +14,7 @@ public class LocationNameNormalizer{
             // Handles betacomment database FormKeys
             results = Regex.Replace(
                 results,
-                @"^\[0x[0-9A-Fa-f]+\s*:\s*(.*?)\]$",
+                @"^\[0x[0-9A-Fa-f]+\s*:\s*(.*?)\s*\(-?\d+\s*,\s*-?\d+\)\s*\]$",
                 "$1",
                 RegexOptions.IgnoreCase);
 
