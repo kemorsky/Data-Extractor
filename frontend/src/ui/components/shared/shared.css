@@ -314,7 +314,7 @@ dialog > button {
         outline: 2px solid oklch(14.5% 0 0deg);
         outline-offset: -1px;
     }
-    }
+}
 
 @-webkit-keyframes zoom {
     from {transform:scale(0)} 

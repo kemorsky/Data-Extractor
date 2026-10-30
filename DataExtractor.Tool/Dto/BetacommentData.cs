@@ -7,5 +7,6 @@ public class BetacommentData
     public string ReferenceFormKey { get; set; } = "";
     public string RawReference { get; set; } = "";
     public string Comment { get; set; } = "";
+    public bool Fixed { get; set; } = false;
     public IList<IList<object>> Rows { get; set; } = [];
 }

@@ -1,5 +1,7 @@
 import "./buttons.css";
+import { useState } from "react";
 
+import { FiCopy } from "react-icons/fi";
 import ChevronUp from "../../../assets/icons/chevron-up.svg";
 import ChevronDown from "../../../assets/icons/chevron-down.svg";
 
@@ -10,6 +12,10 @@ interface ButtonProps {
     onClick?: () => void
     showState?: boolean;
     setShowState?: (value: React.SetStateAction<boolean>) => void;
+}
+
+interface CopyButtonProps {
+    text: string;
 }
 
 export function ShowMoreButton(props: ButtonProps) {
@@ -35,6 +41,39 @@ export function ShowMoreFiltersButton(props: ButtonProps) {
             {/* <span className="show-more-btn__text">{props.showState ? `${props.textTrue}` : `${props.textFalse}` }</span> */}
             <span className="show-more-filters-btn__text">{props.title?.toUpperCase()}</span>
             <img className="show-more-filters-btn__icon" width={24} src={props.showState ? ChevronUp :  ChevronDown } />
+        </button>
+    )
+}
+
+export function CopyButton(props: CopyButtonProps) {
+    const [ copied, setCopied ] = useState(false);
+
+    const handleCopy = () => {
+        try {
+            navigator.clipboard.writeText(props.text);
+            setCopied(true);
+
+            setTimeout(() => {
+                setCopied(false)
+            }, 2000);
+        } catch (err) {
+            console.error('Failed to copy: ', err);
+        }
+    }
+
+    return (
+        <button 
+            className="copy-btn"
+            type="button"
+            onClick={() => handleCopy()}
+        >
+            <FiCopy />
+            Copy
+            
+
+            {copied && (
+                <span className="tooltip">Copied!</span>
+            )}
         </button>
     )
 }

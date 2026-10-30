@@ -135,6 +135,8 @@ public class DataService : IDataService
                 ReferenceFormKey = row.Count > 10 ? row[10].ToString()?.Trim() ?? "" : "",
                 RawReference = row.Count > 12 ? row[12].ToString()?.Trim() ?? "" : "",
                 Comment = row.Count > 11 ? row[11].ToString()?.Trim() ?? "" : "",
+                Fixed = row.Count > 0 && bool.TryParse(row[0]?.ToString(), out var fixedValue) &&
+                    fixedValue
             })
             // .Select((x) => new
             // {
@@ -219,7 +221,8 @@ public class DataService : IDataService
                         Cell = comment.Cell,
                         ReferenceFormKey = comment.ReferenceFormKey,
                         Comment = comment.Comment,
-                        RawReference = comment.RawReference
+                        RawReference = comment.RawReference,
+                        Fixed = comment.Fixed
                     })
                     .ToList();
                 }
