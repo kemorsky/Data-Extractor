@@ -521,6 +521,7 @@
         "ReferenceFormKey": "[0x080BF353: (-180015, -3027, -13431)]",
         "RawReference": "0BF353",
         "Comment": "tiny bit of the stair clips out of ground strangely",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -529,6 +530,7 @@
         "ReferenceFormKey": "[0x081BC073: (-177278, -4042, -12925)]",
         "RawReference": "1BC073",
         "Comment": "(navmesh issue) verticies near tree seem to be higher in the air than they should be. Doesn\u0027t appear to affect traversal with follower",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -537,6 +539,7 @@
         "ReferenceFormKey": "[0x081BC3DD: (-177809, -3375, -12974)]",
         "RawReference": "1BC3DD",
         "Comment": "(navmesh issue) verticies near lantern stand seem to be higher in the air than they should be. Doesn\u0027t appear to affect traversal with follower",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -545,6 +548,7 @@
         "ReferenceFormKey": "[0x080BF350: (-180181, -3534, -12929)]",
         "RawReference": "0BF350",
         "Comment": "(navmesh issue) follower seemingly refused to follow the player up the stairs past about where the navmesh meets the bottom of these stairs.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -553,6 +557,7 @@
         "ReferenceFormKey": "[0x080BF350: (-180181, -3534, -12929)]",
         "RawReference": "0BF350",
         "Comment": "(navmesh issue) follower seemingly refused to follow the player down the stairs past about where the navmesh meets the top of these stairs.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -561,6 +566,7 @@
         "ReferenceFormKey": "[0x080BF351: (-180498, -2859, -13143)]",
         "RawReference": "0BF351",
         "Comment": "bricks don\u0027t match between stair pieces",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -569,6 +575,7 @@
         "ReferenceFormKey": "[0x080BFF36: (-180349, -3204, -12905)]",
         "RawReference": "0BFF36",
         "Comment": "(navmesh issue) navmesh gets occluded by pillar, potentially blocking follower from walking up stairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -577,6 +584,7 @@
         "ReferenceFormKey": "[0x081BBBCA: (-178446, -7389, -11965)]",
         "RawReference": "1BBBCA",
         "Comment": "wall clips strangely with boulder, and open gap at the end",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -585,6 +593,7 @@
         "ReferenceFormKey": "[0x081BC070: (-177935, -4156, -12987)]",
         "RawReference": "1BC070",
         "Comment": "somewhat sharp terrain behind tree, towards the castle wall",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -593,6 +602,7 @@
         "ReferenceFormKey": "[0x081BC070: (-177935, -4156, -12987)]",
         "RawReference": "1BC070",
         "Comment": "somewhat sharp terrain behind tree, towards cliff",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -601,6 +611,7 @@
         "ReferenceFormKey": "[0x0824B8D7: (-178190, -7106, -12049)]",
         "RawReference": "24B8D7",
         "Comment": "(navmesh issue) verticies near planter seem to be higher in the air than they should be. Doesn\u0027t appear to affect traversal with follower",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -609,6 +620,7 @@
         "ReferenceFormKey": "[0x09224FAA: (752, -16, -31)]",
         "RawReference": "224FAA",
         "Comment": "I can see the void",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -1032,6 +1044,7 @@
         "ReferenceFormKey": "[0x08141850: (-184778, 13790, -13560)]",
         "RawReference": "141850",
         "Comment": "Navmesh issue in the horse pen",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -1040,6 +1053,7 @@
         "ReferenceFormKey": "[0x08136590: (-182437, 9348, -13660)]",
         "RawReference": "136590",
         "Comment": "Sign is at on odd angle",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -1048,6 +1062,7 @@
         "ReferenceFormKey": "[0x0813668C: (-190711, 10300, -13373)]",
         "RawReference": "13668C",
         "Comment": "Would be great if you could sneak under this arch, just needs to be a bit higher",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -1056,6 +1071,7 @@
         "ReferenceFormKey": "[0x081569EE: (-185332, 6425, -13890)]",
         "RawReference": "1569EE",
         "Comment": "This bowl doesn\u0027t stay in place",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -1064,6 +1080,7 @@
         "ReferenceFormKey": "[0x081569E6: (-185358, 6446, -13903)]",
         "RawReference": "1569E6",
         "Comment": "Falls over",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -1072,6 +1089,7 @@
         "ReferenceFormKey": "[0x0817E5C2: (-185052, 7372, -13928)]",
         "RawReference": "17E5C2",
         "Comment": "Falls down from table",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -1080,6 +1098,7 @@
         "ReferenceFormKey": "[0x0817E5BD: (-184983, 7645, -13928)]",
         "RawReference": "17E5BD",
         "Comment": "Falls down from table",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -1088,6 +1107,7 @@
         "ReferenceFormKey": "[0x08136A78: (-178073, 1073, -14114)]",
         "RawReference": "136A78",
         "Comment": "(outside of my assigned cell) cliff open seam at bottom",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -1096,6 +1116,7 @@
         "ReferenceFormKey": "[0x08136A75: (-176744, 986, -13899)]",
         "RawReference": "136A75",
         "Comment": "(outside of my assigned cell) cliff open seam at bottom",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -1104,6 +1125,7 @@
         "ReferenceFormKey": "[0x0824B76F: (-184550, 3766, -13501)]",
         "RawReference": "24B76F",
         "Comment": "Navmesh overlaps with this planter, causing NPCs getting stuck on it.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -1112,6 +1134,7 @@
         "ReferenceFormKey": "[0x0A136590: (-182443, 9349, -13685)]",
         "RawReference": "136590",
         "Comment": "physics of sign is not agreeing with something",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -1519,6 +1542,7 @@
         "ReferenceFormKey": "[0x080DD04B: (18281, -8389, -629)]",
         "RawReference": "0DD04B",
         "Comment": "Huge gap under this asset",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -2793,6 +2817,7 @@
         "ReferenceFormKey": "[0x080DF1B1: (151110, 1900, -13999)]",
         "RawReference": "0DF1B1",
         "Comment": "Water merging here with wrong gradient",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -2801,6 +2826,7 @@
         "ReferenceFormKey": "[0x0815E8EA: (147008, -2447, -13812)]",
         "RawReference": "15E8EA",
         "Comment": "Water flowing in opposite direction here",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -3007,6 +3033,7 @@
         "ReferenceFormKey": "[0x0806EB8B: (-2758, -1109, 2432)]",
         "RawReference": "06EB8B",
         "Comment": "Sitting in this chair makes everything shake, multiple plates",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -3015,6 +3042,7 @@
         "ReferenceFormKey": "[0x080AB937: (-2304, 320, 2304)]",
         "RawReference": "0AB937",
         "Comment": "Guard marker next to this is facing wrong way",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -3023,6 +3051,7 @@
         "ReferenceFormKey": "[0x080AB936: (-2816, 320, 2304)]",
         "RawReference": "0AB936",
         "Comment": "Guard marker next to this is facing wrong way",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -3031,6 +3060,7 @@
         "ReferenceFormKey": "[0x08072A14: (489, 1210, 63)]",
         "RawReference": "072A14",
         "Comment": "Shakes when sit on chair nearby",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -3039,6 +3069,7 @@
         "ReferenceFormKey": "[0x08072A15: (551, 1206, 62)]",
         "RawReference": "072A15",
         "Comment": "Shakes when sit on chair nearby",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -3751,6 +3782,7 @@
         "ReferenceFormKey": "[0x100757C3: (61118, 202960, 7318)]",
         "RawReference": "0757C3",
         "Comment": "not so much light flickering but the shadow from Galarynn\u0027s house flickering at angles",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -4445,6 +4477,7 @@
         "ReferenceFormKey": "[0x0823A6D7: (-721, -1742, 4028)]",
         "RawReference": "23A6D7",
         "Comment": "Gap between column and asset to right means you can see out of bounds area",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4453,6 +4486,7 @@
         "ReferenceFormKey": "[0x0811F8AA: (-15306, 154358, 2629)]",
         "RawReference": "11F8AA",
         "Comment": "Door is floating off wall",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4461,6 +4495,7 @@
         "ReferenceFormKey": "[0x080595D2: (-16787, 154490, 2999)]",
         "RawReference": "0595D2",
         "Comment": "Navmeshing: NPCs struggle to climb steps",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4469,6 +4504,7 @@
         "ReferenceFormKey": "[0x081B922C: (-1273, -2133, -7)]",
         "RawReference": "1B922C",
         "Comment": "Platter is constantly vibrating",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4477,6 +4513,7 @@
         "ReferenceFormKey": "[0x081B91BC: (-1277, -2316, 1)]",
         "RawReference": "1B91BC",
         "Comment": "Platter gets tipped over by contents",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4485,6 +4522,7 @@
         "ReferenceFormKey": "[0x081B91B3: (-1146, -2390, -7)]",
         "RawReference": "1B91B3",
         "Comment": "Plate is tipped to one side by cheese",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4493,6 +4531,7 @@
         "ReferenceFormKey": "[0x081D3EAC: (159, -2696, -73)]",
         "RawReference": "1D3EAC",
         "Comment": "Navmeshing: NPCs get stuck between this plant pot and the candle nearby",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4501,6 +4540,7 @@
         "ReferenceFormKey": "[0x0821C8CB: (-1808, -2048, -88)]",
         "RawReference": "21C8CB",
         "Comment": "Navmeshing: NPCs get stuck on the side trying to walk through the arch",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4509,6 +4549,7 @@
         "ReferenceFormKey": "[0x082065AD: (-1727, -2520, 8)]",
         "RawReference": "2065AD",
         "Comment": "Shakes",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4517,6 +4558,7 @@
         "ReferenceFormKey": "[0x081D2553: (1398, -1708, 4027)]",
         "RawReference": "1D2553",
         "Comment": "Navmeshing: NPCs try to walk into it",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4525,6 +4567,7 @@
         "ReferenceFormKey": "[0x0A11F8AE: (-15427, 153368, 2614)]",
         "RawReference": "11F8AE",
         "Comment": "door that can\u0027t be interacted with and is missing an archway",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -4533,6 +4576,7 @@
         "ReferenceFormKey": "[0x0A0FF29C: (-17369, 152399, 2602)]",
         "RawReference": "0FF29C",
         "Comment": "door missing an archway",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -5083,6 +5127,7 @@
         "ReferenceFormKey": "[0x080FF3C0: (-26197, 156790, 1760)]",
         "RawReference": "0FF3C0",
         "Comment": "NPCs can clip into wall",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5091,6 +5136,7 @@
         "ReferenceFormKey": "[0x080FF060: (-24489, 154253, 1704)]",
         "RawReference": "0FF060",
         "Comment": "Navmeshing: NPCs try to walk through the raised steps/seats",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5099,6 +5145,7 @@
         "ReferenceFormKey": "[0x080FEFFB: (-23007, 153853, 1732)]",
         "RawReference": "0FEFFB",
         "Comment": "Cannot jump over this section of stone wall, probably due to collision settings of the nearby two buildings?",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5107,6 +5154,7 @@
         "ReferenceFormKey": "[0x0818E88E: (-24792, 152108, 1668)]",
         "RawReference": "18E88E",
         "Comment": "Navmeshing: Weird pathing where NPCs don\u0027t cut through gate gap between vrelptur and motierre houses to draw water at well",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5115,6 +5163,7 @@
         "ReferenceFormKey": "[0x081143CE: (-30365, 152074, 1726)]",
         "RawReference": "1143CE",
         "Comment": "Missing a blackplane",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5123,6 +5172,7 @@
         "ReferenceFormKey": "[0x081DA0EF: (-18498, 150823, 2713)]",
         "RawReference": "1DA0EF",
         "Comment": "Guards clip into this wall while training against dummy",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5131,6 +5181,7 @@
         "ReferenceFormKey": "[0x080C29DA: (-23213, 148686, 1681)]",
         "RawReference": "0C29DA",
         "Comment": "Spawns partially embedded in wall or topppled",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5139,6 +5190,7 @@
         "ReferenceFormKey": "[0x0815DA85: (-23797, 149748, 1583)]",
         "RawReference": "15DA85",
         "Comment": "NPCs clip up to their ankles when sitting down on steps next to south gate statue",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5147,6 +5199,7 @@
         "ReferenceFormKey": "[0x08100FBA: (-24479, 149509, 1576)]",
         "RawReference": "100FBA",
         "Comment": "NPCs can get stuck on this and float on top of it",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5155,6 +5208,7 @@
         "ReferenceFormKey": "[0x0818E936: (-24612, 148706, 1616)]",
         "RawReference": "18E936",
         "Comment": "NPCs get stuck walking into gate if it\u0027s open",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5163,6 +5217,7 @@
         "ReferenceFormKey": "[0x080FF112: (-24884, 149451, 1571)]",
         "RawReference": "0FF112",
         "Comment": "Navmesh: just one asset selected here, but generally Chorrol\u0027s sidewalks are quite high in places, meaning NPCs walking off them will do the \u0027jump\u0027 animation",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5171,6 +5226,7 @@
         "ReferenceFormKey": "[0x08123BE3: (-25911, 151316, 1673)]",
         "RawReference": "123BE3",
         "Comment": "NPCs clip into the well when doing the drawing water animation",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5179,6 +5235,7 @@
         "ReferenceFormKey": "[0x080AEA76: (-26793, 149405, 2044)]",
         "RawReference": "0AEA76",
         "Comment": "Navmeshing: Filia gets stuck on the stairs of her house",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5187,6 +5244,7 @@
         "ReferenceFormKey": "[0x080FF12E: (-29427, 149819, 1579)]",
         "RawReference": "0FF12E",
         "Comment": "Minor clipping between lowest step and road",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5195,6 +5253,7 @@
         "ReferenceFormKey": "[0x08059590: (-29470, 147516, 1548)]",
         "RawReference": "059590",
         "Comment": "NPCs clip into edges when doing the animation for drawing water",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5203,6 +5262,7 @@
         "ReferenceFormKey": "[0x08123B2B: (-30654, 147100, 1800)]",
         "RawReference": "123B2B",
         "Comment": "Sewer sound plays from here even though there is no running water or grate?",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -5211,6 +5271,7 @@
         "ReferenceFormKey": "[0x0A11ED67: (-18909, 156549, 2652)]",
         "RawReference": "11ED67",
         "Comment": "door missing an archway",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -5388,6 +5449,7 @@
         "ReferenceFormKey": "[0x1006CE88: (1540, 1800, -56)]",
         "RawReference": "06CE88",
         "Comment": "followers teleporting to get around this spot, narrow navmesh around here",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -6655,6 +6717,7 @@
         "ReferenceFormKey": "[0x08104F8F: (3366, 9193, 701)]",
         "RawReference": "104F8F",
         "Comment": "Cannot reach platform, get stuck on ramp",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -7199,6 +7262,7 @@
         "ReferenceFormKey": "[0x08241290: (-46802, 110471, 102)]",
         "RawReference": "241290",
         "Comment": "z fighting with xx241291",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -7207,6 +7271,7 @@
         "ReferenceFormKey": "[0x0A245690: (-46828, 110408, 240)]",
         "RawReference": "245690",
         "Comment": "door arch doesn\u0027t fit door. Could lower the arch",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -9894,6 +9959,7 @@
         "ReferenceFormKey": "[0x0816BEB2: (-161525, 41442, -1716)]",
         "RawReference": "16BEB2",
         "Comment": "Clips oddly with stone wall",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -9902,6 +9968,7 @@
         "ReferenceFormKey": "[0x080D0DD5: (-159936, 38508, -2336)]",
         "RawReference": "0D0DD5",
         "Comment": "z fighting with xx061E39",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -9910,6 +9977,7 @@
         "ReferenceFormKey": "[0x0916BEB3: (-161536, 41444, -1905)]",
         "RawReference": "16BEB3",
         "Comment": "Clips weirdly with stone structure around it",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -12382,6 +12450,7 @@
         "ReferenceFormKey": "[0x111D0477: (-1920, 471, 8152)]",
         "RawReference": "1D0477",
         "Comment": "pathing error NPC and come behind pillar",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -13451,6 +13520,7 @@
         "ReferenceFormKey": "[0x06202A07: (4400, 4816, -1344)]",
         "RawReference": "202A07",
         "Comment": "doesn\u0027t do damage",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -13459,6 +13529,7 @@
         "ReferenceFormKey": "[0x062027A1: (4400, 5328, -1344)]",
         "RawReference": "2027A1",
         "Comment": "doesn\u0027t do damage",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -14747,6 +14818,7 @@
         "ReferenceFormKey": "[0x0613069B: (270712, 42912, -7837)]",
         "RawReference": "13069B",
         "Comment": "has no face when looking at it from the stairs",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -14846,6 +14918,7 @@
         "ReferenceFormKey": "[0x0808BB22: (50073, 159303, -3921)]",
         "RawReference": "08BB22",
         "Comment": "Wolf gets stuck sideways on entrance stairs",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -15907,6 +15980,7 @@
         "ReferenceFormKey": "[0x060C307D: (-8485, 5245, -1284)]",
         "RawReference": "0C307D",
         "Comment": "you can see this from behind",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -15915,6 +15989,7 @@
         "ReferenceFormKey": "[0x080D7F11: (-3582, -278, -541)]",
         "RawReference": "0D7F11",
         "Comment": "Sitting animation misaligned, ayleid float in the air a foot in front",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -16585,6 +16660,7 @@
         "ReferenceFormKey": "[0x0A209690: (-18057, 38589, -4066)]",
         "RawReference": "209690",
         "Comment": "navmesh: NPCs will try to walk though the cart instead of going around it",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -17134,6 +17210,7 @@
         "ReferenceFormKey": "[0x08182DBC: (-25538, 48384, -5892)]",
         "RawReference": "182DBC",
         "Comment": "Enable physics",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -17291,6 +17368,7 @@
         "ReferenceFormKey": "[0x0A1EAE2C: (-185060, 66599, -5778)]",
         "RawReference": "1EAE2C",
         "Comment": "helmets don\u0027t like staying on their stand",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -17299,6 +17377,7 @@
         "ReferenceFormKey": "[0x10224F31: (-186589, 63554, -8103)]",
         "RawReference": "224F31",
         "Comment": "pickaxe anim going through ore",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -18206,6 +18285,7 @@
         "ReferenceFormKey": "[0x0626DE47: (-2173, -11170, -1200)]",
         "RawReference": "26DE47",
         "Comment": "Gap between door and floor",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -18214,6 +18294,7 @@
         "ReferenceFormKey": "[0x0626DBAB: (-3299, -10667, -1920)]",
         "RawReference": "26DBAB",
         "Comment": "Gap between door and floor",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -19286,6 +19367,7 @@
         "ReferenceFormKey": "[0x080ABD38: (-28349, 132305, -1895)]",
         "RawReference": "0ABD38",
         "Comment": "Water shading is off just above this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -19294,6 +19376,7 @@
         "ReferenceFormKey": "[0x081D280F: (1495, 341, 117)]",
         "RawReference": "1D280F",
         "Comment": "Can\u0027t be looted",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -19302,6 +19385,7 @@
         "ReferenceFormKey": "[0x081DBDEE: (8704, -256, -643)]",
         "RawReference": "1DBDEE",
         "Comment": "This door (like others) is not locked int eh dream state like in the normal state",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -19612,6 +19696,7 @@
         "ReferenceFormKey": "[0x08108C43: (-5632, -2528, -320)]",
         "RawReference": "108C43",
         "Comment": "Weird z fighting",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -19620,6 +19705,7 @@
         "ReferenceFormKey": "[0x0810AF1D: (-9984, 1024, -320)]",
         "RawReference": "10AF1D",
         "Comment": "Very hard to walk under/through due to collision",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -19628,6 +19714,7 @@
         "ReferenceFormKey": "[0x08108F76: (-10976, 1024, -192)]",
         "RawReference": "108F76",
         "Comment": "If radiant quests are in this dungeon, markers should point to this door, not to the waterfall entrance",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -21111,6 +21198,7 @@
         "ReferenceFormKey": "[0x1005D308: (3591, -5996, -2106)]",
         "RawReference": "05D308",
         "Comment": "weird lighting transition going down this ramp",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -21119,6 +21207,7 @@
         "ReferenceFormKey": "[0x1005DB88: (5464, -6211, -2124)]",
         "RawReference": "05DB88",
         "Comment": "same lighting situation going down this slope",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -21127,6 +21216,7 @@
         "ReferenceFormKey": "[0x1005D5E2: (2549, -3954, -735)]",
         "RawReference": "05D5E2",
         "Comment": "current at waterfall is strong enough to shove player off ledge to their death",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -21542,6 +21632,7 @@
         "ReferenceFormKey": "[0x08069876: (-172184, 31879, -5145)]",
         "RawReference": "069876",
         "Comment": "Rock clips through fence.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -21550,6 +21641,7 @@
         "ReferenceFormKey": "[0x081D9ED7: (-173233, 32321, -5147)]",
         "RawReference": "1D9ED7",
         "Comment": "Navmesh issue, NPCs will get stuck on this fence",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -21558,6 +21650,7 @@
         "ReferenceFormKey": "[0x081D9EDA: (-173475, 32567, -4973)]",
         "RawReference": "1D9EDA",
         "Comment": "Navmesh issue, NPCs frequently get stuck walking at this lantern.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -21566,6 +21659,7 @@
         "ReferenceFormKey": "[0x08060EA2: (-171113, 35761, -4138)]",
         "RawReference": "060EA2",
         "Comment": "Player and NPCs frequently get temporarily stuck on the steps of this house.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -21574,6 +21668,7 @@
         "ReferenceFormKey": "[0x0806984E: (-174306, 34308, -5131)]",
         "RawReference": "06984E",
         "Comment": "The lone log in this pile is noticably clipped halfway into the terrain.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -21582,6 +21677,7 @@
         "ReferenceFormKey": "[0x081D9D46: (-174044, 35090, -5039)]",
         "RawReference": "1D9D46",
         "Comment": "Gate clips into stone wall.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -21590,6 +21686,7 @@
         "ReferenceFormKey": "[0x081D9D82: (-175193, 33268, -5170)]",
         "RawReference": "1D9D82",
         "Comment": "Armor not resting on table correctly (might be a problem with the ground model collision rather than placement)",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -21804,6 +21901,7 @@
         "ReferenceFormKey": "[0x08074575: (148, 633, -112)]",
         "RawReference": "074575",
         "Comment": "Bentior is unable to walk out from behind the counter and past bedroll xx06312D; teleports",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -24690,6 +24788,7 @@
         "ReferenceFormKey": "[0x060D7C07: (-7501, -4671, 12017)]",
         "RawReference": "0D7C07",
         "Comment": "offset piece",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -26097,6 +26196,7 @@
         "ReferenceFormKey": "[0x0821975D: (-139, -221, 16)]",
         "RawReference": "21975D",
         "Comment": "This orange starts moving about when loaded in.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -26105,6 +26205,7 @@
         "ReferenceFormKey": "[0x080DB8B0: (125, -170, 89)]",
         "RawReference": "0DB8B0",
         "Comment": "The contents of this display case fall out when it is unlocked.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -26113,6 +26214,7 @@
         "ReferenceFormKey": "[0x080DB840: (-101, -21, 12)]",
         "RawReference": "0DB840",
         "Comment": "Sitting in this chair can launch the table clutter.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -26121,6 +26223,7 @@
         "ReferenceFormKey": "[0x080DB841: (-162, -17, 12)]",
         "RawReference": "0DB841",
         "Comment": "Sitting in this chair can launch the table clutter.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -26129,6 +26232,7 @@
         "ReferenceFormKey": "[0x080DB83F: (-176, 135, 12)]",
         "RawReference": "0DB83F",
         "Comment": "Sitting in this chair can launch the table clutter.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -26137,6 +26241,7 @@
         "ReferenceFormKey": "[0x080DB83E: (-112, 135, 12)]",
         "RawReference": "0DB83E",
         "Comment": "Sitting in this chair can launch the table clutter.",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -26238,6 +26343,7 @@
         "ReferenceFormKey": "[0x080DE805: (1812, 551, -450)]",
         "RawReference": "0DE805",
         "Comment": "Bench is too close to wall - sitting on it and looking around in 3rd person clips the camera through the wall.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -26246,6 +26352,7 @@
         "ReferenceFormKey": "[0x080DE846: (689, 518, -234)]",
         "RawReference": "0DE846",
         "Comment": "This oar is very easy to accidentally move by walking too close.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -26254,6 +26361,7 @@
         "ReferenceFormKey": "[0x080DE7EF: (1118, 428, -424)]",
         "RawReference": "0DE7EF",
         "Comment": "Fireplace seems to be missing parts, and some of it is see-through from one side.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -26262,6 +26370,7 @@
         "ReferenceFormKey": "[0x080DE7FF: (1790, 394, -451)]",
         "RawReference": "0DE7FF",
         "Comment": "Sitting in this chair can cause the coins to fall off the table.",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -26383,6 +26492,7 @@
         "ReferenceFormKey": "[0x080DE70D: (4, 67, 8)]",
         "RawReference": "0DE70D",
         "Comment": "Sitting in this chair can launch the table clutter.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -26391,6 +26501,7 @@
         "ReferenceFormKey": "[0x08178F43: (18, 285, 11)]",
         "RawReference": "178F43",
         "Comment": "Light leaks out of the right side of this fireplace.",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -28012,6 +28123,7 @@
         "ReferenceFormKey": "[0x1008C5A0: (2947, 850, -855)]",
         "RawReference": "08C5A0",
         "Comment": "can\u0027t mine",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -28458,6 +28570,7 @@
         "ReferenceFormKey": "[0x10084915: (5889, 4168, -98)]",
         "RawReference": "084915",
         "Comment": "follower doesn\u0027t properly jump but teleport",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -29071,6 +29184,7 @@
         "ReferenceFormKey": "[0x0924B690: (-149057, 53258, -6756)]",
         "RawReference": "24B690",
         "Comment": "grass clipping through stone",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -30368,6 +30482,7 @@
         "ReferenceFormKey": "[0x06110409: (172226, -87829, -13880)]",
         "RawReference": "110409",
         "Comment": "z flickering",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -31223,6 +31338,7 @@
         "ReferenceFormKey": "[0x08123A91: (-11170, 147930, 1234)]",
         "RawReference": "123A91",
         "Comment": "Navmesh: followers can\u0027t walk to this plant from path",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -31231,6 +31347,7 @@
         "ReferenceFormKey": "[0x081239FC: (-10996, 147009, 1328)]",
         "RawReference": "1239FC",
         "Comment": "Door clips on stone when opening",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -31239,6 +31356,7 @@
         "ReferenceFormKey": "[0x0A1D13FA: (-7540, 146446, 1327)]",
         "RawReference": "1D13FA",
         "Comment": "Needs to moved down a bit",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -31247,6 +31365,7 @@
         "ReferenceFormKey": "[0x0A123921: (-8064, 146768, 1329)]",
         "RawReference": "123921",
         "Comment": "Navmesh: follower can\u0027t enter this graveyard",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -31255,6 +31374,7 @@
         "ReferenceFormKey": "[0x0A1D140B: (-8019, 145353, 1309)]",
         "RawReference": "1D140B",
         "Comment": "Navmesh: follower can\u0027t enter this graveyard",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -31263,6 +31383,7 @@
         "ReferenceFormKey": "[0x0A1D13B7: (-9962, 146339, 1242)]",
         "RawReference": "1D13B7",
         "Comment": "Needs havok sim",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -31271,6 +31392,7 @@
         "ReferenceFormKey": "[0x0A1D13BF: (-10444, 147014, 1231)]",
         "RawReference": "1D13BF",
         "Comment": "corner is off the ground",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -31279,6 +31401,7 @@
         "ReferenceFormKey": "[0x0A123A74: (-8349, 145757, 1332)]",
         "RawReference": "123A74",
         "Comment": "corner off the ground",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -31287,6 +31410,7 @@
         "ReferenceFormKey": "[0x0A1D13DD: (-8377, 146335, 1280)]",
         "RawReference": "1D13DD",
         "Comment": "fence doesn\u0027t connect to wall",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -32148,6 +32272,7 @@
         "ReferenceFormKey": "[0x0811B72F: (-9931, 659, 192)]",
         "RawReference": "11B72F",
         "Comment": "Navmesh: Broodmother gets stuck and cannot pass beyond the flame area, makes it easy to pick with ranged attacks",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -35025,6 +35150,7 @@
         "ReferenceFormKey": "[0x080E17A3: (191686, 209063, 25672)]",
         "RawReference": "0E17A3",
         "Comment": "Can see snow when opening",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -35474,6 +35600,7 @@
         "ReferenceFormKey": "[0x0818BA95: (256, -8320, 384)]",
         "RawReference": "18BA95",
         "Comment": "NPCs don\u0027t seem to want to climb these stairs (though I did see it happen once), probably a navmesh issue (though it looks fine to me).",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -35482,6 +35609,7 @@
         "ReferenceFormKey": "[0x080EF5C8: (2224, -9584, 1392)]",
         "RawReference": "0EF5C8",
         "Comment": "If the player goes to this area, a follower or enemy may jump off the stairs to follow, then get stuck due to the lack of navmesh.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -35490,6 +35618,7 @@
         "ReferenceFormKey": "[0x080EF437: (554, 9307, -1664)]",
         "RawReference": "0EF437",
         "Comment": "Coffin lid visibly clips through wall when opened.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -35498,6 +35627,7 @@
         "ReferenceFormKey": "[0x0A206642: (2475, 6174, -880)]",
         "RawReference": "206642",
         "Comment": "Vanilla Skyrim hunting bow (do we not have a placeholder for the planned Cyrodilic version?)",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -36357,6 +36487,7 @@
         "ReferenceFormKey": "[0x08269CDE: (4913, 2522, 720)]",
         "RawReference": "269CDE",
         "Comment": "From the gate you can see some weird flickering on the texture",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -36365,6 +36496,7 @@
         "ReferenceFormKey": "[0x08269C51: (493, 1356, -302)]",
         "RawReference": "269C51",
         "Comment": "Get some lighting flickering with torch under this",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -36373,6 +36505,7 @@
         "ReferenceFormKey": "[0x082371EF: (4456, 2272, -712)]",
         "RawReference": "2371EF",
         "Comment": "Some light flickering underneath",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -36381,6 +36514,7 @@
         "ReferenceFormKey": "[0x08268EAF: (5224, 2680, -454)]",
         "RawReference": "268EAF",
         "Comment": "Some light flickering on the bridge with torch",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -36389,6 +36523,7 @@
         "ReferenceFormKey": "[0x11215793: (-610, 1129, -145)]",
         "RawReference": "215793",
         "Comment": "this hole being open is more confusing than useful from an LD standpoint, should probably be covered with a grate",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -36397,6 +36532,7 @@
         "ReferenceFormKey": "[0x11237284: (3688, 696, -456)]",
         "RawReference": "237284",
         "Comment": "bone-noise trap doesnt alert  the skeletons right next to the trap",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -37210,6 +37346,7 @@
         "ReferenceFormKey": "[0x08186207: (-4918, 2510, 78)]",
         "RawReference": "186207",
         "Comment": "Sat down and launched a plate into Low-Nirn Orbit",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37218,6 +37355,7 @@
         "ReferenceFormKey": "[0x0818620B: (-4964, 2502, 140)]",
         "RawReference": "18620B",
         "Comment": "Plate that is launched",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37226,6 +37364,7 @@
         "ReferenceFormKey": "[0x081EB125: (-4759, 2768, 333)]",
         "RawReference": "1EB125",
         "Comment": "Gap between door and upper doorframe",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -37234,6 +37373,7 @@
         "ReferenceFormKey": "[0x08186175: (-4808, 2768, 334)]",
         "RawReference": "186175",
         "Comment": "Gap between door and upper doorframe",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -37242,6 +37382,7 @@
         "ReferenceFormKey": "[0x0818614F: (-5192, 2640, 334)]",
         "RawReference": "18614F",
         "Comment": "Gap between these two roof parts",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -37250,6 +37391,7 @@
         "ReferenceFormKey": "[0x08186146: (-5192, 2640, 334)]",
         "RawReference": "186146",
         "Comment": "Gap between these two roof parts",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -37258,6 +37400,7 @@
         "ReferenceFormKey": "[0x081EB109: (-4936, 2640, 574)]",
         "RawReference": "1EB109",
         "Comment": "Connection between these two assets flickers",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37266,6 +37409,7 @@
         "ReferenceFormKey": "[0x081EB108: (-4952, 2640, 574)]",
         "RawReference": "1EB108",
         "Comment": "Connection between these two assets flickers",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -37453,6 +37597,7 @@
         "ReferenceFormKey": "[0x0812A438: (-291, -319, 160)]",
         "RawReference": "12A438",
         "Comment": "Light flickers in this corner when hit by torch",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37461,6 +37606,7 @@
         "ReferenceFormKey": "[0x0812A3EE: (-98, -250, -240)]",
         "RawReference": "12A3EE",
         "Comment": "Flies when you sit in nearby chair (xx1CE114)",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37469,6 +37615,7 @@
         "ReferenceFormKey": "[0x08101FA1: (-306, -272, -162)]",
         "RawReference": "101FA1",
         "Comment": "Door hinge is on opposite side compared to exterior",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37477,6 +37624,7 @@
         "ReferenceFormKey": "[0x08101FA0: (0, 0, 0)]",
         "RawReference": "101FA0",
         "Comment": "Interior is too dark",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -37542,6 +37690,7 @@
         "ReferenceFormKey": "[0x08101F9A: (0, 0, 0)]",
         "RawReference": "101F9A",
         "Comment": "Interior is far too dark",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -37607,6 +37756,7 @@
         "ReferenceFormKey": "[0x08101F97: (0, 0, 0)]",
         "RawReference": "101F97",
         "Comment": "Very dark generally",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -37738,6 +37888,7 @@
         "ReferenceFormKey": "[0x0815DD1B: (-8238, 5432, 336)]",
         "RawReference": "15DD1B",
         "Comment": "Lighting fails on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37746,6 +37897,7 @@
         "ReferenceFormKey": "[0x0815DE9A: (-8705, 5182, 340)]",
         "RawReference": "15DE9A",
         "Comment": "Falls off shelf?",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37754,6 +37906,7 @@
         "ReferenceFormKey": "[0x0815DE49: (-8012, 5353, 339)]",
         "RawReference": "15DE49",
         "Comment": "Relar seems to knock these off the end table quite a bit",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37762,6 +37915,7 @@
         "ReferenceFormKey": "[0x0815DE5E: (-8576, 5324, 351)]",
         "RawReference": "15DE5E",
         "Comment": "Npcs knock this down often",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37770,6 +37924,7 @@
         "ReferenceFormKey": "[0x0815DDC0: (-8020, 5218, 84)]",
         "RawReference": "15DDC0",
         "Comment": "Often falls down from shelf",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37778,6 +37933,7 @@
         "ReferenceFormKey": "[0x0815DE20: (-8640, 5227, 347)]",
         "RawReference": "15DE20",
         "Comment": "Also falls down from the upstairs shelf",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37786,6 +37942,7 @@
         "ReferenceFormKey": "[0x0815DD21: (-8734, 5432, 336)]",
         "RawReference": "15DD21",
         "Comment": "Navmesh: NPCs struggle to walk out of room, walk into frame",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -37871,6 +38028,7 @@
         "ReferenceFormKey": "[0x0819A0DC: (-11883, 3706, 336)]",
         "RawReference": "19A0DC",
         "Comment": "Chair causes light jiggling of food on table",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -37936,6 +38094,7 @@
         "ReferenceFormKey": "[0x081181F5: (-3600, 3776, 80)]",
         "RawReference": "1181F5",
         "Comment": "When standing up from the chair you will clip into this table",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -37944,6 +38103,7 @@
         "ReferenceFormKey": "[0x08118223: (-3617, 3768, 149)]",
         "RawReference": "118223",
         "Comment": "Shakes when you sit in chair nearby (xx1181FD)",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38029,6 +38189,7 @@
         "ReferenceFormKey": "[0x08186697: (2371, 2817, 543)]",
         "RawReference": "186697",
         "Comment": "Missing backplane",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38037,6 +38198,7 @@
         "ReferenceFormKey": "[0x08196355: (2066, 2306, 1125)]",
         "RawReference": "196355",
         "Comment": "Shakes when sit in chair nearby",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38045,6 +38207,7 @@
         "ReferenceFormKey": "[0x081E78F3: (2102, 2157, 1066)]",
         "RawReference": "1E78F3",
         "Comment": "Falls over when you get out of chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38053,6 +38216,7 @@
         "ReferenceFormKey": "[0x081E78BE: (2352, 2069, 1105)]",
         "RawReference": "1E78BE",
         "Comment": "Flies when you sit in chair nearby",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38061,6 +38225,7 @@
         "ReferenceFormKey": "[0x081E78F6: (2105, 2459, 800)]",
         "RawReference": "1E78F6",
         "Comment": "Lighting here flickers when you have torch",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38069,6 +38234,7 @@
         "ReferenceFormKey": "[0x08196299: (2341, 2121, 796)]",
         "RawReference": "196299",
         "Comment": "Lighting here flickers when you have torch",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38154,6 +38320,7 @@
         "ReferenceFormKey": "[0x081CEC0C: (2429, 1948, 1081)]",
         "RawReference": "1CEC0C",
         "Comment": "Light flickers when you have torch",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38162,6 +38329,7 @@
         "ReferenceFormKey": "[0x081CEBEF: (2305, 1811, 1335)]",
         "RawReference": "1CEBEF",
         "Comment": "All the floorboards on the top floor can disappear (rooombound issue)",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38170,6 +38338,7 @@
         "ReferenceFormKey": "[0x0824C929: (2429, 1948, 1076)]",
         "RawReference": "24C929",
         "Comment": "Appears as black square when torch light",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38178,6 +38347,7 @@
         "ReferenceFormKey": "[0x081CEA74: (1818, 2029, 827)]",
         "RawReference": "1CEA74",
         "Comment": "On the floor when entering cell",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38186,6 +38356,7 @@
         "ReferenceFormKey": "[0x081CECB4: (2302, 1642, 894)]",
         "RawReference": "1CECB4",
         "Comment": "Would make more sense for hinges to be on the left, not on the right",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38281,6 +38452,7 @@
         "ReferenceFormKey": "[0x08206215: (655, 1229, 214)]",
         "RawReference": "206215",
         "Comment": "Pardulas and plate fly when you sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38289,6 +38461,7 @@
         "ReferenceFormKey": "[0x08178E6A: (346, 709, 146)]",
         "RawReference": "178E6A",
         "Comment": "Can see out of bounds area through the floor boards",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38297,6 +38470,7 @@
         "ReferenceFormKey": "[0x08178E69: (346, 709, 146)]",
         "RawReference": "178E69",
         "Comment": "Light flickers in a square in the NE corner just in front of the door to Sulimius\u0027s room",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38382,6 +38556,7 @@
         "ReferenceFormKey": "[0x081BCBC8: (-11821, 3727, 338)]",
         "RawReference": "1BCBC8",
         "Comment": "Chair may be too close to the table for a lefthand exit. Should either be moved or replaced with upperchair04R",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38390,6 +38565,7 @@
         "ReferenceFormKey": "[0x081BCBCA: (-12304, 4498, 338)]",
         "RawReference": "1BCBCA",
         "Comment": "Sitting here messes with table items",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38398,6 +38574,7 @@
         "ReferenceFormKey": "[0x081BCBC7: (-12181, 4420, 338)]",
         "RawReference": "1BCBC7",
         "Comment": "Sitting here messes with table items",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38406,6 +38583,7 @@
         "ReferenceFormKey": "[0x081BCAE4: (-12579, 4312, 864)]",
         "RawReference": "1BCAE4",
         "Comment": "Object spawns fallen over",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38414,6 +38592,7 @@
         "ReferenceFormKey": "[0x081BCD76: (-12048, 4421, 848)]",
         "RawReference": "1BCD76",
         "Comment": "Sitting here turns plate on table into mach 5 projectile",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38422,6 +38601,7 @@
         "ReferenceFormKey": "[0x081BCC00: (-12231, 4475, 339)]",
         "RawReference": "1BCC00",
         "Comment": "Item spawns on ground, unsure if intentional",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38430,6 +38610,7 @@
         "ReferenceFormKey": "[0x081BCD43: (-12544, 4583, 841)]",
         "RawReference": "1BCD43",
         "Comment": "Should possibly be replaced with a directional bed, no immediate issue though",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38438,6 +38619,7 @@
         "ReferenceFormKey": "[0x081BCD50: (-12203, 4583, 841)]",
         "RawReference": "1BCD50",
         "Comment": "Should possibly be replaced with a directional bed, no immediate issue though",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38446,6 +38628,7 @@
         "ReferenceFormKey": "[0x08112E20: (-11744, 4080, 848)]",
         "RawReference": "112E20",
         "Comment": "Placement leaves visible gap along the end column",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38454,6 +38637,7 @@
         "ReferenceFormKey": "[0x08112E22: (-11744, 4336, 848)]",
         "RawReference": "112E22",
         "Comment": "Placement leaves visible gap along the end column",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38462,6 +38646,7 @@
         "ReferenceFormKey": "[0x08112E31: (-12512, 3824, 848)]",
         "RawReference": "112E31",
         "Comment": "Placement leaves visible gap along the end column",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38470,6 +38655,7 @@
         "ReferenceFormKey": "[0x08112E30: (-12512, 4080, 848)]",
         "RawReference": "112E30",
         "Comment": "Placement leaves visible gap along the end column",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38478,6 +38664,7 @@
         "ReferenceFormKey": "[0x08112E32: (-12512, 4336, 848)]",
         "RawReference": "",
         "Comment": "Placement leaves visible gap along the end column",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38486,6 +38673,7 @@
         "ReferenceFormKey": "[0x081BCA74: (-12455, 3704, 165)]",
         "RawReference": "1BCA74",
         "Comment": "Cannot interact with this cheese wheel",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38494,6 +38682,7 @@
         "ReferenceFormKey": "[0x081BCC9B: (-12453, 3643, 382)]",
         "RawReference": "1BCC9B",
         "Comment": "Moves when sit on bench",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38502,6 +38691,7 @@
         "ReferenceFormKey": "[0x081BCC42: (-12124, 4424, 338)]",
         "RawReference": "1BCC42",
         "Comment": "Flies when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38510,6 +38700,7 @@
         "ReferenceFormKey": "[0x081BCBFD: (-12070, 4500, 403)]",
         "RawReference": "1BCBFD",
         "Comment": "Wobbles when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38518,6 +38709,7 @@
         "ReferenceFormKey": "[0x081BCC0A: (-12182, 4496, 403)]",
         "RawReference": "1BCC0A",
         "Comment": "Wobbles when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38526,6 +38718,7 @@
         "ReferenceFormKey": "[0x081BCB05: (-11829, 3892, 922)]",
         "RawReference": "1BCB05",
         "Comment": "Topples when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38534,6 +38727,7 @@
         "ReferenceFormKey": "[0x081BCAF0: (-12538, 4138, 918)]",
         "RawReference": "1BCAF0",
         "Comment": "Shakes when you sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38542,6 +38736,7 @@
         "ReferenceFormKey": "[0x081BCA8E: (-12046, 4355, 917)]",
         "RawReference": "1BCA8E",
         "Comment": "Shakes when you sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38550,6 +38745,7 @@
         "ReferenceFormKey": "[0x081BCC41: (-12114, 4495, 336)]",
         "RawReference": "1BCC41",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38558,6 +38754,7 @@
         "ReferenceFormKey": "[0x08112DA6: (-12384, 3824, 592)]",
         "RawReference": "112DA6",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38566,6 +38763,7 @@
         "ReferenceFormKey": "[0x08112E46: (-12140, 3568, 592)]",
         "RawReference": "112E46",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38574,6 +38772,7 @@
         "ReferenceFormKey": "[0x08112DFE: (-11872, 3824, 848)]",
         "RawReference": "112DFE",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38582,6 +38781,7 @@
         "ReferenceFormKey": "[0x08112E00: (-12384, 3824, 848)]",
         "RawReference": "112E00",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38590,6 +38790,7 @@
         "ReferenceFormKey": "[0x08112DF3: (-12128, 4592, 848)]",
         "RawReference": "112DF3",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38675,6 +38876,7 @@
         "ReferenceFormKey": "[0x080EDA41: (-4878, 4106, 339)]",
         "RawReference": "0EDA41",
         "Comment": "Falls on the ground?",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38719,6 +38921,7 @@
         "ReferenceFormKey": "[0x0815E98B: (-3643, 3713, 79)]",
         "RawReference": "15E98B",
         "Comment": "Rug clips with people sitting a little bit",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38727,6 +38930,7 @@
         "ReferenceFormKey": "[0x081129BA: (-3376, 3712, 336)]",
         "RawReference": "1129BA",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38782,6 +38986,7 @@
         "ReferenceFormKey": "[0x0823B7D3: (-9972, 5170, 166)]",
         "RawReference": "23B7D3",
         "Comment": "Object floating away from item rack",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38790,6 +38995,7 @@
         "ReferenceFormKey": "[0x0823B7D5: (-9926, 5139, 153)]",
         "RawReference": "23B7D5",
         "Comment": "Object floating away from item rack",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38798,6 +39004,7 @@
         "ReferenceFormKey": "[0x0811300E: (-10590, 5354, 592)]",
         "RawReference": "11300E",
         "Comment": "Very slightly too high up, can see visible seam between roof and wall",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38806,6 +39013,7 @@
         "ReferenceFormKey": "[0x0811300D: (-10771, 5173, 592)]",
         "RawReference": "11300D",
         "Comment": "Very slightly too high up, can see visible seam between roof and wall",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38814,6 +39022,7 @@
         "ReferenceFormKey": "[0x0811300C: (-10952, 4992, 592)]",
         "RawReference": "11300C",
         "Comment": "Very slightly too high up, can see visible seam between roof and wall",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38822,6 +39031,7 @@
         "ReferenceFormKey": "[0x08117DA1: (-10130, 5304, 482)]",
         "RawReference": "117DA1",
         "Comment": "Staves are relatively unstable when put in shelves - I keep finding them loose on the ground",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -38830,6 +39040,7 @@
         "ReferenceFormKey": "[0x08117D7A: (-10410, 5894, 405)]",
         "RawReference": "117D7A",
         "Comment": "Moves when you sit in nearby chair (xx117BDC)",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38838,6 +39049,7 @@
         "ReferenceFormKey": "[0x08117DED: (-10088, 5234, 681)]",
         "RawReference": "117DED",
         "Comment": "CTD if you jump on this crate",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38892,6 +39104,7 @@
         "ReferenceFormKey": "[0x081BB26D: (2887, 1966, 967)]",
         "RawReference": "1BB26D",
         "Comment": "Shakes when you sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38900,6 +39113,7 @@
         "ReferenceFormKey": "[0x081BB264: (2867, 2019, 965)]",
         "RawReference": "1BB264",
         "Comment": "Shakes when you sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38908,6 +39122,7 @@
         "ReferenceFormKey": "[0x08177A6A: (2056, 2053, 390)]",
         "RawReference": "177A6A",
         "Comment": "Navmeshing: NPCs can get stuck while trying to descend from floor to stairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38916,6 +39131,7 @@
         "ReferenceFormKey": "[0x08177A62: (2056, 2053, 390)]",
         "RawReference": "177A62",
         "Comment": "Navmeshing: NPCs also some issues going up the stairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -38924,6 +39140,7 @@
         "ReferenceFormKey": "[0x0820663E: (3066, 2911, 472)]",
         "RawReference": "20663E",
         "Comment": "Shakes when entering cell",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -38999,6 +39216,7 @@
         "ReferenceFormKey": "[0x0819E664: (-12209, 4243, 79)]",
         "RawReference": "19E664",
         "Comment": "Chair causes loud collision with bowl of fruit, though no significant object movement",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39007,6 +39225,7 @@
         "ReferenceFormKey": "[0x0819E6B1: (-11932, 3645, 142)]",
         "RawReference": "19E6B1",
         "Comment": "You can get caught on top of this barrel if you mess around like an idiot (which I did)",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -39015,6 +39234,7 @@
         "ReferenceFormKey": "[0x0819E678: (-11872, 4080, 336)]",
         "RawReference": "19E678",
         "Comment": "NPCs walk into and get stuck at the corner of these stairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39023,6 +39243,7 @@
         "ReferenceFormKey": "[0x08112EA9: (-12128, 4336, 592)]",
         "RawReference": "112EA9",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39031,6 +39252,7 @@
         "ReferenceFormKey": "[0x0819E678: (-11872, 4080, 336)]",
         "RawReference": "19E678",
         "Comment": "Torch light flickers on this asset",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -39106,6 +39328,7 @@
         "ReferenceFormKey": "[0x08118B88: (352, -48, 512)]",
         "RawReference": "118B88",
         "Comment": "You will clip into the table a bit when sitting into this chair",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -39150,6 +39373,7 @@
         "ReferenceFormKey": "[0x080E5C5E: (-1248, 3708, 103)]",
         "RawReference": "0E5C5E",
         "Comment": "Fireplace asset causes lighting flicker on second floor",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -39235,6 +39459,7 @@
         "ReferenceFormKey": "[0x08128EE3: (9, 1648, -179)]",
         "RawReference": "128EE3",
         "Comment": "Flies when you sit in chair (xx128EDD) nearby",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39243,6 +39468,7 @@
         "ReferenceFormKey": "[0x08128EA9: (-562, 1685, -125)]",
         "RawReference": "128EA9",
         "Comment": "Shakes a bit when you sit in chair (xx128EA2) nearby",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39251,6 +39477,7 @@
         "ReferenceFormKey": "[0x08128C6D: (-552, 1024, 320)]",
         "RawReference": "128C6D",
         "Comment": "Can see out of bounds when opening, missing blackplane",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -39414,6 +39641,7 @@
         "ReferenceFormKey": "[0x081B8499: (852, 758, 571)]",
         "RawReference": "1B8499",
         "Comment": "Slight gap between door and frame at top",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -39422,6 +39650,7 @@
         "ReferenceFormKey": "[0x081B833A: (276, 748, 571)]",
         "RawReference": "1B833A",
         "Comment": "Slight gap between door and frame at top",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -39430,6 +39659,7 @@
         "ReferenceFormKey": "[0x081B835D: (820, 531, 783)]",
         "RawReference": "1B835D",
         "Comment": "These items are placed strangely, and often move when the cell loads",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39438,6 +39668,7 @@
         "ReferenceFormKey": "[0x081B8386: (814, 574, 779)]",
         "RawReference": "1B8386",
         "Comment": "These items are placed strangely, and often move when the cell loads",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39446,6 +39677,7 @@
         "ReferenceFormKey": "[0x081B8434: (1004, 589, 382)]",
         "RawReference": "1B8434",
         "Comment": "This item rocks back and forth",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39454,6 +39686,7 @@
         "ReferenceFormKey": "[0x081B83EA: (592, 800, 571)]",
         "RawReference": "1B83EA",
         "Comment": "Flickering light issue on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39462,6 +39695,7 @@
         "ReferenceFormKey": "[0x081CE046: (543, 483, 343)]",
         "RawReference": "1CE046",
         "Comment": "Lighting flickers on this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39470,6 +39704,7 @@
         "ReferenceFormKey": "[0x081B83C6: (850, 594, 577)]",
         "RawReference": "1B83C6",
         "Comment": "Falls down when people sit in nearby chair (xx1B840F)",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -39591,6 +39826,7 @@
         "ReferenceFormKey": "[0x08191BAD: (-435, 80, 66)]",
         "RawReference": "191BAD",
         "Comment": "Plate and contents shake when NPCs sit on nearby chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39599,6 +39835,7 @@
         "ReferenceFormKey": "[0x0818F1C4: (-176, 0, 256)]",
         "RawReference": "18F1C4",
         "Comment": "Lighting is generally too dark and flickers in many places when carrying a torch",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39607,6 +39844,7 @@
         "ReferenceFormKey": "[0x081919A6: (679, 730, 0)]",
         "RawReference": "1919A6",
         "Comment": "NPCs can end up standing on table",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39615,6 +39853,7 @@
         "ReferenceFormKey": "[0x081A823B: (135, 445, 64)]",
         "RawReference": "1A823B",
         "Comment": "Shakes when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39623,6 +39862,7 @@
         "ReferenceFormKey": "[0x08191B4A: (108, 377, 63)]",
         "RawReference": "191B4A",
         "Comment": "Shakes when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39631,6 +39871,7 @@
         "ReferenceFormKey": "[0x08191B4D: (83, 530, 63)]",
         "RawReference": "191B4D",
         "Comment": "Shakes when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39639,6 +39880,7 @@
         "ReferenceFormKey": "[0x08191AAD: (687, 991, 256)]",
         "RawReference": "191AAD",
         "Comment": "Is bumped to the ground when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39647,6 +39889,7 @@
         "ReferenceFormKey": "[0x08191B07: (884, -326, 257)]",
         "RawReference": "191B07",
         "Comment": "Flies when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39655,6 +39898,7 @@
         "ReferenceFormKey": "[0x08191B06: (859, -326, 328)]",
         "RawReference": "191B06",
         "Comment": "Flies when sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -39663,6 +39907,7 @@
         "ReferenceFormKey": "[0x08191B08: (829, -317, 326)]",
         "RawReference": "191B08",
         "Comment": "Flies when sit in chair",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -39882,6 +40127,7 @@
         "ReferenceFormKey": "[0x0807B4F8: (1742, 1929, -819)]",
         "RawReference": "07B4F8",
         "Comment": "Still get flickering mist round here if walking around with a torch",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -42059,6 +42305,7 @@
         "ReferenceFormKey": "[0x0619BB4F: (163874, -79512, -13344)]",
         "RawReference": "19BB4F",
         "Comment": "gap at the bottom",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -42689,6 +42936,7 @@
         "ReferenceFormKey": "[0x080CCDC5: (-32317, 189305, 10349)]",
         "RawReference": "0CCDC5",
         "Comment": "No enemies in exterior",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -42697,6 +42945,7 @@
         "ReferenceFormKey": "[0x08204371: (-384, 856, 77)]",
         "RawReference": "204371",
         "Comment": "Badly placed",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -42705,6 +42954,7 @@
         "ReferenceFormKey": "[0x082042EF: (-302, -415, -415)]",
         "RawReference": "2042EF",
         "Comment": "Seam between this asset and xx20425A",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -42713,6 +42963,7 @@
         "ReferenceFormKey": "[0x082042F3: (-494, -1375, -159)]",
         "RawReference": "2042F3",
         "Comment": "Weirdly placed so can see underneath it",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -42721,6 +42972,7 @@
         "ReferenceFormKey": "[0x08204333: (-46, -671, -479)]",
         "RawReference": "204333",
         "Comment": "Flickers when hit by torchlight",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -42729,6 +42981,7 @@
         "ReferenceFormKey": "[0x082042B0: (-171, -257, -450)]",
         "RawReference": "2042B0",
         "Comment": "Seam between this asset and xx20425A",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -43128,6 +43381,7 @@
         "ReferenceFormKey": "[0x0813E71F: (3490, -2828, -409)]",
         "RawReference": "13E71F",
         "Comment": "Area around here is pitch black",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -43397,6 +43651,7 @@
         "ReferenceFormKey": "[0x081E025D: (-2726, 1152, -2090)]",
         "RawReference": "1E025D",
         "Comment": "Bottom edge of the rock pops out of grass in an unnatural shape",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -43405,6 +43660,7 @@
         "ReferenceFormKey": "[0x081E0176: (-3245, 423, -2181)]",
         "RawReference": "1E0176",
         "Comment": "Water flow clips through a small rock on the southwestern edge of the asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -43413,6 +43669,7 @@
         "ReferenceFormKey": "[0x081E0191: (-3853, 783, -714)]",
         "RawReference": "1E0191",
         "Comment": "When looking up from the bottom, you can just about see the \u0022flat\u0022 bit of the waterfall asset. It would be best to move it back a bit or put a rock asset just underneath it to hide this",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -48318,6 +48575,7 @@
         "ReferenceFormKey": "[0x0615BBDC: (2151, 2057, 978)]",
         "RawReference": "15BBDC",
         "Comment": "too bright",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -48404,6 +48662,7 @@
         "ReferenceFormKey": "[0x080CAAC5: (-137218, 13788, -4178)]",
         "RawReference": "0CAAC5",
         "Comment": "Odd angle",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -49015,6 +49274,7 @@
         "ReferenceFormKey": "[0x101E8459: (-36963, 127871, -976)]",
         "RawReference": "1E8459",
         "Comment": "You can fall between the wood tower and fence, getting stuck.",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -51124,6 +51384,7 @@
         "ReferenceFormKey": "[0x080F92EF: (3486, 7244, 732)]",
         "RawReference": "",
         "Comment": "if you fall down in this hole you can get stuck, similar holes elsewhere in the room",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -52510,6 +52771,7 @@
         "ReferenceFormKey": "[0x11128B0F: (-59616, 147314, 1486)]",
         "RawReference": "128B0F",
         "Comment": "there is a pathing error around here",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -52575,6 +52837,7 @@
         "ReferenceFormKey": "[0x061795B3: (483, -66, 433)]",
         "RawReference": "1795B3",
         "Comment": "Door hinge is on opposite side compared to exterior",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -52583,6 +52846,7 @@
         "ReferenceFormKey": "[0x0817DBBE: (719, 375, 433)]",
         "RawReference": "17DBBE",
         "Comment": "NPCs clip hands through this and/or shakes when sat on stool xx17DB17",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -52591,6 +52855,7 @@
         "ReferenceFormKey": "[0x0817DBAC: (657, 387, 437)]",
         "RawReference": "17DBAC",
         "Comment": "Falls off plate xx17DBBD",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -52599,6 +52864,7 @@
         "ReferenceFormKey": "[0x0817DBBD: (654, 380, 433)]",
         "RawReference": "17DBBD",
         "Comment": "Gets bumped into by NPCs sat on stool",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -52607,6 +52873,7 @@
         "ReferenceFormKey": "[0x1117DBCC: (415, -57, 568)]",
         "RawReference": "17DBCC",
         "Comment": "Walking on these causes earthquake sounds",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -52793,6 +53060,7 @@
         "ReferenceFormKey": "[0x0823A32F: (-224183, 60435, -14047)]",
         "RawReference": "23A32F",
         "Comment": "Encounter with pirates in cell -54, 14 starts with them falling out of the sky and 3 of them usually dying immediately - I think this is due to a floating navmesh affecting their spawn location.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -52801,6 +53069,7 @@
         "ReferenceFormKey": "[0x080694DA: (-224452, 58182, -13550)]",
         "RawReference": "0694DA",
         "Comment": "Lots of grass growing through this.",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -57225,6 +57494,7 @@
         "ReferenceFormKey": "[0x0818EC44: (-58427, 224378, 21902)]",
         "RawReference": "18EC44",
         "Comment": "Spawns clipping into the tower asset",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -57946,6 +58216,7 @@
         "ReferenceFormKey": "[0x08114547: (356, 32, 67)]",
         "RawReference": "114547",
         "Comment": "Plate shakes when sitting in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -57954,6 +58225,7 @@
         "ReferenceFormKey": "[0x08114545: (398, -44, 66)]",
         "RawReference": "114545",
         "Comment": "Shakes when sit in chair",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -58049,6 +58321,7 @@
         "ReferenceFormKey": "[0x08117F35: (-8046, 3424, 80)]",
         "RawReference": "117F35",
         "Comment": "Chair causes slight collision issues with items on table",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -58057,6 +58330,7 @@
         "ReferenceFormKey": "[0x080EDD22: (-8705, 3591, 79)]",
         "RawReference": "0EDD22",
         "Comment": "Gap between door and frame at top",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -58065,6 +58339,7 @@
         "ReferenceFormKey": "[0x080EDD23: (-8673, 3709, 336)]",
         "RawReference": "0EDD23",
         "Comment": "Gap between door and frame at top",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -58073,6 +58348,7 @@
         "ReferenceFormKey": "[0x080EDD24: (-7871, 3854, 336)]",
         "RawReference": "0EDD24",
         "Comment": "Gap between door and frame at top",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -58081,6 +58357,7 @@
         "ReferenceFormKey": "[0x080EDD25: (-7871, 3600, 336)]",
         "RawReference": "0EDD25",
         "Comment": "Gap between door and frame at top",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -58089,6 +58366,7 @@
         "ReferenceFormKey": "[0x08117F65: (-8015, 3542, 144)]",
         "RawReference": "117F65",
         "Comment": "This plate likes to vibrate",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -58097,6 +58375,7 @@
         "ReferenceFormKey": "[0x08117F6C: (-8043, 3540, 79)]",
         "RawReference": "117F6C",
         "Comment": "Rug clips with people sitting a little bit",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -58105,6 +58384,7 @@
         "ReferenceFormKey": "[0x08117F66: (-8061, 3565, 143)]",
         "RawReference": "117F66",
         "Comment": "Shakes when you sit in chair",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -58113,6 +58393,7 @@
         "ReferenceFormKey": "[0x08117F64: (-7960, 3431, 90)]",
         "RawReference": "117F64",
         "Comment": "Flies when you sit in chair",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -59259,6 +59540,7 @@
         "ReferenceFormKey": "[0x08156EE1: (0, 0, 0)]",
         "RawReference": "156EE1",
         "Comment": "Light flickers over these wooden boards on the upper floor",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -59422,6 +59704,7 @@
         "ReferenceFormKey": "[0x081892B3: (6041, 92784, -5290)]",
         "RawReference": "1892B3",
         "Comment": "Navmeshing: some issues just SE of this asset",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -60468,6 +60751,7 @@
         "ReferenceFormKey": "[0x08262CD5: (-555, -333, -52)]",
         "RawReference": "262CD5",
         "Comment": "Very significant framerate drop in this cell",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -60476,6 +60760,7 @@
         "ReferenceFormKey": "[0x082628A7: (-736, -2208, -1064)]",
         "RawReference": "2628A7",
         "Comment": "NPCs get stuck behind this against rock face",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -61312,6 +61597,7 @@
         "ReferenceFormKey": "[0x08178E09: (578, -63, 453)]",
         "RawReference": "178E09",
         "Comment": "Door is missing blackplane",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -61320,6 +61606,7 @@
         "ReferenceFormKey": "[0x08178E09: (578, -63, 453)]",
         "RawReference": "178E09",
         "Comment": "Door hinge is on opposite side compared to exterior",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -61328,6 +61615,7 @@
         "ReferenceFormKey": "[0x1117DBF7: (339, 67, 377)]",
         "RawReference": "17DBF7",
         "Comment": "sitting in chair causes physics problems with items on the table/broom",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -61871,6 +62159,7 @@
         "ReferenceFormKey": "[0x08123AC1: (-23087, 165630, 503)]",
         "RawReference": "123AC1",
         "Comment": "there is no way to activate the lumber pile saw after adding a log to the track",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -62900,6 +63189,7 @@
         "ReferenceFormKey": "[0x091BFDD1: (-115963, 81, -8932)]",
         "RawReference": "1BFDD1",
         "Comment": "Player can get stuck if falling from stairs",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -63005,6 +63295,7 @@
         "ReferenceFormKey": "[0x080AC171: (-128369, 6244, -6134)]",
         "RawReference": "0AC171",
         "Comment": "Seam at junction between this asset, xx0AC176 and xx0AA6A4",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -63013,6 +63304,7 @@
         "ReferenceFormKey": "[0x080AC170: (-128677, 5049, -6195)]",
         "RawReference": "0AC170",
         "Comment": "Seam where this asset merges with xx0AA6A4",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -64134,6 +64426,7 @@
         "ReferenceFormKey": "[0x08087F2E: (-167671, -12189, -8015)]",
         "RawReference": "087F2E",
         "Comment": "table clipping through tent",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -64142,6 +64435,7 @@
         "ReferenceFormKey": "[0x0819295E: (-168520, -9663, -8825)]",
         "RawReference": "19295E",
         "Comment": "gap at back of cliff asset",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -64150,6 +64444,7 @@
         "ReferenceFormKey": "[0x0819295B: (-169433, -11585, -7570)]",
         "RawReference": "19295B",
         "Comment": "(navmesh issue) vertext near banner post is placed high in the air, above player height. Follwer seems to try and walk around areas of navmesh near the problem vertex",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64158,6 +64453,7 @@
         "ReferenceFormKey": "[0x081926CD: (-170556, -15221, -9431)]",
         "RawReference": "1926CD",
         "Comment": "gap at bottom of cliff",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -64166,6 +64462,7 @@
         "ReferenceFormKey": "[0x081FC40A: (-171170, -12803, -8108)]",
         "RawReference": "1FC40A",
         "Comment": "(navmesh issue) follower gets stuck running up spiral stairs of tower, seems to be stuck on the edge towards the center",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64174,6 +64471,7 @@
         "ReferenceFormKey": "[0x0823F1F6: (-169154, -12438, -7658)]",
         "RawReference": "23F1F6",
         "Comment": "(navmesh issue) vertex of navmesh that is supposed to be on stair is placed below, causing a discrepancy with the navmesh. Follower doesn\u0027t appear to have much issue walking over it though",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -64582,6 +64880,7 @@
         "ReferenceFormKey": "[0x101C61BD: (-191564, 47561, -8045)]",
         "RawReference": "1C61BD",
         "Comment": "bit of grass clipping on eastern and northern side",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -64698,6 +64997,7 @@
         "ReferenceFormKey": "[0x08219765: (-155, 375, 15)]",
         "RawReference": "219765",
         "Comment": "Plate falls to floor upon first entering",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64706,6 +65006,7 @@
         "ReferenceFormKey": "[0x0821979D: (51, -6, 99)]",
         "RawReference": "21979D",
         "Comment": "hammer moves strangely, often falling from shelf",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64714,6 +65015,7 @@
         "ReferenceFormKey": "[0x082197B8: (-1, 154, 321)]",
         "RawReference": "2197B8",
         "Comment": "clothes appears to spawn on top of strongbox",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -64722,6 +65024,7 @@
         "ReferenceFormKey": "[0x08219806: (-16, 16, 0)]",
         "RawReference": "219806",
         "Comment": "stairs has strange navmesh that goes far above the floor level (tested with debug menu)",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -64730,6 +65033,7 @@
         "ReferenceFormKey": "[0x08219772: (-49, 319, 292)]",
         "RawReference": "219772",
         "Comment": "bottle settles in a way where it extends off of shelf",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -64865,6 +65169,7 @@
         "ReferenceFormKey": "[0x0818CA4D: (-216106, 49008, -13290)]",
         "RawReference": "18CA4D",
         "Comment": "Bottom of this plant is buried.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64873,6 +65178,7 @@
         "ReferenceFormKey": "[0x08068F16: (-216857, 48167, -13917)]",
         "RawReference": "068F16",
         "Comment": "How this rock is positioned creates an odd looking long \u0026 straight secondary rock with a triangular cutout.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64881,6 +65187,7 @@
         "ReferenceFormKey": "[0x0818CA49: (-217461, 45730, -14006)]",
         "RawReference": "18CA49",
         "Comment": "Shell clips into sand.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64889,6 +65196,7 @@
         "ReferenceFormKey": "[0x08134C28: (-215733, 44402, -13809)]",
         "RawReference": "134C28",
         "Comment": "Basket embedded in the ground.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64897,6 +65205,7 @@
         "ReferenceFormKey": "[0x08134C35: (-215660, 44528, -13754)]",
         "RawReference": "134C35",
         "Comment": "Wheel of this cart is embedded in the ground.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64905,6 +65214,7 @@
         "ReferenceFormKey": "[0x0810C526: (-214092, 42464, -13317)]",
         "RawReference": "10C526",
         "Comment": "Patch of grass terrain clips through this rock near the top.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64913,6 +65223,7 @@
         "ReferenceFormKey": "[0x08068E44: (-214021, 42831, -12403)]",
         "RawReference": "068E44",
         "Comment": "Shrub growing through a rock.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64921,6 +65232,7 @@
         "ReferenceFormKey": "[0x08134C1E: (-215014, 44762, -13733)]",
         "RawReference": "134C1E",
         "Comment": "Are these carts supposed to be static? (they have physics in vanilla)",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -64929,6 +65241,7 @@
         "ReferenceFormKey": "[0x08134B3C: (-217994, 42759, -13736)]",
         "RawReference": "134B3C",
         "Comment": "Player cannot access this little area, probably just collision being too tight.",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -66653,6 +66966,7 @@
         "ReferenceFormKey": "[0x08187736: (860, 729, 412)]",
         "RawReference": "187736",
         "Comment": "door to small for frame, clips when opening",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -66661,6 +66975,7 @@
         "ReferenceFormKey": "[0x08187735: (714, 93, 422)]",
         "RawReference": "187735",
         "Comment": "door to small for frame, clips when opening",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -66669,6 +66984,7 @@
         "ReferenceFormKey": "[0x0818B051: (824, -70, 328)]",
         "RawReference": "18B051",
         "Comment": "sitting in chair sometimes sends items on table flying",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -66677,6 +66993,7 @@
         "ReferenceFormKey": "[0x081F0B0A: (1003, -110, 328)]",
         "RawReference": "1F0B0A",
         "Comment": "sitting in chair sometimes sends items on table flying",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -66685,6 +67002,7 @@
         "ReferenceFormKey": "[0x0818769A: (1291, -37, 424)]",
         "RawReference": "18769A",
         "Comment": "door to small for frame, clips when opening",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -67235,6 +67553,7 @@
         "ReferenceFormKey": "[0x080E5808: (-69608, 167104, 4554)]",
         "RawReference": "0E5808",
         "Comment": "Transition between stony ground and dirt is a straight line here, bit jarring",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -69239,6 +69558,7 @@
         "ReferenceFormKey": "[0x0612EEEE: (66865, 71751, -13274)]",
         "RawReference": "12EEEE",
         "Comment": "wrong bench, uses table lean animation and has wrong exit marker",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -70353,6 +70673,7 @@
         "ReferenceFormKey": "[0x0815A074: (-36107, 169839, 1779)]",
         "RawReference": "15A074",
         "Comment": "NPC seems to spawn in the lake",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -71270,6 +71591,7 @@
         "ReferenceFormKey": "[0x08199DA2: (248, 521, 90)]",
         "RawReference": "199DA2",
         "Comment": "Plate flips when opening door",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -71278,6 +71600,7 @@
         "ReferenceFormKey": "[0x08199C88: (-86, 814, 286)]",
         "RawReference": "199C88",
         "Comment": "Sitting in this chair catapults food nearby",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -71286,6 +71609,7 @@
         "ReferenceFormKey": "[0x08199C8E: (-191, 734, 350)]",
         "RawReference": "199C8E",
         "Comment": "Plate shakes when sitting in chair",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -72227,6 +72551,7 @@
         "ReferenceFormKey": "[0x0824B6DA: (-192059, 76930, -9814)]",
         "RawReference": "24B6DA",
         "Comment": "placed animal spans and gets stuck in the settlement, pacing back and forth",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72235,6 +72560,7 @@
         "ReferenceFormKey": "[0x0818773B: (-192366, 77311, -9712)]",
         "RawReference": "18773B",
         "Comment": "door to small for frame, clips when opening",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72243,6 +72569,7 @@
         "ReferenceFormKey": "[0x0818544B: (-192904, 75617, -9743)]",
         "RawReference": "18544B",
         "Comment": "floating bush",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -72251,6 +72578,7 @@
         "ReferenceFormKey": "[0x08188EBB: (-193587, 77241, -8847)]",
         "RawReference": "188EBB",
         "Comment": "missing ownership, player can take without stealing",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72259,6 +72587,7 @@
         "ReferenceFormKey": "[0x0818773D: (-192536, 76105, -9733)]",
         "RawReference": "18773D",
         "Comment": "door to small for frame, clips when opening",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72267,6 +72596,7 @@
         "ReferenceFormKey": "[0x0818773A: (-193121, 76052, -9723)]",
         "RawReference": "18773A",
         "Comment": "visible gaps between door and farme. door too small for frame",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72275,6 +72605,7 @@
         "ReferenceFormKey": "[0x08188E29: (-193608, 76914, -9672)]",
         "RawReference": "188E29",
         "Comment": "followers show difficulty in leaving tower. possible issue with navmesh at site of this asset",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72283,6 +72614,7 @@
         "ReferenceFormKey": "[0x0821BDE5: (-207, 803, 480)]",
         "RawReference": "21BDE5",
         "Comment": "all items in mine are missing ownership allowing player to take without stealing",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72291,6 +72623,7 @@
         "ReferenceFormKey": "[0x0821BE1D: (-262, 836, 482)]",
         "RawReference": "21BE1D",
         "Comment": "all containers in mine are missing ownership allowing player to take without stealing",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72299,6 +72632,7 @@
         "ReferenceFormKey": "[0x0821BE4A: (-102, 3531, 829)]",
         "RawReference": "21BE4A",
         "Comment": "unable to mine ore deposit",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72307,6 +72641,7 @@
         "ReferenceFormKey": "[0x0821BE85: (1726, 2398, 479)]",
         "RawReference": "21BE85",
         "Comment": "unable to mine ore deposit",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72315,6 +72650,7 @@
         "ReferenceFormKey": "[0x0821BDDD: (1848, 1189, 500)]",
         "RawReference": "21BDDD",
         "Comment": "unable to mine ore deposit",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72323,6 +72659,7 @@
         "ReferenceFormKey": "[0x0821BDF8: (1213, 1424, 507)]",
         "RawReference": "21BDF8",
         "Comment": "iron ore vein placed in glod mine, possibly not a bug",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72331,6 +72668,7 @@
         "ReferenceFormKey": "[0x0818728C: (665, -638, 925)]",
         "RawReference": "18728C",
         "Comment": "followers unable to follow player into mine interior cell",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -72627,6 +72965,7 @@
         "ReferenceFormKey": "[0x081835E0: (1843, -6096, 852)]",
         "RawReference": "1835E0",
         "Comment": "Shaking",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -72635,6 +72974,7 @@
         "ReferenceFormKey": "[0x111834DF: (2176, -4864, 512)]",
         "RawReference": "1834DF",
         "Comment": "enemies have pathing issues here",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -72842,6 +73182,7 @@
         "ReferenceFormKey": "[0x080A9034: (24179, 100604, -6261)]",
         "RawReference": "0A9034",
         "Comment": "Sewer exit connected to normal door inside the cave",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -73146,6 +73487,7 @@
         "ReferenceFormKey": "[0x081874FD: (1465, 6869, 178)]",
         "RawReference": "1874FD",
         "Comment": "Very low-quality textures not merging well with nearby assets",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -74162,6 +74504,7 @@
         "ReferenceFormKey": "[0x0820715D: (-611, -2310, -340)]",
         "RawReference": "20715D",
         "Comment": "No fire damage",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -74170,6 +74513,7 @@
         "ReferenceFormKey": "[0x08206B3E: (-3153, -4047, 409)]",
         "RawReference": "206B3E",
         "Comment": "No fire damage",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -74178,6 +74522,7 @@
         "ReferenceFormKey": "[0x08206DF9: (-3645, 1085, -297)]",
         "RawReference": "206DF9",
         "Comment": "No fire damage",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -75364,6 +75709,7 @@
         "ReferenceFormKey": "[0x061C7047: (-122341, 80279, 921)]",
         "RawReference": "1C7047",
         "Comment": "gap",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -76328,6 +76674,7 @@
         "ReferenceFormKey": "[0x081CDEE3: (-30650, 67355, -6643)]",
         "RawReference": "1CDEE3",
         "Comment": "Gap between wall and ground, runs across 3 of the walls",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76336,6 +76683,7 @@
         "ReferenceFormKey": "[0x0A1CDEEC: (-30261, 66673, -6435)]",
         "RawReference": "1CDEEC",
         "Comment": "sawmill clips through ground underwater, lower terrain if possible",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -76501,6 +76849,7 @@
         "ReferenceFormKey": "[0x08235D37: (-4402, -656, 2983)]",
         "RawReference": "235D37",
         "Comment": "Herring lying on floor, doesn\u0027t seem intentional.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76509,6 +76858,7 @@
         "ReferenceFormKey": "[0x0822E8A0: (-4900, -277, 3051)]",
         "RawReference": "22E8A0",
         "Comment": "The collision of this cup doesn\u0027t play well with the candlestick it\u0027s leaning on, the result doesn\u0027t look right.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76517,6 +76867,7 @@
         "ReferenceFormKey": "[0x08235F5D: (-4019, 843, 2887)]",
         "RawReference": "235F5D",
         "Comment": "Maybe would be better to rework collision to avoid the issue, but this looks very unnatural sitting at this angle.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76525,6 +76876,7 @@
         "ReferenceFormKey": "[0x08235F3A: (-4688, 1804, 3491)]",
         "RawReference": "235F3A",
         "Comment": "This bottle doesn\u0027t seem like it\u0027s supposed to have fallen on the ground.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76533,6 +76885,7 @@
         "ReferenceFormKey": "[0x08235D9B: (-5060, -206, 3470)]",
         "RawReference": "235D9B",
         "Comment": "This statuette doesn\u0027t seem like it\u0027s supposed to have fallen on the ground.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76541,6 +76894,7 @@
         "ReferenceFormKey": "[0x0822E864: (-4662, -1026, 3504)]",
         "RawReference": "22E864",
         "Comment": "This is clipped into the desk at an angle.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76549,6 +76903,7 @@
         "ReferenceFormKey": "[0x08235FCA: (-5652, -632, 3151)]",
         "RawReference": "235FCA",
         "Comment": "This is too far from the wall mount.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76557,6 +76912,7 @@
         "ReferenceFormKey": "[0x08235EFB: (-5414, -902, 3063)]",
         "RawReference": "235EFB",
         "Comment": "Opening and closing this display case causes the axe on the shelf above to fall off. The open case slightly clips through the shelf above it, so maybe not a good fit to use with these shelves?",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76565,6 +76921,7 @@
         "ReferenceFormKey": "[0x0822E82C: (-4963, -950, 2995)]",
         "RawReference": "22E82C",
         "Comment": "These are a placeholder for an item that has been cut, probably replace with Reinforced Steel Boots.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76573,6 +76930,7 @@
         "ReferenceFormKey": "[0x08282D6F: (-3051, 453, 2800)]",
         "RawReference": "282D6F",
         "Comment": "This cart clips into a lot of the clutter behind it and is at least uncomfortably close to the main door.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76581,6 +76939,7 @@
         "ReferenceFormKey": "[0x0827587F: (-3786, 368, 2801)]",
         "RawReference": "27587F",
         "Comment": "These cages are a little too small for chickens to fit well in them.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76589,6 +76948,7 @@
         "ReferenceFormKey": "[0x08235D51: (-5718, 1395, 3033)]",
         "RawReference": "235D51",
         "Comment": "This book is floating.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76597,6 +76957,7 @@
         "ReferenceFormKey": "[0x08228132: (-5048, -1008, 2977)]",
         "RawReference": "228132",
         "Comment": "Navmesh behind this stall clips into it and misses a chunk of the floor, leading to NPCs getting stuck here.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76605,6 +76966,7 @@
         "ReferenceFormKey": "[0x081D83C0: (-4601, -162, 3020)]",
         "RawReference": "1D83C0",
         "Comment": "It\u0027s rather inconsistent, but the lighting on this is disabled when looking from certain angles?",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76613,6 +76975,7 @@
         "ReferenceFormKey": "[0x08235EFB: (-5414, -902, 3063)]",
         "RawReference": "235EFB",
         "Comment": "Display case is unlocked and empty.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76621,6 +76984,7 @@
         "ReferenceFormKey": "[0x0822812F: (-5005, 1787, 3024)]",
         "RawReference": "22812F",
         "Comment": "This display case is empty and unlocked.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76629,6 +76993,7 @@
         "ReferenceFormKey": "[0x08228177: (-5050, 1818, 3054)]",
         "RawReference": "228177",
         "Comment": "This display case is unlocked.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76637,6 +77002,7 @@
         "ReferenceFormKey": "[0x0822E8ED: (-5330, -211, 3536)]",
         "RawReference": "22E8ED",
         "Comment": "This display case is empty and unlocked.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76645,6 +77011,7 @@
         "ReferenceFormKey": "[0x08275852: (-4476, -52, 2989)]",
         "RawReference": "275852",
         "Comment": "Carries an enchanted ring. Maybe random, but in my case was a conjuration ring, which would be useless for this NPC (and any enchanted ring seems odd for him by itself).",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76653,6 +77020,7 @@
         "ReferenceFormKey": "[0x08235E04: (-5143, 1588, 3463)]",
         "RawReference": "235E04",
         "Comment": "This plate and the carrot cake on it seem to be prone to moving by themselves. I\u0027ve never seen them actually move, but they seem to appear on the floor fairly frequently.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76661,6 +77029,7 @@
         "ReferenceFormKey": "[0x0822E820: (-3593, 740, 2878)]",
         "RawReference": "22E820",
         "Comment": "This plate and the horns on it occasionally vibrate.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76669,6 +77038,7 @@
         "ReferenceFormKey": "[0x08282D6F: (-3051, 453, 2800)]",
         "RawReference": "282D6F",
         "Comment": "Due to the navmesh overlapping with this, npcs can get caught on this carriage.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76677,6 +77047,7 @@
         "ReferenceFormKey": "[0x08235DAB: (-3995, 381, 2878)]",
         "RawReference": "235DAB",
         "Comment": "This cup tends to move about in place.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76685,6 +77056,7 @@
         "ReferenceFormKey": "[0x0A228124: (-5051, 1130, 2977)]",
         "RawReference": "228124",
         "Comment": "rug goes under a planter and I have no idea how they got it under it",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -76693,6 +77065,7 @@
         "ReferenceFormKey": "[0x0A1D8359: (-5483, 1839, 3329)]",
         "RawReference": "1D8359",
         "Comment": "can see a gap to the void",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -77202,6 +77575,7 @@
         "ReferenceFormKey": "[0x081339A2: (1768, 544, -88)]",
         "RawReference": "",
         "Comment": "Missing equivalent piece? You can see through it when standing in the center of the room.",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -77210,6 +77584,7 @@
         "ReferenceFormKey": "[0x0821C76C: (1301, 328, -25)]",
         "RawReference": "21C76C",
         "Comment": "Shakes",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -77330,6 +77705,7 @@
         "ReferenceFormKey": "[0x080CF12D: (-194550, 51793, -7969)]",
         "RawReference": "0CF12D",
         "Comment": "light source is in a strange spot, causing weird shadows",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -77614,6 +77990,7 @@
         "ReferenceFormKey": "[0x061E97F5: (-3839, 715, -148)]",
         "RawReference": "1E97F5",
         "Comment": "gap",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -77622,6 +77999,7 @@
         "ReferenceFormKey": "[0x081E982E: (-286, 1593, 733)]",
         "RawReference": "1E982E",
         "Comment": "Can see soil inside when opening",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -78353,6 +78731,7 @@
         "ReferenceFormKey": "[0x0823621F: (-23628, 146642, 1606)]",
         "RawReference": "23621F",
         "Comment": "Cannot interact with this note",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -78361,6 +78740,7 @@
         "ReferenceFormKey": "[0x080FF48E: (-23521, 144257, 1515)]",
         "RawReference": "0FF48E",
         "Comment": "Small flickering patch just to SE of the well",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -78369,6 +78749,7 @@
         "ReferenceFormKey": "[0x081900C7: (-23562, 144928, 1463)]",
         "RawReference": "1900C7",
         "Comment": "NPCs can end up standing inside it",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -78614,6 +78995,7 @@
         "ReferenceFormKey": "[0x10201B61: (-6091, 130234, -712)]",
         "RawReference": "201B61",
         "Comment": "Enemies got stuck on this terrain",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -78936,6 +79318,7 @@
         "ReferenceFormKey": "[0x101E8416: (-190197, 56031, -8770)]",
         "RawReference": "1E8416",
         "Comment": "maybe should be on more even ground. The animation has character hovering for abt half of it",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -79108,6 +79491,7 @@
         "ReferenceFormKey": "[0x101FF17E: (-174377, 53670, -7606)]",
         "RawReference": "1FF17E",
         "Comment": "Navmesh: Npcs will walk into washing bucket",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -79116,6 +79500,7 @@
         "ReferenceFormKey": "[0x101FF17F: (-172291, 53882, -7500)]",
         "RawReference": "1FF17F",
         "Comment": "Navmesh: Npcs will walk into washing bucket",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -79124,6 +79509,7 @@
         "ReferenceFormKey": "[0x1016496B: (-173314, 54500, -7681)]",
         "RawReference": "16496B",
         "Comment": "idle spot here too high making guard hover",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -79132,6 +79518,7 @@
         "ReferenceFormKey": "[0x1016496A: (-173253, 54135, -7692)]",
         "RawReference": "16496A",
         "Comment": "idle spot here slightly too high. barely hovering guard",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -79140,6 +79527,7 @@
         "ReferenceFormKey": "[0x1011EBED: (-174928, 54259, -7732)]",
         "RawReference": "11EBED",
         "Comment": "idle spot here slighty high. guard hovering",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -79148,6 +79536,7 @@
         "ReferenceFormKey": "[0x1011EBD3: (-174373, 54470, -7613)]",
         "RawReference": "11EBD3",
         "Comment": "navmesh: NPCs will cut through grass to go to Sutch instead of taking the path. They do take path when returning from Sutch tho",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -79632,6 +80021,7 @@
         "ReferenceFormKey": "[0x0821E15C: (400, 272, 610)]",
         "RawReference": "21E15C",
         "Comment": "These doors don\u0027t perfectly fit their frame.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -79640,6 +80030,7 @@
         "ReferenceFormKey": "[0x0821E171: (400, 472, 610)]",
         "RawReference": "21E171",
         "Comment": "These doors don\u0027t perfectly fit their frame.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -79648,6 +80039,7 @@
         "ReferenceFormKey": "[0x0821E0A7: (194, -336, 491)]",
         "RawReference": "21E0A7",
         "Comment": "Lighting on the wall this is attached to seems to toggle on and off depending on player distance.",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -79656,6 +80048,7 @@
         "ReferenceFormKey": "[0x0821E18A: (99, 85, 765)]",
         "RawReference": "21E18A",
         "Comment": "The lighting effects on the adjacent wall disappear when looking at it from a specific angle.",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -79882,6 +80275,7 @@
         "ReferenceFormKey": "[0x080F3962: (2461, 2167, 1456)]",
         "RawReference": "0F3962",
         "Comment": "Glows fluorescent when hit by torchlight",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -79997,6 +80391,7 @@
         "ReferenceFormKey": "[0x11218D45: (-65, -246, -158)]",
         "RawReference": "218D45",
         "Comment": "it is possible to get stuck in-between the barrel and the ceiling by jumping onto the barrel",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -80162,6 +80557,7 @@
         "ReferenceFormKey": "[0x101CA2E0: (8, 189, 8)]",
         "RawReference": "1CA2E0",
         "Comment": "shadows with the cooking pot can be a bit jarring sometimes",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -80170,6 +80566,7 @@
         "ReferenceFormKey": "[0x101CA2C5: (186, 314, 12)]",
         "RawReference": "1CA2C5",
         "Comment": "sitting here makes plate slightly bounce making noise",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -80178,6 +80575,7 @@
         "ReferenceFormKey": "[0x101CA294: (245, 311, 73)]",
         "RawReference": "1CA294",
         "Comment": "the plate",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -80186,6 +80584,7 @@
         "ReferenceFormKey": "[0x101CA268: (462, 118, 56)]",
         "RawReference": "1CA268",
         "Comment": "stack of plates can occasionally fall apart when entering the home or bumping into them",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -80347,6 +80746,7 @@
         "ReferenceFormKey": "[0x11235ACF: (241, 345, -368)]",
         "RawReference": "235ACF",
         "Comment": "having drawers you can\u0027t open is teasing!",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -80355,6 +80755,7 @@
         "ReferenceFormKey": "[0x111EC0BE: (-381, 859, -370)]",
         "RawReference": "1EC0BE",
         "Comment": "visible texture seams",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -82637,6 +83038,7 @@
         "ReferenceFormKey": "[0x0819176F: (1075, 199, 240)]",
         "RawReference": "19176F",
         "Comment": "Navmesh: followers get stuck on stairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -82645,6 +83047,7 @@
         "ReferenceFormKey": "[0x08191760: (366, 75, 501)]",
         "RawReference": "191760",
         "Comment": "Flickering with torch light",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -82653,6 +83056,7 @@
         "ReferenceFormKey": "[0x081CEF2C: (665, 653, 565)]",
         "RawReference": "1CEF2C",
         "Comment": "Shakes when sit in chairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -82661,6 +83065,7 @@
         "ReferenceFormKey": "[0x081CED88: (659, 637, 569)]",
         "RawReference": "1CED88",
         "Comment": "Falls over when sit in chairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -82669,6 +83074,7 @@
         "ReferenceFormKey": "[0x081CEE1F: (623, 534, 826)]",
         "RawReference": "1CEE1F",
         "Comment": "Falls off plate on cell entry",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -82677,6 +83083,7 @@
         "ReferenceFormKey": "[0x081CEE21: (609, 519, 842)]",
         "RawReference": "1CEE21",
         "Comment": "Topples on cell entry",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -82685,6 +83092,7 @@
         "ReferenceFormKey": "[0x0A1CEF57: (659, 251, 849)]",
         "RawReference": "",
         "Comment": "Chandelier is not connected to chain on ceiling and is floating",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -82781,6 +83189,7 @@
         "ReferenceFormKey": "[0x081A4008: (-21024, 141065, 1756)]",
         "RawReference": "1A4008",
         "Comment": "Texture mismatch with fence xx1A400A",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -82789,6 +83198,7 @@
         "ReferenceFormKey": "[0x08181B94: (-23454, 141284, 2084)]",
         "RawReference": "181B94",
         "Comment": "Navmesh: npcs can get stuck on steps",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -83015,6 +83425,7 @@
         "ReferenceFormKey": "[0x08100FC4: (-209407, 61707, -14041)]",
         "RawReference": "100FC4",
         "Comment": "Where this meets the cliff-face, there\u0027s a sort of raised area that looks very unnatural.",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -83119,6 +83530,7 @@
         "ReferenceFormKey": "[0x0A1C036A: (-107011, 1955, -13673)]",
         "RawReference": "1C036A",
         "Comment": "Gap on right side when approaching from Smuggler\u0027s Cave",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -85224,6 +85636,7 @@
         "ReferenceFormKey": "[0x101C6308: (-274, -296, 853)]",
         "RawReference": "1C6308",
         "Comment": "incorrect north marker. Misaligned with outside",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85232,6 +85645,7 @@
         "ReferenceFormKey": "[0x102408FF: (-350, -679, 712)]",
         "RawReference": "2408FF",
         "Comment": "navmesh: NPCs can get caught on chest",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -85240,6 +85654,7 @@
         "ReferenceFormKey": "[0x102408E0: (175, -631, 712)]",
         "RawReference": "2408E0",
         "Comment": "navmesh: NPCs very easily caught on dividers. Whole area behind it needs a nav touch-up",
+        "Fixed": true,
         "Rows": []
       },
       {
@@ -85248,6 +85663,7 @@
         "ReferenceFormKey": "[0x101C62C1: (528, 57, 545)]",
         "RawReference": "1C62C1",
         "Comment": "incorrect north marker. Misaligned with outside",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85256,6 +85672,7 @@
         "ReferenceFormKey": "[0x102408AE: (138, -210, 400)]",
         "RawReference": "2408AE",
         "Comment": "navmesh: NPCs will walk into table",
+        "Fixed": true,
         "Rows": []
       }
     ],
@@ -85514,6 +85931,7 @@
         "ReferenceFormKey": "[0x082474DF: (1030, -91, -1084)]",
         "RawReference": "2474DF",
         "Comment": "havok plates",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85522,6 +85940,7 @@
         "ReferenceFormKey": "[0x08247490: (1180, -325, -1074)]",
         "RawReference": "247490",
         "Comment": "non-flora wine",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85530,6 +85949,7 @@
         "ReferenceFormKey": "[0x08243C58: (764, -48, -1084)]",
         "RawReference": "243C58",
         "Comment": "empty",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85538,6 +85958,7 @@
         "ReferenceFormKey": "[0x082474F6: (1287, -301, -829)]",
         "RawReference": "2474F6",
         "Comment": "tweak Fade in lights inside the interior",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85546,6 +85967,7 @@
         "ReferenceFormKey": "[0x08243C84: (556, -232, -1084)]",
         "RawReference": "243C84",
         "Comment": "add cor out piece",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85554,6 +85976,7 @@
         "ReferenceFormKey": "[0x08243C27: (572, -220, -828)]",
         "RawReference": "243C27",
         "Comment": "light flickers on these stairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85562,6 +85985,7 @@
         "ReferenceFormKey": "[0x08247425: (1083, 289, -451)]",
         "RawReference": "247425",
         "Comment": "check if allowed to stay",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85570,6 +85994,7 @@
         "ReferenceFormKey": "[0x082475AC: (1398, -21, -412)]",
         "RawReference": "2475AC",
         "Comment": "too many maps of Solstheim in the house, see if other maps are available",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85578,6 +86003,7 @@
         "ReferenceFormKey": "[0x08247445: (1451, -603, -510)]",
         "RawReference": "247445",
         "Comment": "havok papers and scrolls",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85586,6 +86012,7 @@
         "ReferenceFormKey": "[0x082475E4: (1352, -583, -568)]",
         "RawReference": "2475E4",
         "Comment": "havok paper and basket",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85594,6 +86021,7 @@
         "ReferenceFormKey": "[0x08247452: (716, -598, -563)]",
         "RawReference": "247452",
         "Comment": "books on ground, check if not fallen off",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85602,6 +86030,7 @@
         "ReferenceFormKey": "[0x082474F8: (867, -245, -668)]",
         "RawReference": "2474F8",
         "Comment": "player can fall in and get stuck, might need to push the walls closer to stairs",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85610,6 +86039,7 @@
         "ReferenceFormKey": "[0x08247521: (1287, -216, -1084)]",
         "RawReference": "247521",
         "Comment": "wrong northmarker",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -85963,6 +86393,7 @@
         "ReferenceFormKey": "[0xFF0010E9: (992, 202, 241)]",
         "RawReference": "0010E9",
         "Comment": "needs to be either a fake/replica item or replaced",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -85971,6 +86402,7 @@
         "ReferenceFormKey": "[0x060AF35C: (822, -226, 227)]",
         "RawReference": "0AF35C",
         "Comment": "maybe add other skull variants for orc, argonians and so on",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -86157,6 +86589,7 @@
         "ReferenceFormKey": "[0x060B0AA1: (2239, 178, -248)]",
         "RawReference": "0B0AA1",
         "Comment": "Bad placement",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86165,6 +86598,7 @@
         "ReferenceFormKey": "[0x060B0AA1: (2239, 178, -248)]",
         "RawReference": "0B0AA1",
         "Comment": "seeing as there is alchemy equipment here, maybe add an alchemy station somewhere",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86173,6 +86607,7 @@
         "ReferenceFormKey": "[0x082584AA: (1966, -640, -522)]",
         "RawReference": "2584AA",
         "Comment": "Light flickers when entering room",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -86635,6 +87070,7 @@
         "ReferenceFormKey": "[0x08246EC6: (42, 392, 348)]",
         "RawReference": "246EC6",
         "Comment": "adjust Fade on lights",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86643,6 +87079,7 @@
         "ReferenceFormKey": "[0x082453D2: (232, 208, 216)]",
         "RawReference": "2453D2",
         "Comment": "bit empty",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86651,6 +87088,7 @@
         "ReferenceFormKey": "[0x0824700F: (409, -607, 216)]",
         "RawReference": "24700F",
         "Comment": "bit empty",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86659,6 +87097,7 @@
         "ReferenceFormKey": "[0x08246F9A: (920, -566, 301)]",
         "RawReference": "246F9A",
         "Comment": "fix tool positioning, go crazy ingame",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86667,6 +87106,7 @@
         "ReferenceFormKey": "[0x08246F66: (1104, -320, 292)]",
         "RawReference": "246F66",
         "Comment": "fix placement, goes crazy",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86675,6 +87115,7 @@
         "ReferenceFormKey": "[0x08246F65: (1123, -233, 283)]",
         "RawReference": "246F65",
         "Comment": "could use the whole set on the platter if possible",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86683,6 +87124,7 @@
         "ReferenceFormKey": "[0x08246FAD: (992, -291, 288)]",
         "RawReference": "246FAD",
         "Comment": "maybe showcase the arrows a little prettier - in singles instead of quivers",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86691,6 +87133,7 @@
         "ReferenceFormKey": "[0x08246F83: (340, -389, 305)]",
         "RawReference": "246F83",
         "Comment": "maybe some more regular tools over daggers",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86699,6 +87142,7 @@
         "ReferenceFormKey": "[0x08245460: (232, 0, 472)]",
         "RawReference": "245460",
         "Comment": "bit empty",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86707,6 +87151,7 @@
         "ReferenceFormKey": "[0x08246ECF: (417, -588, 472)]",
         "RawReference": "246ECF",
         "Comment": "bit empty",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86715,6 +87160,7 @@
         "ReferenceFormKey": "[0x08246EE4: (502, 122, 728)]",
         "RawReference": "246EE4",
         "Comment": "bit empty",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86723,6 +87169,7 @@
         "ReferenceFormKey": "[0x08245448: (1064, -224, 728)]",
         "RawReference": "245448",
         "Comment": "uneven af, make it more even",
+        "Fixed": false,
         "Rows": []
       },
       {
@@ -86731,6 +87178,7 @@
         "ReferenceFormKey": "[0x08245448: (1064, -224, 728)]",
         "RawReference": "245448",
         "Comment": "maybe place a wardrobe and more candle(sconce) to chestofdrawers instead",
+        "Fixed": false,
         "Rows": []
       }
     ],
@@ -87804,6 +88252,7 @@
         "ReferenceFormKey": "[0x112400ED: (55, 204, 647)]",
         "RawReference": "2400ED",
         "Comment": "floating and leaning on nothing",
+        "Fixed": false,
         "Rows": []
       }
     ],
