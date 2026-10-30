@@ -1,5 +1,4 @@
 import "./shared.css";
-import X from "../../../assets/icons/cross.svg"
 
 const images = import.meta.glob("../../../assets/map-cities/*.{svg,png,jpg,webp}", {
     eager: true,
@@ -16,33 +15,22 @@ const iconSources = Object.fromEntries(
 interface DrawerCityMapProps {
     text: string;
     showText?: boolean;
-    isOpen: boolean;
-    onClose: () => void;
 };
 
-export default function DrawerCityMap({ text, showText = true, isOpen, onClose }: DrawerCityMapProps) {
-    if (!isOpen) return null;
+export default function DrawerCityMap({ text, showText = true }: DrawerCityMapProps) {
     
     const src = iconSources[text];
 
     return (
-        <dialog 
+        <div 
             id="image-modal" 
-            ref={(node) => {
-                if (node && !node.open) {
-                    node.showModal();
-                }
-            }} 
-            onClose={onClose}
+            className="parent-map"
         >
-            <button onClick={onClose} aria-label="Close">
-                <img src={X} width={24} />
-            </button>
             <img className="image-modal__image" 
                 src={src} 
                 alt={`${text} image`} 
             />
             {showText && text}
-        </dialog>
+        </div>
     )
 };

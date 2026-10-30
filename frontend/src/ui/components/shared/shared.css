@@ -254,7 +254,7 @@
     height: 1.656rem;
 }
 
-dialog {
+.parent-map {
     --bleed: 1rem;
     max-width: calc(30rem - var(--bleed));
     width: calc(100% - var(--bleed));
@@ -268,11 +268,6 @@ dialog {
     animation-duration: 0.2s;
 }
 
-dialog::backdrop {
-    background-color: black;
-    opacity: 0.75;
-}
-
 .image-modal__image {
     object-fit: fill;
     width: 100%;
@@ -280,43 +275,7 @@ dialog::backdrop {
     border-radius: 0.5rem;
 }
 
-dialog > button {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.33rem;
-    margin: 0;
-    border: 1px solid transparent;
-    border-radius: 999px;
-    background-color: oklch(14.5% 0 0deg);
-    opacity: 0.8;
-    font-family: inherit;
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1;
-    white-space: nowrap;
-    color: white;
-    -webkit-user-select: none;
-    user-select: none;
-    transition: var(--button-colors);
-
-    @media (hover: hover) {
-        &:hover:not([data-disabled]) {
-            background-color: oklch(26.9% 0 0deg);
-        }
-    }
-
-    &:focus-visible {
-        outline: 2px solid oklch(14.5% 0 0deg);
-        outline-offset: -1px;
-    }
-}
-
-@-webkit-keyframes zoom {
+/* @-webkit-keyframes zoom {
     from {transform:scale(0)} 
     to {transform:scale(1)}
 }
@@ -324,7 +283,7 @@ dialog > button {
 @keyframes zoom {
     from {transform:scale(0.5)} 
     to {transform:scale(1)}
-}
+} */
 
 @media (max-width: 612px) {
     .status {

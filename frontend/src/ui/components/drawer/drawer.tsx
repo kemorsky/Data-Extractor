@@ -29,7 +29,6 @@ export default function LocationDrawer() {
 
     console.log(locationByName);
 
-    const [ isOpen, setIsOpen ] = useState(false);
     const [ showChildren, setShowChildren ] = useState(false);
 
     const childrenByParent = useMemo(() => {
@@ -169,13 +168,9 @@ export default function LocationDrawer() {
                                         <DrawerBetaCommentsTab locationByName={locationByName} />
                                     </Tabs.Panel>
                                     <Tabs.Panel key={"parent-map"} className={tabsStyles.Panel} value="parent-map">
-                                        
-                                        <button className={styles.ShowMapButton} onClick={() => setIsOpen(true)}>Show map</button>
                                         <DrawerCityMap 
                                             text={locationByName?.parentLocation ?? ""} 
                                             showText={false} 
-                                            isOpen={isOpen}
-                                            onClose={() => setIsOpen(false)}
                                         />
                                            
                                     </Tabs.Panel>

@@ -21,6 +21,8 @@ interface FilterProps {
 
 export default function Filters(props: FilterProps) {
     const { locations, filterResults, filters, searchParams, setSearchParams } = props;
+
+    const MOBILE_BREAKPOINT = 768;
     
     const parentLocations = [
         ...new Set(
@@ -133,7 +135,7 @@ export default function Filters(props: FilterProps) {
     return (
         <Drawer.Root 
             swipeDirection="left" 
-            defaultOpen={true} 
+            defaultOpen={window.innerWidth < MOBILE_BREAKPOINT ? false : true} 
             modal={false} 
             disablePointerDismissal
         >
