@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="DataExtractor.Tests/DataExtractor.Tests.csproj" />
   <Project Path="DataExtractor.Tool/DataExtractor.Tool.csproj" />
   <Project Path="DataExtractor/DataExtractor.csproj" />
 </Solution>
