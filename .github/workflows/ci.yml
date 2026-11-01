@@ -117,10 +117,10 @@ jobs:
       # -------------------------
 
       - name: Restore
-        run: dotnet restore DataExtractor/DataExtractor.csproj    
+        run: dotnet restore DataExtractor.slnx    
       
       - name: Build
-        run: dotnet build DataExtractor/DataExtractor.csproj --configuration Release --no-restore
+        run: dotnet build DataExtractor.slnx --configuration Release --no-restore
 
       - name: Test
         run: dotnet test DataExtractor.Tests/DataExtractor.Tests.csproj --configuration Release --no-build --verbosity normal
