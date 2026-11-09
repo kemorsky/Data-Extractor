@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import LocationDrawer from "../ui/components/drawer/drawer";
+import RedirectPage from "../pages/redirect";
 
 export const router = createBrowserRouter([
     {
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
                 Component: LocationDrawer,
             },
         ]
+    },
+    {
+        path: "/redirect",
+        Component: RedirectPage,
     },
 ], 
     {    

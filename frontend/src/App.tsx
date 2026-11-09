@@ -50,6 +50,12 @@ export default function App() {
       filters.parentLocations, 
       filters.inhabitants,
   ));
+
+  const API_URL = "http://localhost:5161/auth/login";
+  
+  const signIn = () => {
+    window.location.href = `${API_URL}`;
+  };
   
   return (
     <main id="center">
@@ -57,6 +63,7 @@ export default function App() {
         <Navbar />
       </div>
       <section className="main__wrapper">
+        <button onClick={() => signIn()}>Sign In</button>
         <Filters 
           locations={locations}
           filterResults={filterResults}
