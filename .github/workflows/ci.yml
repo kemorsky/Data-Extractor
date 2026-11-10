@@ -25,9 +25,9 @@ jobs:
       VIKUNJA_PROJECT_URL: ${{ vars.VIKUNJA_PROJECT_URL }}
       VIKUNJA_TOKEN: ${{ secrets.VIKUNJA_TOKEN }}
       GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-      ISSUER: ${{ secrets.ZITADEL_ISSUER }}
-      CLIENT_ID: ${{ secrets.ZITADEL_CLIENT_ID }}
-      CLIENT_SECRET: ${{ secrets.ZITADEL_CLIENT_SECRET }}
+      ISSUER: ${{ secrets.ISSUER }}
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
 
     steps:
       - name: Checkout
