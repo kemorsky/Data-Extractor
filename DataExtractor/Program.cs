@@ -15,9 +15,9 @@ var frontendRedirect = Environment.GetEnvironmentVariable("Frontend-Redirect");
 
 var builder = WebApplication.CreateBuilder(args);
 
-var zitadelIssuer = builder.Configuration["Issuer"]!;
-var clientId = builder.Configuration["ClientId"]!;
-var clientSecret = builder.Configuration["ClientSecret"]!;
+var zitadelIssuer = builder.Configuration["Issuer"];
+var clientId = builder.Configuration["ClientId"];
+var clientSecret = builder.Configuration["ClientSecret"];
 
 builder.Services.AddOpenApi();
 
@@ -25,6 +25,9 @@ builder.Services
     .AddAuthentication(options =>
     {
         options.DefaultScheme =
+            CookieAuthenticationDefaults.AuthenticationScheme;
+
+        options.DefaultSignInScheme =
             CookieAuthenticationDefaults.AuthenticationScheme;
 
         options.DefaultChallengeScheme =
@@ -110,6 +113,8 @@ var locationsJson = await File.ReadAllTextAsync(
 );
 
 locationsCache = JsonSerializer.Deserialize<List<LocationDataSheet>>(locationsJson) ?? new();
+
+app.MapGet("/", () => "Hello World!");
 
 app.MapGet("/auth/login", () =>
 {
@@ -227,7 +232,6 @@ app.MapGet("/locations/filter", (
             : Results.Ok(locations);
 });
 
-app.MapGet("/", () => "Hello World!");
 app.Run();
 
 public partial class Program { }
