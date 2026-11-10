@@ -7,8 +7,6 @@ using System.Text.Json;
 using DataExtractor.Tools;
 using Microsoft.AspNetCore.Authentication;
 
-var URL = "https://kemorsky.github.io";
-
 var builder = WebApplication.CreateBuilder(args);
 
 var zitadelIssuer = builder.Configuration["ISSUER"];
@@ -86,7 +84,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
     {
-        policy.WithOrigins(frontendOrigin ?? URL)
+        policy.WithOrigins(frontendOrigin!)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
