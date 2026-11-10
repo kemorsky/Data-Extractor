@@ -9,15 +9,15 @@ using Microsoft.AspNetCore.Authentication;
 
 var URL = Environment.GetEnvironmentVariable("URL");
 var Issuer = Environment.GetEnvironmentVariable("ISSUER");
-var ClientId = Environment.GetEnvironmentVariable("CLIENT-ID");
-var ClientSecret = Environment.GetEnvironmentVariable("CLIENT-SECRETS");
+var ClientId = Environment.GetEnvironmentVariable("CLIENT_ID");
+var ClientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRETS");
 var frontendRedirect = Environment.GetEnvironmentVariable("FRONTEND-REDIRECT");
 
 var builder = WebApplication.CreateBuilder(args);
 
-var zitadelIssuer = builder.Configuration["Issuer"];
-var clientId = builder.Configuration["ClientId"];
-var clientSecret = builder.Configuration["ClientSecret"];
+var zitadelIssuer = builder.Configuration["ISSUER"];
+var clientId = builder.Configuration["CLIENT_ID"];
+var clientSecret = builder.Configuration["CLIENT_SECRET"];
 
 builder.Services.AddOpenApi();
 
