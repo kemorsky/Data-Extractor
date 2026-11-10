@@ -18,6 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 var zitadelIssuer = builder.Configuration["ISSUER"];
 var clientId = builder.Configuration["CLIENT_ID"];
 var clientSecret = builder.Configuration["CLIENT_SECRET"];
+var frontendOrigin = builder.Configuration["URL"];
 
 builder.Services.AddOpenApi();
 
@@ -88,7 +89,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
     {
-        policy.WithOrigins(URL!)
+        policy.WithOrigins(frontendOrigin ?? URL)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
