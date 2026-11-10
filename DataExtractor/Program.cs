@@ -8,10 +8,10 @@ using DataExtractor.Tools;
 using Microsoft.AspNetCore.Authentication;
 
 var URL = Environment.GetEnvironmentVariable("URL");
-var Issuer = Environment.GetEnvironmentVariable("Issuer");
-var ClientId = Environment.GetEnvironmentVariable("ClientId");
-var ClientSecret = Environment.GetEnvironmentVariable("ClientSecret");
-var frontendRedirect = Environment.GetEnvironmentVariable("Frontend-Redirect");
+var Issuer = Environment.GetEnvironmentVariable("ISSUER");
+var ClientId = Environment.GetEnvironmentVariable("CLIENT-ID");
+var ClientSecret = Environment.GetEnvironmentVariable("CLIENT-SECRETS");
+var frontendRedirect = Environment.GetEnvironmentVariable("FRONTEND-REDIRECT");
 
 var builder = WebApplication.CreateBuilder(args);
 

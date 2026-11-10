@@ -19,26 +19,21 @@ public class LocationApiTests : IClassFixture<WebApplicationFactory<Program>>
 
     public LocationApiTests(WebApplicationFactory<Program> factory)
     {
-        var Issuer = Environment.GetEnvironmentVariable("Issuer");
-        var ClientId = Environment.GetEnvironmentVariable("ClientId");
-        var ClientSecret = Environment.GetEnvironmentVariable("ClientSecret");
-        var frontendRedirect = Environment.GetEnvironmentVariable("Frontend-Redirect");
-
         var configuredFactory = factory.WithWebHostBuilder(builder =>
         {
             builder.UseSetting(
                 "ClientId",
-                Environment.GetEnvironmentVariable("ClientId")
+                Environment.GetEnvironmentVariable("CLIENT_ID")
             );
 
             builder.UseSetting(
                 "ClientSecret",
-                Environment.GetEnvironmentVariable("ClientSecret")
+                Environment.GetEnvironmentVariable("CLIENT_SECRET")
             );
 
             builder.UseSetting(
                 "Issuer",
-                Environment.GetEnvironmentVariable("Issuer")
+                Environment.GetEnvironmentVariable("ISSUER")
             );
         });
 
@@ -78,7 +73,6 @@ public class LocationApiTests : IClassFixture<WebApplicationFactory<Program>>
             OpenIdConnectDefaults.AuthenticationScheme
         );
 
-        // Assert
         Assert.NotNull(scheme);
     }
 
