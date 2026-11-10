@@ -7,7 +7,7 @@ using System.Text.Json;
 using DataExtractor.Tools;
 using Microsoft.AspNetCore.Authentication;
 
-var URL = Environment.GetEnvironmentVariable("URL");
+var URL = "https://kemorsky.github.io/DataExtractor/";
 var Issuer = Environment.GetEnvironmentVariable("ISSUER");
 var ClientId = Environment.GetEnvironmentVariable("CLIENT_ID");
 var ClientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRETS");
