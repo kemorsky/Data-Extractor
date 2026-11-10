@@ -7,17 +7,14 @@ using System.Text.Json;
 using DataExtractor.Tools;
 using Microsoft.AspNetCore.Authentication;
 
-var URL = "https://kemorsky.github.io/DataExtractor/";
-var Issuer = Environment.GetEnvironmentVariable("ISSUER");
-var ClientId = Environment.GetEnvironmentVariable("CLIENT_ID");
-var ClientSecret = Environment.GetEnvironmentVariable("CLIENT_SECRETS");
-var frontendRedirect = Environment.GetEnvironmentVariable("FRONTEND-REDIRECT");
+var URL = "https://kemorsky.github.io";
 
 var builder = WebApplication.CreateBuilder(args);
 
 var zitadelIssuer = builder.Configuration["ISSUER"];
 var clientId = builder.Configuration["CLIENT_ID"];
 var clientSecret = builder.Configuration["CLIENT_SECRET"];
+var frontendRedirect = builder.Configuration["FRONTEND_REDIRECT"];
 var frontendOrigin = builder.Configuration["URL"];
 
 builder.Services.AddOpenApi();
