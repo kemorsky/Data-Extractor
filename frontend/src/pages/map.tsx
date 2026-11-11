@@ -5,12 +5,9 @@ import L from 'leaflet';
 import map from "../assets/map/Cyrodiil-Map-5055x3456.webp";
 import Icons from "../ui/components/shared/icons";
 
+import icon from '../assets/icons/question-mark.svg';
 import 'leaflet/dist/leaflet.css';
 import { useNavigate, useLocation } from "react-router";
-
-// import icon from 'leaflet/dist/images/marker-icon.png';
-// import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-// import { useEffect, useState } from "react";
 
 const getMarkerIcon = (locationType: string) => {
     const element = Icons({
@@ -23,7 +20,12 @@ const getMarkerIcon = (locationType: string) => {
     const iconUrl = img?.props?.src;
 
     if (!iconUrl) {
-        return new L.Icon.Default();
+        return L.icon({
+            iconUrl: icon,
+            iconSize: [24, 24],
+            iconAnchor: [12, 18],
+            popupAnchor: [1, -34],
+        });
     }
 
     return L.icon({
@@ -98,7 +100,7 @@ export const Map = (props: MapProps) => {
     };
     
     return (
-        <div className="map" style={{ width: '100vw', height: '100vh', background: '#0b0b0b' }}>
+        <div className="map">
             <MapContainer 
                 crs={L.CRS.Simple}
                 minZoom={-2}
@@ -113,7 +115,7 @@ export const Map = (props: MapProps) => {
                 <ImageOverlay 
                     url={map}
                     bounds={IMAGE_BOUNDS}
-                    attribution="The Elder Scrolls V: Skyrim © Bethesda Game Studios"
+                    attribution="Beyond Skyrim: Cyrodiil"
                 />
 
                 {locations?.map((loc) => {

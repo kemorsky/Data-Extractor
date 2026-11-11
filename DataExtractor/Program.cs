@@ -132,7 +132,7 @@ locationsCache = JsonSerializer.Deserialize<List<LocationDataSheet>>(locationsJs
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/auth/login", () =>
+app.MapGet("/auth/signin", () =>
 {
     var properties = new AuthenticationProperties
     {
@@ -157,7 +157,7 @@ app.MapGet("/auth/me", (ClaimsPrincipal user) =>
 }).RequireAuthorization();
 
 // Logout
-app.MapPost("/auth/logout", () =>
+app.MapPost("/auth/signout", () =>
 {
     var properties = new AuthenticationProperties
     {

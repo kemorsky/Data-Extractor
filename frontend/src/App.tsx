@@ -14,6 +14,7 @@ import { useLocation, useSearchParams } from 'react-router';
 import Footer from './ui/components/shared/footer';
 import Navbar from './ui/components/shared/navbar';
 import { Map } from './pages/map';
+import { signIn } from './api/api';
 
 export default function App() {
   const [_, setSearchParams] = useSearchParams();
@@ -50,12 +51,6 @@ export default function App() {
       filters.parentLocations, 
       filters.inhabitants,
   ));
-
-  const API_URL = "http://localhost:5161/auth/login";
-  
-  const signIn = () => {
-    window.location.href = `${API_URL}`;
-  };
   
   return (
     <main id="center">

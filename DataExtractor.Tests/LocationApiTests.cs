@@ -81,7 +81,7 @@ public class LocationApiTests : IClassFixture<WebApplicationFactory<Program>>
     {
         // Act
         var response = await _client.GetAsync(
-            "/auth/login",
+            "/auth/signin",
             HttpCompletionOption.ResponseHeadersRead
         );
 

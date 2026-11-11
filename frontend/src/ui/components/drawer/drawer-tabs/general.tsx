@@ -145,7 +145,7 @@ export default function DrawerGeneralTab(props: DrawerTabProps) {
             <div className={styles.NotesContainer}>
                 <section className={styles.Notes}>
                     <h2 className={styles.NotesTitle}>Notes</h2>
-                    <hr className={styles.NotesSeparator} />
+                    {/* <hr className={styles.NotesSeparator} /> */}
                     <article className={styles.NotesText}>
                         {parse(rawNotes)}
                     </article>
