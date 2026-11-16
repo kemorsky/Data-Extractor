@@ -79,6 +79,28 @@ builder.Services
             return Task.CompletedTask;
         };
 
+        options.Events.OnTokenValidated = context =>
+        {
+            Console.WriteLine("OIDC TOKEN VALIDATED");
+            Console.WriteLine($"Subject: {context.Principal?.FindFirst("sub")?.Value}");
+
+            return Task.CompletedTask;
+        };
+
+        options.Events.OnAuthenticationFailed = context =>
+        {
+            Console.WriteLine($"OIDC AUTHENTICATION FAILED: {context.Exception}");
+            return Task.CompletedTask;
+        };
+
+        options.Events.OnTicketReceived = context =>
+        {
+            Console.WriteLine("AUTHENTICATION TICKET RECEIVED");
+            Console.WriteLine($"Redirect: {context.ReturnUri}");
+
+            return Task.CompletedTask;
+        };
+
         options.Scope.Clear();
         options.Scope.Add("openid");
         options.Scope.Add("profile");
@@ -100,8 +122,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
     {
-        policy.WithOrigins("https://kemorsky.github.io/Data-Extractor/")
-        //policy.AllowAnyOrigin()
+        policy.WithOrigins("https://kemorsky.github.io")
+        policy.AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
