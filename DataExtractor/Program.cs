@@ -47,12 +47,6 @@ builder.Services
         options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         options.Cookie.SameSite = SameSiteMode.None;
 
-        options.Events.OnRedirectToLogin = context =>
-        {
-            context.Response.StatusCode = 401;
-            return Task.CompletedTask;
-        };
-
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
         options.SlidingExpiration = true;
     })
@@ -160,8 +154,7 @@ app.MapGet("/auth/signin", () =>
 {
     var properties = new AuthenticationProperties
     {
-        RedirectUri = frontendRedirect,
-        IsPersistent = true
+        RedirectUri = frontendRedirect
     };
 
     return Results.Challenge(
