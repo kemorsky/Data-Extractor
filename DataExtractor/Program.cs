@@ -123,7 +123,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("FrontendPolicy", policy =>
     {
         policy.WithOrigins("https://kemorsky.github.io")
-        policy.AllowAnyOrigin()
+        //policy.AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
