@@ -64,6 +64,12 @@ builder.Services
 
         options.CallbackPath = "/signin-oidc";
 
+        options.NonceCookie.SameSite = SameSiteMode.None;
+        options.NonceCookie.SecurePolicy = CookieSecurePolicy.Always;
+
+        options.CorrelationCookie.SameSite = SameSiteMode.None;
+        options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
+
         options.Events.OnRedirectToIdentityProvider = context =>
         {
             Console.WriteLine($"Request Scheme: {context.Request.Scheme}");
