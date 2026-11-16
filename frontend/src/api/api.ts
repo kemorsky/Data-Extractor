@@ -47,7 +47,7 @@ export const signIn = async () => {
 }
 
 export const getUser = async () => {
-    const response = await apiRequest(`${URL}/auth/me"`);
+    const response = await apiRequest(`${URL}/auth/me`);
     return response;
 };
 
