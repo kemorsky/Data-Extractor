@@ -15783,7 +15783,7 @@
         "NpcDocCells": []
       },
       {
-        "Name": "CYRdunSedorDepthsAyleidLich",
+        "Name": "CYRdunSedorDepthsAyleidLichAmbush",
         "Url": "",
         "NpcEditorId": "",
         "NpcFormKey": "",
@@ -25164,7 +25164,7 @@
     "LocationType": "None",
     "InhabitingNpcs": [
       {
-        "Name": "CYREncWolf_Indoor (3)",
+        "Name": "BSKEncWolfTimber_Indoor (2)",
         "Url": "",
         "NpcEditorId": "",
         "NpcFormKey": "",
@@ -25174,7 +25174,7 @@
         "NpcDocCells": []
       },
       {
-        "Name": "CYREncWolfTimber_Indoor (2)",
+        "Name": "CYREncWolf_Indoor (3)",
         "Url": "",
         "NpcEditorId": "",
         "NpcFormKey": "",
@@ -71521,9 +71521,9 @@
     "RelatedQuestName": "None",
     "RelatedQuestUrl": "None",
     "HasQuest": false,
-    "Status": "None",
+    "Status": "First passed",
     "VikunjaLink": "https://claims.beyondskyrim.org/tasks/14750",
-    "Notes": "\u003Cp\u003E\u003Cstrong\u003E2.\u003C/strong\u003E Chapel of Arkay\u003C/p\u003E\n\u003Cp\u003EA chapel of Arkay intended for those pilgrims who wish to pray or meditate before (or after) visiting one of the sacred mausoleums. The Attendant Priests may sometimes come here to pray, but otherwise spend their free time in the Attendant Convent house. Outside the chapel is a cemetery reserved for Attendant Priests and Shrouded Monks who have died serving their respective orders.\u003C/p\u003E"
+    "Notes": "\u003Cp\u003E\u003Cstrong\u003E2.\u003C/strong\u003E Chapel of Arkay\u003C/p\u003E\u003Cp\u003EA chapel of Arkay intended for those pilgrims who wish to pray or meditate before (or after) visiting one of the sacred mausoleums. The Attendant Priests may sometimes come here to pray, but otherwise spend their free time in the Attendant Convent house. Outside the chapel is a cemetery reserved for Attendant Priests and Shrouded Monks who have died serving their respective orders.\u003C/p\u003E"
   },
   {
     "Id": 4088,
