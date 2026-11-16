@@ -14,7 +14,7 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
     try {
         const response = await fetch(url, {
             method: "GET",
-            // credentials: "include",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 ...options.headers
@@ -45,6 +45,11 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
 export const signIn = async () => {
     window.location.href = `${URL}/auth/signin`;
 }
+
+export const getUser = async () => {
+    const response = await apiRequest(`${URL}/auth/me"`);
+    return response;
+};
 
 export const getLocations = async (): Promise<LocationData[]> => {
     const data = await apiRequest(`${URL}/locations`);
