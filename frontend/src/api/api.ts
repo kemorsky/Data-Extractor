@@ -43,7 +43,7 @@ const apiRequest = async (url: string, options: RequestOptions = {}) => {
 }
 
 export const signIn = async () => {
-    window.location.href = `${URL}/signin`;
+    window.location.href = `${URL}/auth/signin`;
 }
 
 export const getLocations = async (): Promise<LocationData[]> => {
