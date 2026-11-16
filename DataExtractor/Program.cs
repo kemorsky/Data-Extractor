@@ -160,7 +160,8 @@ app.MapGet("/auth/signin", () =>
 {
     var properties = new AuthenticationProperties
     {
-        RedirectUri = frontendRedirect
+        RedirectUri = frontendRedirect,
+        IsPersistent = true
     };
 
     return Results.Challenge(
