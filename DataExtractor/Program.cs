@@ -6,6 +6,7 @@ using DataExtractor.Dto;
 using System.Text.Json;
 using DataExtractor.Tools;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,16 @@ var frontendRedirect = builder.Configuration["FRONTEND_REDIRECT"];
 var frontendOrigin = builder.Configuration["URL"];
 
 builder.Services.AddOpenApi();
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto;
+
+    options.KnownIPNetworks.Clear();
+    options.KnownProxies.Clear();
+});
 
 builder.Services
     .AddAuthentication(options =>
@@ -55,10 +66,9 @@ builder.Services
 
         options.Events.OnRedirectToIdentityProvider = context =>
         {
-            Console.WriteLine(
-                $"Redirect URI: {context.ProtocolMessage.RedirectUri}",
-                $"Redirect URI: {context}"
-            );
+            Console.WriteLine($"Request Scheme: {context.Request.Scheme}");
+            Console.WriteLine($"Request Host: {context.Request.Host}");
+            Console.WriteLine($"Redirect URI: {context.ProtocolMessage.RedirectUri}");
 
             return Task.CompletedTask;
         };
@@ -92,6 +102,8 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+app.UseForwardedHeaders();
 
 app.UseExceptionHandler(errorApp =>
 {
