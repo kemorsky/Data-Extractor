@@ -108,8 +108,8 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins("https://kemorsky.github.io")
             .AllowAnyHeader()
-            .AllowAnyMethod();
-            //.AllowCredentials();
+            .AllowAnyMethod()
+            .AllowCredentials();
     });
 });
 
