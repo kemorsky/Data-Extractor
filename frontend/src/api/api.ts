@@ -8,8 +8,6 @@ type RequestOptions = {
 }
 
 const URL = import.meta.env.VITE_URL;
-// const URL = "http://localhost:5161";
-export type User = {
 
 const apiRequest = async (url: string, options: RequestOptions = {}) => {
     try {
