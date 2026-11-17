@@ -12,13 +12,13 @@ const URL = import.meta.env.VITE_URL;
 const apiRequest = async (url: string, options: RequestOptions = {}) => {
     try {
         const response = await fetch(url, {
+            ...options,
             method: options.method ?? "GET",
             credentials: "include",
             headers: {
                 ...(options.body ? { "Content-Type": "application/json" } : {}),
                 ...options.headers
-            },
-            ...options
+            }
         })
         if (!response.ok) {
           let message = 'Request failed';
