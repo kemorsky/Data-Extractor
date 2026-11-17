@@ -3,7 +3,7 @@ import styles from './index.module.css';
 import "./assets/fonts/Webfonts/Balgruf.woff";
 import { useMemo, useState } from 'react'
 import StatusTab from './ui/components/status-graph/status-tab'
-import type { LocationFilters } from './utils/types'
+import type { LocationFilters, User } from './utils/types'
 import LocationDrawer from './ui/components/drawer/drawer'
 import Filters from './ui/blocks/filter/filters';
 import { LocationsTab } from './ui/blocks/locations/locations-tab';
@@ -14,7 +14,7 @@ import { useLocation, useSearchParams } from 'react-router';
 import Footer from './ui/components/shared/footer';
 import Navbar from './ui/components/shared/navbar';
 import { Map } from './pages/map';
-import { signIn, getUser, type User } from './api/api';
+import { signIn, getUser } from './api/api';
 
 export default function App() {
   const [_, setSearchParams] = useSearchParams();

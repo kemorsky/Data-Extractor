@@ -1,11 +1,11 @@
-import { type LocationData } from '../utils/types';
+import { type LocationData, type User } from '../utils/types';
 
 type RequestOptions = {
-        method?: string,
-        headers?: { [key: string]: string },
-        body?: string,
-        credentials?: RequestCredentials;
-    }
+    method?: string,
+    headers?: { [key: string]: string },
+    body?: string,
+    credentials?: RequestCredentials;
+}
 
 const URL = import.meta.env.VITE_URL;
 // const URL = "http://localhost:5161";
@@ -14,6 +14,7 @@ export type User = {
 const apiRequest = async (url: string, options: RequestOptions = {}) => {
     try {
         const response = await fetch(url, {
+            method: options.method ?? "GET",
             credentials: "include",
             headers: {
                 ...(options.body ? { "Content-Type": "application/json" } : {}),
