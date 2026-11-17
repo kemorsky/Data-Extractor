@@ -1,7 +1,7 @@
 import './App.css'
 import styles from './index.module.css';
 import "./assets/fonts/Webfonts/Balgruf.woff";
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import StatusTab from './ui/components/status-graph/status-tab'
 import type { LocationFilters } from './utils/types'
 import LocationDrawer from './ui/components/drawer/drawer'
@@ -14,7 +14,7 @@ import { useLocation, useSearchParams } from 'react-router';
 import Footer from './ui/components/shared/footer';
 import Navbar from './ui/components/shared/navbar';
 import { Map } from './pages/map';
-import { signIn } from './api/api';
+import { signIn, getUser, type User } from './api/api';
 
 export default function App() {
   const [_, setSearchParams] = useSearchParams();
@@ -51,6 +51,14 @@ export default function App() {
       filters.parentLocations, 
       filters.inhabitants,
   ));
+
+  const [ user, setUser ] = useState<User>();
+
+  const handleGetUser = async () => {
+    const user = await getUser();
+    setUser(user);
+    console.log(user);
+  }
   
   return (
     <main id="center">
@@ -59,6 +67,14 @@ export default function App() {
       </div>
       <section className="main__wrapper">
         <button onClick={() => signIn()}>Sign In</button>
+        <button onClick={() => handleGetUser()}>Get User</button>
+        {user && 
+          <div>
+            <p>{user.id}</p>
+            <p>{user.name}</p>
+            <p>{user.email}</p>
+          </div>
+        }
         <Filters 
           locations={locations}
           filterResults={filterResults}

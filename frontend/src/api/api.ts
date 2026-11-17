@@ -9,14 +9,14 @@ type RequestOptions = {
 
 const URL = import.meta.env.VITE_URL;
 // const URL = "http://localhost:5161";
+export type User = {
 
 const apiRequest = async (url: string, options: RequestOptions = {}) => {
     try {
         const response = await fetch(url, {
-            method: "GET",
             credentials: "include",
             headers: {
-                "Content-Type": "application/json",
+                ...(options.body ? { "Content-Type": "application/json" } : {}),
                 ...options.headers
             },
             ...options
@@ -46,9 +46,10 @@ export const signIn = async () => {
     window.location.href = `${URL}/auth/signin`;
 }
 
-export const getUser = async () => {
-    const response = await apiRequest(`${URL}/auth/me`);
-    return response;
+export const getUser = async (): Promise<User> => {
+    const data = await apiRequest(`${URL}/auth/me`);
+    console.log(data);
+    return data;
 };
 
 export const getLocations = async (): Promise<LocationData[]> => {
