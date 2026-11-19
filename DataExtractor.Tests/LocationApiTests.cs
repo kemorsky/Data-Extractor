@@ -22,6 +22,11 @@ public class LocationApiTests : IClassFixture<WebApplicationFactory<Program>>
         var configuredFactory = factory.WithWebHostBuilder(builder =>
         {
             builder.UseSetting(
+                "FrontendRedirect",
+                Environment.GetEnvironmentVariable("URL")
+            );
+            
+            builder.UseSetting(
                 "ClientId",
                 Environment.GetEnvironmentVariable("CLIENT_ID")
             );
@@ -96,7 +101,6 @@ public class LocationApiTests : IClassFixture<WebApplicationFactory<Program>>
         Assert.Contains("redirect_uri=", redirect.Query);
     }
         
-
     [Fact]
     public async Task GetLocations_ReturnsSuccessAndData()
     {
