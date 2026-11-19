@@ -14,7 +14,7 @@ var zitadelIssuer = builder.Configuration["ISSUER"];
 var clientId = builder.Configuration["CLIENT_ID"];
 var clientSecret = builder.Configuration["CLIENT_SECRET"];
 var frontendRedirect = builder.Configuration["FRONTEND_REDIRECT"];
-var frontendOrigin = builder.Configuration["URL"];
+var frontendOrigin = builder.Configuration["URL"] ?? "http://localhost:5173";
 
 builder.Services.AddOpenApi();
 
@@ -43,9 +43,10 @@ builder.Services
     .AddCookie(options =>
     {
         options.Cookie.Name = "__Host-AppSession";
+        options.Cookie.Domain = frontendOrigin;
         options.Cookie.HttpOnly = true;
         options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-        options.Cookie.SameSite = SameSiteMode.None;
+        options.Cookie.SameSite = SameSiteMode.Lax;
 
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
         options.SlidingExpiration = true;
@@ -76,10 +77,10 @@ builder.Services
 
         options.CallbackPath = "/signin-oidc";
 
-        options.NonceCookie.SameSite = SameSiteMode.None;
+        options.NonceCookie.SameSite = SameSiteMode.Lax;
         options.NonceCookie.SecurePolicy = CookieSecurePolicy.Always;
 
-        options.CorrelationCookie.SameSite = SameSiteMode.None;
+        options.CorrelationCookie.SameSite = SameSiteMode.Lax;
         options.CorrelationCookie.SecurePolicy = CookieSecurePolicy.Always;
 
         options.Events.OnRedirectToIdentityProvider = context =>

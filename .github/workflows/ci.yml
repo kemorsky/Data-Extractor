@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      URL: ${{ vars.URL }}
       MASTERLIST_ID: ${{ vars.MASTERLIST_ID }}
       NPC_DATABASE_ID: ${{ vars.NPC_DATABASE_ID }}
       BETACOMMENTS_DATABASE_ID: ${{ vars.BETACOMMENTS_DATABASE_ID }}
