@@ -134,8 +134,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("FrontendPolicy", policy =>
     {
-        policy.WithOrigins("https://kemorsky.github.io")
-        //policy.AllowAnyOrigin()
+        policy.WithOrigins(frontendOrigin)
+        //policy.WithOrigins("http://localhost:5173")
+        // policy.AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
