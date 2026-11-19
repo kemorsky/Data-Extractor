@@ -42,8 +42,8 @@ builder.Services
     })
     .AddCookie(options =>
     {
-        options.Cookie.Name = "__Host-AppSession";
-        options.Cookie.Domain = frontendOrigin;
+        options.Cookie.Name = "__Secure-AppSession";
+        options.Cookie.Domain = "library.beyondskyrim.org";
         options.Cookie.HttpOnly = true;
         options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
         options.Cookie.SameSite = SameSiteMode.Lax;
