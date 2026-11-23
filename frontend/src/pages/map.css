@@ -2,10 +2,21 @@
     font-family: var(--font-primary);
 }
 
+.map__container {
+  width: 1166px;
+  height: 800px;
+}
+
 .map {
   height: 100vh;
-  width: 100vw;
-  background-color: #000000;
+  max-width: 1200px;
+  background-color: var(--bg-light);
+  border-radius: 0.5rem;
+}
+
+.leaftlet-container {
+  background-color: #e61313;
+  border-radius: 0.5rem;
 }
 
 .custom-popup .leaflet-popup-content-wrapper {

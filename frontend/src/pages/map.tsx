@@ -100,58 +100,61 @@ export const Map = (props: MapProps) => {
     };
     
     return (
-        <div className="map">
-            <MapContainer 
-                crs={L.CRS.Simple}
-                minZoom={-2}
-                maxZoom={2}
-                bounds={IMAGE_BOUNDS}
-                maxBounds={IMAGE_BOUNDS}
-                maxBoundsViscosity={1.0}
-                style={{ width: '100%', height: '100%' }}
-                
-            >
-                {/* <MapControls onZoomChange={setZoom} /> */}
-                <ImageOverlay 
-                    url={map}
+        <div className="map__container">
+            <div className="map">
+                <MapContainer 
+                    className="map__leaflet"
+                    crs={L.CRS.Simple}
+                    minZoom={-2}
+                    maxZoom={2}
                     bounds={IMAGE_BOUNDS}
-                    attribution="Beyond Skyrim: Cyrodiil"
-                />
-
-                {locations?.map((loc) => {
-                    const locationOrigin = loc.cells.find(l => l.gridX !== null && l.gridY !== null);
-
-                    if (!locationOrigin) {
-                        return null;
-                    };
+                    maxBounds={IMAGE_BOUNDS}
+                    maxBoundsViscosity={1.0}
+                    style={{ width: '100%', height: '100%', backgroundColor: "transparent"  }}
                     
-                    const position = gridToLeaflet(locationOrigin.gridX, locationOrigin.gridY);
-                    // const size = 24 + zoom * 4;
+                >
+                    {/* <MapControls onZoomChange={setZoom} /> */}
+                    <ImageOverlay 
+                        url={map}
+                        bounds={IMAGE_BOUNDS}
+                        attribution="Beyond Skyrim: Cyrodiil"
+                    />
 
-                    const baseIcon = getMarkerIcon(loc.locationType ?? "");
+                    {locations?.map((loc) => {
+                        const locationOrigin = loc.cells.find(l => l.gridX !== null && l.gridY !== null);
 
-                    if (loc.cells[1]?.gridX !== null && loc.cells[1]?.gridY !== null) {
+                        if (!locationOrigin) {
+                            return null;
+                        };
                         
-                        return (
-                            <Marker key={loc.id} position={position} icon={baseIcon}>
-                                <Popup className="custom-popup"> 
-                                    <h3 className="location-name">{loc.name}</h3>
-                                    <p>{loc.parentLocation}</p>
-                                    <small style={{ color: '#999' }}>
-                                        Cell: {locationOrigin.editorID} <br></br>
-                                        Grid: ({locationOrigin.gridX}, {locationOrigin.gridY})
-                                    </small>
-                                    <button className="location-open-button" onClick={() => {handleClickName(loc.name)}}>
-                                        View
-                                    </button>                                  
-                                </Popup>
-                            </Marker>
-                        )
-                    } else {
-                        return null;
-                    };
-                })}
-            </MapContainer>
+                        const position = gridToLeaflet(locationOrigin.gridX, locationOrigin.gridY);
+                        // const size = 24 + zoom * 4;
+
+                        const baseIcon = getMarkerIcon(loc.locationType ?? "");
+
+                        if (loc.cells[1]?.gridX !== null && loc.cells[1]?.gridY !== null) {
+                            
+                            return (
+                                <Marker key={loc.id} position={position} icon={baseIcon}>
+                                    <Popup className="custom-popup"> 
+                                        <h3 className="location-name">{loc.name}</h3>
+                                        <p>{loc.parentLocation}</p>
+                                        <small style={{ color: '#999' }}>
+                                            Cell: {locationOrigin.editorID} <br></br>
+                                            Grid: ({locationOrigin.gridX}, {locationOrigin.gridY})
+                                        </small>
+                                        <button className="location-open-button" onClick={() => {handleClickName(loc.name)}}>
+                                            View
+                                        </button>                                  
+                                    </Popup>
+                                </Marker>
+                            )
+                        } else {
+                            return null;
+                        };
+                    })}
+                </MapContainer>
+            </div>
         </div>
     )
 }

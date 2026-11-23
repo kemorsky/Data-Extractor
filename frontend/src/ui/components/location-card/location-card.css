@@ -250,7 +250,7 @@
 @media (max-width: 612px) {
     .location-card {
         min-height: 7.5rem;
-        max-width: 10rem;
+        max-width: 9.75rem;
     }
 
     .location-card__info__name {

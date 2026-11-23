@@ -86,16 +86,15 @@ export default function App() {
         <Tabs.Root className={styles.Root} defaultValue="overview">
           <Tabs.List className={styles.List}>
             <Tabs.Tab className={styles.Tab} value="locations">
-              <button>Locations</button>
+              <button className={styles.Tab__Btn}>Locations</button>
               <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Tab className={styles.Tab} value="graphs">
-              <button>Graphs</button>
-              
+              <button className={styles.Tab__Btn}>Graphs</button>
               <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Tab className={styles.Tab} value="map">
-              Map
+              <button className={styles.Tab__Btn}>Map</button>
               <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Indicator className={styles.Indicator} />

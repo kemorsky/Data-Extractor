@@ -1,17 +1,13 @@
 .Root {
   box-sizing: border-box;
   width: 100%;
-  /* padding: 0 1rem; */
-  /* max-width: 90rem; */
-  /* max-height: 100vh; */
 }
 
 .List {
   display: flex;
   position: relative;
   z-index: 1;
-  /* margin-bottom: 0.33rem; */
-  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
 }
 
 .Tab {
@@ -33,34 +29,57 @@
   user-select: none;
   white-space: nowrap;
   word-break: keep-all;
-  padding: 0.75rem;
+  padding: 0.5rem;
   cursor: pointer;
   border-radius: 0.33rem 0.33rem 0 0;
-  transition: var(--button-colors);
   border-bottom: 1px solid transparent;
 
   @media (hover: hover) {
     &:hover {
       color: white;
-      background-color: var(--button-bg-hover);
+      background-color: transparent;
     }
   }
 
   &[data-active] {
     color: #faf118;
-    /* border-bottom: 1px solid #faf118; */
     border-radius: 0.33rem 0.33rem 0 0;
-    background-color: var(--button-bg-active);
+    border-bottom: 1px solid transparent;
+    background-color: var(--bg-light);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 2;
+
+    box-shadow: 
+      0 4px 30px rgba(0, 0, 0, 0.1),            
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.4);
+
+    .Tab__Btn {
+      color: white;
+      background: transparent;
+    }
 
     .Highlight {
       background: #faf118;
-      border-radius: 0.33rem 0.33rem 0 0;
+      border-radius: 0.75rem 0.75rem 0 0;
     }
   }
 
   &:focus-visible {
     outline: 2px solid oklch(14.5% 0 0deg);
     outline-offset: -1px;
+  }
+}
+
+.Tab__Btn {
+  background-color: transparent;
+  color: oklch(67.64% 0.00008 271.152);
+  border-radius: 0.25rem;
+
+  &:hover {
+    color: white;
+    background-color: var(--button-bg-active);
+    transition: none;
   }
 }
 
@@ -83,20 +102,75 @@
   translate: var(--active-tab-left);
   width: var(--active-tab-width);
   height: 100%;
-  transition-property: translate, width;
-  transition-duration: 150ms;
-  transition-timing-function: ease-in-out;
+  
+  background-color: var(--bg-light);
+  border: transparent;
+  border-bottom: none;
   border-radius: 0.33rem 0.33rem 0 0;
-  background-color: var(--bg-dark);
+  
+  transition-property: translate, width;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Shared corner styling */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 12px;
+    height: 12px;
+    background: var(--bg-dark);
+    pointer-events: none;
+    
+    /* Corners fade */
+    opacity: 1;
+    transform: scale(1);
+    transition:
+      opacity 180ms ease-in-out,
+      transform 180ms ease-in-out;
+  }
+
+  /* Left corner */
+  &::before {
+    left: -12px;
+    transform-origin: bottom right;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 5px 5px 0 4px var(--bg-light);
+    border: transparent;
+  }
+
+  /* Right corner */
+  &::after {
+    right: -12px;
+    transform-origin: bottom left;
+    border-bottom-left-radius: 1rem;
+    box-shadow: -5px 5px 0 4px var(--bg-light);
+    border: transparent;
+  }
 }
 
+/* .Tab:first-of-type[aria-selected="true"] ~ .Indicator::before,
+.Tab:first-of-type[data-active] ~ .Indicator::before,
+.Tab:first-of-type[data-selected] ~ .Indicator::before {
+  opacity: 0;
+  transform: scale(0.75);
+}
+
+.Tab:last-of-type[aria-selected="true"] ~ .Indicator::after,
+.Tab:last-of-type[data-active] ~ .Indicator::after,
+.Tab:last-of-type[data-selected] ~ .Indicator::after {
+  opacity: 0;
+  transform: scale(0.75);
+} */
+
 .PanelViewport {
+  background-color: var(--bg-light);
   box-sizing: border-box;
   width: 100%;
   min-height: 8rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   height: 100%;
- 
 
   @media (max-width: 1440px) {
     width: 100%;

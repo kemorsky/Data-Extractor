@@ -30,12 +30,11 @@ export default function DrawerGeneralTab(props: DrawerTabProps) {
     return (
         <div className={styles.Content}>
             <ul className={styles.ListContainer}>
-                <li className={styles.LocationType}>
-                    <span className={styles.LocationText}>Type</span>
-                    <span className={styles.ListItemText}>{locationByName?.locationType}, {locationByName?.locationCategory}</span>
-                </li>
-                
-                <div className={styles.ListsContainer}>     
+                <div className={styles.ListsContainer}>
+                    <li className={styles.LocationType}>
+                        <span className={styles.LocationText}>Type</span>
+                        <span className={styles.ListItemText}>{locationByName?.locationType}, {locationByName?.locationCategory}</span>
+                    </li>
                     <section className={styles.List} style={{ flexDirection: "column"}}>
                         <span className={styles.ListText}>Cells</span>
                         <ul className={styles.ListArray}>
@@ -59,6 +58,10 @@ export default function DrawerGeneralTab(props: DrawerTabProps) {
                             }
                         </ul>
                     </section>
+                </div>
+                
+                <div className={styles.ListsContainer}>     
+                    
                     {(locationByName?.inhabitingNpcs?.length ?? 0) > 0 && 
                         <section className={styles.List} style={{ flexDirection: "column"}}>
                             <span className={styles.ListText}>Inhabitants</span>

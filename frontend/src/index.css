@@ -13,12 +13,12 @@
                     0 0px 20px 0px rgba(192, 192, 192, 0.2);
 
   --bg: #0E0E0E;
-  --bg-light: #111111;
+  --bg-light: #1a1a1a;
   --bg-dark: #0E0E0E;
   --bg-dark-80: #2a2e38;
   --table-row: #272727;
   --table-row-hover: #494949;
-  --button-bg: #282828;
+  --button-bg: rgb(40, 40, 40);
   --button-bg-hover: #4e4e4e;
   --button-bg-active: #292929;
   /* --bg: hsl(220, 15%, 85%); */
@@ -41,6 +41,7 @@
   --font-primary: "Plus Jakarta Sans", sans-serif;
 
   /* Transitions */
+  --border-colors: border 150ms ease-in-out;
   --button-colors: background-color 150ms ease-in-out;
   --button-text: color 150ms ease-in-out;
 
