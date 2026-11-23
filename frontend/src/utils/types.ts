@@ -62,6 +62,7 @@ export type LocationFilters = {
 
 export type User = {
   id: string;
+  nickName: string;
   name: string;
   email: string;
 };

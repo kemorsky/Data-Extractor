@@ -121,6 +121,8 @@ builder.Services
 
         options.MapInboundClaims = false;
 
+        options.GetClaimsFromUserInfoEndpoint = true;
+
         options.TokenValidationParameters.NameClaimType = "name";
         options.TokenValidationParameters.RoleClaimType = "roles";
 
@@ -206,6 +208,7 @@ app.MapGet("/auth/me", (ClaimsPrincipal user) =>
     return Results.Ok(new
     {
         Id = user.FindFirst("sub")?.Value,
+        Nickname = user.FindFirst("nickname")?.Value,
         Name = user.FindFirst("name")?.Value,
         Email = user.FindFirst("email")?.Value
     });

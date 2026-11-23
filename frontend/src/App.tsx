@@ -71,6 +71,7 @@ export default function App() {
         {user && 
           <div>
             <p>{user.id}</p>
+            <p>{user.nickName}</p>
             <p>{user.name}</p>
             <p>{user.email}</p>
           </div>
@@ -85,11 +86,12 @@ export default function App() {
         <Tabs.Root className={styles.Root} defaultValue="overview">
           <Tabs.List className={styles.List}>
             <Tabs.Tab className={styles.Tab} value="locations">
-              Locations
+              <button>Locations</button>
               <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Tab className={styles.Tab} value="graphs">
-              Graphs
+              <button>Graphs</button>
+              
               <div className={styles.Highlight} />
             </Tabs.Tab>
             <Tabs.Tab className={styles.Tab} value="map">
